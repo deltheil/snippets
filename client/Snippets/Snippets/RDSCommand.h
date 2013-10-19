@@ -24,6 +24,9 @@ extern NSString * const kRDSCommandsNS;
 // e.g ["HSET myhash field1 \"foo\"", "HGET myhash field1", "HGET myhash field2"]
 @property (nonatomic, copy, readonly) NSArray *cli;
 
+// Properties out-of-scope of Mantle
+@property (nonatomic, copy) NSString *uid;
+
 + (void)setDatabase:(WNCDatabase *)database;
 
 + (NSArray *)fetch;

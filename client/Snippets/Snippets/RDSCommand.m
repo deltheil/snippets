@@ -61,6 +61,8 @@ NSString * const kRDSCommandsNS = @"rds:cmds";
             return;
         }
         
+        cmd.uid = key;
+        
         [cmds addObject:cmd];
     } error:&iterError];
     

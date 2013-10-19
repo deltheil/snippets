@@ -20,6 +20,8 @@
 		826579861812959C00A17F63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 826579841812959C00A17F63 /* InfoPlist.strings */; };
 		826579881812959C00A17F63 /* LearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579871812959C00A17F63 /* LearnTests.m */; };
 		826579D31812AAB900A17F63 /* libvedis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579D21812AAB900A17F63 /* libvedis.a */; };
+		826579DA1812B57100A17F63 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579D91812B57100A17F63 /* Redis.m */; };
+		826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579DC1812B72200A17F63 /* NSError+Redis.m */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -57,6 +59,10 @@
 		826579871812959C00A17F63 /* LearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnTests.m; sourceTree = "<group>"; };
 		826579D11812AA9E00A17F63 /* vedis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vedis.h; path = ../../../engine/vedis.h; sourceTree = "<group>"; };
 		826579D21812AAB900A17F63 /* libvedis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvedis.a; path = "../../../engine/build-ios-fat/libvedis.a"; sourceTree = "<group>"; };
+		826579D81812B57100A17F63 /* Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Redis.h; sourceTree = "<group>"; };
+		826579D91812B57100A17F63 /* Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redis.m; sourceTree = "<group>"; };
+		826579DB1812B72200A17F63 /* NSError+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Redis.h"; sourceTree = "<group>"; };
+		826579DC1812B72200A17F63 /* NSError+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Redis.m"; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -174,10 +180,22 @@
 		826579D01812AA8300A17F63 /* vedis */ = {
 			isa = PBXGroup;
 			children = (
+				826579D41812B4C400A17F63 /* Obj-C */,
 				826579D11812AA9E00A17F63 /* vedis.h */,
 				826579D21812AAB900A17F63 /* libvedis.a */,
 			);
 			name = vedis;
+			sourceTree = "<group>";
+		};
+		826579D41812B4C400A17F63 /* Obj-C */ = {
+			isa = PBXGroup;
+			children = (
+				826579D81812B57100A17F63 /* Redis.h */,
+				826579D91812B57100A17F63 /* Redis.m */,
+				826579DB1812B72200A17F63 /* NSError+Redis.h */,
+				826579DC1812B72200A17F63 /* NSError+Redis.m */,
+			);
+			name = "Obj-C";
 			sourceTree = "<group>";
 		};
 		B0DDA7371812982F00E015C0 /* Controllers */ = {
@@ -328,9 +346,11 @@
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
 				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,
+				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */,
 				B0DDA74E18129CFA00E015C0 /* UIView+Position.m in Sources */,
+				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
 				B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */,
 				B0DDA74D18129CFA00E015C0 /* UINavigationController+StatusBar.m in Sources */,
 			);

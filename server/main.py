@@ -14,7 +14,7 @@ from Update import update
 # Keep Redis-doc up to date with Winch
 def run():
 	# pull data from redis-doc repository and store it in server file system
-	pull()
+	#pull()
 	# preprocess pull data to conform with Model.md
 	preprocess()
 	# get previous version available in winch

@@ -14,5 +14,7 @@ class Config():
 	targetURI = ""
 	source = "source"
 	target = "/Users/tushar/Desktop/AngelHack/target"
+	commands = source + "/commands"
+	summary = commands + ".json"
 	
 

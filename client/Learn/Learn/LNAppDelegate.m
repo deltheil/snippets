@@ -8,14 +8,36 @@
 
 #import "LNAppDelegate.h"
 
+#import "MainViewController.h"
+#import "BoardingViewController.h"
+
+@interface LNAppDelegate ()
+
+@property (nonatomic, strong) BoardingViewController *boardingView;
+@property (nonatomic, strong) UINavigationController *mainNav;
+
+@end
+
 @implementation LNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+
+    MainViewController *mainView = [[MainViewController alloc] init];
+    self.mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
+    
+    self.window.rootViewController = self.mainNav;
     [self.window makeKeyAndVisible];
+    
+    // Boarding
+    self.boardingView = [[BoardingViewController alloc] init];
+    
+    [self.window.rootViewController addChildViewController:self.boardingView];
+    [self.window addSubview:self.boardingView.view];
+    [self.boardingView didMoveToParentViewController:self.window.rootViewController];
+    
     return YES;
 }
 

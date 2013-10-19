@@ -19,6 +19,12 @@
 		8265797E1812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
 		826579861812959C00A17F63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 826579841812959C00A17F63 /* InfoPlist.strings */; };
 		826579881812959C00A17F63 /* LearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579871812959C00A17F63 /* LearnTests.m */; };
+		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
+		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
+		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
+		B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */; };
+		B0DDA74D18129CFA00E015C0 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74918129CFA00E015C0 /* UINavigationController+StatusBar.m */; };
+		B0DDA74E18129CFA00E015C0 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74B18129CFA00E015C0 /* UIView+Position.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,18 @@
 		826579831812959C00A17F63 /* LearnTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearnTests-Info.plist"; sourceTree = "<group>"; };
 		826579851812959C00A17F63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		826579871812959C00A17F63 /* LearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnTests.m; sourceTree = "<group>"; };
+		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
+		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
+		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
+		B0DDA74018129AED00E015C0 /* BoardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardingViewController.m; path = Controllers/BoardingViewController.m; sourceTree = "<group>"; };
+		B0DDA74218129C8E00E015C0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
+		B0DDA74318129C8E00E015C0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
+		B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		B0DDA74818129CFA00E015C0 /* UINavigationController+StatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBar.h"; sourceTree = "<group>"; };
+		B0DDA74918129CFA00E015C0 /* UINavigationController+StatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBar.m"; sourceTree = "<group>"; };
+		B0DDA74A18129CFA00E015C0 /* UIView+Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
+		B0DDA74B18129CFA00E015C0 /* UIView+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +125,10 @@
 		826579681812959B00A17F63 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				B0DDA73B181298F300E015C0 /* Components */,
+				B0DDA739181298BA00E015C0 /* Resources */,
+				B0DDA738181298B400E015C0 /* Views */,
+				B0DDA7371812982F00E015C0 /* Controllers */,
 				826579711812959B00A17F63 /* LNAppDelegate.h */,
 				826579721812959B00A17F63 /* LNAppDelegate.m */,
 				826579741812959B00A17F63 /* Images.xcassets */,
@@ -142,6 +164,55 @@
 				826579841812959C00A17F63 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0DDA7371812982F00E015C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDA73F18129AED00E015C0 /* BoardingViewController.h */,
+				B0DDA74018129AED00E015C0 /* BoardingViewController.m */,
+				B0DDA74218129C8E00E015C0 /* MainViewController.h */,
+				B0DDA74318129C8E00E015C0 /* MainViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B0DDA738181298B400E015C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B0DDA739181298BA00E015C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B0DDA73B181298F300E015C0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDA74518129CFA00E015C0 /* Category */,
+				B0DDA73C18129A9000E015C0 /* LNViewController.h */,
+				B0DDA73D18129A9000E015C0 /* LNViewController.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		B0DDA74518129CFA00E015C0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */,
+				B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */,
+				B0DDA74818129CFA00E015C0 /* UINavigationController+StatusBar.h */,
+				B0DDA74918129CFA00E015C0 /* UINavigationController+StatusBar.m */,
+				B0DDA74A18129CFA00E015C0 /* UIView+Position.h */,
+				B0DDA74B18129CFA00E015C0 /* UIView+Position.m */,
+			);
+			name = Category;
+			path = Components/Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
+				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
 				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
+				B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */,
+				B0DDA74E18129CFA00E015C0 /* UIView+Position.m in Sources */,
+				B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */,
+				B0DDA74D18129CFA00E015C0 /* UINavigationController+StatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +519,7 @@
 				8265798D1812959C00A17F63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8265798E1812959C00A17F63 /* Build configuration list for PBXNativeTarget "LearnTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +528,7 @@
 				826579901812959C00A17F63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

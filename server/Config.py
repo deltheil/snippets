@@ -10,7 +10,7 @@ import urllib, urllib2
 class Config():
 	
 	# Define variables for configuration
-	sourceURI = ""
+	sourceURI = "git://github.com/antirez/redis-doc"
 	targetURI = ""
 	source = "/Users/tushar/Desktop/AngelHack/source"
 	target = "/Users/tushar/Desktop/AngelHack/target"

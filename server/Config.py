@@ -12,7 +12,7 @@ class Config():
 	# Define variables for configuration
 	sourceURI = "git://github.com/antirez/redis-doc"
 	targetURI = ""
-	source = "/Users/tushar/Desktop/AngelHack/source"
+	source = "source"
 	target = "/Users/tushar/Desktop/AngelHack/target"
 	
 

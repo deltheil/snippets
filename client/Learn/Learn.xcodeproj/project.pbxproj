@@ -19,6 +19,7 @@
 		8265797E1812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
 		826579861812959C00A17F63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 826579841812959C00A17F63 /* InfoPlist.strings */; };
 		826579881812959C00A17F63 /* LearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579871812959C00A17F63 /* LearnTests.m */; };
+		826579D31812AAB900A17F63 /* libvedis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579D21812AAB900A17F63 /* libvedis.a */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -54,6 +55,8 @@
 		826579831812959C00A17F63 /* LearnTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearnTests-Info.plist"; sourceTree = "<group>"; };
 		826579851812959C00A17F63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		826579871812959C00A17F63 /* LearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnTests.m; sourceTree = "<group>"; };
+		826579D11812AA9E00A17F63 /* vedis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vedis.h; path = ../../../engine/vedis.h; sourceTree = "<group>"; };
+		826579D21812AAB900A17F63 /* libvedis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvedis.a; path = "../../../engine/build-ios-fat/libvedis.a"; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 				826579651812959B00A17F63 /* CoreGraphics.framework in Frameworks */,
 				826579671812959B00A17F63 /* UIKit.framework in Frameworks */,
 				826579631812959B00A17F63 /* Foundation.framework in Frameworks */,
+				826579D31812AAB900A17F63 /* libvedis.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +129,7 @@
 		826579681812959B00A17F63 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				826579D01812AA8300A17F63 /* vedis */,
 				B0DDA73B181298F300E015C0 /* Components */,
 				B0DDA739181298BA00E015C0 /* Resources */,
 				B0DDA738181298B400E015C0 /* Views */,
@@ -164,6 +169,15 @@
 				826579841812959C00A17F63 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		826579D01812AA8300A17F63 /* vedis */ = {
+			isa = PBXGroup;
+			children = (
+				826579D11812AA9E00A17F63 /* vedis.h */,
+				826579D21812AAB900A17F63 /* libvedis.a */,
+			);
+			name = vedis;
 			sourceTree = "<group>";
 		};
 		B0DDA7371812982F00E015C0 /* Controllers */ = {
@@ -440,6 +454,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Learn/Learn-Prefix.pch";
 				INFOPLIST_FILE = "Learn/Learn-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cedric/Projects/apphack-learn/engine/build-ios-fat",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +471,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Learn/Learn-Prefix.pch";
 				INFOPLIST_FILE = "Learn/Learn-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cedric/Projects/apphack-learn/engine/build-ios-fat",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

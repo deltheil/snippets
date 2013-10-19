@@ -5,34 +5,24 @@
 
 import sys
 import urllib, urllib2
+from Pull import pull
+from Retrieve import retrieve
+from Diff import diff
+from Update import update
 
-# pull data from redis-doc repository and store it in server file system
-def pull():
-	
-	return
-
-# get previous version available in winch
-def retrieve():
-	
-	return
-
-# check for changes to prevous version obtained from winch
-def diff():
-	
-	return
-
-# push updates to winch
-def update():
-	
-	return
-
+# Keep Redis-doc up to date with Winch
 def run():
+	# pull data from redis-doc repository and store it in server file system
 	pull()
+	# get previous version available in winch
 	retrieve()
+	# check for changes to prevous version obtained from winch
 	diff()
+	# push updates to winch
 	update()
 	print "Test"
 	return
 
+# Script to be run as cron job
 if __name__ == "__main__":
 	run()

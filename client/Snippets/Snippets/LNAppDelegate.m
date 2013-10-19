@@ -52,11 +52,11 @@
     [self.window makeKeyAndVisible];
 
     // Boarding
-    self.boardingView = [[BoardingViewController alloc] init];
-
-    [self.window.rootViewController addChildViewController:self.boardingView];
-    [self.window addSubview:self.boardingView.view];
-    [self.boardingView didMoveToParentViewController:self.window.rootViewController];
+//    self.boardingView = [[BoardingViewController alloc] init];
+//
+//    [self.window.rootViewController addChildViewController:self.boardingView];
+//    [self.window addSubview:self.boardingView.view];
+//    [self.boardingView didMoveToParentViewController:self.window.rootViewController];
 
     return YES;
 }

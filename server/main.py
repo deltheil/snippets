@@ -6,6 +6,7 @@
 import sys
 import urllib, urllib2
 from Pull import pull
+from Preprocess import preprocess
 from Retrieve import retrieve
 from Diff import diff
 from Update import update
@@ -14,6 +15,8 @@ from Update import update
 def run():
 	# pull data from redis-doc repository and store it in server file system
 	pull()
+	# preprocess pull data to conform with Model.md
+	preprocess()
 	# get previous version available in winch
 	retrieve()
 	# check for changes to prevous version obtained from winch

@@ -12,7 +12,7 @@ from Config import Config
 def git(*args):
 	return subprocess.check_call(['git'] + list(args))
 
-# Pull data from redis-doc repository and store it in server file system
+# Pull data from redis-doc repository and store it in server 'source'
 def pull():
 	git("clone", Config.sourceURI, Config.source)
         return

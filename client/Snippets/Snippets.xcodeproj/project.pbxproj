@@ -29,6 +29,7 @@
 		82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */; };
 		82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */; };
 		82C46F3E18131DB400E3E5E6 /* append.html in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3D18131DB400E3E5E6 /* append.html */; };
+		82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F3F18132E2100E3E5E6 /* Winch.framework */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -78,6 +79,7 @@
 		82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Bold.ttf"; sourceTree = "<group>"; };
 		82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRoundedStd-Light.otf"; sourceTree = "<group>"; };
 		82C46F3D18131DB400E3E5E6 /* append.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = append.html; sourceTree = "<group>"; };
+		82C46F3F18132E2100E3E5E6 /* Winch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Winch.framework; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */,
 				826579651812959B00A17F63 /* CoreGraphics.framework in Frameworks */,
 				826579671812959B00A17F63 /* UIKit.framework in Frameworks */,
 				826579631812959B00A17F63 /* Foundation.framework in Frameworks */,
@@ -139,6 +142,7 @@
 		826579611812959B00A17F63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82C46F3F18132E2100E3E5E6 /* Winch.framework */,
 				826579621812959B00A17F63 /* Foundation.framework */,
 				826579641812959B00A17F63 /* CoreGraphics.framework */,
 				826579661812959B00A17F63 /* UIKit.framework */,
@@ -509,6 +513,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					.,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";
 				INFOPLIST_FILE = "Snippets/Snippets-Info.plist";
@@ -526,6 +534,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					.,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";
 				INFOPLIST_FILE = "Snippets/Snippets-Info.plist";

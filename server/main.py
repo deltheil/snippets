@@ -6,9 +6,33 @@
 import sys
 import urllib, urllib2
 
-def Run():
+# pull data from redis-doc repository and store it in server file system
+def pull():
+	
+	return
+
+# get previous version available in winch
+def retrieve():
+	
+	return
+
+# check for changes to prevous version obtained from winch
+def diff():
+	
+	return
+
+# push updates to winch
+def update():
+	
+	return
+
+def run():
+	pull()
+	retrieve()
+	diff()
+	update()
 	print "Test"
 	return
 
 if __name__ == "__main__":
-	Run()
+	run()

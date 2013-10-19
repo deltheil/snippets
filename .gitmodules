@@ -1,1 +1,4 @@
 
+[submodule "server/source"]
+	path = server/source
+	url = git://github.com/antirez/redis-doc

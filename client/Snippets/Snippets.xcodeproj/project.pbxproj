@@ -30,6 +30,7 @@
 		82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */; };
 		82C46F3E18131DB400E3E5E6 /* append.html in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3D18131DB400E3E5E6 /* append.html */; };
 		82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F3F18132E2100E3E5E6 /* Winch.framework */; };
+		82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -80,6 +81,8 @@
 		82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRoundedStd-Light.otf"; sourceTree = "<group>"; };
 		82C46F3D18131DB400E3E5E6 /* append.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = append.html; sourceTree = "<group>"; };
 		82C46F3F18132E2100E3E5E6 /* Winch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Winch.framework; sourceTree = "<group>"; };
+		82C46F421813311100E3E5E6 /* RDSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCommand.h; sourceTree = "<group>"; };
+		82C46F431813311100E3E5E6 /* RDSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCommand.m; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -159,6 +162,7 @@
 				B0DDA739181298BA00E015C0 /* Resources */,
 				B0DDA738181298B400E015C0 /* Views */,
 				B0DDA7371812982F00E015C0 /* Controllers */,
+				82C46F41181330F000E3E5E6 /* Models */,
 				82C46F2F18131B7F00E3E5E6 /* DRAFT */,
 				826579711812959B00A17F63 /* LNAppDelegate.h */,
 				826579721812959B00A17F63 /* LNAppDelegate.m */,
@@ -231,6 +235,15 @@
 				82C46F3218131BB300E3E5E6 /* RedisCmdViewController.xib */,
 			);
 			name = DRAFT;
+			sourceTree = "<group>";
+		};
+		82C46F41181330F000E3E5E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82C46F421813311100E3E5E6 /* RDSCommand.h */,
+				82C46F431813311100E3E5E6 /* RDSCommand.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		B0DDA7371812982F00E015C0 /* Controllers */ = {
@@ -387,6 +400,7 @@
 				82C46F3318131BB300E3E5E6 /* RedisCmdViewController.m in Sources */,
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
+				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,
 				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,

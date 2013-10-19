@@ -1,3 +1,4 @@
-A mobile app that lets you learn &amp; experiment Redis while on-the-go.
+# Snippets
 
-Do you know [redis.io/commands](http://redis.io/commands)? Well get it right on your mobile!
+An iOS app that lets you learn & experience your favorite {databases,languages,tools}
+on-the-go or as a 2nd screen while working. Works with [Redis](http://redis.io) so far.

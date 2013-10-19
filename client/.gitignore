@@ -1,8 +1,8 @@
-Learn.xcodeproj/*.pbxuser
-Learn.xcodeproj/*.mode*
-Learn.xcodeproj/*.perspectivev3
-Learn.xcodeproj/*.xcworkspace/
-Learn.xcodeproj/xcuserdata/
-Learn.xcworkspace/
-Pods/
-Podfile.lock
+Learn/Learn.xcodeproj/*.pbxuser
+Learn/Learn.xcodeproj/*.mode*
+Learn/Learn.xcodeproj/*.perspectivev3
+Learn/Learn.xcodeproj/*.xcworkspace/
+Learn/Learn.xcodeproj/xcuserdata/
+Learn/Learn.xcworkspace/
+Learn/Pods/
+Learn/Podfile.lock

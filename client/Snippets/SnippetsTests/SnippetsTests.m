@@ -1,6 +1,6 @@
 //
-//  LearnTests.m
-//  LearnTests
+//  SnippetsTests.m
+//  SnippetsTests
 //
 //  Created by Cédric Deltheil on 19/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface LearnTests : XCTestCase
+@interface SnippetsTests : XCTestCase
 
 @end
 
-@implementation LearnTests
+@implementation SnippetsTests
 
 - (void)setUp
 {

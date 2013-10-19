@@ -1,6 +1,6 @@
 //
 //  Redis.m
-//  Learn
+//  Snippets
 //
 //  Created by Cédric Deltheil on 19/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.
@@ -44,14 +44,14 @@
 {
     int rc = vedis_close(_store);
     if (rc != VEDIS_OK) goto err;
-    
+
     _store = NULL;
     return YES;
 err:
     if (error) {
         *error = [NSError rds_errorWithCode:rc store:_store];
     }
-    
+
     return NO;
 }
 
@@ -63,19 +63,19 @@ err:
 {
     int rc = vedis_exec(_store, [command UTF8String], -1);
     if (rc != VEDIS_OK) goto err;
-    
+
     vedis_value *res;
-    
+
     rc = vedis_exec_result(_store, &res);
     if (rc != VEDIS_OK) goto err;
-    
+
     return [[NSString alloc] initWithCString:vedis_value_to_string(res, 0)
                                     encoding:NSUTF8StringEncoding];
 err:
     if (error) {
         *error = [NSError rds_errorWithCode:rc store:_store];
     }
-    
+
     return nil;
 }
 

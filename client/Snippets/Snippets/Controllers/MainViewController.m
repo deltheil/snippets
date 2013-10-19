@@ -1,18 +1,18 @@
 //
-//  LNViewController.m
-//  Learn
+//  MainViewController.m
+//  Snippets
 //
 //  Created by Aymeric Gallissot on 19/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.
 //
 
-#import "LNViewController.h"
+#import "MainViewController.h"
 
-@interface LNViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation LNViewController
+@implementation MainViewController
 
 - (id)init
 {
@@ -26,13 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    self.view.backgroundColor = [UIColor colorWithHexString:@"333333"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

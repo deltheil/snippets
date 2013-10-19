@@ -14,6 +14,10 @@
 // Winch main header
 #import <Winch/Winch.h>
 
+// Models
+#import "RDSCommand.h"
+#import "RDSType.h"
+
 // ==========================================
 // Winch demo datastore credentials
 // ==========================================
@@ -41,6 +45,10 @@
     if (![_database openWithID:WNC_DATASTORE_ID appSecret:WNC_APP_SECRET error:&error]) {
         NSLog(@"winch open error: %@", [error wnc_message]);
     }
+    
+    // Hook up the database with the models
+    [RDSCommand setDatabase:_database];
+    [RDSType setDatabase:_database];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

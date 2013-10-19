@@ -19,7 +19,8 @@ extern NSString * const kRDSTypesNS;
 
 // e.g "GET"
 @property (nonatomic, copy, readonly) NSString *name;
-// TODO: cmds (array)
+// e.g ["hdel", "hget", "hlen"]
+@property (nonatomic, copy, readonly) NSArray *cmds;
 
 + (void)setDatabase:(WNCDatabase *)database;
 

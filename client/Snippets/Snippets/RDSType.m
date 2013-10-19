@@ -19,7 +19,8 @@ NSString * const kRDSTypesNS = @"rds:types";
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{
-             @"name": @"name"
+             @"name": @"name",
+             @"cmds": @"cmds"
              };
 }
 

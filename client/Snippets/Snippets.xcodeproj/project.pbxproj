@@ -22,6 +22,13 @@
 		826579D31812AAB900A17F63 /* libvedis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579D21812AAB900A17F63 /* libvedis.a */; };
 		826579DA1812B57100A17F63 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579D91812B57100A17F63 /* Redis.m */; };
 		826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579DC1812B72200A17F63 /* NSError+Redis.m */; };
+		82C46F3318131BB300E3E5E6 /* RedisCmdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F3118131BB300E3E5E6 /* RedisCmdViewController.m */; };
+		82C46F3418131BB300E3E5E6 /* RedisCmdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3218131BB300E3E5E6 /* RedisCmdViewController.xib */; };
+		82C46F3618131C0900E3E5E6 /* redis_cmd.html in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3518131C0900E3E5E6 /* redis_cmd.html */; };
+		82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */; };
+		82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */; };
+		82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */; };
+		82C46F3E18131DB400E3E5E6 /* append.html in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3D18131DB400E3E5E6 /* append.html */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -63,6 +70,14 @@
 		826579D91812B57100A17F63 /* Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redis.m; sourceTree = "<group>"; };
 		826579DB1812B72200A17F63 /* NSError+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Redis.h"; sourceTree = "<group>"; };
 		826579DC1812B72200A17F63 /* NSError+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Redis.m"; sourceTree = "<group>"; };
+		82C46F3018131BB300E3E5E6 /* RedisCmdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedisCmdViewController.h; sourceTree = "<group>"; };
+		82C46F3118131BB300E3E5E6 /* RedisCmdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedisCmdViewController.m; sourceTree = "<group>"; };
+		82C46F3218131BB300E3E5E6 /* RedisCmdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedisCmdViewController.xib; sourceTree = "<group>"; };
+		82C46F3518131C0900E3E5E6 /* redis_cmd.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = redis_cmd.html; sourceTree = "<group>"; };
+		82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aleo-Regular.otf"; sourceTree = "<group>"; };
+		82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Bold.ttf"; sourceTree = "<group>"; };
+		82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRoundedStd-Light.otf"; sourceTree = "<group>"; };
+		82C46F3D18131DB400E3E5E6 /* append.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = append.html; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -140,6 +155,7 @@
 				B0DDA739181298BA00E015C0 /* Resources */,
 				B0DDA738181298B400E015C0 /* Views */,
 				B0DDA7371812982F00E015C0 /* Controllers */,
+				82C46F2F18131B7F00E3E5E6 /* DRAFT */,
 				826579711812959B00A17F63 /* LNAppDelegate.h */,
 				826579721812959B00A17F63 /* LNAppDelegate.m */,
 				826579741812959B00A17F63 /* Images.xcassets */,
@@ -151,6 +167,11 @@
 		826579691812959B00A17F63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */,
+				82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */,
+				82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */,
+				82C46F3518131C0900E3E5E6 /* redis_cmd.html */,
+				82C46F3D18131DB400E3E5E6 /* append.html */,
 				8265796A1812959B00A17F63 /* Snippets-Info.plist */,
 				8265796B1812959B00A17F63 /* InfoPlist.strings */,
 				8265796E1812959B00A17F63 /* main.m */,
@@ -196,6 +217,16 @@
 				826579DC1812B72200A17F63 /* NSError+Redis.m */,
 			);
 			name = "Obj-C";
+			sourceTree = "<group>";
+		};
+		82C46F2F18131B7F00E3E5E6 /* DRAFT */ = {
+			isa = PBXGroup;
+			children = (
+				82C46F3018131BB300E3E5E6 /* RedisCmdViewController.h */,
+				82C46F3118131BB300E3E5E6 /* RedisCmdViewController.m */,
+				82C46F3218131BB300E3E5E6 /* RedisCmdViewController.xib */,
+			);
+			name = DRAFT;
 			sourceTree = "<group>";
 		};
 		B0DDA7371812982F00E015C0 /* Controllers */ = {
@@ -323,8 +354,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C46F3618131C0900E3E5E6 /* redis_cmd.html in Resources */,
+				82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */,
 				8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */,
+				82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */,
 				826579751812959B00A17F63 /* Images.xcassets in Resources */,
+				82C46F3418131BB300E3E5E6 /* RedisCmdViewController.xib in Resources */,
+				82C46F3E18131DB400E3E5E6 /* append.html in Resources */,
+				82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C46F3318131BB300E3E5E6 /* RedisCmdViewController.m in Sources */,
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
 				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,

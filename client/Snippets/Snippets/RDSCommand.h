@@ -21,7 +21,8 @@ extern NSString * const kRDSCommandsNS;
 @property (nonatomic, copy, readonly) NSString *name;
 // e.g "Get the value of a key"
 @property (nonatomic, copy, readonly) NSString *summary;
-// TODO: cli (array)
+// e.g ["HSET myhash field1 \"foo\"", "HGET myhash field1", "HGET myhash field2"]
+@property (nonatomic, copy, readonly) NSArray *cli;
 
 + (void)setDatabase:(WNCDatabase *)database;
 

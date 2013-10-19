@@ -20,7 +20,8 @@ NSString * const kRDSCommandsNS = @"rds:cmds";
 {
     return @{
              @"name": @"name",
-             @"summary": @"summary"
+             @"summary": @"summary",
+             @"cli": @"cli"
     };
 }
 

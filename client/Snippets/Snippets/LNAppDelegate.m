@@ -1,6 +1,6 @@
 //
 //  LNAppDelegate.m
-//  Learn
+//  Snippets
 //
 //  Created by Cédric Deltheil on 19/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.
@@ -27,17 +27,17 @@
 
     MainViewController *mainView = [[MainViewController alloc] init];
     self.mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
-    
+
     self.window.rootViewController = self.mainNav;
     [self.window makeKeyAndVisible];
-    
+
     // Boarding
     self.boardingView = [[BoardingViewController alloc] init];
-    
+
     [self.window.rootViewController addChildViewController:self.boardingView];
     [self.window addSubview:self.boardingView.view];
     [self.boardingView didMoveToParentViewController:self.window.rootViewController];
-    
+
     return YES;
 }
 
@@ -49,7 +49,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

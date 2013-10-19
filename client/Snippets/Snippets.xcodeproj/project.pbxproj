@@ -18,7 +18,7 @@
 		8265797D1812959B00A17F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579621812959B00A17F63 /* Foundation.framework */; };
 		8265797E1812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
 		826579861812959C00A17F63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 826579841812959C00A17F63 /* InfoPlist.strings */; };
-		826579881812959C00A17F63 /* LearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579871812959C00A17F63 /* LearnTests.m */; };
+		826579881812959C00A17F63 /* SnippetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579871812959C00A17F63 /* SnippetsTests.m */; };
 		826579D31812AAB900A17F63 /* libvedis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579D21812AAB900A17F63 /* libvedis.a */; };
 		826579DA1812B57100A17F63 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579D91812B57100A17F63 /* Redis.m */; };
 		826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579DC1812B72200A17F63 /* NSError+Redis.m */; };
@@ -36,7 +36,7 @@
 			containerPortal = 826579571812959B00A17F63 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8265795E1812959B00A17F63;
-			remoteInfo = Learn;
+			remoteInfo = Snippets;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,7 +56,7 @@
 		8265797B1812959B00A17F63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		826579831812959C00A17F63 /* SnippetsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnippetsTests-Info.plist"; sourceTree = "<group>"; };
 		826579851812959C00A17F63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		826579871812959C00A17F63 /* LearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnTests.m; sourceTree = "<group>"; };
+		826579871812959C00A17F63 /* SnippetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnippetsTests.m; sourceTree = "<group>"; };
 		826579D11812AA9E00A17F63 /* vedis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vedis.h; path = ../../../engine/vedis.h; sourceTree = "<group>"; };
 		826579D21812AAB900A17F63 /* libvedis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvedis.a; path = "../../../engine/build-ios-fat/libvedis.a"; sourceTree = "<group>"; };
 		826579D81812B57100A17F63 /* Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Redis.h; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 		826579561812959B00A17F63 = {
 			isa = PBXGroup;
 			children = (
-				826579681812959B00A17F63 /* Learn */,
-				826579811812959C00A17F63 /* LearnTests */,
+				826579681812959B00A17F63 /* Snippets */,
+				826579811812959C00A17F63 /* SnippetsTests */,
 				826579611812959B00A17F63 /* Frameworks */,
 				826579601812959B00A17F63 /* Products */,
 			);
@@ -132,7 +132,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		826579681812959B00A17F63 /* Learn */ = {
+		826579681812959B00A17F63 /* Snippets */ = {
 			isa = PBXGroup;
 			children = (
 				826579D01812AA8300A17F63 /* vedis */,
@@ -145,7 +145,7 @@
 				826579741812959B00A17F63 /* Images.xcassets */,
 				826579691812959B00A17F63 /* Supporting Files */,
 			);
-			path = Learn;
+			path = Snippets;
 			sourceTree = "<group>";
 		};
 		826579691812959B00A17F63 /* Supporting Files */ = {
@@ -159,13 +159,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		826579811812959C00A17F63 /* LearnTests */ = {
+		826579811812959C00A17F63 /* SnippetsTests */ = {
 			isa = PBXGroup;
 			children = (
-				826579871812959C00A17F63 /* LearnTests.m */,
+				826579871812959C00A17F63 /* SnippetsTests.m */,
 				826579821812959C00A17F63 /* Supporting Files */,
 			);
-			path = LearnTests;
+			path = SnippetsTests;
 			sourceTree = "<group>";
 		};
 		826579821812959C00A17F63 /* Supporting Files */ = {
@@ -263,7 +263,7 @@
 			dependencies = (
 			);
 			name = Snippets;
-			productName = Learn;
+			productName = Snippets;
 			productReference = 8265795F1812959B00A17F63 /* Snippets.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -281,7 +281,7 @@
 				826579801812959C00A17F63 /* PBXTargetDependency */,
 			);
 			name = SnippetsTests;
-			productName = LearnTests;
+			productName = SnippetsTests;
 			productReference = 8265797A1812959B00A17F63 /* SnippetsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -360,7 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				826579881812959C00A17F63 /* LearnTests.m in Sources */,
+				826579881812959C00A17F63 /* SnippetsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,8 +472,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Learn/Snippets-Prefix.pch";
-				INFOPLIST_FILE = "Learn/Snippets-Info.plist";
+				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";
+				INFOPLIST_FILE = "Snippets/Snippets-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"../../engine/build-ios-fat",
@@ -489,8 +489,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Learn/Snippets-Prefix.pch";
-				INFOPLIST_FILE = "Learn/Snippets-Info.plist";
+				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";
+				INFOPLIST_FILE = "Snippets/Snippets-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"../../engine/build-ios-fat",
@@ -504,19 +504,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Learn.app/Learn";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Snippets.app/Snippets";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Learn/Learn-Prefix.pch";
+				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LearnTests/SnippetsTests-Info.plist";
+				INFOPLIST_FILE = "SnippetsTests/SnippetsTests-Info.plist";
 				PRODUCT_NAME = SnippetsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -527,15 +527,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Learn.app/Learn";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Snippets.app/Snippets";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Learn/Learn-Prefix.pch";
-				INFOPLIST_FILE = "LearnTests/SnippetsTests-Info.plist";
+				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";
+				INFOPLIST_FILE = "SnippetsTests/SnippetsTests-Info.plist";
 				PRODUCT_NAME = SnippetsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -1,8 +1,8 @@
-Learn/Snippets.xcodeproj/*.pbxuser
-Learn/Snippets.xcodeproj/*.mode*
-Learn/Snippets.xcodeproj/*.perspectivev3
-Learn/Snippets.xcodeproj/*.xcworkspace/
-Learn/Snippets.xcodeproj/xcuserdata/
-Learn/Snippets.xcworkspace/
-Learn/Pods/
-Learn/Podfile.lock
+Snippets/Snippets.xcodeproj/*.pbxuser
+Snippets/Snippets.xcodeproj/*.mode*
+Snippets/Snippets.xcodeproj/*.perspectivev3
+Snippets/Snippets.xcodeproj/*.xcworkspace/
+Snippets/Snippets.xcodeproj/xcuserdata/
+Snippets/Snippets.xcworkspace/
+Snippets/Pods/
+Snippets/Podfile.lock

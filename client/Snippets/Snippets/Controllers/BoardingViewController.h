@@ -1,6 +1,6 @@
 //
 //  BoardingViewController.h
-//  Learn
+//  Snippets
 //
 //  Created by Aymeric Gallissot on 19/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.

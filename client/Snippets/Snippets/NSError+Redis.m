@@ -1,6 +1,6 @@
 //
 //  NSError+Redis.m
-//  Learn
+//  Snippets
 //
 //  Created by Cédric Deltheil on 19/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.
@@ -16,9 +16,9 @@ NSString *const RedisErrorDomain = @"net.symisc.Vedis.error";
 {
     if (code == RDS_OK)
         return nil;
-    
+
     NSDictionary *userInfo = nil;
-    
+
     if (store) {
         const char *err;
         int len = 0;
@@ -28,7 +28,7 @@ NSString *const RedisErrorDomain = @"net.symisc.Vedis.error";
             userInfo = @{ @"msg": msg };
         }
     }
-    
+
     return [NSError errorWithDomain:RedisErrorDomain
                                code:code
                            userInfo:userInfo];

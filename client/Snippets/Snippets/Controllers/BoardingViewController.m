@@ -1,6 +1,6 @@
 //
 //  BoardingViewController.m
-//  Learn
+//  Snippets
 //
 //  Created by Aymeric Gallissot on 19/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.
@@ -26,18 +26,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self.navigationController setNavigationBarHidden:YES];
-	
+
     self.view.backgroundColor = [UIColor colorWithHexString:@"ff9900"];
-    
+
     UIButton *buttonGo = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 40.0)];
     buttonGo.left = floor((self.view.width - buttonGo.width) / 2 );
     buttonGo.top = 200.0;
-    
+
     buttonGo.backgroundColor = [UIColor colorWithHexString:@"0BB5FF"];
     [buttonGo addTarget:self action:@selector(closeView) forControlEvents:UIControlEventTouchUpInside];
-    
+
     [self.view addSubview:buttonGo];
 }
 
@@ -47,7 +47,7 @@
 }
 
 - (void)closeView{
-    
+
     [self willMoveToParentViewController:nil];
     [self.view removeFromSuperview];
     [self removeFromParentViewController];

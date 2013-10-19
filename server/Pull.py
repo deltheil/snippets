@@ -8,6 +8,6 @@ import urllib, urllib2
 
 # Pull data from redis-doc repository and store it in server file system
 def pull():
-
+	
         return
 

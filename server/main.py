@@ -9,6 +9,7 @@ from Pull import pull
 from Retrieve import retrieve
 from Diff import diff
 from Update import update
+from Config import Config
 
 # Keep Redis-doc up to date with Winch
 def run():
@@ -21,6 +22,7 @@ def run():
 	# push updates to winch
 	update()
 	print "Test"
+	print Config.target
 	return
 
 # Script to be run as cron job

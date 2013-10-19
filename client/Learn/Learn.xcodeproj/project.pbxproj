@@ -456,7 +456,7 @@
 				INFOPLIST_FILE = "Learn/Learn-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/cedric/Projects/apphack-learn/engine/build-ios-fat",
+					"../../engine/build-ios-fat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -473,7 +473,7 @@
 				INFOPLIST_FILE = "Learn/Learn-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/cedric/Projects/apphack-learn/engine/build-ios-fat",
+					"../../engine/build-ios-fat",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

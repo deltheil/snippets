@@ -11,6 +11,15 @@
 #import "MainViewController.h"
 #import "BoardingViewController.h"
 
+// Winch main header
+#import <Winch/Winch.h>
+
+// ==========================================
+// Winch demo datastore credentials
+// ==========================================
+#define WNC_DATASTORE_ID @"Id"
+#define WNC_APP_SECRET   @"sEcReT"
+
 @interface LNAppDelegate ()
 
 @property (nonatomic, strong) BoardingViewController *boardingView;
@@ -18,10 +27,21 @@
 
 @end
 
-@implementation LNAppDelegate
+@implementation LNAppDelegate {
+    WNCDatabase *_database;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *path = [WNCDatabase cachesPathFor:@"store.db"];
+    
+    _database = [WNCDatabase databaseWithPath:path];
+    
+    NSError *error;
+    if (![_database openWithID:WNC_DATASTORE_ID appSecret:WNC_APP_SECRET error:&error]) {
+        NSLog(@"winch open error: %@", [error wnc_message]);
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 
@@ -65,7 +85,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [_database close];
 }
 
 @end

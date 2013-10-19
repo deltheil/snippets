@@ -15,7 +15,7 @@
 // rds:cmds
 extern NSString * const kRDSCommandsNS;
 
-@interface RDSCommand : NSObject
+@interface RDSCommand : MTLModel <MTLJSONSerializing>
 
 // e.g "GET"
 @property (nonatomic, copy, readonly) NSString *name;

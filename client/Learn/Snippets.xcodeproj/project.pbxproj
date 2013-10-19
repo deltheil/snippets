@@ -41,20 +41,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8265795F1812959B00A17F63 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8265795F1812959B00A17F63 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826579621812959B00A17F63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		826579641812959B00A17F63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		826579661812959B00A17F63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		8265796A1812959B00A17F63 /* Learn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Learn-Info.plist"; sourceTree = "<group>"; };
+		8265796A1812959B00A17F63 /* Snippets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Snippets-Info.plist"; sourceTree = "<group>"; };
 		8265796C1812959B00A17F63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8265796E1812959B00A17F63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		826579701812959B00A17F63 /* Learn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Learn-Prefix.pch"; sourceTree = "<group>"; };
+		826579701812959B00A17F63 /* Snippets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snippets-Prefix.pch"; sourceTree = "<group>"; };
 		826579711812959B00A17F63 /* LNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNAppDelegate.h; sourceTree = "<group>"; };
 		826579721812959B00A17F63 /* LNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LNAppDelegate.m; sourceTree = "<group>"; };
 		826579741812959B00A17F63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8265797A1812959B00A17F63 /* LearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8265797A1812959B00A17F63 /* SnippetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8265797B1812959B00A17F63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		826579831812959C00A17F63 /* LearnTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearnTests-Info.plist"; sourceTree = "<group>"; };
+		826579831812959C00A17F63 /* SnippetsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnippetsTests-Info.plist"; sourceTree = "<group>"; };
 		826579851812959C00A17F63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		826579871812959C00A17F63 /* LearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnTests.m; sourceTree = "<group>"; };
 		826579D11812AA9E00A17F63 /* vedis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vedis.h; path = ../../../engine/vedis.h; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 		826579601812959B00A17F63 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8265795F1812959B00A17F63 /* Learn.app */,
-				8265797A1812959B00A17F63 /* LearnTests.xctest */,
+				8265795F1812959B00A17F63 /* Snippets.app */,
+				8265797A1812959B00A17F63 /* SnippetsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,10 +151,10 @@
 		826579691812959B00A17F63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8265796A1812959B00A17F63 /* Learn-Info.plist */,
+				8265796A1812959B00A17F63 /* Snippets-Info.plist */,
 				8265796B1812959B00A17F63 /* InfoPlist.strings */,
 				8265796E1812959B00A17F63 /* main.m */,
-				826579701812959B00A17F63 /* Learn-Prefix.pch */,
+				826579701812959B00A17F63 /* Snippets-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 		826579821812959C00A17F63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				826579831812959C00A17F63 /* LearnTests-Info.plist */,
+				826579831812959C00A17F63 /* SnippetsTests-Info.plist */,
 				826579841812959C00A17F63 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -250,9 +250,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8265795E1812959B00A17F63 /* Learn */ = {
+		8265795E1812959B00A17F63 /* Snippets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8265798B1812959C00A17F63 /* Build configuration list for PBXNativeTarget "Learn" */;
+			buildConfigurationList = 8265798B1812959C00A17F63 /* Build configuration list for PBXNativeTarget "Snippets" */;
 			buildPhases = (
 				8265795B1812959B00A17F63 /* Sources */,
 				8265795C1812959B00A17F63 /* Frameworks */,
@@ -262,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = Learn;
+			name = Snippets;
 			productName = Learn;
-			productReference = 8265795F1812959B00A17F63 /* Learn.app */;
+			productReference = 8265795F1812959B00A17F63 /* Snippets.app */;
 			productType = "com.apple.product-type.application";
 		};
-		826579791812959B00A17F63 /* LearnTests */ = {
+		826579791812959B00A17F63 /* SnippetsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8265798E1812959C00A17F63 /* Build configuration list for PBXNativeTarget "LearnTests" */;
+			buildConfigurationList = 8265798E1812959C00A17F63 /* Build configuration list for PBXNativeTarget "SnippetsTests" */;
 			buildPhases = (
 				826579761812959B00A17F63 /* Sources */,
 				826579771812959B00A17F63 /* Frameworks */,
@@ -280,9 +280,9 @@
 			dependencies = (
 				826579801812959C00A17F63 /* PBXTargetDependency */,
 			);
-			name = LearnTests;
+			name = SnippetsTests;
 			productName = LearnTests;
-			productReference = 8265797A1812959B00A17F63 /* LearnTests.xctest */;
+			productReference = 8265797A1812959B00A17F63 /* SnippetsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -300,7 +300,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8265795A1812959B00A17F63 /* Build configuration list for PBXProject "Learn" */;
+			buildConfigurationList = 8265795A1812959B00A17F63 /* Build configuration list for PBXProject "Snippets" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -312,8 +312,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8265795E1812959B00A17F63 /* Learn */,
-				826579791812959B00A17F63 /* LearnTests */,
+				8265795E1812959B00A17F63 /* Snippets */,
+				826579791812959B00A17F63 /* SnippetsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -369,7 +369,7 @@
 /* Begin PBXTargetDependency section */
 		826579801812959C00A17F63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8265795E1812959B00A17F63 /* Learn */;
+			target = 8265795E1812959B00A17F63 /* Snippets */;
 			targetProxy = 8265797F1812959C00A17F63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -472,13 +472,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Learn/Learn-Prefix.pch";
-				INFOPLIST_FILE = "Learn/Learn-Info.plist";
+				GCC_PREFIX_HEADER = "Learn/Snippets-Prefix.pch";
+				INFOPLIST_FILE = "Learn/Snippets-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"../../engine/build-ios-fat",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Snippets;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -489,13 +489,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Learn/Learn-Prefix.pch";
-				INFOPLIST_FILE = "Learn/Learn-Info.plist";
+				GCC_PREFIX_HEADER = "Learn/Snippets-Prefix.pch";
+				INFOPLIST_FILE = "Learn/Snippets-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"../../engine/build-ios-fat",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Snippets;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -516,8 +516,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LearnTests/LearnTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LearnTests/SnippetsTests-Info.plist";
+				PRODUCT_NAME = SnippetsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -535,8 +535,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Learn/Learn-Prefix.pch";
-				INFOPLIST_FILE = "LearnTests/LearnTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LearnTests/SnippetsTests-Info.plist";
+				PRODUCT_NAME = SnippetsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -545,7 +545,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8265795A1812959B00A17F63 /* Build configuration list for PBXProject "Learn" */ = {
+		8265795A1812959B00A17F63 /* Build configuration list for PBXProject "Snippets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				826579891812959C00A17F63 /* Debug */,
@@ -554,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8265798B1812959C00A17F63 /* Build configuration list for PBXNativeTarget "Learn" */ = {
+		8265798B1812959C00A17F63 /* Build configuration list for PBXNativeTarget "Snippets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8265798C1812959C00A17F63 /* Debug */,
@@ -563,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8265798E1812959C00A17F63 /* Build configuration list for PBXNativeTarget "LearnTests" */ = {
+		8265798E1812959C00A17F63 /* Build configuration list for PBXNativeTarget "SnippetsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8265798F1812959C00A17F63 /* Debug */,

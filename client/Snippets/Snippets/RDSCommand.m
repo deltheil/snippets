@@ -10,4 +10,12 @@
 
 @implementation RDSCommand
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return @{
+             @"name": @"name",
+             @"summary": @"summary"
+    };
+}
+
 @end

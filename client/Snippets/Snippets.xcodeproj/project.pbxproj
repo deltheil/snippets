@@ -35,6 +35,8 @@
 		82C46F3E18131DB400E3E5E6 /* append.html in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3D18131DB400E3E5E6 /* append.html */; };
 		82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F3F18132E2100E3E5E6 /* Winch.framework */; };
 		82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
+		B0880308181359F700D102C4 /* CommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0880307181359F700D102C4 /* CommandViewController.m */; };
+		B088030B18135B0E00D102C4 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = B088030A18135B0E00D102C4 /* icon-120.png */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -94,6 +96,9 @@
 		82C46F3F18132E2100E3E5E6 /* Winch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Winch.framework; sourceTree = "<group>"; };
 		82C46F421813311100E3E5E6 /* RDSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCommand.h; sourceTree = "<group>"; };
 		82C46F431813311100E3E5E6 /* RDSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCommand.m; sourceTree = "<group>"; };
+		B0880306181359F700D102C4 /* CommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandViewController.h; path = Controllers/CommandViewController.h; sourceTree = "<group>"; };
+		B0880307181359F700D102C4 /* CommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandViewController.m; path = Controllers/CommandViewController.m; sourceTree = "<group>"; };
+		B088030A18135B0E00D102C4 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -265,6 +270,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		B088030918135B0E00D102C4 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B088030A18135B0E00D102C4 /* icon-120.png */,
+			);
+			name = Icons;
+			path = Resources/Icons;
+			sourceTree = "<group>";
+		};
 		B0DDA7371812982F00E015C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +286,8 @@
 				B0DDA74018129AED00E015C0 /* BoardingViewController.m */,
 				B0DDA74218129C8E00E015C0 /* MainViewController.h */,
 				B0DDA74318129C8E00E015C0 /* MainViewController.m */,
+				B0880306181359F700D102C4 /* CommandViewController.h */,
+				B0880307181359F700D102C4 /* CommandViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +302,7 @@
 		B0DDA739181298BA00E015C0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B088030918135B0E00D102C4 /* Icons */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -395,6 +412,7 @@
 				82C46F3618131C0900E3E5E6 /* redis_cmd.html in Resources */,
 				82017704181358B80041E4E9 /* RedisConsoleViewController.xib in Resources */,
 				82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */,
+				B088030B18135B0E00D102C4 /* icon-120.png in Resources */,
 				8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */,
 				82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */,
 				826579751812959B00A17F63 /* Images.xcassets in Resources */,
@@ -457,6 +475,7 @@
 				82017703181358B80041E4E9 /* RedisConsoleViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
 				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,
+				B0880308181359F700D102C4 /* CommandViewController.m in Sources */,
 				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,

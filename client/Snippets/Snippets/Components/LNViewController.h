@@ -12,6 +12,7 @@
 
 - (UIImageView *)titleLogo;
 
+- (UIBarButtonItem *)buttonBack;
 - (UIBarButtonItem *)buttonConsole;
 - (void)consoleOpen;
 

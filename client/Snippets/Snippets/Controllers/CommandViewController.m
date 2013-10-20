@@ -34,6 +34,10 @@
 	
     self.view.backgroundColor = [UIColor colorWithHexString:@"ffffff"];
     
+    self.navigationItem.leftBarButtonItem = [self buttonBack];
+    self.navigationItem.rightBarButtonItem = [self buttonConsole];
+    self.navigationItem.titleView = [self titleLogo];
+    
     // WebView
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.width, self.view.height - 76.0)];
     self.webView.backgroundColor = [UIColor clearColor];

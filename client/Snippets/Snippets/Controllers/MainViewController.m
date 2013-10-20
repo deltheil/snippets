@@ -104,7 +104,8 @@
     
     self.navigationItem.rightBarButtonItem = [self buttonConsole];
     self.navigationItem.titleView = [self titleLogo];
-
+    self.navigationItem.leftBarButtonItem = [self buttonLanguage];
+    
     // Fonts
 //    for (NSString *familyName in [UIFont familyNames]) {
 //        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
@@ -299,6 +300,20 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setHidden:NO];
+}
+
+- (UIBarButtonItem *)buttonLanguage{
+    UIButton *buttonNow = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[buttonNow addTarget:self action:@selector(actionBack) forControlEvents:UIControlEventTouchUpInside];
+    [buttonNow setBackgroundImage:[UIImage imageNamed:@"nav-redis"] forState:UIControlStateNormal];
+    [buttonNow setFrame:CGRectMake(0.0, 0, 60, 30)];
+    
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    [containerView addSubview:buttonNow];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:containerView];
+    
+    return barButtonItem;
 }
 
 - (void)consoleOpen{

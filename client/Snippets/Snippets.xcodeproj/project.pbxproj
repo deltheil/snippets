@@ -53,6 +53,8 @@
 		B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E201813C45E00801F34 /* nav-logo@2x.png */; };
 		B0C77E271813C45E00801F34 /* nav-redis.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E211813C45E00801F34 /* nav-redis.png */; };
 		B0C77E281813C45E00801F34 /* nav-redis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E221813C45E00801F34 /* nav-redis@2x.png */; };
+		B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E291813CEF900801F34 /* nav-back.png */; };
+		B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2A1813CEF900801F34 /* nav-back@2x.png */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -132,6 +134,8 @@
 		B0C77E201813C45E00801F34 /* nav-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo@2x.png"; sourceTree = "<group>"; };
 		B0C77E211813C45E00801F34 /* nav-redis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis.png"; sourceTree = "<group>"; };
 		B0C77E221813C45E00801F34 /* nav-redis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis@2x.png"; sourceTree = "<group>"; };
+		B0C77E291813CEF900801F34 /* nav-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back.png"; sourceTree = "<group>"; };
+		B0C77E2A1813CEF900801F34 /* nav-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back@2x.png"; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 		B088030C18135FA300D102C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B0C77E291813CEF900801F34 /* nav-back.png */,
+				B0C77E2A1813CEF900801F34 /* nav-back@2x.png */,
 				B0C77E1D1813C45E00801F34 /* nav-console.png */,
 				B0C77E1E1813C45E00801F34 /* nav-console@2x.png */,
 				B0C77E1F1813C45E00801F34 /* nav-logo.png */,
@@ -490,6 +496,8 @@
 				B088032118136E7000D102C4 /* up@2x.png in Resources */,
 				B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */,
 				826579751812959B00A17F63 /* Images.xcassets in Resources */,
+				B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */,
+				B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */,
 				82C46F3E18131DB400E3E5E6 /* append.html in Resources */,
 				82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */,
 				B0C77E231813C45E00801F34 /* nav-console.png in Resources */,

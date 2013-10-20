@@ -49,10 +49,28 @@
     return barButtonItem;
 }
 
+- (UIBarButtonItem *)buttonBack{
+    UIButton *buttonNow = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonNow addTarget:self action:@selector(actionBack) forControlEvents:UIControlEventTouchUpInside];
+    [buttonNow setBackgroundImage:[UIImage imageNamed:@"nav-back.png"] forState:UIControlStateNormal];
+    [buttonNow setFrame:CGRectMake(0, 0, 66, 30)];
+    
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 66, 30)];
+    [containerView addSubview:buttonNow];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:containerView];
+    
+    return barButtonItem;
+}
+
 - (UIImageView *)titleLogo{
     UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-logo"]];
     
     return logo;
+}
+
+- (void)actionBack{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)consoleOpen{

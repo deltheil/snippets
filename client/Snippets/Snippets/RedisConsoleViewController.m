@@ -66,12 +66,17 @@
     NSString *entry;
     NSString *cmd = textField.text;
     
+    // TODO: autocapitalize the command (e.g "set foo bar" -> "SET foo bar")
+    //       => use a whitelist of the 70 commands supported (http://vedis.symisc.net/commands.html)
+    //       This may be done at the wrapper level (see Redis.{h,m})
+    
     // Run the command
     NSString *resp = [_redis exec:cmd error:&error];
     if (!error) {
         entry = resp;
     }
     else {
+        // TODO: what about official commands that are not supported?
         entry = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
     }
     

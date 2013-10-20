@@ -52,7 +52,7 @@
         buttonSorting.tag = idx;
         buttonSorting.left = buttonSortingX;
         buttonSorting.backgroundColor = [UIColor clearColor];
-        buttonSorting.titleLabel.font = [UIFont systemFontOfSize:10.0];
+        buttonSorting.titleLabel.font = [UIFont fontWithName:@"VAGRoundedStd-Light" size:12.0];
         [buttonSorting setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [buttonSorting setTitle:sort forState:UIControlStateNormal];
         [buttonSorting addTarget:self action:@selector(sortingButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -63,12 +63,21 @@
     }];
     
     [self.view addSubview:self.sorting];
+
+    // Sorting Border Bottom
+    UIView *sortingBorderBottom = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.width, (1.0 / [UIScreen mainScreen].scale))];
+    sortingBorderBottom.top = self.sorting.bottom - sortingBorderBottom.height;
+    sortingBorderBottom.backgroundColor = [UIColor colorWithHexString:@"d3392e"];
+    [self.view addSubview:sortingBorderBottom];
     
+    
+    // Sorter Selected
     UIView *sorterSelected = [[UIView alloc] initWithFrame:CGRectMake(14.0, 0.0, 85.0, 2.0)];
     sorterSelected.top = self.sorting.bottom - sorterSelected.height;
     sorterSelected.backgroundColor = [UIColor colorWithHexString:@"d3392e"];
     [self.view addSubview:sorterSelected];
     
+
     // TableView
     float tableViewHeight = self.view.height - self.sorting.bottom;
     
@@ -78,6 +87,14 @@
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
     [self.view addSubview:self.tableView];
+    
+
+    // Fonts
+//    for (NSString *familyName in [UIFont familyNames]) {
+//        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+//            NSLog(@"%@", fontName);
+//        }
+//    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,7 +145,7 @@
     labelTitle.backgroundColor = [UIColor clearColor];
     labelTitle.top = 20.0;
     labelTitle.left = 15.0;
-    labelTitle.font = [UIFont systemFontOfSize:10.0];
+    labelTitle.font = [UIFont fontWithName:@"Aleo-Regular" size:13.0];
     labelTitle.text = [@"ZREVRANGEBYSCORE" uppercaseString];
     labelTitle.textColor = [UIColor colorWithHexString:@"d3392e"];
     [labelTitle sizeToFit];
@@ -139,13 +156,19 @@
     labelSummary.backgroundColor = [UIColor clearColor];
     labelSummary.top = labelTitle.bottom + 5.0;
     labelSummary.left = 15.0;
-    labelSummary.font = [UIFont systemFontOfSize:9.0];
+    labelSummary.font = [UIFont fontWithName:@"VAGRoundedStd-Light" size:12.0];
     labelSummary.textColor = [UIColor colorWithHexString:@"006269"];
     labelSummary.text = @"Return a range of members in a sorted set, by score, with scores ordered from high to low";
     labelSummary.lineBreakMode = NSLineBreakByWordWrapping;
     labelSummary.numberOfLines = 0;
     [labelSummary sizeToFit];
     [cell addSubview:labelSummary];
+    
+    // Accessory
+    UIImageView *accessory = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"accessory"]];
+    accessory.top = floor((84.0 - accessory.height) / 2);
+    accessory.left = cell.width - accessory.width - 15.0;
+    [cell addSubview:accessory];
     
     // Sepator
     UIView *sepator = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, cell.width, (1.0 / [UIScreen mainScreen].scale))];

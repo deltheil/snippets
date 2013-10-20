@@ -63,6 +63,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setHidden:NO];
+}
+
 // Emulate the local database get
 - (NSString *)getContent
 {

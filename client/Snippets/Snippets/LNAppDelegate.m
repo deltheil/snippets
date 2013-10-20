@@ -21,8 +21,8 @@
 // ==========================================
 // Winch demo datastore credentials
 // ==========================================
-#define WNC_DATASTORE_ID @"Id"
-#define WNC_APP_SECRET   @"sEcReT"
+#define WNC_DATASTORE_ID @"ZCDFQ0KDSO"
+#define WNC_APP_SECRET   @"1LPbPhLr5DiutD1Z"
 
 @interface LNAppDelegate ()
 

@@ -58,7 +58,7 @@
     buttonTry.top = self.webView.bottom + 15.0;
     buttonTry.left = floor((self.view.width - buttonTry.width) / 2 );
     [buttonTry setBackgroundImage:[UIImage imageNamed:@"try"] forState:UIControlStateNormal];
-    [buttonTry addTarget:self action:@selector(tryAction) forControlEvents:UIControlEventTouchUpInside];
+    [buttonTry addTarget:self action:@selector(consoleOpen) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonTry];
     
 }
@@ -80,8 +80,10 @@
 }
 
 #pragma mark Try
-- (void)tryAction{
 
+
+- (void)consoleOpen{
+    
     ConsoleViewController *consoleView = [[ConsoleViewController alloc] init];
     [self.navigationController pushViewController:consoleView animated:YES];
 }

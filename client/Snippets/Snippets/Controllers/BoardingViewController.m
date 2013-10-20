@@ -8,6 +8,13 @@
 
 #import "BoardingViewController.h"
 
+// Winch main header
+#import <Winch/Winch.h>
+
+// Models
+#import "RDSCommand.h"
+#import "RDSType.h"
+
 @interface BoardingViewController ()
 
 @end
@@ -34,7 +41,19 @@
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default-568h"]];
     [self.view addSubview:background];
     
-    [self performSelector:@selector(closeView) withObject:nil afterDelay:1.0];
+    [RDSCommand sync:^(NSArray *cmds, NSArray *types, NSError *error) {
+        if(error){
+            [self performSelector:@selector(closeView) withObject:nil afterDelay:.75];
+        }
+        
+    } progress:^(NSInteger percentDone) {
+        NSLog(@"%d", percentDone);
+        
+        if(percentDone == 100){
+            [self performSelector:@selector(closeView) withObject:nil];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning

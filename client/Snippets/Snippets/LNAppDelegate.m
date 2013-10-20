@@ -54,6 +54,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     MainViewController *mainView = [[MainViewController alloc] init];
+    mainView.database = _database;
     self.mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
 
     self.window.rootViewController = self.mainNav;

@@ -8,6 +8,10 @@
 
 #import "LNViewController.h"
 
+@class WNCDatabase;
+
 @interface MainViewController : LNViewController
+
+@property WNCDatabase *database;
 
 @end

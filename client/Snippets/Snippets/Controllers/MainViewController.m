@@ -9,10 +9,17 @@
 #import "MainViewController.h"
 #import "CommandViewController.h"
 
+#import <Winch/Winch.h>
+
+// Data model
+#import "RDSCommand.h"
+#import "RDSType.h"
+
 @interface MainViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *sorting;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *cmds;
 
 @end
 
@@ -95,6 +102,20 @@
 //            NSLog(@"%@", fontName);
 //        }
 //    }
+    
+    if ([_cmds count] > 0) {
+        [self reload];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // TODO: move the initial sync at another level
+    if ([_cmds count] <= 0) {
+        [self reload];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,10 +144,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return [_cmds count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    RDSCommand *cmd = [_cmds objectAtIndex:indexPath.row];
     
     static NSString *CellIdentifier = @"Cell";
     
@@ -146,7 +168,7 @@
     labelTitle.top = 20.0;
     labelTitle.left = 15.0;
     labelTitle.font = [UIFont fontWithName:@"Aleo-Regular" size:13.0];
-    labelTitle.text = [@"ZREVRANGEBYSCORE" uppercaseString];
+    labelTitle.text = cmd.name;
     labelTitle.textColor = [UIColor colorWithHexString:@"d3392e"];
     [labelTitle sizeToFit];
     [cell addSubview:labelTitle];
@@ -158,7 +180,7 @@
     labelSummary.left = 15.0;
     labelSummary.font = [UIFont fontWithName:@"VAGRoundedStd-Light" size:12.0];
     labelSummary.textColor = [UIColor colorWithHexString:@"006269"];
-    labelSummary.text = @"Return a range of members in a sorted set, by score, with scores ordered from high to low";
+    labelSummary.text = cmd.summary;
     labelSummary.lineBreakMode = NSLineBreakByWordWrapping;
     labelSummary.numberOfLines = 0;
     [labelSummary sizeToFit];
@@ -204,6 +226,35 @@
         [self.sorting setContentOffset:CGPointMake((position * 85.0), 0) animated:YES];
         return;
     }
+}
+
+#pragma mark Data source
+
+- (void)reload
+{
+    [self reloadWithResultBlock:nil progressBlock:nil];
+}
+
+- (void)reloadWithResultBlock:(void (^)(NSError *error))resultBlock
+                progressBlock:(void (^)(NSInteger percentDone))progressBlock
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+    void (^postSyncBlock)(NSArray *, NSError *) = ^(NSArray *cmds, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        if (resultBlock) {
+            resultBlock(error);
+        }
+        
+        if (!error) {
+            self.cmds = cmds;
+            [self.tableView reloadData];
+        }
+    };
+    
+    [RDSCommand sync:postSyncBlock
+            progress:progressBlock];
 }
 
 

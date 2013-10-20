@@ -84,4 +84,32 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
++ (void)sync:(void (^)(NSArray *catalogs, NSError *error))block
+{
+    return [self sync:block progress:nil];
+}
+
++ (void)sync:(void (^)(NSArray *cmds, NSError *error))block
+    progress:(void (^)(NSInteger percentDone))progressBlock
+{
+    NSError *err = nil;
+    NSDictionary *params = @{
+                             kRDSCommandsNS: @(kWNCSyncDefault),
+                             kRDSCommandsHTMLNS: @(kWNCSyncDefault)
+                             };
+    
+    [_wnc_database sync:params block:^(id object, NSError *error) {
+        if (error)
+            return block(nil, error);
+        NSError *loadError = nil;
+        NSArray *cmds = [self fetch:&loadError];
+        block(cmds, loadError);
+    }
+    progressBlock:progressBlock error:&err];
+    
+    if (err) {
+        block(nil, err);
+    }
+}
+
 @end

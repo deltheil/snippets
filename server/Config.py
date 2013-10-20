@@ -17,5 +17,7 @@ class Config():
 	target = "target"
 	commands = source + "/commands"
 	summary = commands + ".json"
+	ns_types = "rds:types"
+	ns_cmds = "rds:cmds"
+	ns_cmds_html = "rds:cmds_html"
 	
-

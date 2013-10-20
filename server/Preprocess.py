@@ -133,7 +133,7 @@ def store(obj, path):
 
 # Write data for rds:types namespace
 def writeTypes(path):
-	path = path + "/types"
+	path = path + "/" + Config.ns_types.split(":")[1]
 	rdsTypes = {}
 	rdsGroups = {}
 	for cmd, attr in blob.iteritems():
@@ -163,7 +163,7 @@ def writeTypes(path):
 
 # Write data for rds:cmds namespace
 def writeCmds(path):
-	path = path + "/cmds"
+	path = path + "/" + Config.ns_cmds.split(":")[1]
 	rdsCmds = {}
 	for cmd, attr in blob.iteritems():
 		summary = ""
@@ -185,7 +185,7 @@ def writeCmds(path):
 
 # Write data for rds:cmds_html
 def writeCmdsHtml(path):
-	path = path + "/cmds_html"
+	path = path + "/" + Config.ns_cmds_html.split(":")[1]
 	rdsCmdsHtml = {}
 	for cmd, attr in blob.iteritems():
 		html = ""

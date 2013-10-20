@@ -14,7 +14,7 @@ DS = Config.ds
 
 # Verify if data-store exists for user
 def searchDataStore(wc, name):
-  return next(ds for ds in wc.list_datastores() if ds.name==name)
+	return next(ds for ds in wc.list_datastores() if ds.name==name)
 
 
 # Load updates from system
@@ -42,6 +42,7 @@ def push(npace, ds):
 			ns.create_record(k, v, "application/json")
 			#puts(".")
 		except winch.ErrExists:
+			print "fail"
 			#puts("s")
 	return
 
@@ -50,7 +51,9 @@ def push(npace, ds):
 def init(user, passwd):
 	wc = winch.Client(user, passwd)
 	ds = searchDataStore(wc, ds)
-	push("rds:types", ds)
+	push(Config.ns_types, ds)
+	push(Config.ns_cmds, ds)
+	push(Config.ns_cmds_html, ds)
 	return
 
 # Login retrieve

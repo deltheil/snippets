@@ -7,6 +7,7 @@
 //
 
 #import "CommandViewController.h"
+#import "ConsoleViewController.h"
 
 @interface CommandViewController ()
 
@@ -74,6 +75,8 @@
 #pragma mark Try
 - (void)tryAction{
 
+    ConsoleViewController *consoleView = [[ConsoleViewController alloc] init];
+    [self.navigationController pushViewController:consoleView animated:YES];
 }
 
 

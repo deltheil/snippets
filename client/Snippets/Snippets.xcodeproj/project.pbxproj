@@ -39,6 +39,8 @@
 		B088030B18135B0E00D102C4 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = B088030A18135B0E00D102C4 /* icon-120.png */; };
 		B088030F18135FA300D102C4 /* try.png in Resources */ = {isa = PBXBuildFile; fileRef = B088030D18135FA300D102C4 /* try.png */; };
 		B088031018135FA300D102C4 /* try@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088030E18135FA300D102C4 /* try@2x.png */; };
+		B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0880312181364C800D102C4 /* ConsoleViewController.m */; };
+		B08803161813654500D102C4 /* TextFiedConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = B08803151813654500D102C4 /* TextFiedConsole.m */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -103,6 +105,10 @@
 		B088030A18135B0E00D102C4 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		B088030D18135FA300D102C4 /* try.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = try.png; sourceTree = "<group>"; };
 		B088030E18135FA300D102C4 /* try@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "try@2x.png"; sourceTree = "<group>"; };
+		B0880311181364C800D102C4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleViewController.h; path = Controllers/ConsoleViewController.h; sourceTree = "<group>"; };
+		B0880312181364C800D102C4 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleViewController.m; path = Controllers/ConsoleViewController.m; sourceTree = "<group>"; };
+		B08803141813654500D102C4 /* TextFiedConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFiedConsole.h; path = Views/TextFiedConsole.h; sourceTree = "<group>"; };
+		B08803151813654500D102C4 /* TextFiedConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextFiedConsole.m; path = Views/TextFiedConsole.m; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -302,6 +308,8 @@
 				B0DDA74318129C8E00E015C0 /* MainViewController.m */,
 				B0880306181359F700D102C4 /* CommandViewController.h */,
 				B0880307181359F700D102C4 /* CommandViewController.m */,
+				B0880311181364C800D102C4 /* ConsoleViewController.h */,
+				B0880312181364C800D102C4 /* ConsoleViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +317,8 @@
 		B0DDA738181298B400E015C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B08803141813654500D102C4 /* TextFiedConsole.h */,
+				B08803151813654500D102C4 /* TextFiedConsole.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -488,9 +498,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				82C46F3318131BB300E3E5E6 /* RedisCmdViewController.m in Sources */,
+				B08803161813654500D102C4 /* TextFiedConsole.m in Sources */,
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
 				82017703181358B80041E4E9 /* RedisConsoleViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
+				B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */,
 				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,
 				B0880308181359F700D102C4 /* CommandViewController.m in Sources */,
 				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,

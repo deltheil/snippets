@@ -30,7 +30,8 @@ def fetch(path, ext):
 		if entryPath.endswith(ext):
 			fileContent = readFile(entryPath)
 			if fileContent is not None:
-				data[entry] = fileContent
+				name = entry.replace(ext, "")
+				data[name] = fileContent
 	return data
 
 
@@ -96,10 +97,12 @@ def extractDetail(path):
 		markDown = ""
 		# parse to ge MarkDown and CLI data
 		detail = rawDetail.split("```")
-		for x in xrange(0, len(detail), 2):
-			markDown += detail[x]
+		for x in xrange(0, len(detail), 1):
+			if x != 1:
+				markDown += detail[x]
 		markDown = markDown.replace("@","## ")
 		html = pandoc(markDown)
+		html = html.replace("\n","<br />")
 		for x in xrange(1, len(detail), 2):
 			cliExmpl = detail[x]
 			if cliExmpl[:3] == "cli":
@@ -168,7 +171,7 @@ def writeCmds(path):
 	for cmd, attr in blob.iteritems():
 		summary = ""
 		name = cmd
-		command = name.lower()
+		command = name.upper()
 		cli = []
 		val = {"name" : name}
 		if "summary" in attr:
@@ -179,6 +182,7 @@ def writeCmds(path):
 			val["cli"] = cli
 		if command not in rdsCmds:
 			rdsCmds[command] = val
+			#print rdsCmds[command]["cli"]
 	store(rdsCmds, path)
 	return
 
@@ -194,6 +198,7 @@ def writeCmdsHtml(path):
 			html = attr["html"]
 		if command not in rdsCmdsHtml:
 			rdsCmdsHtml[command] = html
+			#print rdsCmdsHtml[command]
 	store(rdsCmdsHtml, path)
 	return
 

@@ -52,7 +52,8 @@ def push(nspace, ds):
 			ns.create_record(k, val, "application/json")
 			#puts(".")
 		except winch.ErrExists:
-			print "fail"
+			row = ns.search_record(k)
+			row.update_value(val, "application/json")
 			#puts("s")
 	return
 

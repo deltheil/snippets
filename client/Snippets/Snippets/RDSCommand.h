@@ -46,8 +46,8 @@ extern NSString * const kRDSCommandsHTMLNS;
 
 - (NSString *)getHTMLString;
 
-+ (void)sync:(void (^)(NSArray *cmds, NSError *error))block;
-+ (void)sync:(void (^)(NSArray *cmds, NSError *error))block
++ (void)sync:(void (^)(NSArray *cmds, NSArray *types, NSError *error))block;
++ (void)sync:(void (^)(NSArray *cmds, NSArray *types, NSError *error))block
     progress:(void (^)(NSInteger percentDone))progressBlock;
 
 @end

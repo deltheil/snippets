@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UIScrollView *sorting;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *cmds;
+@property (nonatomic, strong) NSArray *types;
 
 @end
 
@@ -240,7 +241,7 @@
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
-    void (^postSyncBlock)(NSArray *, NSError *) = ^(NSArray *cmds, NSError *error) {
+    void (^postSyncBlock)(NSArray *, NSArray *, NSError *) = ^(NSArray *c, NSArray *t, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
         if (resultBlock) {
@@ -248,7 +249,8 @@
         }
         
         if (!error) {
-            self.cmds = cmds;
+            self.cmds = c;
+            self.types = t;
             [self.tableView reloadData];
         }
     };

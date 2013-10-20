@@ -8,7 +8,10 @@
 
 #import "RedisConsoleViewController.h"
 
-@interface RedisConsoleViewController ()
+@interface RedisConsoleViewController () <UITextFieldDelegate>
+
+@property (weak) IBOutlet UIWebView *webview;
+@property (weak) IBOutlet UITextField *textfield;
 
 @end
 
@@ -26,13 +29,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self.textfield becomeFirstResponder];
+    [self.textfield setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [self.textfield setClearButtonMode:UITextFieldViewModeAlways];
+    [self.textfield setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"Redis command -> %@ ", textField.text);
+    textField.text = @"";
+    return YES;
 }
 
 @end

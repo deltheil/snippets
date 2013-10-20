@@ -31,6 +31,16 @@ extern NSString * const kRDSCommandsHTMLNS;
 
 + (void)setDatabase:(WNCDatabase *)database;
 
+// TODO: add the ability to fetch with a white list of commands (= filters)?
+//
+// Otherwise we could do something like that:
+//
+// RDSType *type = ...;
+//
+// [cmds filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+//   RDSCommand *cmd = (RDSCommand *) evaluatedObject;
+//   return [type.cmds containsObject:cmd.uid];
+// }]];
 + (NSArray *)fetch;
 + (NSArray *)fetch:(NSError **)error;
 

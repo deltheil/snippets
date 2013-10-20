@@ -10,4 +10,7 @@
 
 @interface LNViewController : UIViewController
 
+- (UIBarButtonItem *)buttonConsole;
+- (void)consoleOpen;
+
 @end

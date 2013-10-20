@@ -35,4 +35,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIBarButtonItem *)buttonConsole{
+    UIButton *buttonNow = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonNow addTarget:self action:@selector(consoleOpen) forControlEvents:UIControlEventTouchUpInside];
+    //[buttonNow setBackgroundImage:[UIImage imageNamed:@"nav-more.png"] forState:UIControlStateNormal];
+    [buttonNow setFrame:CGRectMake(5, 0, 44, 44)];
+    
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [containerView addSubview:buttonNow];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:containerView];
+    
+    return barButtonItem;
+}
+
+- (void)consoleOpen{
+    
+}
+
 @end

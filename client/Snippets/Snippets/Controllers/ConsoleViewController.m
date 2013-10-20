@@ -57,6 +57,8 @@
     self.textFieldConsole.top = self.view.height - 216.0 - self.textFieldConsole.height;
     self.textFieldConsole.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
     self.textFieldConsole.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.textFieldConsole.returnKeyType = UIReturnKeySend;
+    self.textFieldConsole.placeholder = @"Tap command";
     [self.view addSubview:self.textFieldConsole];
     [self.textFieldConsole becomeFirstResponder];
     
@@ -84,8 +86,8 @@
     [self.view addSubview:self.webView];
     
     // Button Close
-    UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 40.0, 44.0, 44.0)];
-    buttonClose.backgroundColor = [UIColor blueColor];
+    UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 40.0, 56.0, 23.0)];
+    [buttonClose setBackgroundImage:[UIImage imageNamed:@"nav-close"] forState:UIControlStateNormal];
     buttonClose.left = self.view.width - buttonClose.width - 20.0;
     [buttonClose addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonClose];

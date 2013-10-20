@@ -45,6 +45,14 @@
 		B088032118136E7000D102C4 /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031D18136E7000D102C4 /* up@2x.png */; };
 		B088032418137D7700D102C4 /* accessory.png in Resources */ = {isa = PBXBuildFile; fileRef = B088032218137D7700D102C4 /* accessory.png */; };
 		B088032518137D7700D102C4 /* accessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088032318137D7700D102C4 /* accessory@2x.png */; };
+		B0C77E1B1813C03A00801F34 /* nav-close.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E191813C03A00801F34 /* nav-close.png */; };
+		B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1A1813C03A00801F34 /* nav-close@2x.png */; };
+		B0C77E231813C45E00801F34 /* nav-console.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1D1813C45E00801F34 /* nav-console.png */; };
+		B0C77E241813C45E00801F34 /* nav-console@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1E1813C45E00801F34 /* nav-console@2x.png */; };
+		B0C77E251813C45E00801F34 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1F1813C45E00801F34 /* nav-logo.png */; };
+		B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E201813C45E00801F34 /* nav-logo@2x.png */; };
+		B0C77E271813C45E00801F34 /* nav-redis.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E211813C45E00801F34 /* nav-redis.png */; };
+		B0C77E281813C45E00801F34 /* nav-redis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E221813C45E00801F34 /* nav-redis@2x.png */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -116,6 +124,14 @@
 		B088031D18136E7000D102C4 /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up@2x.png"; sourceTree = "<group>"; };
 		B088032218137D7700D102C4 /* accessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accessory.png; sourceTree = "<group>"; };
 		B088032318137D7700D102C4 /* accessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accessory@2x.png"; sourceTree = "<group>"; };
+		B0C77E191813C03A00801F34 /* nav-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-close.png"; sourceTree = "<group>"; };
+		B0C77E1A1813C03A00801F34 /* nav-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-close@2x.png"; sourceTree = "<group>"; };
+		B0C77E1D1813C45E00801F34 /* nav-console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-console.png"; sourceTree = "<group>"; };
+		B0C77E1E1813C45E00801F34 /* nav-console@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-console@2x.png"; sourceTree = "<group>"; };
+		B0C77E1F1813C45E00801F34 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
+		B0C77E201813C45E00801F34 /* nav-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo@2x.png"; sourceTree = "<group>"; };
+		B0C77E211813C45E00801F34 /* nav-redis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis.png"; sourceTree = "<group>"; };
+		B0C77E221813C45E00801F34 /* nav-redis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis@2x.png"; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -296,6 +312,14 @@
 		B088030C18135FA300D102C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B0C77E1D1813C45E00801F34 /* nav-console.png */,
+				B0C77E1E1813C45E00801F34 /* nav-console@2x.png */,
+				B0C77E1F1813C45E00801F34 /* nav-logo.png */,
+				B0C77E201813C45E00801F34 /* nav-logo@2x.png */,
+				B0C77E211813C45E00801F34 /* nav-redis.png */,
+				B0C77E221813C45E00801F34 /* nav-redis@2x.png */,
+				B0C77E191813C03A00801F34 /* nav-close.png */,
+				B0C77E1A1813C03A00801F34 /* nav-close@2x.png */,
 				B088032218137D7700D102C4 /* accessory.png */,
 				B088032318137D7700D102C4 /* accessory@2x.png */,
 				B088031A18136E7000D102C4 /* down.png */,
@@ -445,22 +469,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				B088032018136E7000D102C4 /* up.png in Resources */,
+				B0C77E271813C45E00801F34 /* nav-redis.png in Resources */,
 				82C46F3618131C0900E3E5E6 /* redis_cmd.html in Resources */,
 				82017704181358B80041E4E9 /* RedisConsoleViewController.xib in Resources */,
 				82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */,
 				B088031E18136E7000D102C4 /* down.png in Resources */,
 				B088031F18136E7000D102C4 /* down@2x.png in Resources */,
+				B0C77E241813C45E00801F34 /* nav-console@2x.png in Resources */,
+				B0C77E1B1813C03A00801F34 /* nav-close.png in Resources */,
+				B0C77E281813C45E00801F34 /* nav-redis@2x.png in Resources */,
 				B088030B18135B0E00D102C4 /* icon-120.png in Resources */,
 				B088031018135FA300D102C4 /* try@2x.png in Resources */,
 				B088030F18135FA300D102C4 /* try.png in Resources */,
 				8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */,
+				B0C77E251813C45E00801F34 /* nav-logo.png in Resources */,
 				82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */,
+				B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */,
 				B088032518137D7700D102C4 /* accessory@2x.png in Resources */,
 				B088032418137D7700D102C4 /* accessory.png in Resources */,
 				B088032118136E7000D102C4 /* up@2x.png in Resources */,
+				B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */,
 				826579751812959B00A17F63 /* Images.xcassets in Resources */,
 				82C46F3E18131DB400E3E5E6 /* append.html in Resources */,
 				82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */,
+				B0C77E231813C45E00801F34 /* nav-console.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

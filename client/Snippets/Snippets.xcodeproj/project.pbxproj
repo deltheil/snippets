@@ -57,6 +57,7 @@
 		B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2A1813CEF900801F34 /* nav-back@2x.png */; };
 		B0C77E2E1813D2B100801F34 /* console.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* console.html */; };
 		B0C77E301813D4BD00801F34 /* console-example.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2F1813D4BD00801F34 /* console-example.html */; };
+		B0C77E321813DC0B00801F34 /* DejaVuSansMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -140,6 +141,7 @@
 		B0C77E2A1813CEF900801F34 /* nav-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back@2x.png"; sourceTree = "<group>"; };
 		B0C77E2D1813D2B100801F34 /* console.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = console.html; sourceTree = "<group>"; };
 		B0C77E2F1813D4BD00801F34 /* console-example.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "console-example.html"; sourceTree = "<group>"; };
+		B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSansMono.ttf; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		826579691812959B00A17F63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */,
 				B0C77E2F1813D4BD00801F34 /* console-example.html */,
 				B0C77E2D1813D2B100801F34 /* console.html */,
 				82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */,
@@ -480,6 +483,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C77E321813DC0B00801F34 /* DejaVuSansMono.ttf in Resources */,
 				B088032018136E7000D102C4 /* up.png in Resources */,
 				B0C77E271813C45E00801F34 /* nav-redis.png in Resources */,
 				82C46F3618131C0900E3E5E6 /* redis_cmd.html in Resources */,

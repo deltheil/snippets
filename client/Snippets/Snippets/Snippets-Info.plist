@@ -30,6 +30,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>DejaVuSansMono.ttf</string>
 		<string>Aleo-Regular.otf</string>
 		<string>DINPro-Bold.ttf</string>
 		<string>VAGRoundedStd-Light.otf</string>

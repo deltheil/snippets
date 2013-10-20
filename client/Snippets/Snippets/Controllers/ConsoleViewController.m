@@ -25,6 +25,8 @@
 @property (nonatomic, strong) NSMutableArray *history;
 @property (nonatomic, strong) NSMutableArray *entries;
 
+@property (nonatomic) BOOL webViewEnable;
+
 @end
 
 @implementation ConsoleViewController {
@@ -92,14 +94,21 @@
     // Console
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 20.0, self.view.width, textFiedConsoleBorderTop.top - 20.0)];
     self.webView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.webView];
     self.webView.delegate = self;
 
+    // Load the HTML template in memory
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"console" ofType:@"html"];
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    NSString *html = [NSString stringWithFormat:tpl, @""];
+    [self.webView loadHTMLString:html baseURL:nil];
+    
     
     // Button Close
-    UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 40.0, 56.0, 23.0)];
-    [buttonClose setBackgroundImage:[UIImage imageNamed:@"nav-close"] forState:UIControlStateNormal];
-    buttonClose.left = self.view.width - buttonClose.width - 20.0;
+    UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 27.0, 56.0, 23.0)];
+    buttonClose.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+    [buttonClose setImage:[UIImage imageNamed:@"nav-close"] forState:UIControlStateNormal];
+    buttonClose.left = self.view.width - buttonClose.width - 16.0;
     [buttonClose addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonClose];
 }
@@ -108,6 +117,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+
+    if(!self.webViewEnable){
+        self.webViewEnable = YES;
+        [self.view insertSubview:self.webView atIndex:2];
+    }
 }
 
 - (void)dealloc
@@ -196,7 +213,7 @@
     [_entries addObject:entry];
     
     // Recreate the full HTML with all entries
-    NSString *htmlContent = [_entries componentsJoinedByString:@"<br/></div>"];
+    NSString *htmlContent = [_entries componentsJoinedByString:@"<br/>"];
     
     NSString *html = [NSString stringWithFormat:tpl, htmlContent];
     
@@ -213,7 +230,7 @@
     // NSLog(@"----- %f", consoleHeight);
     // [self.webView.scrollView setContentOffset:CGPointMake(0.0, consoleHeight) animated:YES];
     
-    return YES;
+    return NO;
 }
 
 - (void)closeAction{

@@ -43,6 +43,7 @@ extern NSString * const kRDSCommandsHTMLNS;
 // }]];
 + (NSArray *)fetch;
 + (NSArray *)fetch:(NSError **)error;
++ (RDSCommand *)getCommand:(NSString *)uid;
 
 - (NSString *)getHTMLString;
 

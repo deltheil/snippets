@@ -60,7 +60,7 @@
     __block float buttonSortingX = 14.0;
     [_types enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         RDSType *t = (RDSType *) obj;
-        NSLog(@"%@", t.name);
+
         UIButton *buttonSorting = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 85.0, 48.0)];
         buttonSorting.tag = idx;
         buttonSorting.left = buttonSortingX;
@@ -211,8 +211,21 @@
 
 #pragma mark Sorting
 - (void)sortingButton:(UIButton *)sender{
-    
     [self.sorting setContentOffset:CGPointMake((sender.tag * 85.0), 0) animated:YES];
+    
+    RDSType *type = (RDSType *) [_types objectAtIndex:sender.tag];
+    
+    NSMutableArray *filt = [NSMutableArray arrayWithCapacity:[type.cmds count]];
+    for (NSString *uid in type.cmds) {
+        RDSCommand *c = [RDSCommand getCommand:uid];
+        if (c != nil) {
+            [filt addObject:c];
+
+        }
+    }
+    
+    self.cmds = filt;
+    [self.tableView reloadData];
 }
 
 
@@ -242,7 +255,7 @@
     
     NSMutableArray *allCmds = [NSMutableArray arrayWithCapacity:[_cmds count]];
     for (RDSCommand *cmd in _cmds) {
-        [allCmds addObject:cmd.name];
+        [allCmds addObject:cmd.uid];
     }
     
     RDSType *all = [[RDSType alloc] initWithName:@"All" commands:allCmds];

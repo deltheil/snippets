@@ -79,6 +79,28 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
     return cmds;
 }
 
++ (RDSCommand *)getCommand:(NSString *)uid
+{
+    WNCNamespace *ns = [_wnc_database getNamespace:kRDSCommandsNS];
+    NSData *data = [ns getDataForKey:uid];
+    
+    if (!data) {
+        // This should never happen with a consistent datastore
+        return nil;
+    }
+    
+    // TODO: check errors
+    id jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    RDSCommand *cmd = [MTLJSONAdapter modelOfClass:RDSCommand.class
+                                fromJSONDictionary:jsonDict
+                                             error:nil];
+    
+    [cmd setUid:uid];
+    
+    return cmd;
+}
+
 - (NSString *)getHTMLString
 {
     WNCNamespace *ns = [_wnc_database getNamespace:kRDSCommandsHTMLNS];

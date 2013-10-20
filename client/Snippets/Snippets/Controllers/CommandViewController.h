@@ -8,6 +8,12 @@
 
 #import "LNViewController.h"
 
+@class RDSCommand;
+
 @interface CommandViewController : LNViewController
+
+@property RDSCommand *command;
+
+- (id)initWithCommand:(RDSCommand *)c;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "CommandViewController.h"
+#import "ConsoleViewController.h"
 
 #import <Winch/Winch.h>
 
@@ -101,7 +102,10 @@
     [self.tableView setDelegate:self];
     [self.view addSubview:self.tableView];
     
-
+    self.navigationItem.rightBarButtonItem = [self buttonConsole];
+    self.navigationItem.titleView = [self titleLogo];
+    self.navigationItem.leftBarButtonItem = [self buttonLanguage];
+    
     // Fonts
 //    for (NSString *familyName in [UIFont familyNames]) {
 //        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
@@ -136,8 +140,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    RDSCommand *cmd = [_cmds objectAtIndex:indexPath.row];
     
-    CommandViewController *commandView = [[CommandViewController alloc] init];
+    CommandViewController *commandView = [[CommandViewController alloc] initWithCommand:cmd];
     [self.navigationController pushViewController:commandView animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -291,6 +296,30 @@
     
     [RDSCommand sync:postSyncBlock
             progress:progressBlock];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setHidden:NO];
+}
+
+- (UIBarButtonItem *)buttonLanguage{
+    UIButton *buttonNow = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[buttonNow addTarget:self action:@selector(actionBack) forControlEvents:UIControlEventTouchUpInside];
+    [buttonNow setBackgroundImage:[UIImage imageNamed:@"nav-redis"] forState:UIControlStateNormal];
+    [buttonNow setFrame:CGRectMake(0.0, 0, 60, 30)];
+    
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    [containerView addSubview:buttonNow];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:containerView];
+    
+    return barButtonItem;
+}
+
+- (void)consoleOpen{
+    
+    ConsoleViewController *consoleView = [[ConsoleViewController alloc] init];
+    [self.navigationController pushViewController:consoleView animated:YES];
 }
 
 

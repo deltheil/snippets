@@ -9,6 +9,8 @@
 #import "CommandViewController.h"
 #import "ConsoleViewController.h"
 
+#import "RDSCommand.h"
+
 @interface CommandViewController ()
 
 @property (nonatomic, strong) UIWebView *webView;
@@ -17,11 +19,11 @@
 
 @implementation CommandViewController
 
-- (id)init
+- (id)initWithCommand:(RDSCommand *)c
 {
     self = [super init];
     if (self) {
-        // Custom initialization
+        _command = c;
     }
     return self;
 }
@@ -31,6 +33,10 @@
     [super viewDidLoad];
 	
     self.view.backgroundColor = [UIColor colorWithHexString:@"ffffff"];
+    
+    self.navigationItem.leftBarButtonItem = [self buttonBack];
+    self.navigationItem.rightBarButtonItem = [self buttonConsole];
+    self.navigationItem.titleView = [self titleLogo];
     
     // WebView
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.width, self.view.height - 76.0)];
@@ -70,11 +76,8 @@
 // Emulate the local database get
 - (NSString *)getContent
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"append" ofType:@"html"];
-    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
-    return [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    return [self.command getHTMLString];
 }
-
 
 #pragma mark Try
 - (void)tryAction{

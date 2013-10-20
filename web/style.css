@@ -1,0 +1,161 @@
+/********        RESET         *********/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/********        CSS         *********/
+
+
+body{
+
+}
+
+header{
+	background-image: url(img/bg.jpg);
+	background-repeat: no-repeat;
+	height: 530px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.intro{
+	position: absolute;
+	top: 130px;
+	left: 17.73%;
+}
+
+.sign_up {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1280px;
+  height: 1138px;
+  z-index: 27;
+}
+.Get_the_app_first {
+  font-size: 22px;
+  border: none;
+  font-family: "VAG Rounded Std";
+  color: rgb( 128, 128, 128 );
+  line-height: 1.091;
+  text-align: left;
+  position: absolute;
+  left: 19.15%;
+  top: 378px;
+  z-index: 26;
+}
+
+.Get_the_app_first:focus{
+	outline: none;
+}
+
+.SEND {
+  font-size: 22px;
+  font-family: "VAG Rounded Std";
+  color: rgb( 255, 255, 255 );
+  font-weight: 200;
+  line-height: 1.091;
+  text-align: left;
+  background: none;padding: 20px;
+  border : none;
+  position: absolute;
+  left: 43.5%;
+  top: 363px;
+  z-index: 25;
+  cursor: pointer;
+}
+
+.fondsign{
+	position: absolute;
+	left: 17.6%;
+  	top: 361px;
+}
+
+.Ra1 {
+  background-color: rgb( 236, 88, 77 );
+  opacity: 0.8;
+  position: absolute;
+  left: 327px;
+  width: 104px;
+  height: 60px;
+  z-index: 24;
+  border-radius: 0 8px 8px 0;
+}
+.Ra2 {
+  background-color: rgb( 245, 98, 86 );
+  position: absolute;
+  left: 327px;
+  width: 104px;
+  height: 60px;
+  z-index: 23;
+  border-radius: 0 8px 8px 0;
+}
+.Ra3 {
+  background-color: rgb( 255, 255, 255 );
+  position: absolute;
+  width: 424px;
+  height: 60px;
+  z-index: 22;
+  border-radius: 8px 0 0 8px;
+}
+
+
+.iphone{
+	float: right;
+	margin-top: 21px;
+	margin-right: 12.18%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

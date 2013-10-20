@@ -31,14 +31,10 @@
 
     self.view.backgroundColor = [UIColor colorWithHexString:@"ff9900"];
 
-    UIButton *buttonGo = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 40.0)];
-    buttonGo.left = floor((self.view.width - buttonGo.width) / 2 );
-    buttonGo.top = 200.0;
-
-    buttonGo.backgroundColor = [UIColor colorWithHexString:@"0BB5FF"];
-    [buttonGo addTarget:self action:@selector(closeView) forControlEvents:UIControlEventTouchUpInside];
-
-    [self.view addSubview:buttonGo];
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default-568h"]];
+    [self.view addSubview:background];
+    
+    [self performSelector:@selector(closeView) withObject:nil afterDelay:1.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,11 +43,18 @@
 }
 
 - (void)closeView{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    [self willMoveToParentViewController:nil];
+//    [self.view removeFromSuperview];
+//    [self removeFromParentViewController];
+//    [self didMoveToParentViewController:nil];
+}
 
-    [self willMoveToParentViewController:nil];
-    [self.view removeFromSuperview];
-    [self removeFromParentViewController];
-    [self didMoveToParentViewController:nil];
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

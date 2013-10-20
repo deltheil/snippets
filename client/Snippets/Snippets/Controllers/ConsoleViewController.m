@@ -12,7 +12,7 @@
 #import "Redis.h" // our in memory engine
 #import "NSError+Redis.h"
 
-@interface ConsoleViewController () <UITextFieldDelegate>
+@interface ConsoleViewController () <UITextFieldDelegate, UIWebViewDelegate>
 
 
 @property (nonatomic, strong) TextFieldConsole *textFieldConsole;
@@ -25,9 +25,13 @@
 @property (nonatomic, strong) NSMutableArray *history;
 @property (nonatomic, strong) NSMutableArray *entries;
 
+@property (nonatomic) BOOL webViewEnable;
+
 @end
 
-@implementation ConsoleViewController
+@implementation ConsoleViewController {
+    NSInteger _currentIndex;
+}
 
 - (id)init
 {
@@ -48,6 +52,7 @@
     _redis = [[Redis alloc] init];
     _history = [[NSMutableArray alloc] init];
     _entries = [[NSMutableArray alloc] init];
+    _currentIndex = -1;
     
     // TextFieldConsole
     self.textFieldConsole = [[TextFieldConsole alloc] initWithFrame:CGRectMake(0.0, 0.0, 0.0, 50.0)];
@@ -72,23 +77,38 @@
     self.historyUp = [self buttonHistory:[UIImage imageNamed:@"up"]];
     self.historyUp.top = self.textFieldConsole.top;
     self.historyUp.left = self.view.width - self.historyUp.width;
+    [self.historyUp addTarget:self
+                       action:@selector(historyBack:)
+             forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.historyUp];
     
     // History Down
     self.historyDown = [self buttonHistory:[UIImage imageNamed:@"down"]];
     self.historyDown.top = self.textFieldConsole.top;
     self.historyDown.left = self.historyUp.left - self.historyDown.width;
+    [self.historyDown addTarget:self
+                         action:@selector(historyForward:)
+               forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.historyDown];
     
     // Console
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 20.0, self.view.width, textFiedConsoleBorderTop.top - 20.0)];
     self.webView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.webView];
+    self.webView.delegate = self;
+
+    // Load the HTML template in memory
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"console" ofType:@"html"];
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    NSString *html = [NSString stringWithFormat:tpl, @""];
+    [self.webView loadHTMLString:html baseURL:nil];
+    
     
     // Button Close
-    UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 40.0, 56.0, 23.0)];
-    [buttonClose setBackgroundImage:[UIImage imageNamed:@"nav-close"] forState:UIControlStateNormal];
-    buttonClose.left = self.view.width - buttonClose.width - 20.0;
+    UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 27.0, 56.0, 23.0)];
+    buttonClose.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+    [buttonClose setImage:[UIImage imageNamed:@"nav-close"] forState:UIControlStateNormal];
+    buttonClose.left = self.view.width - buttonClose.width - 16.0;
     [buttonClose addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonClose];
 }
@@ -97,6 +117,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+
+    if(!self.webViewEnable){
+        self.webViewEnable = YES;
+        [self.view insertSubview:self.webView atIndex:2];
+    }
 }
 
 - (void)dealloc
@@ -120,6 +148,44 @@
     return button;
 }
 
+- (void)historyBack:(UIButton *)sender
+{
+    if (_currentIndex == -1) {
+        _currentIndex = [_history count] -1;
+    }
+    else {
+        NSInteger idx = _currentIndex;
+        if (idx > 0)
+            _currentIndex = idx - 1;
+    }
+    
+    NSLog(@" %d <- ", (int) _currentIndex);
+    
+    if (_currentIndex >= 0 && _currentIndex <= [_history count] -1) { // paranoid
+        NSString *cmd = [_history objectAtIndex:_currentIndex];
+        self.textFieldConsole.text = cmd;
+    }
+}
+
+- (void)historyForward:(UIButton *)sender
+{
+    if (_currentIndex == -1) {
+        _currentIndex = [_history count] -1;
+    }
+    else {
+        NSInteger idx = _currentIndex;
+        if (idx < [_history count] -1)
+            _currentIndex = idx + 1;
+    }
+    
+    NSLog(@" -> %d ", (int) _currentIndex);
+    
+    if (_currentIndex >= 0 && _currentIndex <= [_history count] -1) { // paranoid
+        NSString *cmd = [_history objectAtIndex:_currentIndex];
+        self.textFieldConsole.text = cmd;
+    }
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -137,12 +203,19 @@
         entry = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
     }
     
+    // Load the HTML template in memory
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"console" ofType:@"html"];
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    
     // Create the pair command + response / error
-    [_entries addObject:[NSString stringWithFormat:@"<strong>redis> %@</strong>", cmd]];
+    [_entries addObject:[NSString stringWithFormat:@"<div class='lg'>redis></div> %@", cmd]];
     [_entries addObject:entry];
     
     // Recreate the full HTML with all entries
-    NSString *html = [_entries componentsJoinedByString:@"<br/>"];
+    NSString *htmlContent = [_entries componentsJoinedByString:@"<br/>"];
+    
+    NSString *html = [NSString stringWithFormat:tpl, htmlContent];
     
     [self.webView loadHTMLString:html baseURL:nil];
     
@@ -152,7 +225,12 @@
     [_history addObject:cmd];
     textField.text = @"";
     
-    return YES;
+    // Automatic Scroll
+    // float consoleHeight = self.webView.scrollView.contentSize.height - 280.0;
+    // NSLog(@"----- %f", consoleHeight);
+    // [self.webView.scrollView setContentOffset:CGPointMake(0.0, consoleHeight) animated:YES];
+    
+    return NO;
 }
 
 - (void)closeAction{

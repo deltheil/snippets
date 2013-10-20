@@ -44,6 +44,32 @@ table {
 	border-spacing: 0;
 }
 
+
+
+/********        FONT-FACE         *********/
+
+
+@font-face {
+font-family: 'VAG Rounded Std';
+src: url('font/VAGRoundedStd-Light.otf');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Aleo';
+src: url('font/Aleo-Regular.otf');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'DINpro';
+src: url('font/DINPro-Light.ttf');
+font-weight: normal;
+font-style: normal;
+}
+
 /********        CSS         *********/
 
 
@@ -237,6 +263,7 @@ h7 a{
 
 h7 a:hover{
 	color: #999;
+	transition: 0.3s ease-out;
 }
 
 

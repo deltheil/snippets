@@ -27,7 +27,9 @@
 
 @end
 
-@implementation ConsoleViewController
+@implementation ConsoleViewController {
+    NSInteger _currentIndex;
+}
 
 - (id)init
 {
@@ -48,6 +50,7 @@
     _redis = [[Redis alloc] init];
     _history = [[NSMutableArray alloc] init];
     _entries = [[NSMutableArray alloc] init];
+    _currentIndex = -1;
     
     // TextFieldConsole
     self.textFieldConsole = [[TextFieldConsole alloc] initWithFrame:CGRectMake(0.0, 0.0, 0.0, 50.0)];
@@ -72,12 +75,18 @@
     self.historyUp = [self buttonHistory:[UIImage imageNamed:@"up"]];
     self.historyUp.top = self.textFieldConsole.top;
     self.historyUp.left = self.view.width - self.historyUp.width;
+    [self.historyUp addTarget:self
+                       action:@selector(historyBack:)
+             forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.historyUp];
     
     // History Down
     self.historyDown = [self buttonHistory:[UIImage imageNamed:@"down"]];
     self.historyDown.top = self.textFieldConsole.top;
     self.historyDown.left = self.historyUp.left - self.historyDown.width;
+    [self.historyDown addTarget:self
+                         action:@selector(historyForward:)
+               forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.historyDown];
     
     // Console
@@ -120,6 +129,44 @@
     [button addSubview:borderLeft];
     
     return button;
+}
+
+- (void)historyBack:(UIButton *)sender
+{
+    if (_currentIndex == -1) {
+        _currentIndex = [_history count] -1;
+    }
+    else {
+        NSInteger idx = _currentIndex;
+        if (idx > 0)
+            _currentIndex = idx - 1;
+    }
+    
+    NSLog(@" %d <- ", (int) _currentIndex);
+    
+    if (_currentIndex >= 0 && _currentIndex <= [_history count] -1) { // paranoid
+        NSString *cmd = [_history objectAtIndex:_currentIndex];
+        self.textFieldConsole.text = cmd;
+    }
+}
+
+- (void)historyForward:(UIButton *)sender
+{
+    if (_currentIndex == -1) {
+        _currentIndex = [_history count] -1;
+    }
+    else {
+        NSInteger idx = _currentIndex;
+        if (idx < [_history count] -1)
+            _currentIndex = idx + 1;
+    }
+    
+    NSLog(@" -> %d ", (int) _currentIndex);
+    
+    if (_currentIndex >= 0 && _currentIndex <= [_history count] -1) { // paranoid
+        NSString *cmd = [_history objectAtIndex:_currentIndex];
+        self.textFieldConsole.text = cmd;
+    }
 }
 
 #pragma mark - UITextFieldDelegate

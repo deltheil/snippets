@@ -236,6 +236,22 @@
 
 #pragma mark Data source
 
+- (void)setTypes:(NSArray *)t
+{
+    NSMutableArray *ary = [NSMutableArray arrayWithArray:t];
+    
+    NSMutableArray *allCmds = [NSMutableArray arrayWithCapacity:[_cmds count]];
+    for (RDSCommand *cmd in _cmds) {
+        [allCmds addObject:cmd.name];
+    }
+    
+    RDSType *all = [[RDSType alloc] initWithName:@"All" commands:allCmds];
+    
+    [ary insertObject:all atIndex:0];
+    
+    _types = ary;
+}
+
 - (void)reload
 {
     [self reloadWithResultBlock:nil progressBlock:nil];

@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "CommandViewController.h"
 
 @interface MainViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -90,6 +91,14 @@
     return 84.0;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CommandViewController *commandView = [[CommandViewController alloc] init];
+    [self.navigationController pushViewController:commandView animated:YES];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 #pragma mark UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -111,8 +120,8 @@
     }
     
     // Cell selection
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [cell setBackgroundColor:[UIColor clearColor]];
+    // [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    // [cell setBackgroundColor:[UIColor clearColor]];
     
     // Title
     UILabel *labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 40.0)];
@@ -145,9 +154,9 @@
     [cell addSubview:sepator];
     
     
-    
     return cell;
 }
+
 
 #pragma mark Sorting
 - (void)sortingButton:(UIButton *)sender{

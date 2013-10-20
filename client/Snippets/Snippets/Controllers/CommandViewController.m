@@ -47,6 +47,12 @@
     [self.webView loadHTMLString:html baseURL:nil];
     
     // Try Code
+    UIButton *buttonTry = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 270.0, 46.0)];
+    buttonTry.top = self.webView.bottom + 15.0;
+    buttonTry.left = floor((self.view.width - buttonTry.width) / 2 );
+    [buttonTry setBackgroundImage:[UIImage imageNamed:@"try"] forState:UIControlStateNormal];
+    [buttonTry addTarget:self action:@selector(tryAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:buttonTry];
     
 }
 
@@ -63,5 +69,12 @@
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
     return [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
 }
+
+
+#pragma mark Try
+- (void)tryAction{
+
+}
+
 
 @end

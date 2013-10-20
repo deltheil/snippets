@@ -3,7 +3,9 @@
 # AngelHack Paris Oct '13
 # @uthors Tushar Ghosh (2shar007)
 
+import os
 import sys
+import json
 import winch
 import getpass
 import urllib, urllib2
@@ -11,6 +13,13 @@ from Config import Config
 
 # The Winch Data Store
 DS = Config.ds
+
+
+# Convert python dictionary to string
+def getString(data):
+	dataString = json.dumps(data)
+	return dataString
+
 
 # Verify if data-store exists for user
 def searchDataStore(wc, name):
@@ -23,13 +32,13 @@ def load(path, entry):
 	entryPath = os.path.join(path, entry)
 	if not os.path.exists(entryPath):
 		os.makedirs(entryPath)
-	with open(path, 'r') as inFile:
+	with open(entryPath, 'r') as inFile:
 		obj = json.load(inFile)
 	return obj
 
 
 # Push updates to Winch
-def push(npace, ds):
+def push(nspace, ds):
 	entry = Config.targetFile
 	path = Config.target + "/" + nspace.split(":")[1]
 	obj = load(path, entry)
@@ -38,8 +47,9 @@ def push(npace, ds):
 		ns = ds.create_namespace(nspace)
 	print "Processing %s" % ns.name
 	for k, v in obj.iteritems():
+		val = getString(v)
 		try:
-			ns.create_record(k, v, "application/json")
+			ns.create_record(k, val, "application/json")
 			#puts(".")
 		except winch.ErrExists:
 			print "fail"
@@ -50,7 +60,7 @@ def push(npace, ds):
 # Initialize pushing updates
 def init(user, passwd):
 	wc = winch.Client(user, passwd)
-	ds = searchDataStore(wc, ds)
+	ds = searchDataStore(wc, DS)
 	push(Config.ns_types, ds)
 	push(Config.ns_cmds, ds)
 	push(Config.ns_cmds_html, ds)
@@ -58,18 +68,15 @@ def init(user, passwd):
 
 # Login retrieve
 def login():
-    user = input("Username [%s]: " % getpass.getuser())
-    if not user:
-        user = getpass.getuser()
+	user = raw_input("Username: ")
+	
+	pprompt = lambda: (getpass.getpass(), getpass.getpass('Retype password: '))	
+	p1, p2 = pprompt()
+	while p1 != p2:
+		print('Passwords do not match. Try again')
+		p1, p2 = pprompt()
 
-    pprompt = lambda: (getpass.getpass(), getpass.getpass('Retype password: '))
-
-    p1, p2 = pprompt()
-    while p1 != p2:
-        print('Passwords do not match. Try again')
-        p1, p2 = pprompt()
-
-    return user, p1
+	return user, p1
 
 
 # Push updates to winch

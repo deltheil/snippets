@@ -136,8 +136,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    RDSCommand *cmd = [_cmds objectAtIndex:indexPath.row];
     
-    CommandViewController *commandView = [[CommandViewController alloc] init];
+    CommandViewController *commandView = [[CommandViewController alloc] initWithCommand:cmd];
     [self.navigationController pushViewController:commandView animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

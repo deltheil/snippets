@@ -124,7 +124,6 @@ def extractDetail(path):
 def store(obj, path):
 	entry = "dump.sp"
 	entryPath = os.path.join(path, entry)
-	print entryPath
 	if not os.path.exists(path):
 		os.makedirs(path)
 	with open(entryPath, 'w') as outfile:
@@ -136,15 +135,29 @@ def store(obj, path):
 def writeTypes(path):
 	path = path + "/types"
 	rdsTypes = {}
+	rdsGroups = {}
 	for cmd, attr in blob.iteritems():
-		html = ""
+		group = ""
 		command = cmd.lower()
-		if "html" in attr:
-			html = attr["html"]
-		if command not in rdsTypes:
-			rdsTypes[command] = html
+		val = [command]
+		if "group" in attr:
+			group = attr["group"]
+			if group in rdsGroups:
+				val = val + rdsGroups[group]
+			rdsGroups[group] = val
+	sortedTypes = sorted(rdsGroups.keys())
+	numTypes = len(sortedTypes)
+	numDigits = len(str(abs(numTypes))) + 2
+	ind = 1
+	for type in sortedTypes:
+		index = str(ind).zfill(numDigits)
+		name = type
+		cmds = rdsGroups[type]
+		val = {"name" : name, "cmds" : cmds}
+		if index not in rdsTypes:
+			rdsTypes[index] = val
+		ind = ind + 1
 	store(rdsTypes, path)
-
 	return
 
 
@@ -153,12 +166,19 @@ def writeCmds(path):
 	path = path + "/cmds"
 	rdsCmds = {}
 	for cmd, attr in blob.iteritems():
-		html = ""
-		command = cmd.lower()
-		if "html" in attr:
-			html = attr["html"]
+		summary = ""
+		name = cmd
+		command = name.lower()
+		cli = []
+		val = {"name" : name}
+		if "summary" in attr:
+			summary = attr["summary"]
+			val["summary"] = summary
+		if "cli" in attr:
+			cli = cli + attr["cli"]
+			val["cli"] = cli
 		if command not in rdsCmds:
-			rdsCmds[command] = html
+			rdsCmds[command] = val
 	store(rdsCmds, path)
 	return
 
@@ -182,7 +202,6 @@ def writeCmdsHtml(path):
 def preprocess():
 	extractSummary(Config.summary)
 	extractDetail(Config.commands)
-	print json.dumps(blob)
 	# Use data from blob to define namespaces as in server/Model.md
 	# rds:types
 	writeTypes(Config.target)

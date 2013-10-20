@@ -23,7 +23,7 @@ def run():
 	diff()
 	# push updates to winch
 	update()
-	print "Test"
+	print "Execution of main completed [OK]"
 	return
 
 # Script to be run as cron job

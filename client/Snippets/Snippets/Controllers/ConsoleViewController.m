@@ -85,6 +85,7 @@
     self.webView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.webView];
     self.webView.delegate = self;
+
     
     // Button Close
     UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 40.0, 56.0, 23.0)];
@@ -138,12 +139,19 @@
         entry = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
     }
     
+    // Load the HTML template in memory
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"console" ofType:@"html"];
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    
     // Create the pair command + response / error
-    [_entries addObject:[NSString stringWithFormat:@"<strong>redis> %@</strong>", cmd]];
+    [_entries addObject:[NSString stringWithFormat:@"<div class='lg'>redis></div> %@", cmd]];
     [_entries addObject:entry];
     
     // Recreate the full HTML with all entries
-    NSString *html = [_entries componentsJoinedByString:@"<br/>"];
+    NSString *htmlContent = [_entries componentsJoinedByString:@"<br/></div>"];
+    
+    NSString *html = [NSString stringWithFormat:tpl, htmlContent];
     
     [self.webView loadHTMLString:html baseURL:nil];
     

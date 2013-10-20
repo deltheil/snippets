@@ -55,6 +55,8 @@
 		B0C77E281813C45E00801F34 /* nav-redis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E221813C45E00801F34 /* nav-redis@2x.png */; };
 		B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E291813CEF900801F34 /* nav-back.png */; };
 		B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2A1813CEF900801F34 /* nav-back@2x.png */; };
+		B0C77E2E1813D2B100801F34 /* console.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* console.html */; };
+		B0C77E301813D4BD00801F34 /* console-example.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2F1813D4BD00801F34 /* console-example.html */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -136,6 +138,8 @@
 		B0C77E221813C45E00801F34 /* nav-redis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis@2x.png"; sourceTree = "<group>"; };
 		B0C77E291813CEF900801F34 /* nav-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back.png"; sourceTree = "<group>"; };
 		B0C77E2A1813CEF900801F34 /* nav-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back@2x.png"; sourceTree = "<group>"; };
+		B0C77E2D1813D2B100801F34 /* console.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = console.html; sourceTree = "<group>"; };
+		B0C77E2F1813D4BD00801F34 /* console-example.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "console-example.html"; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 		826579691812959B00A17F63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B0C77E2F1813D4BD00801F34 /* console-example.html */,
+				B0C77E2D1813D2B100801F34 /* console.html */,
 				82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */,
 				82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */,
 				82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */,
@@ -488,7 +494,9 @@
 				B088031018135FA300D102C4 /* try@2x.png in Resources */,
 				B088030F18135FA300D102C4 /* try.png in Resources */,
 				8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */,
+				B0C77E2E1813D2B100801F34 /* console.html in Resources */,
 				B0C77E251813C45E00801F34 /* nav-logo.png in Resources */,
+				B0C77E301813D4BD00801F34 /* console-example.html in Resources */,
 				82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */,
 				B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */,
 				B088032518137D7700D102C4 /* accessory@2x.png in Resources */,

@@ -13,6 +13,7 @@
 static __weak WNCDatabase *_wnc_database;
 
 NSString * const kRDSCommandsNS = @"rds:cmds";
+NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
 
 @implementation RDSCommand
 
@@ -74,6 +75,13 @@ NSString * const kRDSCommandsNS = @"rds:cmds";
     }
     
     return cmds;
+}
+
+- (NSString *)getHTMLString
+{
+    WNCNamespace *ns = [_wnc_database getNamespace:kRDSCommandsHTMLNS];
+    NSData *data = [ns getDataForKey:self.uid];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 @end

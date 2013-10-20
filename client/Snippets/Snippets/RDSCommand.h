@@ -14,6 +14,8 @@
 
 // rds:cmds
 extern NSString * const kRDSCommandsNS;
+// rds:cmds_html
+extern NSString * const kRDSCommandsHTMLNS;
 
 @interface RDSCommand : MTLModel <MTLJSONSerializing>
 
@@ -31,5 +33,7 @@ extern NSString * const kRDSCommandsNS;
 
 + (NSArray *)fetch;
 + (NSArray *)fetch:(NSError **)error;
+
+- (NSString *)getHTMLString;
 
 @end

@@ -10,8 +10,9 @@ import urllib, urllib2
 class Config():
 	
 	# Define variables for configuration
+	ds = "snippets_db"
 	sourceURI = "git://github.com/antirez/redis-doc"
-	targetURI = ""
+	targetFile = "dump.sp"
 	source = "source"
 	target = "target"
 	commands = source + "/commands"

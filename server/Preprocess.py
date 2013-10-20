@@ -122,7 +122,7 @@ def extractDetail(path):
 
 # Store data in specified path
 def store(obj, path):
-	entry = "dump.sp"
+	entry = Config.targetFile
 	entryPath = os.path.join(path, entry)
 	if not os.path.exists(path):
 		os.makedirs(path)

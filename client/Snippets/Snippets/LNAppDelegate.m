@@ -14,6 +14,10 @@
 // Winch main header
 #import <Winch/Winch.h>
 
+// Models
+#import "RDSCommand.h"
+#import "RDSType.h"
+
 // ==========================================
 // Winch demo datastore credentials
 // ==========================================
@@ -42,6 +46,10 @@
         NSLog(@"winch open error: %@", [error wnc_message]);
     }
     
+    // Hook up the database with the models
+    [RDSCommand setDatabase:_database];
+    [RDSType setDatabase:_database];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 
@@ -52,11 +60,11 @@
     [self.window makeKeyAndVisible];
 
     // Boarding
-    self.boardingView = [[BoardingViewController alloc] init];
-
-    [self.window.rootViewController addChildViewController:self.boardingView];
-    [self.window addSubview:self.boardingView.view];
-    [self.boardingView didMoveToParentViewController:self.window.rootViewController];
+//    self.boardingView = [[BoardingViewController alloc] init];
+//
+//    [self.window.rootViewController addChildViewController:self.boardingView];
+//    [self.window addSubview:self.boardingView.view];
+//    [self.boardingView didMoveToParentViewController:self.window.rootViewController];
 
     return YES;
 }

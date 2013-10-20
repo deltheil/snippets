@@ -14,6 +14,8 @@
 
 // rds:cmds
 extern NSString * const kRDSCommandsNS;
+// rds:cmds_html
+extern NSString * const kRDSCommandsHTMLNS;
 
 @interface RDSCommand : MTLModel <MTLJSONSerializing>
 
@@ -21,11 +23,17 @@ extern NSString * const kRDSCommandsNS;
 @property (nonatomic, copy, readonly) NSString *name;
 // e.g "Get the value of a key"
 @property (nonatomic, copy, readonly) NSString *summary;
-// TODO: cli (array)
+// e.g ["HSET myhash field1 \"foo\"", "HGET myhash field1", "HGET myhash field2"]
+@property (nonatomic, copy, readonly) NSArray *cli;
+
+// Properties out-of-scope of Mantle
+@property (nonatomic, copy) NSString *uid;
 
 + (void)setDatabase:(WNCDatabase *)database;
 
 + (NSArray *)fetch;
 + (NSArray *)fetch:(NSError **)error;
+
+- (NSString *)getHTMLString;
 
 @end

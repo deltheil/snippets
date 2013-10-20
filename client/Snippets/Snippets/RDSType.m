@@ -1,29 +1,27 @@
 //
-//  RDSCommand.m
+//  RDSType.m
 //  Snippets
 //
-//  Created by Cédric Deltheil on 19/10/13.
+//  Created by Cédric Deltheil on 20/10/13.
 //  Copyright (c) 2013 AppHACK. All rights reserved.
 //
 
-#import "RDSCommand.h"
+#import "RDSType.h"
 
 #import <Winch/Winch.h>
 
 static __weak WNCDatabase *_wnc_database;
 
-NSString * const kRDSCommandsNS = @"rds:cmds";
-NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
+NSString * const kRDSTypesNS = @"rds:types";
 
-@implementation RDSCommand
+@implementation RDSType
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{
              @"name": @"name",
-             @"summary": @"summary",
-             @"cli": @"cli"
-    };
+             @"cmds": @"cmds"
+             };
 }
 
 + (NSArray *)fetch
@@ -38,7 +36,7 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
 
 + (NSArray *)fetch:(NSError **)error
 {
-    WNCNamespace *ns = [_wnc_database getNamespace:kRDSCommandsNS];
+    WNCNamespace *ns = [_wnc_database getNamespace:kRDSTypesNS];
     NSMutableArray *cmds = [NSMutableArray array];
     NSError *iterError = nil;
     __block BOOL dataError = NO;
@@ -53,35 +51,26 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
         }
         
         NSError *parseError = nil;
-        RDSCommand *cmd = [MTLJSONAdapter modelOfClass:RDSCommand.class
-                                    fromJSONDictionary:jsonDict
-                                                 error:&parseError];
+        RDSType *cmd = [MTLJSONAdapter modelOfClass:RDSType.class
+                                 fromJSONDictionary:jsonDict
+                                              error:&parseError];
         if (parseError) {
             dataError = YES;
             *option = kWNCIterStop;
             return;
         }
         
-        cmd.uid = key;
-        
         [cmds addObject:cmd];
     } error:&iterError];
     
     if (iterError || dataError) {
         if (error) {
-            *error = [NSError errorWithDomain:@"RDSCommand" code:1 userInfo:nil];
+            *error = [NSError errorWithDomain:@"RDSType" code:1 userInfo:nil];
             return nil;
         }
     }
     
     return cmds;
-}
-
-- (NSString *)getHTMLString
-{
-    WNCNamespace *ns = [_wnc_database getNamespace:kRDSCommandsHTMLNS];
-    NSData *data = [ns getDataForKey:self.uid];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 @end

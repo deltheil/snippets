@@ -97,6 +97,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
+    // TODO: persist history into Winch!
+    
+    [_redis close];
+}
+
 - (UIButton *)buttonHistory:(UIImage *)image{
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 51.0, 50.0)];

@@ -12,7 +12,7 @@
 #import "Redis.h" // our in memory engine
 #import "NSError+Redis.h"
 
-@interface ConsoleViewController () <UITextFieldDelegate>
+@interface ConsoleViewController () <UITextFieldDelegate, UIWebViewDelegate>
 
 
 @property (nonatomic, strong) TextFieldConsole *textFieldConsole;
@@ -84,6 +84,7 @@
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 20.0, self.view.width, textFiedConsoleBorderTop.top - 20.0)];
     self.webView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.webView];
+    self.webView.delegate = self;
     
     // Button Close
     UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 40.0, 56.0, 23.0)];
@@ -151,6 +152,11 @@
     // Record the command into the history and clean up the prompt
     [_history addObject:cmd];
     textField.text = @"";
+    
+    // Automatic Scroll
+    // float consoleHeight = self.webView.scrollView.contentSize.height - 280.0;
+    // NSLog(@"----- %f", consoleHeight);
+    // [self.webView.scrollView setContentOffset:CGPointMake(0.0, consoleHeight) animated:YES];
     
     return YES;
 }

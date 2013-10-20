@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "CommandViewController.h"
+#import "ConsoleViewController.h"
 
 #import <Winch/Winch.h>
 
@@ -101,6 +102,8 @@
     [self.tableView setDelegate:self];
     [self.view addSubview:self.tableView];
     
+    self.navigationItem.rightBarButtonItem = [self buttonConsole];
+    self.navigationItem.titleView = [self titleLogo];
 
     // Fonts
 //    for (NSString *familyName in [UIFont familyNames]) {
@@ -292,6 +295,16 @@
     
     [RDSCommand sync:postSyncBlock
             progress:progressBlock];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setHidden:NO];
+}
+
+- (void)consoleOpen{
+    
+    ConsoleViewController *consoleView = [[ConsoleViewController alloc] init];
+    [self.navigationController pushViewController:consoleView animated:YES];
 }
 
 

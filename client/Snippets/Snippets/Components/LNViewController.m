@@ -38,15 +38,21 @@
 - (UIBarButtonItem *)buttonConsole{
     UIButton *buttonNow = [UIButton buttonWithType:UIButtonTypeCustom];
     [buttonNow addTarget:self action:@selector(consoleOpen) forControlEvents:UIControlEventTouchUpInside];
-    //[buttonNow setBackgroundImage:[UIImage imageNamed:@"nav-more.png"] forState:UIControlStateNormal];
-    [buttonNow setFrame:CGRectMake(5, 0, 44, 44)];
+    [buttonNow setBackgroundImage:[UIImage imageNamed:@"nav-console"] forState:UIControlStateNormal];
+    [buttonNow setFrame:CGRectMake(0, 0, 30, 30)];
     
-    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [containerView addSubview:buttonNow];
     
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:containerView];
     
     return barButtonItem;
+}
+
+- (UIImageView *)titleLogo{
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-logo"]];
+    
+    return logo;
 }
 
 - (void)consoleOpen{

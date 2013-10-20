@@ -10,6 +10,8 @@
 
 @interface LNViewController : UIViewController
 
+- (UIImageView *)titleLogo;
+
 - (UIBarButtonItem *)buttonConsole;
 - (void)consoleOpen;
 

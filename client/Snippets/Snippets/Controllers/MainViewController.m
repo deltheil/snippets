@@ -26,11 +26,15 @@
 
 @implementation MainViewController
 
-- (id)init
+- (id)initWithDatabase:(WNCDatabase *)db
 {
     self = [super init];
     if (self) {
-        // Custom initialization
+        _database = db;
+        if ([[_database getNamespace:kRDSCommandsNS] count] > 0) {
+            self.cmds = [RDSCommand fetch:nil];
+            self.types = [RDSType fetch:nil];
+        }
     }
     return self;
 }
@@ -43,7 +47,7 @@
     
     
     // Sorting
-    NSArray *sorter = @[@"All", @"Keys", @"Strings", @"Hashes", @"Lists", @"Sets", @"Sorted Sets", @"Pub/Sub", @"Transactions", @"Scripting", @"Connection", @"Server"];
+    /*NSArray *sorter = @[@"All", @"Keys", @"Strings", @"Hashes", @"Lists", @"Sets", @"Sorted Sets", @"Pub/Sub", @"Transactions", @"Scripting", @"Connection", @"Server"];*/
     
     self.sorting = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64.0, self.view.frame.size.width, 48.0)];
     self.sorting.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
@@ -54,15 +58,16 @@
     [self.sorting setContentOffset:CGPointMake(0, 0) animated:YES];
     
     __block float buttonSortingX = 14.0;
-    [sorter enumerateObjectsUsingBlock:^(NSString *sort, NSUInteger idx, BOOL *stop) {
-        
+    [_types enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        RDSType *t = (RDSType *) obj;
+        NSLog(@"%@", t.name);
         UIButton *buttonSorting = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 85.0, 48.0)];
         buttonSorting.tag = idx;
         buttonSorting.left = buttonSortingX;
         buttonSorting.backgroundColor = [UIColor clearColor];
         buttonSorting.titleLabel.font = [UIFont fontWithName:@"VAGRoundedStd-Light" size:12.0];
         [buttonSorting setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [buttonSorting setTitle:sort forState:UIControlStateNormal];
+        [buttonSorting setTitle:t.name forState:UIControlStateNormal];
         [buttonSorting addTarget:self action:@selector(sortingButton:) forControlEvents:UIControlEventTouchUpInside];
         
         buttonSortingX += 85.0;

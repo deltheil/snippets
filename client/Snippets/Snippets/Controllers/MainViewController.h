@@ -14,4 +14,6 @@
 
 @property WNCDatabase *database;
 
+- (id)initWithDatabase:(WNCDatabase *)db;
+
 @end

@@ -53,8 +53,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 
-    MainViewController *mainView = [[MainViewController alloc] init];
-    mainView.database = _database;
+    MainViewController *mainView = [[MainViewController alloc] initWithDatabase:_database];
     self.mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
 
     self.window.rootViewController = self.mainNav;

@@ -120,10 +120,75 @@ def extractDetail(path):
 	return
 
 
+# Store data in specified path
+def store(obj, path):
+	entry = "dump.sp"
+	entryPath = os.path.join(path, entry)
+	print entryPath
+	if not os.path.exists(path):
+		os.makedirs(path)
+	with open(entryPath, 'w') as outfile:
+		json.dump(obj, outfile)
+	return
+
+
+# Write data for rds:types namespace
+def writeTypes(path):
+	path = path + "/types"
+	rdsTypes = {}
+	for cmd, attr in blob.iteritems():
+		html = ""
+		command = cmd.lower()
+		if "html" in attr:
+			html = attr["html"]
+		if command not in rdsTypes:
+			rdsTypes[command] = html
+	store(rdsTypes, path)
+
+	return
+
+
+# Write data for rds:cmds namespace
+def writeCmds(path):
+	path = path + "/cmds"
+	rdsCmds = {}
+	for cmd, attr in blob.iteritems():
+		html = ""
+		command = cmd.lower()
+		if "html" in attr:
+			html = attr["html"]
+		if command not in rdsCmds:
+			rdsCmds[command] = html
+	store(rdsCmds, path)
+	return
+
+
+# Write data for rds:cmds_html
+def writeCmdsHtml(path):
+	path = path + "/cmds_html"
+	rdsCmdsHtml = {}
+	for cmd, attr in blob.iteritems():
+		html = ""
+		command = cmd.lower()
+		if "html" in attr:
+			html = attr["html"]
+		if command not in rdsCmdsHtml:
+			rdsCmdsHtml[command] = html
+	store(rdsCmdsHtml, path)
+	return
+
+
 # Process Pull data to conform to Model.md
 def preprocess():
 	extractSummary(Config.summary)
 	extractDetail(Config.commands)
-	# Use data from blob to define namespaces
+	print json.dumps(blob)
+	# Use data from blob to define namespaces as in server/Model.md
+	# rds:types
+	writeTypes(Config.target)
+	# rds:cmds
+	writeCmds(Config.target)
+	# rds:cmds_html
+	writeCmdsHtml(Config.target)
         return
 

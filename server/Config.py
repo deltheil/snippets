@@ -13,7 +13,7 @@ class Config():
 	sourceURI = "git://github.com/antirez/redis-doc"
 	targetURI = ""
 	source = "source"
-	target = "/Users/tushar/Desktop/AngelHack/target"
+	target = "target"
 	commands = source + "/commands"
 	summary = commands + ".json"
 	

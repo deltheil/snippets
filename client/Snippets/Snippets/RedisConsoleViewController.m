@@ -37,6 +37,8 @@
 
 - (void)dealloc
 {
+    // TODO: persist history into Winch!
+    
     [_redis close];
 }
 

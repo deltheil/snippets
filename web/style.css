@@ -75,15 +75,21 @@ header{
 }
 .Get_the_app_first {
   font-size: 22px;
+  border: none;
   font-family: "VAG Rounded Std";
   color: rgb( 128, 128, 128 );
   line-height: 1.091;
   text-align: left;
   position: absolute;
   left: 19.15%;
-  top: 383px;
+  top: 378px;
   z-index: 26;
 }
+
+.Get_the_app_first:focus{
+	outline: none;
+}
+
 .SEND {
   font-size: 22px;
   font-family: "VAG Rounded Std";
@@ -91,38 +97,47 @@ header{
   font-weight: 200;
   line-height: 1.091;
   text-align: left;
+  background: none;padding: 20px;
+  border : none;
   position: absolute;
-  left: 45.15%;
-  top: 383px;
+  left: 43.5%;
+  top: 363px;
   z-index: 25;
+  cursor: pointer;
 }
+
+.fondsign{
+	position: absolute;
+	left: 17.6%;
+  	top: 361px;
+}
+
 .Ra1 {
   background-color: rgb( 236, 88, 77 );
   opacity: 0.8;
   position: absolute;
-  left: 43.125%;
-  top: 361px;
+  left: 327px;
   width: 104px;
   height: 60px;
   z-index: 24;
+  border-radius: 0 8px 8px 0;
 }
 .Ra2 {
   background-color: rgb( 245, 98, 86 );
   position: absolute;
-  left: 43.125%;
-  top: 361px;
+  left: 327px;
   width: 104px;
   height: 60px;
   z-index: 23;
+  border-radius: 0 8px 8px 0;
 }
 .Ra3 {
   background-color: rgb( 255, 255, 255 );
   position: absolute;
-  left: 17.6%;
-  top: 361px;
   width: 424px;
   height: 60px;
   z-index: 22;
+  border-radius: 8px 0 0 8px;
 }
 
 

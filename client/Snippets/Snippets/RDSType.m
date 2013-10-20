@@ -16,6 +16,16 @@ NSString * const kRDSTypesNS = @"rds:types";
 
 @implementation RDSType
 
+- (id)initWithName:(NSString *)n commands:(NSArray *)c
+{
+    self = [super init];
+    if (self) {
+        _name = n;
+        _cmds = c;
+    }
+    return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{

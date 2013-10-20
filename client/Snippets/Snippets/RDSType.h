@@ -22,6 +22,8 @@ extern NSString * const kRDSTypesNS;
 // e.g ["hdel", "hget", "hlen"]
 @property (nonatomic, copy, readonly) NSArray *cmds;
 
+- (id)initWithName:(NSString *)n commands:(NSArray *)c;
+
 + (void)setDatabase:(WNCDatabase *)database;
 
 + (NSArray *)fetch;

@@ -34,20 +34,6 @@ def fetch(path, ext):
 	return data
 
 
-# Sanitize JSON data
-def sanitize(data, indent=0):
-    if isinstance(data, list):
-        print
-        for item in data:
-            printKeyVals(item, indent+1)
-    elif isinstance(data, dict):
-        print
-        for k, v in data.iteritems():
-            print "    " * indent, k + ":",
-            printKeyVals(v, indent + 1)
-    else:
-        print data
-
 # Get command summaries
 def extractSummary(filePath):
 	summaryCmd = readFile(filePath)
@@ -55,16 +41,52 @@ def extractSummary(filePath):
 		cmdList = {}
 		rawCmdList = json.loads(summaryCmd)
 		for cmd, rawAttr in rawCmdList.iteritems():
-			print cmd, rawAttr
-		#cmdList = sanitize(rawCmdList)
-		# TODO
-		return cmdList	
-	return None
+			group = ""
+			arguments = []
+			complexity = ""
+			summary = ""
+			since = ""
+			if "group" in rawAttr:
+				group = rawAttr["group"]
+			if "arguments" in rawAttr:
+				for item in rawAttr["arguments"]:
+					arguments.append(item)
+			if "complexity" in rawAttr:
+				complexity = rawAttr["complexity"]
+			if "summary" in rawAttr:
+				summary = rawAttr["summary"]
+			if "since" in rawAttr:
+				since = rawAttr["since"]
+			if cmd not in blob:
+				blob[cmd] = {}
+			if "group" not in blob[cmd]:
+				blob[cmd]["group"] = ""
+			group = group + blob[cmd]["group"]
+			blob[cmd]["group"] = group
+			if "arguments" not in blob[cmd]:
+				blob[cmd]["arguments"] = []
+			arguments = arguments + blob[cmd]["arguments"]
+			blob[cmd]["arguments"] = arguments
+			if "complexity" not in blob[cmd]:
+				blob[cmd]["complexity"] = ""
+			complexity = complexity + blob[cmd]["complexity"]
+			blob[cmd]["complexity"] = complexity
+			if "summary" not in blob[cmd]:
+				blob[cmd]["summary"] = ""
+			summary = summary + blob[cmd]["summary"]
+			blob[cmd]["summary"] = summary
+			if "since" not in blob[cmd]:
+				blob[cmd]["since"] = ""
+			since = since + blob[cmd]["since"]
+			blob[cmd]["since"] = since
+	return
+
 
 # Execute pandoc command in python
 def pandoc(arg):
 	p = subprocess.Popen(['pandoc', '--to=html', '--from=markdown'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 	return p.communicate(arg)[0]
+
 
 # Get command details from .md files and extract CLI data and MarkDown
 def extractDetail(path):
@@ -95,13 +117,13 @@ def extractDetail(path):
 			blob[cmd]["cli"] = []
 		cli = cli + blob[cmd]["cli"]
 		blob[cmd]["cli"] = cli
-		print blob[cmd]["html"]
 	return
+
 
 # Process Pull data to conform to Model.md
 def preprocess():
-	#summary = extractSummary(Config.summary)
+	extractSummary(Config.summary)
 	extractDetail(Config.commands)
-	# TODO
+	# Use data from blob to define namespaces
         return
 

@@ -1,0 +1,68 @@
+/*
+Site: Snippets
+Site URI: http://snippetshq.com
+Version: 1.0
+Author: Aymeric Gallissot
+Author URI: http://aymeric.io
+*/
+
+
+/* FONTS
+-------------------------------------------------- */
+@font-face {
+font-family: "VAG Rounded Std";
+src: url("font/VAGRoundedStd-Light.otf");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: "Aleo";
+src: url("font/Aleo-Regular.otf");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: "DINpro";
+src: url("font/DINPro-Light.ttf");
+font-weight: normal;
+font-style: normal;
+}
+
+
+/* BASE
+-------------------------------------------------- */
+body{
+  font:normal 80% "Lucida Grande",Lucida,Verdana,sans-serif;
+  color:#333333;
+}
+
+a{
+  text-decoration:none;
+}
+
+div.content{
+  position: relative;
+  margin:0 auto;
+  width: 960px;
+}
+
+
+/* HEADER
+-------------------------------------------------- */
+header{
+  background: url(../images/bg.jpg) center no-repeat;
+  height:530px;
+}
+
+header h1 a{
+  background: url(../images/logo.png) no-repeat;
+  position: absolute;
+  top: 128px;
+  left:20px;
+  display: block;
+  width: 325px;
+  height: 179px;
+  text-indent: -9999em;
+}

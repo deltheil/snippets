@@ -6,36 +6,89 @@ Author: Aymeric Gallissot
 Author URI: http://aymeric.io
 */
 
+/* RESET
+-------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-weight:inherit;
+  font-style:inherit;
+  font-size:100%;
+  font-family:inherit;
+  vertical-align:baseline;
+}
+:focus{
+  outline:0;
+}
+body{
+  line-height:1;
+  color:#000;
+  background:#fff;
+}
+ol, ul{
+  list-style:none;
+}
+table{
+  border-collapse:separate;
+  border-spacing:0;
+}
+caption, th, td{
+  text-align:left;
+  font-weight:normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after{
+  content:"";
+}
+blockquote, q{
+  quotes:"" "";
+}
+ins{
+  text-decoration:none;
+}
+del{
+  text-decoration:line-through;
+}
 
 /* FONTS
 -------------------------------------------------- */
 @font-face {
 font-family: "VAG Rounded Std";
-src: url("font/VAGRoundedStd-Light.otf");
+src: url("../fonts/VAGRoundedStd-Light.otf");
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: "Aleo";
-src: url("font/Aleo-Regular.otf");
+src: url("../fonts/Aleo-Regular.otf");
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: "DINpro";
-src: url("font/DINPro-Light.ttf");
+src: url("../fonts/DINPro-Light.ttf");
 font-weight: normal;
 font-style: normal;
 }
 
-
 /* BASE
 -------------------------------------------------- */
 body{
-  font:normal 80% "Lucida Grande",Lucida,Verdana,sans-serif;
-  color:#333333;
+  /*font:normal 80% "Lucida Grande",Lucida,Verdana,sans-serif;
+  color:#333333;*/
+  background-color: #242424;
+  overflow: hidden;
 }
 
 a{
@@ -48,11 +101,18 @@ div.content{
   width: 960px;
 }
 
-
 /* HEADER
 -------------------------------------------------- */
 header{
-  background: url(../images/bg.jpg) center no-repeat;
+  background: url(../images/header.jpg) center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
+  background-size: cover;
+}
+
+header > div.content{
+  background: url(../images/iphone.png) 649px bottom no-repeat;
   height:530px;
 }
 
@@ -65,4 +125,146 @@ header h1 a{
   width: 325px;
   height: 179px;
   text-indent: -9999em;
+}
+
+/* SIGNUP
+-------------------------------------------------- */
+#signup{
+  position: absolute;
+  width: 430px;
+  height: 59px;
+  top:360px;
+  left:20px;
+}
+
+#signup input[type="text"]{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left:0;
+  top: 0;
+  width: 306px;
+  height: 59px;
+  border-radius: 8px 0 0 8px;
+  border: 0;
+  padding:0 0 0 20px;
+  font: 22px "VAG Rounded Std";
+  color: rgb(128, 128, 128);
+}
+
+#signup input[type="submit"]{
+  background-color: rgb( 245, 98, 86);
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 104px;
+  height: 59px;
+  border-radius: 0 8px 8px 0;
+  border: 0;
+  font: 22px "VAG Rounded Std";
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+/* FEATURES
+-------------------------------------------------- */
+#features{
+  background: #fff;
+}
+
+#features div.content{
+  overflow: hidden;
+  height: 445px;
+}
+
+#features div.feature{
+  margin: 100px 45px 0;
+  float: left;
+  width: 230px;
+  height: 290px;
+}
+
+#features div.feature.terminal{
+  background: url(../images/terminal.png) top center no-repeat;
+}
+
+#features div.feature.offline{
+  background: url(../images/offline.png) top center no-repeat;
+}
+
+#features div.feature.updates{
+  background: url(../images/updates.png) top center no-repeat;
+}
+
+#features div.feature > h2{
+  text-align: center;
+  margin:156px 0 0;
+  font: 22px/0.86em "Aleo";
+  color: rgb(36, 36, 36);
+}
+
+#features div.feature > p{
+  margin: 16px 0 0;
+  font: 14px/1.357em "VAG Rounded Std";
+  color: rgb(128, 128, 128);
+  text-align: center;
+}
+
+/* FOOTER
+-------------------------------------------------- */
+footer{
+  height: 160px
+}
+
+footer h3{
+  font: 30px "Aleo";
+  color: rgb(102, 102, 102);
+  text-align: center;
+  margin: 30px 0 0;
+}
+
+footer p, footer p a{
+  font: 14px "Aleo";
+  color: rgb( 102, 102, 102 );
+  margin:10px 0 0;
+  text-align: center;
+}
+
+footer p a:hover{
+  color: #999;
+  transition: 0.3s ease-out;
+}
+
+footer ul{
+  margin:14px 0 0;
+  text-align: center;
+}
+footer ul li{
+  display: inline;
+  font: 16px/0.633em "DINpro";
+  color: rgb(102, 102, 102);
+  text-transform: uppercase;
+  padding: 0;
+}
+
+footer ul li:after{
+  content: "x";
+  text-transform: lowercase;
+  padding: 0 5px 0 9px;
+}
+
+footer ul li:last-child:after{
+  content: "";
+  padding:0;
+}
+
+footer ul li a{
+  font: 16px/0.633em "DINpro";
+  color: rgb(102, 102, 102);
+  text-transform: uppercase;
+  padding: 0;
+}
+
+footer ul li a:hover{
+  color: #999;
+  transition: 0.3s ease-out;
 }

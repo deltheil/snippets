@@ -63,7 +63,7 @@ class Reference
     end
 
     def to_hash
-      {name: name, summary: command["summary"], cli: cli}
+      {name: name, summary: command["summary"], cli: cli}.reject{|_,v| v.nil?}
     end
   end
 
@@ -106,6 +106,11 @@ class SnippetsRender < Redcarpet::Render::HTML
     tpl % [@cmd.name, @cmd.args, @cmd.since, @cmd.complexity]
   end
 
+  def cli(code)
+    return nil if code =~ /redis>/
+    code.split("\n")
+  end
+
   def sections(source)
     source.gsub(/^\@(\w+)$/) do
       title = SECTIONS[$1]
@@ -123,7 +128,7 @@ class SnippetsRender < Redcarpet::Render::HTML
   # -- start of custom Redcarpet methods
   def block_code(code, language)
     # Keep the first example (if any)
-    @cmd.cli ||= code.split("\n") if @header == "Examples"
+    @cmd.cli ||= cli(code) if @header == "Examples"
     "<pre><code>%s</code></pre>" % CGI.escapeHTML(code)
   end
 

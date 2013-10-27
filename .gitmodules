@@ -1,4 +1,4 @@
 
-[submodule "server/source"]
-	path = server/source
-	url = git://github.com/antirez/redis-doc
+[submodule "tools/redis/redis-doc"]
+	path = tools/redis/redis-doc
+	url = git@github.com:antirez/redis-doc.git

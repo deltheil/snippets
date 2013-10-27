@@ -2,3 +2,6 @@
 [submodule "tools/redis/redis-doc"]
 	path = tools/redis/redis-doc
 	url = git@github.com:antirez/redis-doc.git
+[submodule "tools/redis/redis-io"]
+	path = tools/redis/redis-io
+	url = git@github.com:antirez/redis-io.git

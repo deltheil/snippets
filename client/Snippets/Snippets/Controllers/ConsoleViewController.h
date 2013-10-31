@@ -10,4 +10,6 @@
 
 @interface ConsoleViewController : UIViewController
 
+- (id)initWithCLI:(NSString *)cli AndDisplay:(NSString *)display;
+
 @end

@@ -84,8 +84,8 @@
 
 - (void)consoleOpen{
     
-    ConsoleViewController *consoleView = [[ConsoleViewController alloc] init];
-    [self.navigationController pushViewController:consoleView animated:YES];
+    ConsoleViewController *consoleView = [[ConsoleViewController alloc] initWithCLI:nil AndDisplay:@"<h1>Example<br/>APPEND key value<br/><br/>////////////////////////////////<br/><br/></h1>"];
+    [self.navigationController presentViewController:consoleView animated:YES completion:nil];
 }
 
 

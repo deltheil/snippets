@@ -14,6 +14,8 @@
 
 @interface ConsoleViewController () <UITextFieldDelegate, UIWebViewDelegate>
 
+@property (nonatomic, strong) NSString *cli;
+@property (nonatomic, strong) NSString *display;
 
 @property (nonatomic, strong) TextFieldConsole *textFieldConsole;
 @property (nonatomic, strong) UIWebView *webView;
@@ -33,11 +35,12 @@
     NSInteger _currentIndex;
 }
 
-- (id)init
+- (id)initWithCLI:(NSString *)cli AndDisplay:(NSString *)display
 {
     self = [super init];
     if (self) {
-        // Custom initialization
+        self.cli = cli;
+        self.display = display;
     }
     return self;
 }
@@ -46,8 +49,10 @@
 {
     [super viewDidLoad];
     
+    //TODO: Singleton console, get history + entries
+    
     [self.navigationController.navigationBar setHidden:YES];
-    self.view.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"212121"];
     
     _redis = [[Redis alloc] init];
     _history = [[NSMutableArray alloc] init];
@@ -55,21 +60,25 @@
     _currentIndex = -1;
     
     // TextFieldConsole
+    [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"1f8d95"]];
     self.textFieldConsole = [[TextFieldConsole alloc] initWithFrame:CGRectMake(0.0, 0.0, 0.0, 50.0)];
     self.textFieldConsole.delegate = self;
     self.textFieldConsole.width = self.view.width - 101.0;
     self.textFieldConsole.left = 0.0;
     self.textFieldConsole.top = self.view.height - 216.0 - self.textFieldConsole.height;
-    self.textFieldConsole.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+    self.textFieldConsole.backgroundColor = [UIColor colorWithHexString:@"212121"];
     self.textFieldConsole.autocorrectionType = UITextAutocorrectionTypeNo;
     self.textFieldConsole.returnKeyType = UIReturnKeySend;
+    self.textFieldConsole.keyboardAppearance = UIKeyboardAppearanceDark;
     self.textFieldConsole.placeholder = @"Tap command";
+    self.textFieldConsole.textColor = [UIColor colorWithHexString:@"999999"];
+    [self.textFieldConsole setValue:[UIColor colorWithHexString:@"999999"] forKeyPath:@"_placeholderLabel.textColor"];
     [self.view addSubview:self.textFieldConsole];
     [self.textFieldConsole becomeFirstResponder];
     
     // TextFieldConsole Border
     UIView *textFiedConsoleBorderTop = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.width, 2.0)];
-    textFiedConsoleBorderTop.backgroundColor = [UIColor colorWithHexString:@"dadbdf"];
+    textFiedConsoleBorderTop.backgroundColor = [UIColor colorWithHexString:@"4d4d4d"];
     textFiedConsoleBorderTop.top = self.textFieldConsole.top - textFiedConsoleBorderTop.height;
     [self.view addSubview:textFiedConsoleBorderTop];
     
@@ -100,17 +109,28 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"console" ofType:@"html"];
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
     NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    NSString *html = [NSString stringWithFormat:tpl, @""];
+    NSString *html;
+    if(self.display == nil){
+        html = [NSString stringWithFormat:tpl, @""];
+    }
+    else{
+        html = [NSString stringWithFormat:tpl, self.display];
+    }
     [self.webView loadHTMLString:html baseURL:nil];
     
     
     // Button Close
     UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 27.0, 56.0, 23.0)];
-    buttonClose.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+    buttonClose.backgroundColor = [UIColor colorWithHexString:@"212121"];
     [buttonClose setImage:[UIImage imageNamed:@"nav-close"] forState:UIControlStateNormal];
     buttonClose.left = self.view.width - buttonClose.width - 16.0;
     [buttonClose addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonClose];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning
@@ -142,7 +162,7 @@
     [button setImage:image forState:UIControlStateNormal];
     
     UIView *borderLeft = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 2.0, button.height)];
-    borderLeft.backgroundColor = [UIColor colorWithHexString:@"dadbdf"];
+    borderLeft.backgroundColor = [UIColor colorWithHexString:@"4d4d4d"];
     [button addSubview:borderLeft];
     
     return button;
@@ -235,7 +255,7 @@
 
 - (void)closeAction{
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

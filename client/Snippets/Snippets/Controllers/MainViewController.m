@@ -318,8 +318,8 @@
 
 - (void)consoleOpen{
     
-    ConsoleViewController *consoleView = [[ConsoleViewController alloc] init];
-    [self.navigationController pushViewController:consoleView animated:YES];
+    ConsoleViewController *consoleView = [[ConsoleViewController alloc] initWithCLI:nil AndDisplay:nil];
+    [self.navigationController presentViewController:consoleView animated:YES completion:nil];
 }
 
 

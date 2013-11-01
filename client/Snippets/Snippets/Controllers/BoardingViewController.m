@@ -11,9 +11,8 @@
 // Winch main header
 #import <Winch/Winch.h>
 
-// Models
+// Redis data sync
 #import "RDSCommand.h"
-#import "RDSType.h"
 
 @interface BoardingViewController ()
 
@@ -41,7 +40,7 @@
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default-568h"]];
     [self.view addSubview:background];
     
-    [RDSCommand sync:^(NSArray *cmds, NSArray *types, NSError *error) {
+    [RDSCommand sync:^(NSArray *cmds, NSArray *groups, NSError *error) {
         if(error){
             [self performSelector:@selector(closeView) withObject:nil afterDelay:.75];
         }

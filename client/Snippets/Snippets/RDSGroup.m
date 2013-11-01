@@ -1,20 +1,20 @@
 //
-//  RDSType.m
+//  RDSGroup.m
 //  Snippets
 //
 //  Created by Cédric Deltheil on 20/10/13.
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "RDSType.h"
+#import "RDSGroup.h"
 
 #import <Winch/Winch.h>
 
 static __weak WNCDatabase *_wnc_database;
 
-NSString * const kRDSTypesNS = @"rds:types";
+NSString * const kRDSGroupsNS = @"rds:groups";
 
-@implementation RDSType
+@implementation RDSGroup
 
 - (id)initWithName:(NSString *)n commands:(NSArray *)c
 {
@@ -46,7 +46,7 @@ NSString * const kRDSTypesNS = @"rds:types";
 
 + (NSArray *)fetch:(NSError **)error
 {
-    WNCNamespace *ns = [_wnc_database getNamespace:kRDSTypesNS];
+    WNCNamespace *ns = [_wnc_database getNamespace:kRDSGroupsNS];
     NSMutableArray *cmds = [NSMutableArray array];
     NSError *iterError = nil;
     __block BOOL dataError = NO;
@@ -61,9 +61,9 @@ NSString * const kRDSTypesNS = @"rds:types";
         }
         
         NSError *parseError = nil;
-        RDSType *cmd = [MTLJSONAdapter modelOfClass:RDSType.class
-                                 fromJSONDictionary:jsonDict
-                                              error:&parseError];
+        RDSGroup *cmd = [MTLJSONAdapter modelOfClass:RDSGroup.class
+                                  fromJSONDictionary:jsonDict
+                                               error:&parseError];
         if (parseError) {
             dataError = YES;
             *option = kWNCIterStop;
@@ -75,7 +75,7 @@ NSString * const kRDSTypesNS = @"rds:types";
     
     if (iterError || dataError) {
         if (error) {
-            *error = [NSError errorWithDomain:@"RDSType" code:1 userInfo:nil];
+            *error = [NSError errorWithDomain:@"RDSGroup" code:1 userInfo:nil];
             return nil;
         }
     }

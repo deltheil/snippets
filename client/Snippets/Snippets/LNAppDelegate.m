@@ -16,7 +16,7 @@
 
 // Models
 #import "RDSCommand.h"
-#import "RDSType.h"
+#import "RDSGroup.h"
 
 // ==========================================
 // Winch demo datastore credentials
@@ -48,7 +48,7 @@
     
     // Hook up the database with the models
     [RDSCommand setDatabase:_database];
-    [RDSType setDatabase:_database];
+    [RDSGroup setDatabase:_database];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -14,8 +14,8 @@
 
 // rds:cmds
 extern NSString * const kRDSCommandsNS;
-// rds:cmds_html
-extern NSString * const kRDSCommandsHTMLNS;
+// rds:docs
+extern NSString * const kRDSDocsNS;
 
 @interface RDSCommand : MTLModel <MTLJSONSerializing>
 
@@ -35,7 +35,7 @@ extern NSString * const kRDSCommandsHTMLNS;
 //
 // Otherwise we could do something like that:
 //
-// RDSType *type = ...;
+// RDSGroup *group = ...;
 //
 // [cmds filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
 //   RDSCommand *cmd = (RDSCommand *) evaluatedObject;
@@ -47,8 +47,8 @@ extern NSString * const kRDSCommandsHTMLNS;
 
 - (NSString *)getHTMLString;
 
-+ (void)sync:(void (^)(NSArray *cmds, NSArray *types, NSError *error))block;
-+ (void)sync:(void (^)(NSArray *cmds, NSArray *types, NSError *error))block
++ (void)sync:(void (^)(NSArray *cmds, NSArray *groups, NSError *error))block;
++ (void)sync:(void (^)(NSArray *cmds, NSArray *groups, NSError *error))block
     progress:(void (^)(NSInteger percentDone))progressBlock;
 
 @end

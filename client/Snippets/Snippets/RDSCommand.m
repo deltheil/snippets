@@ -10,12 +10,12 @@
 
 #import <Winch/Winch.h>
 
-#import "RDSType.h" // for the extra namespace (kRDSTypesNS)
+#import "RDSGroup.h" // for the extra namespace (kRDSGroupsNS)
 
 static __weak WNCDatabase *_wnc_database;
 
 NSString * const kRDSCommandsNS = @"rds:cmds";
-NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
+NSString * const kRDSDocsNS = @"rds:docs";
 
 @implementation RDSCommand
 
@@ -103,7 +103,7 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
 
 - (NSString *)getHTMLString
 {
-    WNCNamespace *ns = [_wnc_database getNamespace:kRDSCommandsHTMLNS];
+    WNCNamespace *ns = [_wnc_database getNamespace:kRDSDocsNS];
     NSData *data = [ns getDataForKey:self.uid];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
@@ -113,14 +113,14 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
     return [self sync:block progress:nil];
 }
 
-+ (void)sync:(void (^)(NSArray *cmds, NSArray *types, NSError *error))block
++ (void)sync:(void (^)(NSArray *cmds, NSArray *groups, NSError *error))block
     progress:(void (^)(NSInteger percentDone))progressBlock
 {
     NSError *err = nil;
     NSDictionary *params = @{
                              kRDSCommandsNS: @(kWNCSyncDefault),
-                             kRDSCommandsHTMLNS: @(kWNCSyncDefault),
-                             kRDSTypesNS: @(kWNCSyncDefault)
+                             kRDSDocsNS: @(kWNCSyncDefault),
+                             kRDSGroupsNS: @(kWNCSyncDefault)
                              };
 
     [_wnc_database sync:params block:^(id object, NSError *error) {
@@ -131,7 +131,7 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
         NSArray *cmds = [self fetch:&loadError];
         NSArray *types = nil;
         if (!loadError) {
-            types = [RDSType fetch:&loadError];
+            types = [RDSGroup fetch:&loadError];
         }
 
 

@@ -1,5 +1,5 @@
 //
-//  RDSType.h
+//  RDSGroup.h
 //  Snippets
 //
 //  Created by Cédric Deltheil on 20/10/13.
@@ -12,10 +12,10 @@
 
 @class WNCDatabase;
 
-// rds:cmds
-extern NSString * const kRDSTypesNS;
+// rds:groups
+extern NSString * const kRDSGroupsNS;
 
-@interface RDSType : MTLModel <MTLJSONSerializing>
+@interface RDSGroup : MTLModel <MTLJSONSerializing>
 
 // e.g "GET"
 @property (nonatomic, copy, readonly) NSString *name;

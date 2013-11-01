@@ -14,14 +14,14 @@
 
 // Data model
 #import "RDSCommand.h"
-#import "RDSType.h"
+#import "RDSGroup.h"
 
 @interface MainViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *sorting;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *cmds;
-@property (nonatomic, strong) NSArray *types;
+@property (nonatomic, strong) NSArray *groups;
 
 @end
 
@@ -34,7 +34,7 @@
         _database = db;
         if ([[_database getNamespace:kRDSCommandsNS] count] > 0) {
             self.cmds = [RDSCommand fetch:nil];
-            self.types = [RDSType fetch:nil];
+            self.groups = [RDSGroup fetch:nil];
         }
     }
     return self;
@@ -59,8 +59,8 @@
     [self.sorting setContentOffset:CGPointMake(0, 0) animated:YES];
     
     __block float buttonSortingX = 14.0;
-    [_types enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        RDSType *t = (RDSType *) obj;
+    [_groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        RDSGroup *g = (RDSGroup *) obj;
 
         UIButton *buttonSorting = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 85.0, 48.0)];
         buttonSorting.tag = idx;
@@ -68,7 +68,7 @@
         buttonSorting.backgroundColor = [UIColor clearColor];
         buttonSorting.titleLabel.font = [UIFont fontWithName:@"VAGRoundedStd-Light" size:12.0];
         [buttonSorting setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [buttonSorting setTitle:t.name forState:UIControlStateNormal];
+        [buttonSorting setTitle:g.name forState:UIControlStateNormal];
         [buttonSorting addTarget:self action:@selector(sortingButton:) forControlEvents:UIControlEventTouchUpInside];
         
         buttonSortingX += 85.0;
@@ -218,10 +218,10 @@
 - (void)sortingButton:(UIButton *)sender{
     [self.sorting setContentOffset:CGPointMake((sender.tag * 85.0), 0) animated:YES];
     
-    RDSType *type = (RDSType *) [_types objectAtIndex:sender.tag];
+    RDSGroup *group = (RDSGroup *) [_groups objectAtIndex:sender.tag];
     
-    NSMutableArray *filt = [NSMutableArray arrayWithCapacity:[type.cmds count]];
-    for (NSString *uid in type.cmds) {
+    NSMutableArray *filt = [NSMutableArray arrayWithCapacity:[group.cmds count]];
+    for (NSString *uid in group.cmds) {
         RDSCommand *c = [RDSCommand getCommand:uid];
         if (c != nil) {
             [filt addObject:c];
@@ -254,20 +254,20 @@
 
 #pragma mark Data source
 
-- (void)setTypes:(NSArray *)t
+- (void)setGroups:(NSArray *)g
 {
-    NSMutableArray *ary = [NSMutableArray arrayWithArray:t];
+    NSMutableArray *ary = [NSMutableArray arrayWithArray:g];
     
     NSMutableArray *allCmds = [NSMutableArray arrayWithCapacity:[_cmds count]];
     for (RDSCommand *cmd in _cmds) {
         [allCmds addObject:cmd.uid];
     }
     
-    RDSType *all = [[RDSType alloc] initWithName:@"All" commands:allCmds];
+    RDSGroup *all = [[RDSGroup alloc] initWithName:@"All" commands:allCmds];
     
     [ary insertObject:all atIndex:0];
     
-    _types = ary;
+    _groups = ary;
 }
 
 - (void)reload
@@ -280,7 +280,7 @@
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
-    void (^postSyncBlock)(NSArray *, NSArray *, NSError *) = ^(NSArray *c, NSArray *t, NSError *error) {
+    void (^postSyncBlock)(NSArray *, NSArray *, NSError *) = ^(NSArray *c, NSArray *g, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
         if (resultBlock) {
@@ -289,7 +289,7 @@
         
         if (!error) {
             self.cmds = c;
-            self.types = t;
+            self.groups = g;
             [self.tableView reloadData];
         }
     };

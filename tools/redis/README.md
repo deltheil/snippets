@@ -3,6 +3,10 @@ Redis documentation resources.
 
 ## Requirements
 
+You need the
+[Winch Ruby client](https://winch.io/documentation/api/tutorial/#ruby-client)
+properly installed. In addition you also need:
+
 ```shell
 gem install redcarpet
 gem install batch
@@ -10,9 +14,21 @@ gem install batch
 
 ## Steps
 
-### 1. Convert data
+### 1. Update submodules
 
-This converts Redis doc into local data files:
+**Goal**: keep the local Redis docs in sync with the official repo.
+
+```shell
+git submodule update --remote
+```
+
+> The `--remote` option is available as of Git 1.8.2. See
+[this](http://www.vogella.com/articles/Git/article.html#submodules_trackbranch)
+for more details.
+
+### 2. Convert data
+
+**Goal**: convert the Redis docs into local data files that fit with our data model.
 
 ```shell
 ./convert.rb
@@ -33,6 +49,13 @@ data
     ├── ...
 ```
 
-### 2. Index data into Winch
+### 3. Index data into Winch
 
-TODO
+**Goal**: transfer local data files to the Winch datastore.
+
+```
+WNC_CRED="user@mail.com:pAsSwoRd" ./index.rb snippets
+```
+
+> Note: this is quite basic (and inefficient). It will be improved in a near
+future. Also: it does not care about removing stuff (which should never happen).

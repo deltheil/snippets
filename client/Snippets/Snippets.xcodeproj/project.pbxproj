@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
 		820176FF18134C980041E4E9 /* RDSType.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSType.m */; };
-		82017703181358B80041E4E9 /* RedisConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82017701181358B80041E4E9 /* RedisConsoleViewController.m */; };
-		82017704181358B80041E4E9 /* RedisConsoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82017702181358B80041E4E9 /* RedisConsoleViewController.xib */; };
 		826579631812959B00A17F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579621812959B00A17F63 /* Foundation.framework */; };
 		826579651812959B00A17F63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579641812959B00A17F63 /* CoreGraphics.framework */; };
 		826579671812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
@@ -84,9 +82,6 @@
 		651242B8D3EF4CB9ACACB863 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		820176FD18134C980041E4E9 /* RDSType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSType.h; sourceTree = "<group>"; };
 		820176FE18134C980041E4E9 /* RDSType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSType.m; sourceTree = "<group>"; };
-		82017700181358B80041E4E9 /* RedisConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedisConsoleViewController.h; sourceTree = "<group>"; };
-		82017701181358B80041E4E9 /* RedisConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedisConsoleViewController.m; sourceTree = "<group>"; };
-		82017702181358B80041E4E9 /* RedisConsoleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedisConsoleViewController.xib; sourceTree = "<group>"; };
 		8265795F1812959B00A17F63 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826579621812959B00A17F63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		826579641812959B00A17F63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -231,7 +226,6 @@
 				B0DDA738181298B400E015C0 /* Views */,
 				B0DDA7371812982F00E015C0 /* Controllers */,
 				82C46F41181330F000E3E5E6 /* Models */,
-				82C46F2F18131B7F00E3E5E6 /* DRAFT */,
 				826579711812959B00A17F63 /* LNAppDelegate.h */,
 				826579721812959B00A17F63 /* LNAppDelegate.m */,
 				826579741812959B00A17F63 /* Images.xcassets */,
@@ -296,16 +290,6 @@
 				826579DC1812B72200A17F63 /* NSError+Redis.m */,
 			);
 			name = "Obj-C";
-			sourceTree = "<group>";
-		};
-		82C46F2F18131B7F00E3E5E6 /* DRAFT */ = {
-			isa = PBXGroup;
-			children = (
-				82017700181358B80041E4E9 /* RedisConsoleViewController.h */,
-				82017701181358B80041E4E9 /* RedisConsoleViewController.m */,
-				82017702181358B80041E4E9 /* RedisConsoleViewController.xib */,
-			);
-			name = DRAFT;
 			sourceTree = "<group>";
 		};
 		82C46F41181330F000E3E5E6 /* Models */ = {
@@ -507,7 +491,6 @@
 				B0C77E381813E0E900801F34 /* default.png in Resources */,
 				B0C77E271813C45E00801F34 /* nav-redis.png in Resources */,
 				82C46F3618131C0900E3E5E6 /* redis_cmd.html in Resources */,
-				82017704181358B80041E4E9 /* RedisConsoleViewController.xib in Resources */,
 				82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */,
 				B088031E18136E7000D102C4 /* down.png in Resources */,
 				B088031F18136E7000D102C4 /* down@2x.png in Resources */,
@@ -586,7 +569,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
-				82017703181358B80041E4E9 /* RedisConsoleViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
 				B08803191813694D00D102C4 /* TextFieldConsole.m in Sources */,
 				B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */,

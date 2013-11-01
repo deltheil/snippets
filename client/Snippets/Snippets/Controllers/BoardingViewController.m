@@ -11,8 +11,8 @@
 // Winch main header
 #import <Winch/Winch.h>
 
-// Redis data sync
-#import "RDSCommand.h"
+#import "WNCDatabase+Redis.h"
+#import "WNCDebug.h"
 
 @interface BoardingViewController ()
 
@@ -20,11 +20,11 @@
 
 @implementation BoardingViewController
 
-- (id)init
+- (id)initWithDatabase:(WNCDatabase *)db
 {
     self = [super init];
     if (self) {
-        // Custom initialization
+        _database = db;
     }
     return self;
 }
@@ -40,19 +40,20 @@
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default-568h"]];
     [self.view addSubview:background];
     
-    [RDSCommand sync:^(NSArray *cmds, NSArray *groups, NSError *error) {
-        if(error){
-            [self performSelector:@selector(closeView) withObject:nil afterDelay:.75];
-        }
-        
-    } progress:^(NSInteger percentDone) {
-        NSLog(@"%d", percentDone);
-        
-        if(percentDone == 100){
-            [self performSelector:@selector(closeView) withObject:nil];
-        }
-    }];
+    void (^resultBlock)(id, NSError *) = ^(id _, NSError *error) {
+        WNCDLog(@"%@", error ? [error wnc_message] : @"sync ok");
+        [self closeView];
+    };
     
+    void (^progressBlock)(NSInteger) = ^(NSInteger percentDone) {
+        WNCDLog(@"sync progress: %d%%", (int) percentDone);
+    };
+    
+    // TODO: manage errors properly
+    // TODO: sync in background when not at cold start
+    [_database rds_syncWithBlock:resultBlock
+                   progressBlock:progressBlock
+                           error:nil];
 }
 
 - (void)didReceiveMemoryWarning

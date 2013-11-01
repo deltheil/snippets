@@ -12,8 +12,10 @@
 
 @interface CommandViewController : LNViewController
 
-@property RDSCommand *command;
+@property RDSCommand *cmd;
+@property NSString *htmlDoc;
 
-- (id)initWithCommand:(RDSCommand *)c;
+- (id)initWithCommand:(RDSCommand *)cmd
+        documentation:(NSString *)htmlDoc;
 
 @end

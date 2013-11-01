@@ -12,9 +12,6 @@
 
 @class WNCDatabase;
 
-// rds:groups
-extern NSString * const kRDSGroupsNS;
-
 @interface RDSGroup : MTLModel <MTLJSONSerializing>
 
 // e.g "GET"
@@ -22,11 +19,6 @@ extern NSString * const kRDSGroupsNS;
 // e.g ["hdel", "hget", "hlen"]
 @property (nonatomic, copy, readonly) NSArray *cmds;
 
-- (id)initWithName:(NSString *)n commands:(NSArray *)c;
-
-+ (void)setDatabase:(WNCDatabase *)database;
-
-+ (NSArray *)fetch;
-+ (NSArray *)fetch:(NSError **)error;
++ (RDSGroup *)groupsUnion:(NSArray *)groups;
 
 @end

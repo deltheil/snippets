@@ -8,6 +8,12 @@
 
 #import "LNViewController.h"
 
+@class WNCDatabase;
+
 @interface BoardingViewController : LNViewController
+
+@property WNCDatabase *database;
+
+- (id)initWithDatabase:(WNCDatabase *)db;
 
 @end

@@ -19,11 +19,13 @@
 
 @implementation CommandViewController
 
-- (id)initWithCommand:(RDSCommand *)c
+- (id)initWithCommand:(RDSCommand *)cmd
+        documentation:(NSString *)htmlDoc
 {
     self = [super init];
     if (self) {
-        _command = c;
+        self.cmd = cmd;
+        self.htmlDoc = htmlDoc;
     }
     return self;
 }
@@ -49,7 +51,7 @@
     NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
     
     // Add the specific content
-    NSString *html = [NSString stringWithFormat:tpl, [self getContent]];
+    NSString *html = [NSString stringWithFormat:tpl, _htmlDoc];
     
     [self.webView loadHTMLString:html baseURL:nil];
     
@@ -71,12 +73,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setHidden:NO];
-}
-
-// Emulate the local database get
-- (NSString *)getContent
-{
-    return [self.command getHTMLString];
 }
 
 #pragma mark Try

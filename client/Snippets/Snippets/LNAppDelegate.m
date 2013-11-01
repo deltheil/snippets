@@ -46,10 +46,6 @@
         NSLog(@"winch open error: %@", [error wnc_message]);
     }
     
-    // Hook up the database with the models
-    [RDSCommand setDatabase:_database];
-    [RDSGroup setDatabase:_database];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 
@@ -58,15 +54,8 @@
 
     self.window.rootViewController = self.mainNav;
     [self.window makeKeyAndVisible];
-
-    // Boarding
-//    self.boardingView = [[BoardingViewController alloc] init];
-//
-//    [self.window.rootViewController addChildViewController:self.boardingView];
-//    [self.window addSubview:self.boardingView.view];
-//    [self.boardingView didMoveToParentViewController:self.window.rootViewController];
     
-    self.boardingView = [[BoardingViewController alloc] init];
+    self.boardingView = [[BoardingViewController alloc] initWithDatabase:_database];
     [self.window.rootViewController presentViewController:self.boardingView animated:NO completion:nil];
     
     return YES;

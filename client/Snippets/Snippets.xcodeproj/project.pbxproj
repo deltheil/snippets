@@ -25,6 +25,7 @@
 		826579DA1812B57100A17F63 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579D91812B57100A17F63 /* Redis.m */; };
 		826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579DC1812B72200A17F63 /* NSError+Redis.m */; };
 		82B420CD182429A1002236BE /* redis-doc.html in Resources */ = {isa = PBXBuildFile; fileRef = 82B420CC182429A1002236BE /* redis-doc.html */; };
+		82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B420D018245D72002236BE /* WNCDatabase+Redis.m */; };
 		82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */; };
 		82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */; };
 		82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */; };
@@ -103,6 +104,9 @@
 		826579DB1812B72200A17F63 /* NSError+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Redis.h"; sourceTree = "<group>"; };
 		826579DC1812B72200A17F63 /* NSError+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Redis.m"; sourceTree = "<group>"; };
 		82B420CC182429A1002236BE /* redis-doc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-doc.html"; sourceTree = "<group>"; };
+		82B420CF18245D72002236BE /* WNCDatabase+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WNCDatabase+Redis.h"; sourceTree = "<group>"; };
+		82B420D018245D72002236BE /* WNCDatabase+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WNCDatabase+Redis.m"; sourceTree = "<group>"; };
+		82B420D2182463CA002236BE /* WNCDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNCDebug.h; sourceTree = "<group>"; };
 		82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aleo-Regular.otf"; sourceTree = "<group>"; };
 		82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Bold.ttf"; sourceTree = "<group>"; };
 		82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRoundedStd-Light.otf"; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				B0DDA738181298B400E015C0 /* Views */,
 				B0DDA7371812982F00E015C0 /* Controllers */,
 				82C46F41181330F000E3E5E6 /* Models */,
+				82B420CE18245D17002236BE /* Winch+ */,
 				826579711812959B00A17F63 /* LNAppDelegate.h */,
 				826579721812959B00A17F63 /* LNAppDelegate.m */,
 				826579741812959B00A17F63 /* Images.xcassets */,
@@ -284,6 +289,16 @@
 				826579DC1812B72200A17F63 /* NSError+Redis.m */,
 			);
 			name = "Obj-C";
+			sourceTree = "<group>";
+		};
+		82B420CE18245D17002236BE /* Winch+ */ = {
+			isa = PBXGroup;
+			children = (
+				82B420D2182463CA002236BE /* WNCDebug.h */,
+				82B420CF18245D72002236BE /* WNCDatabase+Redis.h */,
+				82B420D018245D72002236BE /* WNCDatabase+Redis.m */,
+			);
+			name = "Winch+";
 			sourceTree = "<group>";
 		};
 		82C46F41181330F000E3E5E6 /* Models */ = {
@@ -573,6 +588,7 @@
 				B0DDA74E18129CFA00E015C0 /* UIView+Position.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
+				82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */,
 				B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */,
 				B0DDA74D18129CFA00E015C0 /* UINavigationController+StatusBar.m in Sources */,
 			);

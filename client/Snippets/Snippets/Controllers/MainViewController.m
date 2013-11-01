@@ -12,6 +12,8 @@
 
 #import <Winch/Winch.h>
 
+#import "WNCDatabase+Redis.h"
+
 // Data model
 #import "RDSCommand.h"
 #import "RDSGroup.h"
@@ -22,20 +24,23 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *cmds;
 @property (nonatomic, strong) NSArray *groups;
+@property (nonatomic, strong) NSArray *dataSource;
 
 @end
 
 @implementation MainViewController
 
-- (id)initWithDatabase:(WNCDatabase *)db
+- (id)initWithDatabase:(WNCDatabase *)database
 {
     self = [super init];
     if (self) {
-        _database = db;
-        if ([[_database getNamespace:kRDSCommandsNS] count] > 0) {
-            self.cmds = [RDSCommand fetch:nil];
-            self.groups = [RDSGroup fetch:nil];
-        }
+        self.database = database;
+        
+        NSArray *cmds = [_database fetchCommands:nil];
+        
+        self.cmds = cmds;
+        self.groups = [_database fetchGroups:nil];
+        self.dataSource = cmds;
     }
     return self;
 }
@@ -112,20 +117,11 @@
 //            NSLog(@"%@", fontName);
 //        }
 //    }
-    
-    if ([_cmds count] > 0) {
-        [self reload];
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    // TODO: move the initial sync at another level
-    if ([_cmds count] <= 0) {
-        [self reload];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -140,9 +136,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    RDSCommand *cmd = [_cmds objectAtIndex:indexPath.row];
+    RDSCommand *cmd = [_dataSource objectAtIndex:indexPath.row];
+    NSString *htmlDoc = [_database getHTMLForCommand:cmd];
     
-    CommandViewController *commandView = [[CommandViewController alloc] initWithCommand:cmd];
+    CommandViewController *commandView = [[CommandViewController alloc] initWithCommand:cmd
+                                                                          documentation:htmlDoc];
     [self.navigationController pushViewController:commandView animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -155,11 +153,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_cmds count];
+    return [_dataSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    RDSCommand *cmd = [_cmds objectAtIndex:indexPath.row];
+    RDSCommand *cmd = [_dataSource objectAtIndex:indexPath.row];
     
     static NSString *CellIdentifier = @"Cell";
     
@@ -213,26 +211,25 @@
     return cell;
 }
 
-
 #pragma mark Sorting
-- (void)sortingButton:(UIButton *)sender{
+
+- (void)sortingButton:(UIButton *)sender
+{
     [self.sorting setContentOffset:CGPointMake((sender.tag * 85.0), 0) animated:YES];
     
     RDSGroup *group = (RDSGroup *) [_groups objectAtIndex:sender.tag];
     
-    NSMutableArray *filt = [NSMutableArray arrayWithCapacity:[group.cmds count]];
-    for (NSString *uid in group.cmds) {
-        RDSCommand *c = [RDSCommand getCommand:uid];
-        if (c != nil) {
-            [filt addObject:c];
-
-        }
-    }
+    NSMutableArray *filtCmds = [NSMutableArray arrayWithArray:_cmds];
     
-    self.cmds = filt;
+    [filtCmds filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        RDSCommand *cmd = (RDSCommand *) evaluatedObject;
+        return [group.cmds containsObject:cmd.uid];
+    }]];
+    
+    self.dataSource = filtCmds;
+    
     [self.tableView reloadData];
 }
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -253,50 +250,6 @@
 }
 
 #pragma mark Data source
-
-- (void)setGroups:(NSArray *)g
-{
-    NSMutableArray *ary = [NSMutableArray arrayWithArray:g];
-    
-    NSMutableArray *allCmds = [NSMutableArray arrayWithCapacity:[_cmds count]];
-    for (RDSCommand *cmd in _cmds) {
-        [allCmds addObject:cmd.uid];
-    }
-    
-    RDSGroup *all = [[RDSGroup alloc] initWithName:@"All" commands:allCmds];
-    
-    [ary insertObject:all atIndex:0];
-    
-    _groups = ary;
-}
-
-- (void)reload
-{
-    [self reloadWithResultBlock:nil progressBlock:nil];
-}
-
-- (void)reloadWithResultBlock:(void (^)(NSError *error))resultBlock
-                progressBlock:(void (^)(NSInteger percentDone))progressBlock
-{
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    
-    void (^postSyncBlock)(NSArray *, NSArray *, NSError *) = ^(NSArray *c, NSArray *g, NSError *error) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        
-        if (resultBlock) {
-            resultBlock(error);
-        }
-        
-        if (!error) {
-            self.cmds = c;
-            self.groups = g;
-            [self.tableView reloadData];
-        }
-    };
-    
-    [RDSCommand sync:postSyncBlock
-            progress:progressBlock];
-}
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setHidden:NO];

@@ -10,21 +10,7 @@
 
 #import <Winch/Winch.h>
 
-static __weak WNCDatabase *_wnc_database;
-
-NSString * const kRDSGroupsNS = @"rds:groups";
-
 @implementation RDSGroup
-
-- (id)initWithName:(NSString *)n commands:(NSArray *)c
-{
-    self = [super init];
-    if (self) {
-        _name = n;
-        _cmds = c;
-    }
-    return self;
-}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -34,53 +20,19 @@ NSString * const kRDSGroupsNS = @"rds:groups";
              };
 }
 
-+ (NSArray *)fetch
++ (RDSGroup *)groupsUnion:(NSArray *)groups
 {
-    return [self fetch:nil];
-}
-
-+ (void)setDatabase:(WNCDatabase *)database
-{
-    _wnc_database = database;
-}
-
-+ (NSArray *)fetch:(NSError **)error
-{
-    WNCNamespace *ns = [_wnc_database getNamespace:kRDSGroupsNS];
-    NSMutableArray *cmds = [NSMutableArray array];
-    NSError *iterError = nil;
-    __block BOOL dataError = NO;
+    NSMutableSet *set = [NSMutableSet set];
     
-    [ns enumerateRecordsUsingBlock:^(NSString *key, NSMutableData *data, int *option) {
-        NSError *jsonError = nil;
-        id jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        if (jsonError) {
-            dataError = YES;
-            *option = kWNCIterStop;
-            return;
-        }
-        
-        NSError *parseError = nil;
-        RDSGroup *cmd = [MTLJSONAdapter modelOfClass:RDSGroup.class
-                                  fromJSONDictionary:jsonDict
-                                               error:&parseError];
-        if (parseError) {
-            dataError = YES;
-            *option = kWNCIterStop;
-            return;
-        }
-        
-        [cmds addObject:cmd];
-    } error:&iterError];
-    
-    if (iterError || dataError) {
-        if (error) {
-            *error = [NSError errorWithDomain:@"RDSGroup" code:1 userInfo:nil];
-            return nil;
-        }
+    for (RDSGroup *group in groups) {
+        [set addObjectsFromArray:group.cmds];
     }
     
-    return cmds;
+    NSArray *cmds = [NSArray arrayWithArray:[set allObjects]];
+    
+    return [MTLJSONAdapter modelOfClass:RDSGroup.class
+                     fromJSONDictionary:@{@"name": @"All", @"cmds": cmds}
+                                  error:nil];
 }
 
 @end

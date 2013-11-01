@@ -12,11 +12,6 @@
 
 @class WNCDatabase;
 
-// rds:cmds
-extern NSString * const kRDSCommandsNS;
-// rds:docs
-extern NSString * const kRDSDocsNS;
-
 @interface RDSCommand : MTLModel <MTLJSONSerializing>
 
 // e.g "GET"
@@ -28,27 +23,5 @@ extern NSString * const kRDSDocsNS;
 
 // Properties out-of-scope of Mantle
 @property (nonatomic, copy) NSString *uid;
-
-+ (void)setDatabase:(WNCDatabase *)database;
-
-// TODO: add the ability to fetch with a white list of commands (= filters)?
-//
-// Otherwise we could do something like that:
-//
-// RDSGroup *group = ...;
-//
-// [cmds filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-//   RDSCommand *cmd = (RDSCommand *) evaluatedObject;
-//   return [type.cmds containsObject:cmd.uid];
-// }]];
-+ (NSArray *)fetch;
-+ (NSArray *)fetch:(NSError **)error;
-+ (RDSCommand *)getCommand:(NSString *)uid;
-
-- (NSString *)getHTMLString;
-
-+ (void)sync:(void (^)(NSArray *cmds, NSArray *groups, NSError *error))block;
-+ (void)sync:(void (^)(NSArray *cmds, NSArray *groups, NSError *error))block
-    progress:(void (^)(NSInteger percentDone))progressBlock;
 
 @end

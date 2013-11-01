@@ -455,7 +455,7 @@
 			attributes = {
 				CLASSPREFIX = LN;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = AppHACK;
+				ORGANIZATIONNAME = Snippets;
 				TargetAttributes = {
 					826579791812959B00A17F63 = {
 						TestTargetID = 8265795E1812959B00A17F63;

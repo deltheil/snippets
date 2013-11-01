@@ -3,7 +3,7 @@
 //  Snippets
 //
 //  Created by Aymeric Gallissot on 20/10/13.
-//  Copyright (c) 2013 AppHACK. All rights reserved.
+//  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
 #import "TextFieldConsole.h"

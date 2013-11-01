@@ -3,7 +3,7 @@
 //  Snippets
 //
 //  Created by Cédric Deltheil on 19/10/13.
-//  Copyright (c) 2013 AppHACK. All rights reserved.
+//  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
 #import "RDSCommand.h"
@@ -122,23 +122,23 @@ NSString * const kRDSCommandsHTMLNS = @"rds:cmds_html";
                              kRDSCommandsHTMLNS: @(kWNCSyncDefault),
                              kRDSTypesNS: @(kWNCSyncDefault)
                              };
-    
+
     [_wnc_database sync:params block:^(id object, NSError *error) {
         if (error)
             return block(nil, nil, error);
-        
+
         NSError *loadError = nil;
         NSArray *cmds = [self fetch:&loadError];
         NSArray *types = nil;
         if (!loadError) {
             types = [RDSType fetch:&loadError];
         }
-        
-        
+
+
         block(cmds, types, loadError);
     }
     progressBlock:progressBlock error:&err];
-    
+
     if (err) {
         block(nil, nil, err);
     }

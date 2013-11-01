@@ -24,6 +24,7 @@
 		826579D31812AAB900A17F63 /* libvedis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579D21812AAB900A17F63 /* libvedis.a */; };
 		826579DA1812B57100A17F63 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579D91812B57100A17F63 /* Redis.m */; };
 		826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579DC1812B72200A17F63 /* NSError+Redis.m */; };
+		82B420CD182429A1002236BE /* redis-doc.html in Resources */ = {isa = PBXBuildFile; fileRef = 82B420CC182429A1002236BE /* redis-doc.html */; };
 		82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */; };
 		82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */; };
 		82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */; };
@@ -51,7 +52,7 @@
 		B0C77E281813C45E00801F34 /* nav-redis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E221813C45E00801F34 /* nav-redis@2x.png */; };
 		B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E291813CEF900801F34 /* nav-back.png */; };
 		B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2A1813CEF900801F34 /* nav-back@2x.png */; };
-		B0C77E2E1813D2B100801F34 /* redis.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* redis.html */; };
+		B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* redis-cli.html */; };
 		B0C77E321813DC0B00801F34 /* DejaVuSansMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */; };
 		B0C77E371813E0E900801F34 /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E341813E0E900801F34 /* default-568h@2x.png */; };
 		B0C77E381813E0E900801F34 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E351813E0E900801F34 /* default.png */; };
@@ -101,6 +102,7 @@
 		826579D91812B57100A17F63 /* Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redis.m; sourceTree = "<group>"; };
 		826579DB1812B72200A17F63 /* NSError+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Redis.h"; sourceTree = "<group>"; };
 		826579DC1812B72200A17F63 /* NSError+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Redis.m"; sourceTree = "<group>"; };
+		82B420CC182429A1002236BE /* redis-doc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-doc.html"; sourceTree = "<group>"; };
 		82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aleo-Regular.otf"; sourceTree = "<group>"; };
 		82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Bold.ttf"; sourceTree = "<group>"; };
 		82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRoundedStd-Light.otf"; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		B0C77E221813C45E00801F34 /* nav-redis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis@2x.png"; sourceTree = "<group>"; };
 		B0C77E291813CEF900801F34 /* nav-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back.png"; sourceTree = "<group>"; };
 		B0C77E2A1813CEF900801F34 /* nav-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back@2x.png"; sourceTree = "<group>"; };
-		B0C77E2D1813D2B100801F34 /* redis.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = redis.html; sourceTree = "<group>"; };
+		B0C77E2D1813D2B100801F34 /* redis-cli.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-cli.html"; sourceTree = "<group>"; };
 		B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSansMono.ttf; sourceTree = "<group>"; };
 		B0C77E341813E0E900801F34 /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h@2x.png"; sourceTree = "<group>"; };
 		B0C77E351813E0E900801F34 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
@@ -231,7 +233,8 @@
 		826579691812959B00A17F63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B0C77E2D1813D2B100801F34 /* redis.html */,
+				B0C77E2D1813D2B100801F34 /* redis-cli.html */,
+				82B420CC182429A1002236BE /* redis-doc.html */,
 				B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */,
 				82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */,
 				82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */,
@@ -491,12 +494,13 @@
 				B088031018135FA300D102C4 /* try@2x.png in Resources */,
 				B088030F18135FA300D102C4 /* try.png in Resources */,
 				8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */,
-				B0C77E2E1813D2B100801F34 /* redis.html in Resources */,
+				B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */,
 				B0C77E251813C45E00801F34 /* nav-logo.png in Resources */,
 				82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */,
 				B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */,
 				B088032518137D7700D102C4 /* accessory@2x.png in Resources */,
 				B088032418137D7700D102C4 /* accessory.png in Resources */,
+				82B420CD182429A1002236BE /* redis-doc.html in Resources */,
 				B088032118136E7000D102C4 /* up@2x.png in Resources */,
 				B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */,
 				826579751812959B00A17F63 /* Images.xcassets in Resources */,

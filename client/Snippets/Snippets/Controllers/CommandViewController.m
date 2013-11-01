@@ -44,7 +44,7 @@
     [self.view addSubview:self.webView];
     
     // Load the HTML template in memory
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"redis_cmd" ofType:@"html"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-doc" ofType:@"html"];
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
     NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
     

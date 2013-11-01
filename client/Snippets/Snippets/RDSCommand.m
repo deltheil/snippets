@@ -14,10 +14,9 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
+    // Note: all other properties are implicitly mapped
     return @{
-             @"name": @"name",
-             @"summary": @"summary",
-             @"cli": @"cli"
+        @"uid": NSNull.null // tell Mantle we handle it ourselves
     };
 }
 

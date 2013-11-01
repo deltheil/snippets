@@ -14,10 +14,8 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
-    return @{
-             @"name": @"name",
-             @"cmds": @"cmds"
-             };
+    // Note: all properties are implicitly marked
+    return @{};
 }
 
 + (RDSGroup *)groupsUnion:(NSArray *)groups

@@ -14,14 +14,13 @@
 
 @interface RDSCommand : MTLModel <MTLJSONSerializing>
 
-// e.g "GET"
-@property (nonatomic, copy, readonly) NSString *name;
-// e.g "Get the value of a key"
-@property (nonatomic, copy, readonly) NSString *summary;
-// e.g ["HSET myhash field1 \"foo\"", "HGET myhash field1", "HGET myhash field2"]
-@property (nonatomic, copy, readonly) NSArray *cli;
-
-// Properties out-of-scope of Mantle
+// command unique identifier, e.g "hset"
 @property (nonatomic, copy) NSString *uid;
+// e.g "HSET"
+@property (nonatomic, copy, readonly) NSString *name;
+// e.g "Set the string value of a hash field"
+@property (nonatomic, copy, readonly) NSString *summary;
+// e.g ["HSET myhash field1 \"foo\"", "HGET myhash field1"]
+@property (nonatomic, copy, readonly) NSArray *cli;
 
 @end

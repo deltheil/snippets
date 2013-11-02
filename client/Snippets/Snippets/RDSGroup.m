@@ -8,8 +8,6 @@
 
 #import "RDSGroup.h"
 
-#import <Winch/Winch.h>
-
 @implementation RDSGroup
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey

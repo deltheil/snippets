@@ -10,8 +10,6 @@
 
 #import <Mantle.h>
 
-@class WNCDatabase;
-
 @interface RDSCommand : MTLModel <MTLJSONSerializing>
 
 // command unique identifier, e.g "hset"

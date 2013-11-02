@@ -10,8 +10,6 @@
 
 #import <Mantle.h>
 
-@class WNCDatabase;
-
 @interface RDSGroup : MTLModel <MTLJSONSerializing>
 
 // e.g "GET"

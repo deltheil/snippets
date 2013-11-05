@@ -63,7 +63,10 @@ class Reference
     end
 
     def to_hash
-      {name: name, summary: command["summary"], cli: cli}.reject{|_,v| v.nil?}
+      h = {name: name, summary: command["summary"]}
+      h[:cli] = cli unless cli.nil?
+      h[:args] = args unless args.empty?
+      h
     end
   end
 

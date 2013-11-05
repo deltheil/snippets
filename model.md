@@ -33,6 +33,7 @@ e.g:
     $ get("rds:cmds", "get") | jshon
     {
      "name": "GET",
+     "args": "key",
      "summary": "Get the value of a key"
      "cli": ["GET nonexisting","SET mykey "Hello","GET mykey"]
     }

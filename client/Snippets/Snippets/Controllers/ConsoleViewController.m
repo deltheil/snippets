@@ -12,6 +12,11 @@
 #import "Redis.h" // our in memory engine
 #import "NSError+Redis.h"
 
+#define REDIS_PROMPT @"<div class='lg'>redis></div> %@"
+
+#define REDIS_CMD(_CMD) \
+  [NSString stringWithFormat:REDIS_PROMPT, (_CMD)]
+
 @interface ConsoleViewController () <UITextFieldDelegate, UIWebViewDelegate>
 
 @property (nonatomic, strong) NSString *cli;
@@ -227,7 +232,7 @@
     }
     
     // Create the pair command + response
-    [_entries addObject:[NSString stringWithFormat:@"<div class='lg'>redis></div> %@", cmd]];
+    [_entries addObject:REDIS_CMD(cmd)];
     [_entries addObject:resp];
     
     [self reloadEntries];

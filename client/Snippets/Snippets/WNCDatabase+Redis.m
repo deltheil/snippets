@@ -29,18 +29,18 @@
                 error:error];
 }
 
-- (NSArray *)fetchCommands:(NSError **)error
+- (NSArray *)rds_fetchCommands:(NSError **)error
 {
-    return [self fetchModelOfClass:RDSCommand.class error:error];
+    return [self rds_fetchModelOfClass:RDSCommand.class error:error];
 }
 
-- (NSArray *)fetchGroups:(NSError **)error
+- (NSArray *)rds_fetchGroups:(NSError **)error
 {
-    return [self fetchModelOfClass:RDSGroup.class error:error];
+    return [self rds_fetchModelOfClass:RDSGroup.class error:error];
 }
 
-- (NSArray *)fetchModelOfClass:(Class)modelClass
-                         error:(NSError **)error
+- (NSArray *)rds_fetchModelOfClass:(Class)modelClass
+                             error:(NSError **)error
 {
     WNCNamespace *ns = nil;
     if (modelClass == RDSCommand.class) {
@@ -98,7 +98,7 @@
     return models;
 }
 
-- (NSString *)getHTMLForCommand:(RDSCommand *)cmd
+- (NSString *)rds_getHTMLForCommand:(RDSCommand *)cmd
 {
     WNCNamespace *ns = [self getNamespace:DOCS];
     NSData *data = [ns getDataForKey:cmd.uid];

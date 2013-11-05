@@ -16,10 +16,10 @@
             progressBlock:(WNCProgressBlock)progressBlock
                     error:(NSError **)error;
 
-- (NSArray *)fetchCommands:(NSError **)error;
+- (NSArray *)rds_fetchCommands:(NSError **)error;
 
-- (NSArray *)fetchGroups:(NSError **)error;
+- (NSArray *)rds_fetchGroups:(NSError **)error;
 
-- (NSString *)getHTMLForCommand:(RDSCommand *)cmd;
+- (NSString *)rds_getHTMLForCommand:(RDSCommand *)cmd;
 
 @end

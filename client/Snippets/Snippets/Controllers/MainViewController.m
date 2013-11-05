@@ -36,10 +36,10 @@
     if (self) {
         self.database = database;
         
-        NSArray *cmds = [_database fetchCommands:nil];
+        NSArray *cmds = [_database rds_fetchCommands:nil];
         
         self.cmds = cmds;
-        self.groups = [_database fetchGroups:nil];
+        self.groups = [_database rds_fetchGroups:nil];
         self.dataSource = cmds;
     }
     return self;
@@ -137,7 +137,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     RDSCommand *cmd = [_dataSource objectAtIndex:indexPath.row];
-    NSString *htmlDoc = [_database getHTMLForCommand:cmd];
+    NSString *htmlDoc = [_database rds_getHTMLForCommand:cmd];
     
     CommandViewController *commandView = [[CommandViewController alloc] initWithCommand:cmd
                                                                           documentation:htmlDoc];

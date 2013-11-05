@@ -104,9 +104,12 @@ class SnippetsRender < Redcarpet::Render::HTML
   end
 
   def prologue
-    tpl = "<header><h1>%s</h1><h2>%s</h2></header>" \
-          "<h3>Available since %s<br/>Time complexity: %s</h3>"
-    tpl % [@cmd.name, @cmd.args, @cmd.since, @cmd.complexity]
+    p  = "<header><h1>#{@cmd.name}</h1>"
+    p += "<h2>#{@cmd.args}</h2>" unless @cmd.args.empty?
+    p += "<h3>Available since #{@cmd.since}<br/>"
+    p += "Time complexity: #{@cmd.complexity}" unless @cmd.complexity.nil?
+    p += "</h3>"
+    p
   end
 
   def cli(code)

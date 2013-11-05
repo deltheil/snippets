@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *uid;
 // e.g "HSET"
 @property (nonatomic, copy, readonly) NSString *name;
+// e.g "key field value"
+@property (nonatomic, copy, readonly) NSString *args;
 // e.g "Set the string value of a hash field"
 @property (nonatomic, copy, readonly) NSString *summary;
 // e.g ["HSET myhash field1 \"foo\"", "HGET myhash field1"]

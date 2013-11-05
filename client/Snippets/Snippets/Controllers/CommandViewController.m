@@ -77,10 +77,10 @@
 
 #pragma mark Try
 
-
-- (void)consoleOpen{
-    
-    ConsoleViewController *consoleView = [[ConsoleViewController alloc] initWithCLI:nil AndDisplay:@"<h1>Example<br/>APPEND key value<br/><br/>////////////////////////////////<br/><br/></h1>"];
+- (void)consoleOpen
+{
+    ConsoleViewController *consoleView = [[ConsoleViewController alloc] initWithCLI:nil
+                                                                         AndDisplay:[self.cmd htmlHeader]];
     [self.navigationController presentViewController:consoleView animated:YES completion:nil];
 }
 

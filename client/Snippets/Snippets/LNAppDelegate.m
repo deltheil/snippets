@@ -14,10 +14,6 @@
 // Winch main header
 #import <Winch/Winch.h>
 
-// Models
-#import "RDSCommand.h"
-#import "RDSGroup.h"
-
 // ==========================================
 // Winch demo datastore credentials
 // ==========================================

@@ -23,4 +23,6 @@
 // e.g ["HSET myhash field1 \"foo\"", "HGET myhash field1"]
 @property (nonatomic, copy, readonly) NSArray *cli;
 
+- (NSString *)htmlHeader;
+
 @end

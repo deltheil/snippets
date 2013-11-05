@@ -8,6 +8,8 @@
 
 #import "RDSCommand.h"
 
+#define HDR_TPL @"<h1>Example<br/>%@<br/><br/>////////////////////////////////<br/><br/></h1>"
+
 @implementation RDSCommand
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -16,6 +18,15 @@
     return @{
         @"uid": NSNull.null // tell Mantle we handle it ourselves
     };
+}
+
+- (NSString *)htmlHeader
+{
+    NSMutableArray *ary = [NSMutableArray arrayWithObject:_name];
+    if (_args != nil) {
+        [ary addObject:_args];
+    }
+    return [NSString stringWithFormat:HDR_TPL, [ary componentsJoinedByString:@" "]];
 }
 
 @end

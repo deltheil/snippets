@@ -45,6 +45,10 @@
         _history = [[NSMutableArray alloc] init];
         _entries = [[NSMutableArray alloc] init];
         
+        if (display != nil) {
+            [_entries addObject:display];
+        }
+        
         _currentIndex = -1;
     }
     return self;
@@ -103,20 +107,6 @@
     self.webView.backgroundColor = [UIColor clearColor];
     self.webView.delegate = self;
 
-    // Load the HTML template in memory
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-cli" ofType:@"html"];
-    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
-    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    NSString *html;
-    if(self.display == nil){
-        html = [NSString stringWithFormat:tpl, @""];
-    }
-    else{
-        html = [NSString stringWithFormat:tpl, self.display];
-    }
-    [self.webView loadHTMLString:html baseURL:nil];
-    
-    
     // Button Close
     UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 27.0, 56.0, 23.0)];
     buttonClose.backgroundColor = [UIColor colorWithHexString:@"212121"];
@@ -124,6 +114,8 @@
     buttonClose.left = self.view.width - buttonClose.width - 16.0;
     [buttonClose addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonClose];
+    
+    [self reloadEntries];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -205,6 +197,22 @@
     }
 }
 
+- (void)reloadEntries
+{
+    // Load the HTML template in memory
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-cli" ofType:@"html"];
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    
+    // Recreate the full HTML with all entries
+    NSString *content = [_entries componentsJoinedByString:@"<br/>"];
+    NSString *html = [NSString stringWithFormat:tpl, content];
+    
+    [self.webView loadHTMLString:html baseURL:nil];
+    
+    // TODO: force the web view to scroll down
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -222,28 +230,11 @@
     [_entries addObject:[NSString stringWithFormat:@"<div class='lg'>redis></div> %@", cmd]];
     [_entries addObject:resp];
     
-    // Load the HTML template in memory
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-cli" ofType:@"html"];
-    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
-    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    
-    // Recreate the full HTML with all entries
-    NSString *htmlContent = [_entries componentsJoinedByString:@"<br/>"];
-    
-    NSString *html = [NSString stringWithFormat:tpl, htmlContent];
-    
-    [self.webView loadHTMLString:html baseURL:nil];
-    
-    // TODO: force the view to scroll down
+    [self reloadEntries];
     
     // Record the command into the history and clean up the prompt
     [_history addObject:cmd];
     textField.text = @"";
-    
-    // Automatic Scroll
-    // float consoleHeight = self.webView.scrollView.contentSize.height - 280.0;
-    // NSLog(@"----- %f", consoleHeight);
-    // [self.webView.scrollView setContentOffset:CGPointMake(0.0, consoleHeight) animated:YES];
     
     return NO;
 }

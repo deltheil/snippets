@@ -104,10 +104,16 @@ class SnippetsRender < Redcarpet::Render::HTML
   end
 
   def prologue
-    p  = "<header><h1>#{@cmd.name}</h1>"
+    p  = "<header>"
+    p += "<h1>#{@cmd.name}</h1>"
     p += "<h2>#{@cmd.args}</h2>" unless @cmd.args.empty?
-    p += "<h3>Available since #{@cmd.since}<br/>"
-    p += "Time complexity: #{@cmd.complexity}" unless @cmd.complexity.nil?
+    p += "</header>"
+    p += "<h3>"
+    p += "Available since #{@cmd.since}"
+    unless @cmd.complexity.nil?
+      p += "<br/>"
+      p += "Time complexity: #{@cmd.complexity}"
+    end
     p += "</h3>"
     p
   end

@@ -23,15 +23,14 @@
 @property (nonatomic, strong) UIButton *historyUp;
 @property (nonatomic, strong) UIButton *historyDown;
 
-@property (nonatomic, strong) Redis *redis;
-@property (nonatomic, strong) NSMutableArray *history;
-@property (nonatomic, strong) NSMutableArray *entries;
-
 @property (nonatomic) BOOL webViewEnable;
 
 @end
 
 @implementation ConsoleViewController {
+    Redis *_redis;
+    NSMutableArray *_history;
+    NSMutableArray *_entries;
     NSInteger _currentIndex;
 }
 
@@ -41,6 +40,12 @@
     if (self) {
         self.cli = cli;
         self.display = display;
+        
+        _redis = [[Redis alloc] init];
+        _history = [[NSMutableArray alloc] init];
+        _entries = [[NSMutableArray alloc] init];
+        
+        _currentIndex = -1;
     }
     return self;
 }
@@ -49,15 +54,8 @@
 {
     [super viewDidLoad];
     
-    //TODO: Singleton console, get history + entries
-    
     [self.navigationController.navigationBar setHidden:YES];
     self.view.backgroundColor = [UIColor colorWithHexString:@"212121"];
-    
-    _redis = [[Redis alloc] init];
-    _history = [[NSMutableArray alloc] init];
-    _entries = [[NSMutableArray alloc] init];
-    _currentIndex = -1;
     
     // TextFieldConsole
     [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"1f8d95"]];
@@ -139,7 +137,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
 
     if(!self.webViewEnable){
         self.webViewEnable = YES;
@@ -150,11 +149,11 @@
 - (void)dealloc
 {
     // TODO: persist history into Winch!
-    
     [_redis close];
 }
 
-- (UIButton *)buttonHistory:(UIImage *)image{
+- (UIButton *)buttonHistory:(UIImage *)image
+{
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 51.0, 50.0)];
     button.backgroundColor = [UIColor clearColor];
@@ -211,26 +210,22 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     NSError *error;
-    NSString *entry;
     NSString *cmd = textField.text;
     
     // Run the command
     NSString *resp = [_redis exec:cmd error:&error];
-    if (!error) {
-        entry = resp;
+    if (error) {
+        resp = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
     }
-    else {
-        entry = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
-    }
+    
+    // Create the pair command + response
+    [_entries addObject:[NSString stringWithFormat:@"<div class='lg'>redis></div> %@", cmd]];
+    [_entries addObject:resp];
     
     // Load the HTML template in memory
     NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-cli" ofType:@"html"];
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
     NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    
-    // Create the pair command + response / error
-    [_entries addObject:[NSString stringWithFormat:@"<div class='lg'>redis></div> %@", cmd]];
-    [_entries addObject:entry];
     
     // Recreate the full HTML with all entries
     NSString *htmlContent = [_entries componentsJoinedByString:@"<br/>"];
@@ -253,8 +248,8 @@
     return NO;
 }
 
-- (void)closeAction{
-    
+- (void)closeAction
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

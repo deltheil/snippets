@@ -42,6 +42,9 @@
 - (NSArray *)rds_fetchModelOfClass:(Class)modelClass
                              error:(NSError **)error
 {
+    NSError *err = nil;
+    __block NSError *parseErr = nil; // JSON or Mantle error
+    
     WNCNamespace *ns = nil;
     if (modelClass == RDSCommand.class) {
         ns = [self getNamespace:RDS_CMDS];
@@ -52,24 +55,19 @@
     
     NSMutableArray *models = [NSMutableArray array];
     
-    NSError *iterError = nil;
-    __block BOOL dataError = NO;
-    
-    [ns enumerateRecordsUsingBlock:^(NSString *key, NSMutableData *data, int *option) {
-        NSError *jsonError = nil;
-        id jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        if (jsonError) {
-            dataError = YES;
+    void (^recordBlock)(NSString *, NSMutableData *, int *) = ^(NSString *key, NSMutableData *data, int *option) {
+        id jsonDict = [NSJSONSerialization JSONObjectWithData:data
+                                                      options:0
+                                                        error:&parseErr];
+        if (parseErr) {
             *option = kWNCIterStop;
             return;
         }
         
-        NSError *parseError = nil;
         id model = [MTLJSONAdapter modelOfClass:modelClass
-                              fromJSONDictionary:jsonDict
-                                           error:&parseError];
-        if (parseError) {
-            dataError = YES;
+                             fromJSONDictionary:jsonDict
+                                          error:&parseErr];
+        if (parseErr) {
             *option = kWNCIterStop;
             return;
         }
@@ -80,14 +78,16 @@
         }
         
         [models addObject:model];
-    } error:&iterError];
+    };
     
-    if (iterError || dataError) {
-        if (error) {
-            *error = [NSError errorWithDomain:@"WNCDatabase+Redis" code:1 userInfo:nil];
-        }
-        
-        return nil;
+    if (![ns enumerateRecordsUsingBlock:recordBlock
+                                  error:&err]) {
+        goto fail;
+    }
+    
+    if (parseErr) {
+        err = parseErr;
+        goto fail;
     }
     
     if (modelClass == RDSGroup.class) {
@@ -96,6 +96,13 @@
     }
     
     return models;
+    
+fail:
+    if (error) {
+        *error = err;
+    }
+    
+    return nil;
 }
 
 - (NSString *)rds_getHTMLForCommand:(RDSCommand *)cmd

@@ -61,7 +61,7 @@
     [self.navigationController.navigationBar setHidden:YES];
     self.view.backgroundColor = [UIColor colorWithHexString:@"212121"];
     
-    // TextFieldConsole
+    // Text input (= console prompt)
     [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"1f8d95"]];
     self.textFieldConsole = [[TextFieldConsole alloc] initWithFrame:CGRectMake(0.0, 0.0, 0.0, 50.0)];
     self.textFieldConsole.delegate = self;
@@ -78,13 +78,13 @@
     [self.view addSubview:self.textFieldConsole];
     [self.textFieldConsole becomeFirstResponder];
     
-    // TextFieldConsole Border
+    // Text input border
     UIView *textFiedConsoleBorderTop = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.width, 2.0)];
     textFiedConsoleBorderTop.backgroundColor = [UIColor colorWithHexString:@"4d4d4d"];
     textFiedConsoleBorderTop.top = self.textFieldConsole.top - textFiedConsoleBorderTop.height;
     [self.view addSubview:textFiedConsoleBorderTop];
     
-    // History Up
+    // History Up button
     self.historyUp = [self buttonHistory:[UIImage imageNamed:@"up"]];
     self.historyUp.top = self.textFieldConsole.top;
     self.historyUp.left = self.view.width - self.historyUp.width;
@@ -93,7 +93,7 @@
              forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.historyUp];
     
-    // History Down
+    // History Down button
     self.historyDown = [self buttonHistory:[UIImage imageNamed:@"down"]];
     self.historyDown.top = self.textFieldConsole.top;
     self.historyDown.left = self.historyUp.left - self.historyDown.width;
@@ -102,12 +102,12 @@
                forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.historyDown];
     
-    // Console
+    // Console screen
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 20.0, self.view.width, textFiedConsoleBorderTop.top - 20.0)];
     self.webView.backgroundColor = [UIColor clearColor];
     self.webView.delegate = self;
 
-    // Button Close
+    // Close button
     UIButton *buttonClose = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 27.0, 56.0, 23.0)];
     buttonClose.backgroundColor = [UIColor colorWithHexString:@"212121"];
     [buttonClose setImage:[UIImage imageNamed:@"nav-close"] forState:UIControlStateNormal];

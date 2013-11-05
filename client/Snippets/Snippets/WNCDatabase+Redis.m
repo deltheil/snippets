@@ -12,10 +12,10 @@
 #import "RDSCommand.h"
 #import "RDSGroup.h"
 
-#define CMDS   @"rds:cmds"
-#define DOCS   @"rds:docs"
-#define GROUPS @"rds:groups"
-#define DEFOPT @(kWNCSyncDefault)
+#define RDS_CMDS   @"rds:cmds"
+#define RDS_DOCS   @"rds:docs"
+#define RDS_GROUPS @"rds:groups"
+#define DEF_OPT    @(kWNCSyncDefault)
 
 @implementation WNCDatabase (Redis)
 
@@ -23,7 +23,7 @@
             progressBlock:(WNCProgressBlock)progressBlock
                     error:(NSError **)error
 {
-    return [self sync:@{CMDS: DEFOPT, DOCS: DEFOPT, GROUPS: DEFOPT}
+    return [self sync:@{RDS_CMDS: DEF_OPT, RDS_DOCS: DEF_OPT, RDS_GROUPS: DEF_OPT}
                 block:block
         progressBlock:progressBlock
                 error:error];
@@ -44,10 +44,10 @@
 {
     WNCNamespace *ns = nil;
     if (modelClass == RDSCommand.class) {
-        ns = [self getNamespace:CMDS];
+        ns = [self getNamespace:RDS_CMDS];
     }
     else if (modelClass == RDSGroup.class) {
-        ns = [self getNamespace:GROUPS];
+        ns = [self getNamespace:RDS_GROUPS];
     }
     
     NSMutableArray *models = [NSMutableArray array];
@@ -100,7 +100,7 @@
 
 - (NSString *)rds_getHTMLForCommand:(RDSCommand *)cmd
 {
-    WNCNamespace *ns = [self getNamespace:DOCS];
+    WNCNamespace *ns = [self getNamespace:RDS_DOCS];
     NSData *data = [ns getDataForKey:cmd.uid];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

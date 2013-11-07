@@ -2,7 +2,7 @@
 
 ## Redis
 
-### `rds:types`
+### `rds:groups`
 
 * `key`: zero-padded integer key
 * `value`: JSON hash with command pretty name and list of related commands for
@@ -10,7 +10,7 @@ runtime filtering
 
 e.g:
 
-    $ get("rds:types", "0003") | jshon
+    $ get("rds:groups", "0003") | jshon
     {
      "name": "Hashes",
      "cmds": [
@@ -38,12 +38,12 @@ e.g:
      "cli": ["GET nonexisting","SET mykey "Hello","GET mykey"]
     }
 
-### `rds:cmds_html`
+### `rds:docs`
 
 * `key`: command identifier (= filename under `redis-doc/commands/*.md` files)
 * `value`: HTML fragment
 
 e.g:
 
-    $ get("rds:cmds_html", "get") | jshon
+    $ get("rds:docs", "get") | jshon
     <header><h1>GET</h1><h2>key</h2></header><h3>Available since 1.0.0</h3>...

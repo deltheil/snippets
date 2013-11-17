@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-432" y="2"/>
         </scene>
-        <!--View Controller-->
+        <!--Redis View Controller-->
         <scene sceneID="fzg-y2-pCg">
             <objects>
-                <viewController id="wmh-VH-L1l" sceneMemberID="viewController">
+                <viewController id="wmh-VH-L1l" customClass="RedisViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Izm-py-EXx"/>
                         <viewControllerLayoutGuide type="bottom" id="D9s-6A-FJH"/>

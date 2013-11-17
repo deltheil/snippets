@@ -1,12 +1,12 @@
 //
-//  LNAppDelegate.m
+//  AppDelegate.m
 //  Snippets
 //
 //  Created by Cédric Deltheil on 19/10/13.
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "LNAppDelegate.h"
+#import "AppDelegate.h"
 
 // Winch main header
 #import <Winch/Winch.h>
@@ -19,7 +19,7 @@
 
 #import "RedisViewController.h"
 
-@implementation LNAppDelegate {
+@implementation AppDelegate {
     WNCDatabase *_database;
 }
 

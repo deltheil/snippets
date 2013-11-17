@@ -1,5 +1,5 @@
 //
-//  LNAppDelegate.h
+//  AppDelegate.h
 //  Snippets
 //
 //  Created by Cédric Deltheil on 19/10/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LNAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

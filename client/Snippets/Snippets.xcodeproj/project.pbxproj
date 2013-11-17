@@ -16,7 +16,7 @@
 		826579671812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
 		8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8265796B1812959B00A17F63 /* InfoPlist.strings */; };
 		8265796F1812959B00A17F63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8265796E1812959B00A17F63 /* main.m */; };
-		826579731812959B00A17F63 /* LNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579721812959B00A17F63 /* LNAppDelegate.m */; };
+		826579731812959B00A17F63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579721812959B00A17F63 /* AppDelegate.m */; };
 		826579751812959B00A17F63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 826579741812959B00A17F63 /* Images.xcassets */; };
 		8265797C1812959B00A17F63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8265797B1812959B00A17F63 /* XCTest.framework */; };
 		8265797D1812959B00A17F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579621812959B00A17F63 /* Foundation.framework */; };
@@ -92,8 +92,8 @@
 		8265796C1812959B00A17F63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8265796E1812959B00A17F63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		826579701812959B00A17F63 /* Snippets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snippets-Prefix.pch"; sourceTree = "<group>"; };
-		826579711812959B00A17F63 /* LNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNAppDelegate.h; sourceTree = "<group>"; };
-		826579721812959B00A17F63 /* LNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LNAppDelegate.m; sourceTree = "<group>"; };
+		826579711812959B00A17F63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		826579721812959B00A17F63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		826579741812959B00A17F63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8265797A1812959B00A17F63 /* SnippetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8265797B1812959B00A17F63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -231,8 +231,8 @@
 				B0DDA7371812982F00E015C0 /* Controllers */,
 				82C46F41181330F000E3E5E6 /* Models */,
 				82B420CE18245D17002236BE /* Winch+ */,
-				826579711812959B00A17F63 /* LNAppDelegate.h */,
-				826579721812959B00A17F63 /* LNAppDelegate.m */,
+				826579711812959B00A17F63 /* AppDelegate.h */,
+				826579721812959B00A17F63 /* AppDelegate.m */,
 				823B05EE183919AB00463BFD /* Main.storyboard */,
 				827C5050183978B000703460 /* fonts */,
 				826579741812959B00A17F63 /* Images.xcassets */,
@@ -619,7 +619,7 @@
 				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,
 				B0880308181359F700D102C4 /* CommandViewController.m in Sources */,
 				827C504818396A9200703460 /* RDSNameLabel.m in Sources */,
-				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,
+				826579731812959B00A17F63 /* AppDelegate.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */,

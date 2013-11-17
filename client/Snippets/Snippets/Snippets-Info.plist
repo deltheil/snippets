@@ -31,6 +31,8 @@
 		<string>DINPro-Bold.ttf</string>
 		<string>VAGRoundedStd-Light.otf</string>
 	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

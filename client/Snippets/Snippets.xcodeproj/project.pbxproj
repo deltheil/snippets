@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
 		820176FF18134C980041E4E9 /* RDSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSGroup.m */; };
+		823B05EF183919AB00463BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B05EE183919AB00463BFD /* Main.storyboard */; };
 		826579631812959B00A17F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579621812959B00A17F63 /* Foundation.framework */; };
 		826579651812959B00A17F63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579641812959B00A17F63 /* CoreGraphics.framework */; };
 		826579671812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
@@ -81,6 +82,7 @@
 		651242B8D3EF4CB9ACACB863 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		820176FD18134C980041E4E9 /* RDSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSGroup.h; sourceTree = "<group>"; };
 		820176FE18134C980041E4E9 /* RDSGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSGroup.m; sourceTree = "<group>"; };
+		823B05EE183919AB00463BFD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8265795F1812959B00A17F63 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826579621812959B00A17F63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		826579641812959B00A17F63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -229,6 +231,7 @@
 				82B420CE18245D17002236BE /* Winch+ */,
 				826579711812959B00A17F63 /* LNAppDelegate.h */,
 				826579721812959B00A17F63 /* LNAppDelegate.m */,
+				823B05EE183919AB00463BFD /* Main.storyboard */,
 				826579741812959B00A17F63 /* Images.xcassets */,
 				826579691812959B00A17F63 /* Supporting Files */,
 			);
@@ -523,6 +526,7 @@
 				B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */,
 				B0C77E391813E0E900801F34 /* default@2x.png in Resources */,
 				82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */,
+				823B05EF183919AB00463BFD /* Main.storyboard in Resources */,
 				B0C77E231813C45E00801F34 /* nav-console.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

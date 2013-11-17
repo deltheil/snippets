@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class WNCDatabase;
+
 @interface RedisViewController : UIViewController
+
+@property (nonatomic, strong) WNCDatabase *database;
 
 @end

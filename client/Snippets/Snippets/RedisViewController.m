@@ -8,6 +8,10 @@
 
 #import "RedisViewController.h"
 
+#import <Winch/Winch.h>
+
+#import "WNCDatabase+Redis.h"
+
 @interface RedisViewController ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *menuView;

@@ -17,6 +17,8 @@
 #define WNC_DATASTORE_ID @"ZCDFQ0KDSO"
 #define WNC_APP_SECRET   @"1LPbPhLr5DiutD1Z"
 
+#import "RedisViewController.h"
+
 @implementation LNAppDelegate {
     WNCDatabase *_database;
 }
@@ -31,6 +33,10 @@
     if (![_database openWithID:WNC_DATASTORE_ID appSecret:WNC_APP_SECRET error:&error]) {
         NSLog(@"winch open error: %@", [error wnc_message]);
     }
+    
+    UINavigationController *navigationVC = (UINavigationController *) self.window.rootViewController;
+    RedisViewController *redisVC = (RedisViewController *) navigationVC.topViewController;
+    redisVC.database = _database;
     
     return YES;
 }

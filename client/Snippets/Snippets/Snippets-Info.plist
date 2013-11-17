@@ -26,10 +26,10 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>DejaVuSansMono.ttf</string>
-		<string>Aleo-Regular.otf</string>
-		<string>DINPro-Bold.ttf</string>
-		<string>VAGRoundedStd-Light.otf</string>
+		<string>fonts/DejaVuSansMono.ttf</string>
+		<string>fonts/Aleo-Regular.otf</string>
+		<string>fonts/DINPro-Bold.ttf</string>
+		<string>fonts/VAGRoundedStd-Light.otf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>

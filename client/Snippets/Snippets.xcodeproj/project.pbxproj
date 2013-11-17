@@ -29,11 +29,9 @@
 		827C504518393D0A00703460 /* RDSCommandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504418393D0A00703460 /* RDSCommandCell.m */; };
 		827C504818396A9200703460 /* RDSNameLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504718396A9200703460 /* RDSNameLabel.m */; };
 		827C504B18396B1A00703460 /* RDSSummaryLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504A18396B1A00703460 /* RDSSummaryLabel.m */; };
+		827C5051183978B000703460 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 827C5050183978B000703460 /* fonts */; };
 		82B420CD182429A1002236BE /* redis-doc.html in Resources */ = {isa = PBXBuildFile; fileRef = 82B420CC182429A1002236BE /* redis-doc.html */; };
 		82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B420D018245D72002236BE /* WNCDatabase+Redis.m */; };
-		82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */; };
-		82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */; };
-		82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */; };
 		82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F3F18132E2100E3E5E6 /* Winch.framework */; };
 		82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
 		B0880308181359F700D102C4 /* CommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0880307181359F700D102C4 /* CommandViewController.m */; };
@@ -57,7 +55,6 @@
 		B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E291813CEF900801F34 /* nav-back.png */; };
 		B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2A1813CEF900801F34 /* nav-back@2x.png */; };
 		B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* redis-cli.html */; };
-		B0C77E321813DC0B00801F34 /* DejaVuSansMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */; };
 		B0C77E371813E0E900801F34 /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E341813E0E900801F34 /* default-568h@2x.png */; };
 		B0C77E381813E0E900801F34 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E351813E0E900801F34 /* default.png */; };
 		B0C77E391813E0E900801F34 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E361813E0E900801F34 /* default@2x.png */; };
@@ -115,13 +112,11 @@
 		827C504718396A9200703460 /* RDSNameLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSNameLabel.m; sourceTree = "<group>"; };
 		827C504918396B1A00703460 /* RDSSummaryLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSSummaryLabel.h; sourceTree = "<group>"; };
 		827C504A18396B1A00703460 /* RDSSummaryLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSSummaryLabel.m; sourceTree = "<group>"; };
+		827C5050183978B000703460 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		82B420CC182429A1002236BE /* redis-doc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-doc.html"; sourceTree = "<group>"; };
 		82B420CF18245D72002236BE /* WNCDatabase+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WNCDatabase+Redis.h"; sourceTree = "<group>"; };
 		82B420D018245D72002236BE /* WNCDatabase+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WNCDatabase+Redis.m"; sourceTree = "<group>"; };
 		82B420D2182463CA002236BE /* WNCDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNCDebug.h; sourceTree = "<group>"; };
-		82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aleo-Regular.otf"; sourceTree = "<group>"; };
-		82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Bold.ttf"; sourceTree = "<group>"; };
-		82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VAGRoundedStd-Light.otf"; sourceTree = "<group>"; };
 		82C46F3F18132E2100E3E5E6 /* Winch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Winch.framework; sourceTree = "<group>"; };
 		82C46F421813311100E3E5E6 /* RDSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCommand.h; sourceTree = "<group>"; };
 		82C46F431813311100E3E5E6 /* RDSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCommand.m; sourceTree = "<group>"; };
@@ -149,7 +144,6 @@
 		B0C77E291813CEF900801F34 /* nav-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back.png"; sourceTree = "<group>"; };
 		B0C77E2A1813CEF900801F34 /* nav-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back@2x.png"; sourceTree = "<group>"; };
 		B0C77E2D1813D2B100801F34 /* redis-cli.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-cli.html"; sourceTree = "<group>"; };
-		B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSansMono.ttf; sourceTree = "<group>"; };
 		B0C77E341813E0E900801F34 /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h@2x.png"; sourceTree = "<group>"; };
 		B0C77E351813E0E900801F34 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		B0C77E361813E0E900801F34 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
@@ -240,6 +234,7 @@
 				826579711812959B00A17F63 /* LNAppDelegate.h */,
 				826579721812959B00A17F63 /* LNAppDelegate.m */,
 				823B05EE183919AB00463BFD /* Main.storyboard */,
+				827C5050183978B000703460 /* fonts */,
 				826579741812959B00A17F63 /* Images.xcassets */,
 				826579691812959B00A17F63 /* Supporting Files */,
 			);
@@ -251,10 +246,6 @@
 			children = (
 				B0C77E2D1813D2B100801F34 /* redis-cli.html */,
 				82B420CC182429A1002236BE /* redis-doc.html */,
-				B0C77E311813DBBF00801F34 /* DejaVuSansMono.ttf */,
-				82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */,
-				82C46F3818131C1900E3E5E6 /* DINPro-Bold.ttf */,
-				82C46F3918131C1900E3E5E6 /* VAGRoundedStd-Light.otf */,
 				8265796A1812959B00A17F63 /* Snippets-Info.plist */,
 				8265796B1812959B00A17F63 /* InfoPlist.strings */,
 				8265796E1812959B00A17F63 /* main.m */,
@@ -305,6 +296,8 @@
 		827C504C183977F400703460 /* legacy */ = {
 			isa = PBXGroup;
 			children = (
+				B0DDA73C18129A9000E015C0 /* LNViewController.h */,
+				B0DDA73D18129A9000E015C0 /* LNViewController.m */,
 				B0DDA73F18129AED00E015C0 /* BoardingViewController.h */,
 				B0DDA74018129AED00E015C0 /* BoardingViewController.m */,
 				B0DDA74218129C8E00E015C0 /* MainViewController.h */,
@@ -324,6 +317,26 @@
 				B08803181813694D00D102C4 /* TextFieldConsole.m */,
 			);
 			name = legacy;
+			sourceTree = "<group>";
+		};
+		827C504E1839782900703460 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				827C504318393D0A00703460 /* RDSCommandCell.h */,
+				827C504418393D0A00703460 /* RDSCommandCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		827C504F1839783100703460 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				827C504618396A9200703460 /* RDSNameLabel.h */,
+				827C504718396A9200703460 /* RDSNameLabel.m */,
+				827C504918396B1A00703460 /* RDSSummaryLabel.h */,
+				827C504A18396B1A00703460 /* RDSSummaryLabel.m */,
+			);
+			name = Labels;
 			sourceTree = "<group>";
 		};
 		82B420CE18245D17002236BE /* Winch+ */ = {
@@ -405,12 +418,8 @@
 			isa = PBXGroup;
 			children = (
 				827C504D1839781200703460 /* legacy */,
-				827C504318393D0A00703460 /* RDSCommandCell.h */,
-				827C504418393D0A00703460 /* RDSCommandCell.m */,
-				827C504618396A9200703460 /* RDSNameLabel.h */,
-				827C504718396A9200703460 /* RDSNameLabel.m */,
-				827C504918396B1A00703460 /* RDSSummaryLabel.h */,
-				827C504A18396B1A00703460 /* RDSSummaryLabel.m */,
+				827C504E1839782900703460 /* Cells */,
+				827C504F1839783100703460 /* Labels */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -429,8 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				B0DDA74518129CFA00E015C0 /* Category */,
-				B0DDA73C18129A9000E015C0 /* LNViewController.h */,
-				B0DDA73D18129A9000E015C0 /* LNViewController.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -528,11 +535,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C77E371813E0E900801F34 /* default-568h@2x.png in Resources */,
-				B0C77E321813DC0B00801F34 /* DejaVuSansMono.ttf in Resources */,
 				B088032018136E7000D102C4 /* up.png in Resources */,
 				B0C77E381813E0E900801F34 /* default.png in Resources */,
 				B0C77E271813C45E00801F34 /* nav-redis.png in Resources */,
-				82C46F3B18131C1900E3E5E6 /* DINPro-Bold.ttf in Resources */,
 				B088031E18136E7000D102C4 /* down.png in Resources */,
 				B088031F18136E7000D102C4 /* down@2x.png in Resources */,
 				B0C77E241813C45E00801F34 /* nav-console@2x.png in Resources */,
@@ -544,16 +549,15 @@
 				8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */,
 				B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */,
 				B0C77E251813C45E00801F34 /* nav-logo.png in Resources */,
-				82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */,
 				B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */,
 				82B420CD182429A1002236BE /* redis-doc.html in Resources */,
 				B088032118136E7000D102C4 /* up@2x.png in Resources */,
+				827C5051183978B000703460 /* fonts in Resources */,
 				B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */,
 				826579751812959B00A17F63 /* Images.xcassets in Resources */,
 				B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */,
 				B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */,
 				B0C77E391813E0E900801F34 /* default@2x.png in Resources */,
-				82C46F3C18131C1900E3E5E6 /* VAGRoundedStd-Light.otf in Resources */,
 				823B05EF183919AB00463BFD /* Main.storyboard in Resources */,
 				B0C77E231813C45E00801F34 /* nav-console.png in Resources */,
 			);

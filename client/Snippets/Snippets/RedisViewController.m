@@ -10,6 +10,9 @@
 
 @interface RedisViewController ()
 
+@property (nonatomic, weak) IBOutlet UIScrollView *menuView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation RedisViewController

@@ -30,9 +30,46 @@
                     <view key="view" contentMode="scaleToFill" id="HHP-hQ-2iM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pf-bn-9Hp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TeN-eu-EFv"/>
+                                </constraints>
+                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7VH-tH-f7I">
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sBy-0I-Xxl">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBy-0I-Xxl" id="n2j-M0-3ky">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Pf-bn-9Hp" firstAttribute="leading" secondItem="HHP-hQ-2iM" secondAttribute="leading" id="6ff-HB-Ifv"/>
+                            <constraint firstItem="7VH-tH-f7I" firstAttribute="top" secondItem="3Pf-bn-9Hp" secondAttribute="bottom" id="APo-Rc-NwV"/>
+                            <constraint firstItem="D9s-6A-FJH" firstAttribute="top" secondItem="7VH-tH-f7I" secondAttribute="bottom" id="HaV-m4-XWA"/>
+                            <constraint firstAttribute="trailing" secondItem="7VH-tH-f7I" secondAttribute="trailing" id="NdZ-p8-oNm"/>
+                            <constraint firstAttribute="trailing" secondItem="3Pf-bn-9Hp" secondAttribute="trailing" id="TJa-z9-GtJ"/>
+                            <constraint firstItem="3Pf-bn-9Hp" firstAttribute="top" secondItem="Izm-py-EXx" secondAttribute="bottom" id="bU5-2z-nVA"/>
+                            <constraint firstItem="7VH-tH-f7I" firstAttribute="leading" secondItem="HHP-hQ-2iM" secondAttribute="leading" id="lEB-jV-j2l"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iPJ-dR-Oig"/>
+                    <connections>
+                        <outlet property="menuView" destination="3Pf-bn-9Hp" id="se4-nm-6TJ"/>
+                        <outlet property="tableView" destination="7VH-tH-f7I" id="jZh-MK-xqj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6h-cl-QU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

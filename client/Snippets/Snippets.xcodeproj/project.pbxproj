@@ -317,6 +317,15 @@
 			name = legacy;
 			sourceTree = "<group>";
 		};
+		827C504D1839781200703460 /* legacy */ = {
+			isa = PBXGroup;
+			children = (
+				B08803171813694D00D102C4 /* TextFieldConsole.h */,
+				B08803181813694D00D102C4 /* TextFieldConsole.m */,
+			);
+			name = legacy;
+			sourceTree = "<group>";
+		};
 		82B420CE18245D17002236BE /* Winch+ */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,8 +404,7 @@
 		B0DDA738181298B400E015C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B08803171813694D00D102C4 /* TextFieldConsole.h */,
-				B08803181813694D00D102C4 /* TextFieldConsole.m */,
+				827C504D1839781200703460 /* legacy */,
 				827C504318393D0A00703460 /* RDSCommandCell.h */,
 				827C504418393D0A00703460 /* RDSCommandCell.m */,
 				827C504618396A9200703460 /* RDSNameLabel.h */,

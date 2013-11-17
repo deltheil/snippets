@@ -26,6 +26,9 @@
 		826579D31812AAB900A17F63 /* libvedis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579D21812AAB900A17F63 /* libvedis.a */; };
 		826579DA1812B57100A17F63 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579D91812B57100A17F63 /* Redis.m */; };
 		826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579DC1812B72200A17F63 /* NSError+Redis.m */; };
+		827C504518393D0A00703460 /* RDSCommandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504418393D0A00703460 /* RDSCommandCell.m */; };
+		827C504818396A9200703460 /* RDSNameLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504718396A9200703460 /* RDSNameLabel.m */; };
+		827C504B18396B1A00703460 /* RDSSummaryLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504A18396B1A00703460 /* RDSSummaryLabel.m */; };
 		82B420CD182429A1002236BE /* redis-doc.html in Resources */ = {isa = PBXBuildFile; fileRef = 82B420CC182429A1002236BE /* redis-doc.html */; };
 		82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B420D018245D72002236BE /* WNCDatabase+Redis.m */; };
 		82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82C46F3718131C1900E3E5E6 /* Aleo-Regular.otf */; };
@@ -43,8 +46,6 @@
 		B088031F18136E7000D102C4 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031B18136E7000D102C4 /* down@2x.png */; };
 		B088032018136E7000D102C4 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031C18136E7000D102C4 /* up.png */; };
 		B088032118136E7000D102C4 /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031D18136E7000D102C4 /* up@2x.png */; };
-		B088032418137D7700D102C4 /* accessory.png in Resources */ = {isa = PBXBuildFile; fileRef = B088032218137D7700D102C4 /* accessory.png */; };
-		B088032518137D7700D102C4 /* accessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088032318137D7700D102C4 /* accessory@2x.png */; };
 		B0C77E1B1813C03A00801F34 /* nav-close.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E191813C03A00801F34 /* nav-close.png */; };
 		B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1A1813C03A00801F34 /* nav-close@2x.png */; };
 		B0C77E231813C45E00801F34 /* nav-console.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1D1813C45E00801F34 /* nav-console.png */; };
@@ -108,6 +109,12 @@
 		826579D91812B57100A17F63 /* Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redis.m; sourceTree = "<group>"; };
 		826579DB1812B72200A17F63 /* NSError+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Redis.h"; sourceTree = "<group>"; };
 		826579DC1812B72200A17F63 /* NSError+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Redis.m"; sourceTree = "<group>"; };
+		827C504318393D0A00703460 /* RDSCommandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCommandCell.h; sourceTree = "<group>"; };
+		827C504418393D0A00703460 /* RDSCommandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCommandCell.m; sourceTree = "<group>"; };
+		827C504618396A9200703460 /* RDSNameLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSNameLabel.h; sourceTree = "<group>"; };
+		827C504718396A9200703460 /* RDSNameLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSNameLabel.m; sourceTree = "<group>"; };
+		827C504918396B1A00703460 /* RDSSummaryLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSSummaryLabel.h; sourceTree = "<group>"; };
+		827C504A18396B1A00703460 /* RDSSummaryLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSSummaryLabel.m; sourceTree = "<group>"; };
 		82B420CC182429A1002236BE /* redis-doc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-doc.html"; sourceTree = "<group>"; };
 		82B420CF18245D72002236BE /* WNCDatabase+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WNCDatabase+Redis.h"; sourceTree = "<group>"; };
 		82B420D018245D72002236BE /* WNCDatabase+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WNCDatabase+Redis.m"; sourceTree = "<group>"; };
@@ -131,8 +138,6 @@
 		B088031B18136E7000D102C4 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
 		B088031C18136E7000D102C4 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		B088031D18136E7000D102C4 /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up@2x.png"; sourceTree = "<group>"; };
-		B088032218137D7700D102C4 /* accessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accessory.png; sourceTree = "<group>"; };
-		B088032318137D7700D102C4 /* accessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accessory@2x.png"; sourceTree = "<group>"; };
 		B0C77E191813C03A00801F34 /* nav-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-close.png"; sourceTree = "<group>"; };
 		B0C77E1A1813C03A00801F34 /* nav-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-close@2x.png"; sourceTree = "<group>"; };
 		B0C77E1D1813C45E00801F34 /* nav-console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-console.png"; sourceTree = "<group>"; };
@@ -340,8 +345,6 @@
 				B0C77E221813C45E00801F34 /* nav-redis@2x.png */,
 				B0C77E191813C03A00801F34 /* nav-close.png */,
 				B0C77E1A1813C03A00801F34 /* nav-close@2x.png */,
-				B088032218137D7700D102C4 /* accessory.png */,
-				B088032318137D7700D102C4 /* accessory@2x.png */,
 				B088031A18136E7000D102C4 /* down.png */,
 				B088031B18136E7000D102C4 /* down@2x.png */,
 				B088031C18136E7000D102C4 /* up.png */,
@@ -386,6 +389,12 @@
 			children = (
 				B08803171813694D00D102C4 /* TextFieldConsole.h */,
 				B08803181813694D00D102C4 /* TextFieldConsole.m */,
+				827C504318393D0A00703460 /* RDSCommandCell.h */,
+				827C504418393D0A00703460 /* RDSCommandCell.m */,
+				827C504618396A9200703460 /* RDSNameLabel.h */,
+				827C504718396A9200703460 /* RDSNameLabel.m */,
+				827C504918396B1A00703460 /* RDSSummaryLabel.h */,
+				827C504A18396B1A00703460 /* RDSSummaryLabel.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -521,8 +530,6 @@
 				B0C77E251813C45E00801F34 /* nav-logo.png in Resources */,
 				82C46F3A18131C1900E3E5E6 /* Aleo-Regular.otf in Resources */,
 				B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */,
-				B088032518137D7700D102C4 /* accessory@2x.png in Resources */,
-				B088032418137D7700D102C4 /* accessory.png in Resources */,
 				82B420CD182429A1002236BE /* redis-doc.html in Resources */,
 				B088032118136E7000D102C4 /* up@2x.png in Resources */,
 				B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */,
@@ -587,9 +594,11 @@
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
 				B08803191813694D00D102C4 /* TextFieldConsole.m in Sources */,
+				827C504518393D0A00703460 /* RDSCommandCell.m in Sources */,
 				B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */,
 				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,
 				B0880308181359F700D102C4 /* CommandViewController.m in Sources */,
+				827C504818396A9200703460 /* RDSNameLabel.m in Sources */,
 				826579731812959B00A17F63 /* LNAppDelegate.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
@@ -601,6 +610,7 @@
 				82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */,
 				B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */,
 				B0DDA74D18129CFA00E015C0 /* UINavigationController+StatusBar.m in Sources */,
+				827C504B18396B1A00703460 /* RDSSummaryLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

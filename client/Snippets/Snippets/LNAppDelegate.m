@@ -8,9 +8,6 @@
 
 #import "LNAppDelegate.h"
 
-#import "MainViewController.h"
-#import "BoardingViewController.h"
-
 // Winch main header
 #import <Winch/Winch.h>
 
@@ -19,13 +16,6 @@
 // ==========================================
 #define WNC_DATASTORE_ID @"ZCDFQ0KDSO"
 #define WNC_APP_SECRET   @"1LPbPhLr5DiutD1Z"
-
-@interface LNAppDelegate ()
-
-@property (nonatomic, strong) BoardingViewController *boardingView;
-@property (nonatomic, strong) UINavigationController *mainNav;
-
-@end
 
 @implementation LNAppDelegate {
     WNCDatabase *_database;
@@ -41,18 +31,6 @@
     if (![_database openWithID:WNC_DATASTORE_ID appSecret:WNC_APP_SECRET error:&error]) {
         NSLog(@"winch open error: %@", [error wnc_message]);
     }
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-
-    MainViewController *mainView = [[MainViewController alloc] initWithDatabase:_database];
-    self.mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
-
-    self.window.rootViewController = self.mainNav;
-    [self.window makeKeyAndVisible];
-    
-    self.boardingView = [[BoardingViewController alloc] initWithDatabase:_database];
-    [self.window.rootViewController presentViewController:self.boardingView animated:NO completion:nil];
     
     return YES;
 }

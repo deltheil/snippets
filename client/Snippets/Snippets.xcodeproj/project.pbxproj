@@ -302,6 +302,21 @@
 			name = "Obj-C";
 			sourceTree = "<group>";
 		};
+		827C504C183977F400703460 /* legacy */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDA73F18129AED00E015C0 /* BoardingViewController.h */,
+				B0DDA74018129AED00E015C0 /* BoardingViewController.m */,
+				B0DDA74218129C8E00E015C0 /* MainViewController.h */,
+				B0DDA74318129C8E00E015C0 /* MainViewController.m */,
+				B0880306181359F700D102C4 /* CommandViewController.h */,
+				B0880307181359F700D102C4 /* CommandViewController.m */,
+				B0880311181364C800D102C4 /* ConsoleViewController.h */,
+				B0880312181364C800D102C4 /* ConsoleViewController.m */,
+			);
+			name = legacy;
+			sourceTree = "<group>";
+		};
 		82B420CE18245D17002236BE /* Winch+ */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,14 +385,7 @@
 		B0DDA7371812982F00E015C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B0DDA73F18129AED00E015C0 /* BoardingViewController.h */,
-				B0DDA74018129AED00E015C0 /* BoardingViewController.m */,
-				B0DDA74218129C8E00E015C0 /* MainViewController.h */,
-				B0DDA74318129C8E00E015C0 /* MainViewController.m */,
-				B0880306181359F700D102C4 /* CommandViewController.h */,
-				B0880307181359F700D102C4 /* CommandViewController.m */,
-				B0880311181364C800D102C4 /* ConsoleViewController.h */,
-				B0880312181364C800D102C4 /* ConsoleViewController.m */,
+				827C504C183977F400703460 /* legacy */,
 				823B05F41839243100463BFD /* RedisViewController.h */,
 				823B05F51839243100463BFD /* RedisViewController.m */,
 			);

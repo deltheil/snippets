@@ -65,25 +65,33 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUD-Yr-Sw2" userLabel="Name Label">
                                                     <rect key="frame" x="20" y="26" width="240" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="5aZ-xz-TqQ" userLabel="Summary Label">
                                                     <rect key="frame" x="20" y="43" width="240" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#006269"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zUD-Yr-Sw2" firstAttribute="leading" secondItem="5aZ-xz-TqQ" secondAttribute="leading" id="6qM-rh-REk"/>
                                                 <constraint firstAttribute="trailing" secondItem="Odd-oK-Ake" secondAttribute="trailing" constant="20" id="Ki5-cy-2pK"/>
-                                                <constraint firstItem="Odd-oK-Ake" firstAttribute="bottom" secondItem="5aZ-xz-TqQ" secondAttribute="bottom" constant="-6" id="Wix-Jh-j9L"/>
+                                                <constraint firstItem="Odd-oK-Ake" firstAttribute="bottom" secondItem="5aZ-xz-TqQ" secondAttribute="bottom" id="Wix-Jh-j9L"/>
                                                 <constraint firstItem="5aZ-xz-TqQ" firstAttribute="leading" secondItem="n2j-M0-3ky" secondAttribute="leading" constant="20" symbolic="YES" id="XqC-EU-F6e"/>
                                                 <constraint firstItem="Odd-oK-Ake" firstAttribute="top" secondItem="n2j-M0-3ky" secondAttribute="top" constant="26" id="dQK-vJ-XXn"/>
                                                 <constraint firstItem="Odd-oK-Ake" firstAttribute="centerY" secondItem="n2j-M0-3ky" secondAttribute="centerY" id="g2q-B9-ewY"/>
                                                 <constraint firstAttribute="trailing" secondItem="5aZ-xz-TqQ" secondAttribute="trailing" constant="60" id="hys-M8-R8p"/>
-                                                <constraint firstItem="5aZ-xz-TqQ" firstAttribute="top" secondItem="zUD-Yr-Sw2" secondAttribute="top" constant="23" id="rtr-VI-iy8"/>
+                                                <constraint firstItem="5aZ-xz-TqQ" firstAttribute="top" secondItem="zUD-Yr-Sw2" secondAttribute="top" constant="17" id="rtr-VI-iy8"/>
                                                 <constraint firstItem="Odd-oK-Ake" firstAttribute="leading" secondItem="zUD-Yr-Sw2" secondAttribute="trailing" constant="8" symbolic="YES" id="zHu-4b-KTo"/>
                                             </constraints>
                                         </tableViewCellContentView>

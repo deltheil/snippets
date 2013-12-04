@@ -184,12 +184,12 @@
 		826579681812959B00A17F63 /* Snippets */ = {
 			isa = PBXGroup;
 			children = (
-				826579D01812AA8300A17F63 /* vedis */,
-				B0DDA73B181298F300E015C0 /* Components */,
-				82C46F41181330F000E3E5E6 /* Models */,
-				B0DDA738181298B400E015C0 /* Views */,
-				B0DDA7371812982F00E015C0 /* View Controllers */,
 				82B420CE18245D17002236BE /* Winch+ */,
+				826579D01812AA8300A17F63 /* Vedis */,
+				B0DDA73B181298F300E015C0 /* Components */,
+				B0DDA738181298B400E015C0 /* Views */,
+				82C46F41181330F000E3E5E6 /* Models */,
+				B0DDA7371812982F00E015C0 /* View Controllers */,
 				826579711812959B00A17F63 /* AppDelegate.h */,
 				826579721812959B00A17F63 /* AppDelegate.m */,
 				823B05EE183919AB00463BFD /* Main.storyboard */,
@@ -231,14 +231,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		826579D01812AA8300A17F63 /* vedis */ = {
+		826579D01812AA8300A17F63 /* Vedis */ = {
 			isa = PBXGroup;
 			children = (
 				826579D41812B4C400A17F63 /* Obj-C */,
 				826579D11812AA9E00A17F63 /* vedis.h */,
 				826579D21812AAB900A17F63 /* libvedis.a */,
 			);
-			name = vedis;
+			name = Vedis;
 			sourceTree = "<group>";
 		};
 		826579D41812B4C400A17F63 /* Obj-C */ = {
@@ -276,15 +276,6 @@
 				B08803181813694D00D102C4 /* TextFieldConsole.m */,
 			);
 			name = legacy;
-			sourceTree = "<group>";
-		};
-		827C504E1839782900703460 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				827C504318393D0A00703460 /* RDSCommandCell.h */,
-				827C504418393D0A00703460 /* RDSCommandCell.m */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 		827C504F1839783100703460 /* Labels */ = {
@@ -332,9 +323,11 @@
 		B0DDA738181298B400E015C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				827C504D1839781200703460 /* legacy */,
-				827C504E1839782900703460 /* Cells */,
+				827C504318393D0A00703460 /* RDSCommandCell.h */,
+				827C504418393D0A00703460 /* RDSCommandCell.m */,
+				B0DDA74518129CFA00E015C0 /* UI Categories */,
 				827C504F1839783100703460 /* Labels */,
+				827C504D1839781200703460 /* legacy */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -342,12 +335,11 @@
 		B0DDA73B181298F300E015C0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B0DDA74518129CFA00E015C0 /* Category */,
 			);
 			name = Components;
 			sourceTree = "<group>";
 		};
-		B0DDA74518129CFA00E015C0 /* Category */ = {
+		B0DDA74518129CFA00E015C0 /* UI Categories */ = {
 			isa = PBXGroup;
 			children = (
 				B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */,
@@ -357,7 +349,7 @@
 				B0DDA74A18129CFA00E015C0 /* UIView+Position.h */,
 				B0DDA74B18129CFA00E015C0 /* UIView+Position.m */,
 			);
-			name = Category;
+			name = "UI Categories";
 			path = Components/Category;
 			sourceTree = "<group>";
 		};

@@ -17,9 +17,11 @@
 
 @interface RedisViewController ()
 
+// UI properties
 @property (nonatomic, weak) IBOutlet UIScrollView *menuView;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
+// Private properties
 @property (nonatomic, strong) NSArray *groups;
 @property (nonatomic, strong) NSArray *commands;
 @property (nonatomic, strong) RDSGroup *currentGroup;

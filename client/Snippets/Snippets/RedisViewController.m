@@ -35,7 +35,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    // calling sync method to test with data
+    // TODO: sync in background when not at cold start
+    // TODO: manage errors properly
+    [_database rds_syncWithBlock:nil
+                   progressBlock:nil
+                           error:nil];
 }
 
 - (void)didReceiveMemoryWarning

@@ -134,6 +134,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="iPJ-dR-Oig">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" id="aGv-CF-YwY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DXH-qE-gmu">
+                                <rect key="frame" x="16" y="7" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="sn-redis">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="AcS-Hp-BaA">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -165,6 +175,7 @@
     </scenes>
     <resources>
         <image name="sn-logo" width="30" height="30"/>
+        <image name="sn-redis" width="60" height="30"/>
         <image name="sn-see" width="30" height="33"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

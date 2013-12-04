@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Mps-hM-I75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E4022" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Mps-hM-I75">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -34,6 +34,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pf-bn-9Hp">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="TeN-eu-EFv"/>
                                 </constraints>
@@ -56,9 +57,9 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-oK-Ake">
-                                                            <rect key="frame" x="264" y="16" width="30" height="33"/>
+                                                            <rect key="frame" x="264" y="17" width="30" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" image="accessory">
+                                                            <state key="normal" image="sn-see">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
@@ -92,11 +93,12 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="HsO-ll-3cr" firstAttribute="leading" secondItem="f9M-5H-nkR" secondAttribute="leading" id="1G7-xK-Xr5"/>
+                                                        <constraint firstItem="Odd-oK-Ake" firstAttribute="centerY" secondItem="HsO-ll-3cr" secondAttribute="centerY" id="7uR-Rf-I18"/>
                                                         <constraint firstItem="HsO-ll-3cr" firstAttribute="top" secondItem="f9M-5H-nkR" secondAttribute="top" id="Lw8-7u-lEm"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Odd-oK-Ake" secondAttribute="trailing" id="OC9-zH-KnW"/>
-                                                        <constraint firstItem="Odd-oK-Ake" firstAttribute="leading" secondItem="HsO-ll-3cr" secondAttribute="trailing" constant="10" id="P77-dJ-dHX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Odd-oK-Ake" secondAttribute="trailing" id="QfC-1C-Eu6"/>
                                                         <constraint firstAttribute="bottom" secondItem="HsO-ll-3cr" secondAttribute="bottom" id="Qze-bb-gki"/>
-                                                        <constraint firstAttribute="centerY" secondItem="Odd-oK-Ake" secondAttribute="centerY" id="hTN-RR-3Nw"/>
+                                                        <constraint firstItem="Odd-oK-Ake" firstAttribute="top" secondItem="f9M-5H-nkR" secondAttribute="top" constant="17" id="Tbd-K7-7TB"/>
+                                                        <constraint firstItem="Odd-oK-Ake" firstAttribute="leading" secondItem="HsO-ll-3cr" secondAttribute="trailing" constant="10" id="r1f-Is-Smj"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -130,7 +132,27 @@
                             <constraint firstItem="7VH-tH-f7I" firstAttribute="leading" secondItem="HHP-hQ-2iM" secondAttribute="leading" id="lEB-jV-j2l"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iPJ-dR-Oig"/>
+                    <navigationItem key="navigationItem" id="iPJ-dR-Oig">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="AcS-Hp-BaA">
+                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sn-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ymd-st-Ksj">
+                                    <rect key="frame" x="49" y="2" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="8jB-9h-80A"/>
+                                        <constraint firstAttribute="height" constant="30" id="wCU-Dp-jNk"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="ymd-st-Ksj" secondAttribute="centerY" constant="-0.5" id="iyQ-vK-QRl"/>
+                                <constraint firstItem="ymd-st-Ksj" firstAttribute="leading" secondItem="AcS-Hp-BaA" secondAttribute="leading" constant="49" id="v70-Vb-psS"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
                     <connections>
                         <outlet property="menuView" destination="3Pf-bn-9Hp" id="se4-nm-6TJ"/>
                         <outlet property="tableView" destination="7VH-tH-f7I" id="jZh-MK-xqj"/>
@@ -142,7 +164,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="accessory" width="30" height="33"/>
+        <image name="sn-logo" width="30" height="30"/>
+        <image name="sn-see" width="30" height="33"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

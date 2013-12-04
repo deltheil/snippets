@@ -10,10 +10,10 @@
 
 #import <Winch/Winch.h>
 
-#import "WNCDatabase+Redis.h"
 #import "RDSGroup.h"
 #import "RDSCommand.h"
 #import "RDSCommandCell.h"
+#import "WNCDatabase+Redis.h"
 
 @interface RedisViewController ()
 
@@ -30,14 +30,7 @@
 
 @implementation RedisViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - Life Cycle
 
 - (void)viewDidLoad
 {

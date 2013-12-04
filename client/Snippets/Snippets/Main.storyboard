@@ -162,6 +162,16 @@
                                 <constraint firstItem="ymd-st-Ksj" firstAttribute="leading" secondItem="AcS-Hp-BaA" secondAttribute="leading" constant="49" id="v70-Vb-psS"/>
                             </constraints>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="TKj-bg-QOz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aGK-5M-h9N">
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="sn-console">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuView" destination="3Pf-bn-9Hp" id="se4-nm-6TJ"/>
@@ -174,6 +184,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sn-console" width="30" height="30"/>
         <image name="sn-logo" width="30" height="30"/>
         <image name="sn-redis" width="60" height="30"/>
         <image name="sn-see" width="30" height="33"/>

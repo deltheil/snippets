@@ -188,7 +188,7 @@
 				B0DDA73B181298F300E015C0 /* Components */,
 				82C46F41181330F000E3E5E6 /* Models */,
 				B0DDA738181298B400E015C0 /* Views */,
-				B0DDA7371812982F00E015C0 /* Controllers */,
+				B0DDA7371812982F00E015C0 /* View Controllers */,
 				82B420CE18245D17002236BE /* Winch+ */,
 				826579711812959B00A17F63 /* AppDelegate.h */,
 				826579721812959B00A17F63 /* AppDelegate.m */,
@@ -319,14 +319,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		B0DDA7371812982F00E015C0 /* Controllers */ = {
+		B0DDA7371812982F00E015C0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				827C504C183977F400703460 /* legacy */,
 				823B05F41839243100463BFD /* RedisViewController.h */,
 				823B05F51839243100463BFD /* RedisViewController.m */,
 			);
-			name = Controllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		B0DDA738181298B400E015C0 /* Views */ = {

@@ -35,29 +35,9 @@
 		82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F3F18132E2100E3E5E6 /* Winch.framework */; };
 		82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
 		B0880308181359F700D102C4 /* CommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0880307181359F700D102C4 /* CommandViewController.m */; };
-		B088030B18135B0E00D102C4 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = B088030A18135B0E00D102C4 /* icon-120.png */; };
-		B088030F18135FA300D102C4 /* try.png in Resources */ = {isa = PBXBuildFile; fileRef = B088030D18135FA300D102C4 /* try.png */; };
-		B088031018135FA300D102C4 /* try@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088030E18135FA300D102C4 /* try@2x.png */; };
 		B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0880312181364C800D102C4 /* ConsoleViewController.m */; };
 		B08803191813694D00D102C4 /* TextFieldConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = B08803181813694D00D102C4 /* TextFieldConsole.m */; };
-		B088031E18136E7000D102C4 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031A18136E7000D102C4 /* down.png */; };
-		B088031F18136E7000D102C4 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031B18136E7000D102C4 /* down@2x.png */; };
-		B088032018136E7000D102C4 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031C18136E7000D102C4 /* up.png */; };
-		B088032118136E7000D102C4 /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B088031D18136E7000D102C4 /* up@2x.png */; };
-		B0C77E1B1813C03A00801F34 /* nav-close.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E191813C03A00801F34 /* nav-close.png */; };
-		B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1A1813C03A00801F34 /* nav-close@2x.png */; };
-		B0C77E231813C45E00801F34 /* nav-console.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1D1813C45E00801F34 /* nav-console.png */; };
-		B0C77E241813C45E00801F34 /* nav-console@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1E1813C45E00801F34 /* nav-console@2x.png */; };
-		B0C77E251813C45E00801F34 /* nav-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E1F1813C45E00801F34 /* nav-logo.png */; };
-		B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E201813C45E00801F34 /* nav-logo@2x.png */; };
-		B0C77E271813C45E00801F34 /* nav-redis.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E211813C45E00801F34 /* nav-redis.png */; };
-		B0C77E281813C45E00801F34 /* nav-redis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E221813C45E00801F34 /* nav-redis@2x.png */; };
-		B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E291813CEF900801F34 /* nav-back.png */; };
-		B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2A1813CEF900801F34 /* nav-back@2x.png */; };
 		B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* redis-cli.html */; };
-		B0C77E371813E0E900801F34 /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E341813E0E900801F34 /* default-568h@2x.png */; };
-		B0C77E381813E0E900801F34 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E351813E0E900801F34 /* default.png */; };
-		B0C77E391813E0E900801F34 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E361813E0E900801F34 /* default@2x.png */; };
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
@@ -122,31 +102,11 @@
 		82C46F431813311100E3E5E6 /* RDSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCommand.m; sourceTree = "<group>"; };
 		B0880306181359F700D102C4 /* CommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandViewController.h; path = Controllers/CommandViewController.h; sourceTree = "<group>"; };
 		B0880307181359F700D102C4 /* CommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandViewController.m; path = Controllers/CommandViewController.m; sourceTree = "<group>"; };
-		B088030A18135B0E00D102C4 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
-		B088030D18135FA300D102C4 /* try.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = try.png; sourceTree = "<group>"; };
-		B088030E18135FA300D102C4 /* try@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "try@2x.png"; sourceTree = "<group>"; };
 		B0880311181364C800D102C4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleViewController.h; path = Controllers/ConsoleViewController.h; sourceTree = "<group>"; };
 		B0880312181364C800D102C4 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleViewController.m; path = Controllers/ConsoleViewController.m; sourceTree = "<group>"; };
 		B08803171813694D00D102C4 /* TextFieldConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldConsole.h; path = Views/TextFieldConsole.h; sourceTree = "<group>"; };
 		B08803181813694D00D102C4 /* TextFieldConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextFieldConsole.m; path = Views/TextFieldConsole.m; sourceTree = "<group>"; };
-		B088031A18136E7000D102C4 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
-		B088031B18136E7000D102C4 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
-		B088031C18136E7000D102C4 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
-		B088031D18136E7000D102C4 /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up@2x.png"; sourceTree = "<group>"; };
-		B0C77E191813C03A00801F34 /* nav-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-close.png"; sourceTree = "<group>"; };
-		B0C77E1A1813C03A00801F34 /* nav-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-close@2x.png"; sourceTree = "<group>"; };
-		B0C77E1D1813C45E00801F34 /* nav-console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-console.png"; sourceTree = "<group>"; };
-		B0C77E1E1813C45E00801F34 /* nav-console@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-console@2x.png"; sourceTree = "<group>"; };
-		B0C77E1F1813C45E00801F34 /* nav-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo.png"; sourceTree = "<group>"; };
-		B0C77E201813C45E00801F34 /* nav-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-logo@2x.png"; sourceTree = "<group>"; };
-		B0C77E211813C45E00801F34 /* nav-redis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis.png"; sourceTree = "<group>"; };
-		B0C77E221813C45E00801F34 /* nav-redis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-redis@2x.png"; sourceTree = "<group>"; };
-		B0C77E291813CEF900801F34 /* nav-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back.png"; sourceTree = "<group>"; };
-		B0C77E2A1813CEF900801F34 /* nav-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back@2x.png"; sourceTree = "<group>"; };
 		B0C77E2D1813D2B100801F34 /* redis-cli.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-cli.html"; sourceTree = "<group>"; };
-		B0C77E341813E0E900801F34 /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h@2x.png"; sourceTree = "<group>"; };
-		B0C77E351813E0E900801F34 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
-		B0C77E361813E0E900801F34 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
 		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
 		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
@@ -226,7 +186,6 @@
 			children = (
 				826579D01812AA8300A17F63 /* vedis */,
 				B0DDA73B181298F300E015C0 /* Components */,
-				B0DDA739181298BA00E015C0 /* Resources */,
 				82C46F41181330F000E3E5E6 /* Models */,
 				B0DDA738181298B400E015C0 /* Views */,
 				B0DDA7371812982F00E015C0 /* Controllers */,
@@ -360,50 +319,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		B088030918135B0E00D102C4 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				B088030A18135B0E00D102C4 /* icon-120.png */,
-			);
-			name = Icons;
-			path = Resources/Icons;
-			sourceTree = "<group>";
-		};
-		B088030C18135FA300D102C4 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				B0C77E291813CEF900801F34 /* nav-back.png */,
-				B0C77E2A1813CEF900801F34 /* nav-back@2x.png */,
-				B0C77E1D1813C45E00801F34 /* nav-console.png */,
-				B0C77E1E1813C45E00801F34 /* nav-console@2x.png */,
-				B0C77E1F1813C45E00801F34 /* nav-logo.png */,
-				B0C77E201813C45E00801F34 /* nav-logo@2x.png */,
-				B0C77E211813C45E00801F34 /* nav-redis.png */,
-				B0C77E221813C45E00801F34 /* nav-redis@2x.png */,
-				B0C77E191813C03A00801F34 /* nav-close.png */,
-				B0C77E1A1813C03A00801F34 /* nav-close@2x.png */,
-				B088031A18136E7000D102C4 /* down.png */,
-				B088031B18136E7000D102C4 /* down@2x.png */,
-				B088031C18136E7000D102C4 /* up.png */,
-				B088031D18136E7000D102C4 /* up@2x.png */,
-				B088030D18135FA300D102C4 /* try.png */,
-				B088030E18135FA300D102C4 /* try@2x.png */,
-			);
-			name = UI;
-			path = Resources/UI;
-			sourceTree = "<group>";
-		};
-		B0C77E331813E0E900801F34 /* Default */ = {
-			isa = PBXGroup;
-			children = (
-				B0C77E341813E0E900801F34 /* default-568h@2x.png */,
-				B0C77E351813E0E900801F34 /* default.png */,
-				B0C77E361813E0E900801F34 /* default@2x.png */,
-			);
-			name = Default;
-			path = Resources/Default;
-			sourceTree = "<group>";
-		};
 		B0DDA7371812982F00E015C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,16 +337,6 @@
 				827C504F1839783100703460 /* Labels */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		B0DDA739181298BA00E015C0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B0C77E331813E0E900801F34 /* Default */,
-				B088030C18135FA300D102C4 /* UI */,
-				B088030918135B0E00D102C4 /* Icons */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		B0DDA73B181298F300E015C0 /* Components */ = {
@@ -534,32 +439,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0C77E371813E0E900801F34 /* default-568h@2x.png in Resources */,
-				B088032018136E7000D102C4 /* up.png in Resources */,
-				B0C77E381813E0E900801F34 /* default.png in Resources */,
-				B0C77E271813C45E00801F34 /* nav-redis.png in Resources */,
-				B088031E18136E7000D102C4 /* down.png in Resources */,
-				B088031F18136E7000D102C4 /* down@2x.png in Resources */,
-				B0C77E241813C45E00801F34 /* nav-console@2x.png in Resources */,
-				B0C77E1B1813C03A00801F34 /* nav-close.png in Resources */,
-				B0C77E281813C45E00801F34 /* nav-redis@2x.png in Resources */,
-				B088030B18135B0E00D102C4 /* icon-120.png in Resources */,
-				B088031018135FA300D102C4 /* try@2x.png in Resources */,
-				B088030F18135FA300D102C4 /* try.png in Resources */,
 				8265796D1812959B00A17F63 /* InfoPlist.strings in Resources */,
 				B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */,
-				B0C77E251813C45E00801F34 /* nav-logo.png in Resources */,
-				B0C77E261813C45E00801F34 /* nav-logo@2x.png in Resources */,
 				82B420CD182429A1002236BE /* redis-doc.html in Resources */,
-				B088032118136E7000D102C4 /* up@2x.png in Resources */,
 				827C5051183978B000703460 /* fonts in Resources */,
-				B0C77E1C1813C03A00801F34 /* nav-close@2x.png in Resources */,
 				826579751812959B00A17F63 /* Images.xcassets in Resources */,
-				B0C77E2B1813CEF900801F34 /* nav-back.png in Resources */,
-				B0C77E2C1813CEF900801F34 /* nav-back@2x.png in Resources */,
-				B0C77E391813E0E900801F34 /* default@2x.png in Resources */,
 				823B05EF183919AB00463BFD /* Main.storyboard in Resources */,
-				B0C77E231813C45E00801F34 /* nav-console.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

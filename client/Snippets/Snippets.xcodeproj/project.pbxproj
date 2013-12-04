@@ -40,7 +40,7 @@
 		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
-		B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */; };
+		B0DDA74C18129CFA00E015C0 /* UIColor+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +108,8 @@
 		B0DDA74018129AED00E015C0 /* BoardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardingViewController.m; path = Controllers/BoardingViewController.m; sourceTree = "<group>"; };
 		B0DDA74218129C8E00E015C0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
 		B0DDA74318129C8E00E015C0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
-		B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
-		B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		B0DDA74618129CFA00E015C0 /* UIColor+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Snippets.h"; sourceTree = "<group>"; };
+		B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Snippets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,8 +313,8 @@
 		B0DDA74518129CFA00E015C0 /* UI Categories */ = {
 			isa = PBXGroup;
 			children = (
-				B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */,
-				B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */,
+				B0DDA74618129CFA00E015C0 /* UIColor+Snippets.h */,
+				B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */,
 				1AC3D059184FD945009ED88D /* UILabel+Snippets.h */,
 				1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */,
 			);
@@ -458,7 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
-				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
+				B0DDA74C18129CFA00E015C0 /* UIColor+Snippets.m in Sources */,
 				827C504518393D0A00703460 /* RDSCommandCell.m in Sources */,
 				B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */,
 				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,

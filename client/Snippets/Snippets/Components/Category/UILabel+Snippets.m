@@ -7,7 +7,7 @@
 //
 
 #import "UILabel+Snippets.h"
-#import "UIColor+Hex.h"
+#import "UIColor+Snippets.h"
 
 @implementation UILabel (Snippets)
 

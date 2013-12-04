@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Hex)
+@interface UIColor (Snippets)
 
-+ (UIColor *)colorWithHexString:(NSString *)stringToConvert alpha:(float)alpha;
-+ (UIColor *)colorWithHexString:(NSString *)stringToConvert;
++ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(float)alpha;
 
 @end

@@ -27,8 +27,6 @@
 		826579DA1812B57100A17F63 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579D91812B57100A17F63 /* Redis.m */; };
 		826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 826579DC1812B72200A17F63 /* NSError+Redis.m */; };
 		827C504518393D0A00703460 /* RDSCommandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504418393D0A00703460 /* RDSCommandCell.m */; };
-		827C504818396A9200703460 /* RDSNameLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504718396A9200703460 /* RDSNameLabel.m */; };
-		827C504B18396B1A00703460 /* RDSSummaryLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C504A18396B1A00703460 /* RDSSummaryLabel.m */; };
 		827C5051183978B000703460 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 827C5050183978B000703460 /* fonts */; };
 		82B420CD182429A1002236BE /* redis-doc.html in Resources */ = {isa = PBXBuildFile; fileRef = 82B420CC182429A1002236BE /* redis-doc.html */; };
 		82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B420D018245D72002236BE /* WNCDatabase+Redis.m */; };
@@ -42,8 +40,6 @@
 		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
 		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
 		B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */; };
-		B0DDA74D18129CFA00E015C0 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74918129CFA00E015C0 /* UINavigationController+StatusBar.m */; };
-		B0DDA74E18129CFA00E015C0 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74B18129CFA00E015C0 /* UIView+Position.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,10 +84,6 @@
 		826579DC1812B72200A17F63 /* NSError+Redis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Redis.m"; sourceTree = "<group>"; };
 		827C504318393D0A00703460 /* RDSCommandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCommandCell.h; sourceTree = "<group>"; };
 		827C504418393D0A00703460 /* RDSCommandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCommandCell.m; sourceTree = "<group>"; };
-		827C504618396A9200703460 /* RDSNameLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSNameLabel.h; sourceTree = "<group>"; };
-		827C504718396A9200703460 /* RDSNameLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSNameLabel.m; sourceTree = "<group>"; };
-		827C504918396B1A00703460 /* RDSSummaryLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSSummaryLabel.h; sourceTree = "<group>"; };
-		827C504A18396B1A00703460 /* RDSSummaryLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSSummaryLabel.m; sourceTree = "<group>"; };
 		827C5050183978B000703460 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		82B420CC182429A1002236BE /* redis-doc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-doc.html"; sourceTree = "<group>"; };
 		82B420CF18245D72002236BE /* WNCDatabase+Redis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WNCDatabase+Redis.h"; sourceTree = "<group>"; };
@@ -115,10 +107,6 @@
 		B0DDA74318129C8E00E015C0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
 		B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
-		B0DDA74818129CFA00E015C0 /* UINavigationController+StatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBar.h"; sourceTree = "<group>"; };
-		B0DDA74918129CFA00E015C0 /* UINavigationController+StatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBar.m"; sourceTree = "<group>"; };
-		B0DDA74A18129CFA00E015C0 /* UIView+Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
-		B0DDA74B18129CFA00E015C0 /* UIView+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +174,6 @@
 			children = (
 				82B420CE18245D17002236BE /* Winch+ */,
 				826579D01812AA8300A17F63 /* Vedis */,
-				B0DDA73B181298F300E015C0 /* Components */,
 				B0DDA738181298B400E015C0 /* Views */,
 				82C46F41181330F000E3E5E6 /* Models */,
 				B0DDA7371812982F00E015C0 /* View Controllers */,
@@ -278,17 +265,6 @@
 			name = legacy;
 			sourceTree = "<group>";
 		};
-		827C504F1839783100703460 /* Labels */ = {
-			isa = PBXGroup;
-			children = (
-				827C504618396A9200703460 /* RDSNameLabel.h */,
-				827C504718396A9200703460 /* RDSNameLabel.m */,
-				827C504918396B1A00703460 /* RDSSummaryLabel.h */,
-				827C504A18396B1A00703460 /* RDSSummaryLabel.m */,
-			);
-			name = Labels;
-			sourceTree = "<group>";
-		};
 		82B420CE18245D17002236BE /* Winch+ */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,17 +302,9 @@
 				827C504318393D0A00703460 /* RDSCommandCell.h */,
 				827C504418393D0A00703460 /* RDSCommandCell.m */,
 				B0DDA74518129CFA00E015C0 /* UI Categories */,
-				827C504F1839783100703460 /* Labels */,
 				827C504D1839781200703460 /* legacy */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		B0DDA73B181298F300E015C0 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Components;
 			sourceTree = "<group>";
 		};
 		B0DDA74518129CFA00E015C0 /* UI Categories */ = {
@@ -344,10 +312,6 @@
 			children = (
 				B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */,
 				B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */,
-				B0DDA74818129CFA00E015C0 /* UINavigationController+StatusBar.h */,
-				B0DDA74918129CFA00E015C0 /* UINavigationController+StatusBar.m */,
-				B0DDA74A18129CFA00E015C0 /* UIView+Position.h */,
-				B0DDA74B18129CFA00E015C0 /* UIView+Position.m */,
 			);
 			name = "UI Categories";
 			path = Components/Category;
@@ -490,24 +454,19 @@
 			files = (
 				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Hex.m in Sources */,
-				B08803191813694D00D102C4 /* TextFieldConsole.m in Sources */,
 				827C504518393D0A00703460 /* RDSCommandCell.m in Sources */,
 				B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */,
 				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,
 				B0880308181359F700D102C4 /* CommandViewController.m in Sources */,
-				827C504818396A9200703460 /* RDSNameLabel.m in Sources */,
 				826579731812959B00A17F63 /* AppDelegate.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */,
 				823B05F61839243100463BFD /* RedisViewController.m in Sources */,
-				B0DDA74E18129CFA00E015C0 /* UIView+Position.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
 				82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */,
 				B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */,
-				B0DDA74D18129CFA00E015C0 /* UINavigationController+StatusBar.m in Sources */,
-				827C504B18396B1A00703460 /* RDSSummaryLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

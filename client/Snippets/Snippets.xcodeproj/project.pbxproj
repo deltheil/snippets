@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */; };
+		1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
 		820176FF18134C980041E4E9 /* RDSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSGroup.m */; };
 		823B05EF183919AB00463BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B05EE183919AB00463BFD /* Main.storyboard */; };
@@ -32,14 +33,7 @@
 		82B420CD182429A1002236BE /* redis-doc.html in Resources */ = {isa = PBXBuildFile; fileRef = 82B420CC182429A1002236BE /* redis-doc.html */; };
 		82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B420D018245D72002236BE /* WNCDatabase+Redis.m */; };
 		82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F3F18132E2100E3E5E6 /* Winch.framework */; };
-		82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
-		B0880308181359F700D102C4 /* CommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0880307181359F700D102C4 /* CommandViewController.m */; };
-		B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0880312181364C800D102C4 /* ConsoleViewController.m */; };
-		B08803191813694D00D102C4 /* TextFieldConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = B08803181813694D00D102C4 /* TextFieldConsole.m */; };
 		B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* redis-cli.html */; };
-		B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA73D18129A9000E015C0 /* LNViewController.m */; };
-		B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74018129AED00E015C0 /* BoardingViewController.m */; };
-		B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74318129C8E00E015C0 /* MainViewController.m */; };
 		B0DDA74C18129CFA00E015C0 /* UIColor+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */; };
 /* End PBXBuildFile section */
 
@@ -457,22 +451,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0DDA74118129AED00E015C0 /* BoardingViewController.m in Sources */,
 				B0DDA74C18129CFA00E015C0 /* UIColor+Snippets.m in Sources */,
 				827C504518393D0A00703460 /* RDSCommandCell.m in Sources */,
-				B0880313181364C800D102C4 /* ConsoleViewController.m in Sources */,
-				82C46F441813311100E3E5E6 /* RDSCommand.m in Sources */,
-				B0880308181359F700D102C4 /* CommandViewController.m in Sources */,
 				826579731812959B00A17F63 /* AppDelegate.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
-				B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */,
 				1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */,
 				823B05F61839243100463BFD /* RedisViewController.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
+				1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */,
 				82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */,
-				B0DDA73E18129A9000E015C0 /* LNViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

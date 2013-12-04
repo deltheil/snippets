@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */; };
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
 		820176FF18134C980041E4E9 /* RDSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSGroup.m */; };
 		823B05EF183919AB00463BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B05EE183919AB00463BFD /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AC3D059184FD945009ED88D /* UILabel+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Snippets.h"; sourceTree = "<group>"; };
+		1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Snippets.m"; sourceTree = "<group>"; };
 		37450F446EB0401CADA07D5F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		651242B8D3EF4CB9ACACB863 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		820176FD18134C980041E4E9 /* RDSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSGroup.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 			children = (
 				B0DDA74618129CFA00E015C0 /* UIColor+Hex.h */,
 				B0DDA74718129CFA00E015C0 /* UIColor+Hex.m */,
+				1AC3D059184FD945009ED88D /* UILabel+Snippets.h */,
+				1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */,
 			);
 			name = "UI Categories";
 			path = Components/Category;
@@ -462,6 +467,7 @@
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				B0DDA74418129C8E00E015C0 /* MainViewController.m in Sources */,
+				1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */,
 				823B05F61839243100463BFD /* RedisViewController.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,

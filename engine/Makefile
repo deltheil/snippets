@@ -15,6 +15,10 @@ all: lib
 
 lib: $(DIR)/$(LIBNAME)
 
+demo: CFLAGS=-I.
+demo: demo.o vedis.o
+	$(CC) -o $@ $^
+
 $(DIR)/$(LIBNAME): $(DIRv7)/$(LIBNAME) $(DIRv7s)/$(LIBNAME) $(DIR64)/$(LIBNAME) $(DIRi386)/$(LIBNAME) $(DIRx86_64)/$(LIBNAME)
 	install -d $(DIR)
 	rm -f $@
@@ -22,6 +26,7 @@ $(DIR)/$(LIBNAME): $(DIRv7)/$(LIBNAME) $(DIRv7s)/$(LIBNAME) $(DIR64)/$(LIBNAME) 
 
 clean: clean-armv7 clean-armv7s clean-arm64 clean-i386 clean-x86_64
 	rm -rf $(DIR)
+	rm -f demo demo.o vedis.o
 
 # -------------------------------------------------
 # armv7

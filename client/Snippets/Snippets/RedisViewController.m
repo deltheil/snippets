@@ -13,13 +13,14 @@
 #import "WNCDatabase+Redis.h"
 
 #import "RDSGroup.h"
+#import "RDSGroupCell.h"
 #import "RDSCommand.h"
 #import "RDSCommandCell.h"
 
 @interface RedisViewController ()
 
 // UI properties
-@property (nonatomic, weak) IBOutlet UIScrollView *menuView;
+@property (weak, nonatomic) IBOutlet UICollectionView *groupsCollectionView;
 @property (nonatomic, weak) IBOutlet UITableView *commandsTableView;
 
 // Private properties
@@ -100,6 +101,38 @@
     [self.commandsTableView reloadData];
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
+{
+    return [self.groups count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RDSGroup *group = [self.groups objectAtIndex:indexPath.row];
+    
+    RDSGroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"redisGroupCellID" forIndexPath:indexPath];
+    cell.groupName = group.name;
+    
+    // TODO: at the app launch set the red underline view to the first row "ALL"
+
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row;
+
+    self.currentGroup = [self.groups objectAtIndex:row];
+
+    // TODO: overflow has to be rethink for the scroll view [1]
+    // [1] [collectionView setContentOffset:CGPointMake((row * GROUP_CELL_WIDTH), 0) animated:YES];
+    
+    // set table view offset when group has been selected
+    // and table view has been scrolled before
+    [self.commandsTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+}
 }
 
 #pragma mark - UITableViewDataSource

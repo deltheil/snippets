@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AAA30D6185151B100527AA2 /* RDSGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA30D5185151B100527AA2 /* RDSGroupCell.m */; };
 		1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */; };
 		1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
 		1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4F7011851FF3E00659531 /* UIView+Snippets.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AAA30D4185151B100527AA2 /* RDSGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSGroupCell.h; sourceTree = "<group>"; };
+		1AAA30D5185151B100527AA2 /* RDSGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSGroupCell.m; sourceTree = "<group>"; };
 		1AC3D059184FD945009ED88D /* UILabel+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Snippets.h"; sourceTree = "<group>"; };
 		1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Snippets.m"; sourceTree = "<group>"; };
 		1AD4F7001851FF3E00659531 /* UIView+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snippets.h"; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 			children = (
 				827C504318393D0A00703460 /* RDSCommandCell.h */,
 				827C504418393D0A00703460 /* RDSCommandCell.m */,
+				1AAA30D4185151B100527AA2 /* RDSGroupCell.h */,
+				1AAA30D5185151B100527AA2 /* RDSGroupCell.m */,
 				B0DDA74518129CFA00E015C0 /* UI Categories */,
 				827C504D1839781200703460 /* legacy */,
 			);
@@ -468,6 +473,7 @@
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
 				1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */,
 				82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */,
+				1AAA30D6185151B100527AA2 /* RDSGroupCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

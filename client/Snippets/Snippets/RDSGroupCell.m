@@ -18,6 +18,10 @@
     return self;
 }
 
+- (void)setSelected:(BOOL)selected
+{
+    [self.underlineView setHidden:!selected];
+}
 
 - (void)setGroupName:(NSString *)groupName
 {

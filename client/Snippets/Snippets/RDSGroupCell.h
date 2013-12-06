@@ -11,6 +11,7 @@
 @interface RDSGroupCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *groupLabel;
+@property (weak, nonatomic) IBOutlet UIView *underlineView;
 
 @property (strong, nonatomic) NSString *groupName;
 

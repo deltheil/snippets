@@ -19,5 +19,11 @@
 }
 
 
+- (void)setGroupName:(NSString *)groupName
+{
+    _groupName = groupName;
+    
+    [self.groupLabel setText:_groupName];
+}
 
 @end

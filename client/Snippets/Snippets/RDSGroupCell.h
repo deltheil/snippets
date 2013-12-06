@@ -10,6 +10,7 @@
 
 @interface RDSGroupCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *groupLabel;
 
 @property (strong, nonatomic) NSString *groupName;
 

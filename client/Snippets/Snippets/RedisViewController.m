@@ -17,6 +17,8 @@
 #import "RDSCommand.h"
 #import "RDSCommandCell.h"
 
+#define GROUP_CELL_WIDTH 90
+
 @interface RedisViewController ()
 
 // UI properties
@@ -133,6 +135,22 @@
     // and table view has been scrolled before
     [self.commandsTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView == self.groupsCollectionView) {
+        CGPoint contentOffset = scrollView.contentOffset;
+        contentOffset.x = contentOffset.x - scrollView.contentInset.left;
+        scrollView.contentOffset = contentOffset;
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (scrollView == self.groupsCollectionView) {
+        NSInteger position = (NSInteger) floor(scrollView.contentOffset.x / GROUP_CELL_WIDTH);
+        [scrollView setContentOffset:CGPointMake((position * GROUP_CELL_WIDTH), 0) animated:YES];
+    }
 }
 
 #pragma mark - UITableViewDataSource

@@ -21,8 +21,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if ((self = [super initWithCoder:aDecoder])) {
-        // void
+    self = [super initWithCoder:aDecoder];
+    if (self) {
     }
     return self;
 }

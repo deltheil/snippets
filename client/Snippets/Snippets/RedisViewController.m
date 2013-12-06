@@ -10,16 +10,17 @@
 
 #import <Winch/Winch.h>
 
+#import "WNCDatabase+Redis.h"
+
 #import "RDSGroup.h"
 #import "RDSCommand.h"
 #import "RDSCommandCell.h"
-#import "WNCDatabase+Redis.h"
 
 @interface RedisViewController ()
 
 // UI properties
 @property (nonatomic, weak) IBOutlet UIScrollView *menuView;
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITableView *commandsTableView;
 
 // Private properties
 @property (nonatomic, strong) NSArray *groups;
@@ -95,7 +96,10 @@
     _currentGroup = currentGroup;
     
     self.commands = nil;
-    [self.tableView reloadData];
+    
+    [self.commandsTableView reloadData];
+}
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -110,11 +114,11 @@
     return [self.commands count];
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"redisCommandCellID";
     
-    RDSCommandCell *cell = (RDSCommandCell *) [_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    RDSCommandCell *cell = (RDSCommandCell *) [_commandsTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[RDSCommandCell alloc] initWithStyle:UITableViewCellStyleDefault
                                      reuseIdentifier:cellIdentifier];

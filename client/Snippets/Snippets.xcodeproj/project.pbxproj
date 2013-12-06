@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */; };
 		1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
+		1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4F7011851FF3E00659531 /* UIView+Snippets.m */; };
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
 		820176FF18134C980041E4E9 /* RDSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSGroup.m */; };
 		823B05EF183919AB00463BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B05EE183919AB00463BFD /* Main.storyboard */; };
@@ -50,6 +51,8 @@
 /* Begin PBXFileReference section */
 		1AC3D059184FD945009ED88D /* UILabel+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Snippets.h"; sourceTree = "<group>"; };
 		1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Snippets.m"; sourceTree = "<group>"; };
+		1AD4F7001851FF3E00659531 /* UIView+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snippets.h"; sourceTree = "<group>"; };
+		1AD4F7011851FF3E00659531 /* UIView+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snippets.m"; sourceTree = "<group>"; };
 		37450F446EB0401CADA07D5F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		651242B8D3EF4CB9ACACB863 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		820176FD18134C980041E4E9 /* RDSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSGroup.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 		B0DDA74518129CFA00E015C0 /* UI Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1AD4F7001851FF3E00659531 /* UIView+Snippets.h */,
+				1AD4F7011851FF3E00659531 /* UIView+Snippets.m */,
 				B0DDA74618129CFA00E015C0 /* UIColor+Snippets.h */,
 				B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */,
 				1AC3D059184FD945009ED88D /* UILabel+Snippets.h */,
@@ -454,6 +459,7 @@
 				B0DDA74C18129CFA00E015C0 /* UIColor+Snippets.m in Sources */,
 				827C504518393D0A00703460 /* RDSCommandCell.m in Sources */,
 				826579731812959B00A17F63 /* AppDelegate.m in Sources */,
+				1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */,

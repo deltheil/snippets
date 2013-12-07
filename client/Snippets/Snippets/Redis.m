@@ -61,16 +61,19 @@ err:
 }
 - (NSString *)exec:(NSString *)command error:(NSError **)error
 {
+    vedis_value *res;
     int rc = vedis_exec(_store, [command UTF8String], -1);
     if (rc != VEDIS_OK) goto err;
-
-    vedis_value *res;
-
     rc = vedis_exec_result(_store, &res);
     if (rc != VEDIS_OK) goto err;
+    if (vedis_value_is_null(res)) {
+        return @"(nil)";
+    }
+    else {
+        return [[NSString alloc] initWithCString:vedis_value_to_string(res, NULL)
+                                        encoding:NSUTF8StringEncoding];
+    }
 
-    return [[NSString alloc] initWithCString:vedis_value_to_string(res, 0)
-                                    encoding:NSUTF8StringEncoding];
 err:
     if (error) {
         *error = [NSError rds_errorWithCode:rc store:_store];

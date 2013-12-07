@@ -3,16 +3,21 @@
 
 #include <vedis.h>
 
-#define EXEC_CMD(_CMD) \
+#define EXEC_CMD(vds_CMD) \
   do { \
-    printf("vedis> %s\n", (_CMD)); \
-    rc = vedis_exec(store, (_CMD), -1); \
+    printf("vedis> %s\n", (vds_CMD)); \
+    rc = vedis_exec(store, (vds_CMD), -1); \
     if (rc != VEDIS_OK) goto err; \
     rc = vedis_exec_result(store, &res); \
     if (rc != VEDIS_OK) goto err; \
-    int _LEN; \
-    const char *_MSG = vedis_value_to_string(res, &_LEN); \
-    printf("%s\n", _LEN > 0 ? _MSG : "OK"); \
+    const char *vds_MSG; \
+    if (vedis_value_is_null(res)) { \
+      vds_MSG = "(nil)"; \
+    } \
+    else { \
+      vds_MSG = vedis_value_to_string(res, NULL); \
+    } \
+    printf("%s\n", vds_MSG); \
   } while (0)
 
 int
@@ -28,6 +33,9 @@ main(int argc, const char **argv)
   EXEC_CMD("HSET props os linux");
   EXEC_CMD("HLEN props");
   EXEC_CMD("HGETALL props");
+  EXEC_CMD("GET misc");
+  EXEC_CMD("SET misc smthg");
+  EXEC_CMD("GET misc");
 
   vedis_close(store);
   return 0;

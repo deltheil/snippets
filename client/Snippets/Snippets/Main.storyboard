@@ -477,6 +477,9 @@
                                 <state key="normal" image="sn-console">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryCommand:" destination="H3B-2i-PkJ" eventType="touchUpInside" id="tU0-eS-k4L"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

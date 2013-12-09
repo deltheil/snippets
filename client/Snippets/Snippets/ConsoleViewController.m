@@ -67,6 +67,8 @@
 {
     _htmlHeader = htmlHeader;
 
+    [_entries addObject:htmlHeader];
+}
 }
 
 #pragma mark - Actions

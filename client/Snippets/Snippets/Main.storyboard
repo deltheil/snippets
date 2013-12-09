@@ -383,6 +383,10 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#212121"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="inputContainerView" destination="VyS-id-TEy" id="jyv-7w-jFI"/>
+                        <outlet property="textField" destination="UYh-Zp-hn2" id="d1C-rv-Yx8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgb-8Q-3kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

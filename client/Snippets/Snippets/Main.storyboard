@@ -269,6 +269,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="sn-back"/>
+                                <connections>
+                                    <action selector="popViewController:" destination="H3B-2i-PkJ" eventType="touchUpInside" id="Yxc-1h-0s0"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="x9J-f0-K6i" userLabel="Title View">

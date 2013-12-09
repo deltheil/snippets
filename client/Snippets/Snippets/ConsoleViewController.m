@@ -14,11 +14,20 @@
 @property (weak, nonatomic) IBOutlet UIView *inputContainerView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+@property (strong, nonatomic) NSMutableArray *entries;
+
 @end
 
 @implementation ConsoleViewController
 
 #pragma mark - Life Cyle
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    _entries = [[NSMutableArray alloc] init];
+}
 
 - (void)viewDidLoad
 {

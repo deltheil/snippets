@@ -12,7 +12,7 @@
 
 @interface CommandViewController : UIViewController
 
-@property (strong, nonatomic) RDSCommand *cmd;
+@property (strong, nonatomic) RDSCommand *command;
 @property (strong, nonatomic) NSString *htmlDoc;
 
 @end

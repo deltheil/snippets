@@ -7,6 +7,7 @@
 //
 
 #import "RedisViewController.h"
+#import "CommandViewController.h"
 
 #import <Winch/Winch.h>
 
@@ -56,7 +57,31 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([segue.identifier isEqualToString:@"commandViewSegue"]) {
+        
+        UIButton *button = (UIButton *) sender;
+        
+        UITableViewCell *cell = nil;
+        
+        // Getting tableViewCell from button
+        
+        for (id view = [button superview]; view != nil; view = [view superview]) {
+            if ([view isKindOfClass:[UITableViewCell class]]) {
+                cell = (UITableViewCell *) view;
+                break;
+            }
+        }
+
+        NSIndexPath *indexPath = [self.commandsTableView indexPathForCell:cell];
+        
+        RDSCommand *cmd = self.commands[indexPath.row];
+
+        NSString *htmlDoc = [_database rds_getHTMLForCommand:cmd];
+
+        CommandViewController *cmdVC = segue.destinationViewController;
+        cmdVC.command = cmd;
+        cmdVC.htmlDoc = htmlDoc;
+    }
 }
 
 #pragma mark - Private

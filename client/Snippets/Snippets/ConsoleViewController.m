@@ -27,6 +27,9 @@
 
 @property (strong, nonatomic) Redis *redis;
 
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *prevButton;
+
 @end
 
 @implementation ConsoleViewController
@@ -105,12 +108,19 @@
 
 - (IBAction)previousCmd:(id)sender
 {
+    UIButton *prev = (UIButton *) sender;
 
+    prev.tag = prev.tag - 1;
+
+    if (prev.tag >= 0 && prev.tag <= [_history count] - 1) {
+
+        self.nextButton.tag += 1;
+        self.textField.text = [_history objectAtIndex:prev.tag];
+    }
 }
 
 - (IBAction)nextCmd:(id)sender
 {
-
 }
 
 - (IBAction)dismissViewController:(id)sender
@@ -141,6 +151,7 @@
     [_history addObject:cmd];
     textField.text = @"";
     
+    _prevButton.tag += 1;
     return NO;
 }
 

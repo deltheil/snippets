@@ -7,6 +7,7 @@
 //
 
 #import "CommandViewController.h"
+#import "RDSCommand.h"
 
 @interface CommandViewController ()
 

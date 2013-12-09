@@ -108,6 +108,11 @@
 
 }
 
+- (IBAction)nextCmd:(id)sender
+{
+
+}
+
 - (IBAction)dismissViewController:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -129,7 +134,7 @@
     // Create the pair command + response
     [_entries addObject:REDIS_CMD(cmd)];
     [_entries addObject:resp];
-    
+
     [self reloadEntries];
     
     // Record the command into the history and clean up the prompt

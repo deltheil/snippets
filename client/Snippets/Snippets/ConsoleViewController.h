@@ -10,4 +10,6 @@
 
 @interface ConsoleViewController : UIViewController
 
+@property (strong, nonatomic) NSString *htmlHeader;
+
 @end

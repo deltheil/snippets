@@ -46,6 +46,14 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Private
+
+- (void)setHtmlHeader:(NSString *)htmlHeader
+{
+    _htmlHeader = htmlHeader;
+
+}
+
 #pragma mark - Actions
 
 - (IBAction)dismissViewController:(id)sender

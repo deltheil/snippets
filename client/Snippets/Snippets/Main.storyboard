@@ -238,7 +238,7 @@
         <!--Command View Controller-->
         <scene sceneID="yHf-23-QVb">
             <objects>
-                <viewController id="H3B-2i-PkJ" userLabel="Command View Controller" sceneMemberID="viewController">
+                <viewController id="H3B-2i-PkJ" userLabel="Command View Controller" customClass="CommandViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JlT-BT-CC6"/>
                         <viewControllerLayoutGuide type="bottom" id="wTt-ck-DsD"/>

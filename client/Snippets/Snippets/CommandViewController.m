@@ -9,6 +9,7 @@
 #import "CommandViewController.h"
 
 @interface CommandViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 

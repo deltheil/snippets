@@ -300,6 +300,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="EBj-uv-b2g" id="D3e-yX-Y5P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2T-fh-80R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

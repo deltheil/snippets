@@ -49,12 +49,6 @@
                            error:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"commandViewSegue"]) {
@@ -82,6 +76,11 @@
         cmdVC.command = cmd;
         cmdVC.htmlDoc = htmlDoc;
     }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Private

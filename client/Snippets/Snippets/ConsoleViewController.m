@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property (strong, nonatomic) NSMutableArray *entries;
+@property (strong, nonatomic) NSMutableArray *history;
+
 @property (strong, nonatomic) Redis *redis;
 
 @end
@@ -36,6 +38,8 @@
     [super awakeFromNib];
     
     _entries = [[NSMutableArray alloc] init];
+    _history = [[NSMutableArray alloc] init];
+    
     _redis = [[Redis alloc] init];
 }
 
@@ -123,6 +127,8 @@
     
     [self reloadEntries];
     
+    // Record the command into the history and clean up the prompt
+    [_history addObject:cmd];
     textField.text = @"";
     
     return NO;

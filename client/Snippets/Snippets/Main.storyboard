@@ -246,7 +246,20 @@
                     <view key="view" contentMode="scaleToFill" id="xE4-Xh-anb">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBj-uv-b2g">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EBj-uv-b2g" firstAttribute="leading" secondItem="xE4-Xh-anb" secondAttribute="leading" id="2pZ-LA-2Ch"/>
+                            <constraint firstAttribute="trailing" secondItem="EBj-uv-b2g" secondAttribute="trailing" id="6gL-Ao-hIj"/>
+                            <constraint firstItem="EBj-uv-b2g" firstAttribute="top" secondItem="JlT-BT-CC6" secondAttribute="bottom" id="Oe3-Yc-wWf"/>
+                            <constraint firstItem="wTt-ck-DsD" firstAttribute="top" secondItem="EBj-uv-b2g" secondAttribute="bottom" id="kMa-Qf-d4V"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ocK-Rx-enP">
                         <nil key="title"/>
@@ -255,9 +268,7 @@
                                 <rect key="frame" x="16" y="7" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" image="sn-back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="sn-back"/>
                             </button>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="x9J-f0-K6i" userLabel="Title View">

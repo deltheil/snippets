@@ -54,6 +54,11 @@
 
 #pragma mark - Actions
 
+- (IBAction)tryCommand:(id)sender
+{
+
+}
+
 - (IBAction)popViewController:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];

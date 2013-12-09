@@ -258,6 +258,9 @@
                                 <state key="normal" image="sn-try">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryCommand:" destination="H3B-2i-PkJ" eventType="touchUpInside" id="T6w-Fm-WPA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -251,7 +251,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frL-2s-dGp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -379,10 +379,10 @@
                             <constraint firstAttribute="trailing" secondItem="Tdl-ae-G0s" secondAttribute="trailing" constant="20" id="4JP-w3-GSv"/>
                             <constraint firstItem="frL-2s-dGp" firstAttribute="top" secondItem="bVa-Nz-90Z" secondAttribute="top" id="5RJ-Te-Dcm"/>
                             <constraint firstItem="VyS-id-TEy" firstAttribute="trailing" secondItem="frL-2s-dGp" secondAttribute="trailing" id="5lu-vC-8Xi"/>
+                            <constraint firstItem="VyS-id-TEy" firstAttribute="top" secondItem="frL-2s-dGp" secondAttribute="bottom" id="Kgz-4R-wYC"/>
                             <constraint firstItem="iAL-mZ-wP5" firstAttribute="top" secondItem="VyS-id-TEy" secondAttribute="bottom" id="XCb-fF-k06"/>
                             <constraint firstItem="VyS-id-TEy" firstAttribute="leading" secondItem="bVa-Nz-90Z" secondAttribute="leading" id="dHC-qc-0tW"/>
                             <constraint firstItem="Tdl-ae-G0s" firstAttribute="top" secondItem="Iy4-Qe-iGb" secondAttribute="bottom" constant="13" id="rMY-pg-EOJ"/>
-                            <constraint firstAttribute="bottom" secondItem="frL-2s-dGp" secondAttribute="bottom" id="vhf-iL-GHT"/>
                             <constraint firstAttribute="trailing" secondItem="VyS-id-TEy" secondAttribute="trailing" id="yLK-Yo-Iy7"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

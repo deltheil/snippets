@@ -88,6 +88,10 @@
 
 - (IBAction)presentConsoleViewController:(id)sender
 {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ConsoleViewController *consoleVC = [storyboard instantiateViewControllerWithIdentifier:@"ConsoleViewController"];
+
+    [self presentViewController:consoleVC animated:YES completion:nil];
 }
 
 #pragma mark - Private

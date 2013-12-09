@@ -276,6 +276,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sn-back" width="66" height="30"/>
         <image name="sn-console" width="30" height="30"/>
         <image name="sn-logo" width="30" height="30"/>
         <image name="sn-redis" width="60" height="30"/>

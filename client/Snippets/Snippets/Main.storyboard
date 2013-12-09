@@ -238,7 +238,7 @@
         <!--Console View Controller-->
         <scene sceneID="A5b-kq-B9a">
             <objects>
-                <viewController id="NVQ-xa-jXk" userLabel="Console View Controller" sceneMemberID="viewController">
+                <viewController id="NVQ-xa-jXk" userLabel="Console View Controller" customClass="ConsoleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iy4-Qe-iGb"/>
                         <viewControllerLayoutGuide type="bottom" id="iAL-mZ-wP5"/>

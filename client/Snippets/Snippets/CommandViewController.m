@@ -31,6 +31,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-doc" ofType:@"html"];
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    
+    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile]
+                                          encoding:NSUTF8StringEncoding];
+    
+    NSString *html = [NSString stringWithFormat:tpl, _htmlDoc];
+    
+    [self.webView loadHTMLString:html baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning

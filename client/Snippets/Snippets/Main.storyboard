@@ -232,6 +232,25 @@
             </objects>
             <point key="canvasLocation" x="113" y="2"/>
         </scene>
+        <!--Command View Controller-->
+        <scene sceneID="yHf-23-QVb">
+            <objects>
+                <viewController id="H3B-2i-PkJ" userLabel="Command View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JlT-BT-CC6"/>
+                        <viewControllerLayoutGuide type="bottom" id="wTt-ck-DsD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xE4-Xh-anb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ocK-Rx-enP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2T-fh-80R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="2"/>
+        </scene>
     </scenes>
     <resources>
         <image name="sn-console" width="30" height="30"/>

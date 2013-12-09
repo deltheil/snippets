@@ -32,7 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [self.textField becomeFirstResponder];
+//  [self.textField becomeFirstResponder];
+    [self reloadEntries];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -69,6 +70,19 @@
 
     [_entries addObject:htmlHeader];
 }
+
+- (void)reloadEntries
+{
+    // Load the HTML template in memory
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-cli" ofType:@"html"];
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+
+    // Recreate the full HTML with all entries
+    NSString *content = [_entries componentsJoinedByString:@"<br/>"];
+    NSString *html = [NSString stringWithFormat:tpl, content];
+    
+    [self.webView loadHTMLString:html baseURL:nil];
 }
 
 #pragma mark - Actions

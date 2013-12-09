@@ -10,6 +10,7 @@
 
 @interface ConsoleViewController ()
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *inputContainerView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 

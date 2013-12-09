@@ -254,6 +254,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NVQ-xa-jXk" id="bdp-Pe-K6n"/>
+                                </connections>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-ae-G0s" userLabel="Close Button">
                                 <rect key="frame" x="234" y="33" width="66" height="30"/>
@@ -386,6 +389,7 @@
                     <connections>
                         <outlet property="inputContainerView" destination="VyS-id-TEy" id="jyv-7w-jFI"/>
                         <outlet property="textField" destination="UYh-Zp-hn2" id="d1C-rv-Yx8"/>
+                        <outlet property="webView" destination="frL-2s-dGp" id="xKl-fd-es2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgb-8Q-3kq" userLabel="First Responder" sceneMemberID="firstResponder"/>

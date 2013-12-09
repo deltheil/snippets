@@ -11,6 +11,10 @@
 
 #import "NSError+Redis.h"
 
+#define REDIS_PROMPT @"<div class='lg'>redis></div> %@"
+
+#define REDIS_CMD(_CMD) \
+[NSString stringWithFormat:REDIS_PROMPT, (_CMD)]
 
 @interface ConsoleViewController ()
 
@@ -104,6 +108,23 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    NSError *error;
+    NSString *cmd = [textField.text uppercaseString];
+    
+    // Run the command
+    NSString *resp = [_redis exec:cmd error:&error];
+    if (error) {
+        resp = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
+    }
+    
+    // Create the pair command + response
+    [_entries addObject:REDIS_CMD(cmd)];
+    [_entries addObject:resp];
+    
+    [self reloadEntries];
+    
+    textField.text = @"";
+    
     return NO;
 }
 

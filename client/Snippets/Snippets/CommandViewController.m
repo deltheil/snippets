@@ -40,6 +40,16 @@
 
 #pragma mark - Private
 
+- (void)setCommand:(RDSCommand *)command
+{
+    _command = command;
+}
+
+- (void)setHtmlDoc:(NSString *)htmlDoc
+{
+    _htmlDoc = htmlDoc;
+}
+
 - (IBAction)popViewController:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];

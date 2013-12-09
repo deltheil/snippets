@@ -112,7 +112,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="H3B-2i-PkJ" kind="push" id="3gM-56-XaM"/>
+                                                        <segue destination="H3B-2i-PkJ" kind="push" identifier="commandViewSegue" id="3gM-56-XaM"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-Bg-Mtv" userLabel="Name Label">

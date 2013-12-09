@@ -248,17 +248,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBj-uv-b2g">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkN-km-igE">
+                                <rect key="frame" x="0.0" y="446" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="sn-try">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EBj-uv-b2g" firstAttribute="leading" secondItem="xE4-Xh-anb" secondAttribute="leading" id="2pZ-LA-2Ch"/>
                             <constraint firstAttribute="trailing" secondItem="EBj-uv-b2g" secondAttribute="trailing" id="6gL-Ao-hIj"/>
                             <constraint firstItem="EBj-uv-b2g" firstAttribute="top" secondItem="JlT-BT-CC6" secondAttribute="bottom" id="Oe3-Yc-wWf"/>
-                            <constraint firstItem="wTt-ck-DsD" firstAttribute="top" secondItem="EBj-uv-b2g" secondAttribute="bottom" id="kMa-Qf-d4V"/>
+                            <constraint firstAttribute="trailing" secondItem="RkN-km-igE" secondAttribute="trailing" id="T1K-Nc-foE"/>
+                            <constraint firstItem="RkN-km-igE" firstAttribute="top" secondItem="EBj-uv-b2g" secondAttribute="bottom" constant="8" id="dWu-9t-yEN"/>
+                            <constraint firstItem="RkN-km-igE" firstAttribute="leading" secondItem="xE4-Xh-anb" secondAttribute="leading" id="fyV-wI-Ych"/>
+                            <constraint firstItem="wTt-ck-DsD" firstAttribute="top" secondItem="EBj-uv-b2g" secondAttribute="bottom" constant="66" id="kMa-Qf-d4V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ocK-Rx-enP">
@@ -318,6 +328,7 @@
         <image name="sn-logo" width="30" height="30"/>
         <image name="sn-redis" width="60" height="30"/>
         <image name="sn-see" width="30" height="33"/>
+        <image name="sn-try" width="270" height="46"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

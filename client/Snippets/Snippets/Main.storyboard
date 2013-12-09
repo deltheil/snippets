@@ -278,6 +278,16 @@
                                 <constraint firstItem="u2u-MM-4Ly" firstAttribute="centerX" secondItem="x9J-f0-K6i" secondAttribute="centerX" id="s9f-TB-Wfh"/>
                             </constraints>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" id="plP-Fw-128" userLabel="Console Bar Button Item">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6ZY-H5-F5Z" userLabel="Console Button">
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="sn-console">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2T-fh-80R" userLabel="First Responder" sceneMemberID="firstResponder"/>

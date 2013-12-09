@@ -103,6 +103,11 @@
 
 #pragma mark - Actions
 
+- (IBAction)previousCmd:(id)sender
+{
+
+}
+
 - (IBAction)dismissViewController:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];

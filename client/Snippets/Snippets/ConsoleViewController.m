@@ -7,6 +7,10 @@
 //
 
 #import "ConsoleViewController.h"
+#import "Redis.h"
+
+#import "NSError+Redis.h"
+
 
 @interface ConsoleViewController ()
 
@@ -15,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property (strong, nonatomic) NSMutableArray *entries;
+@property (strong, nonatomic) Redis *redis;
 
 @end
 
@@ -27,6 +32,7 @@
     [super awakeFromNib];
     
     _entries = [[NSMutableArray alloc] init];
+    _redis = [[Redis alloc] init];
 }
 
 - (void)viewDidLoad
@@ -50,6 +56,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillChangeFrameNotification
                                                   object:nil];
+    
+    [_redis close];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

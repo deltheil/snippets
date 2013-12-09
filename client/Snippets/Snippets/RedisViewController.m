@@ -8,6 +8,7 @@
 
 #import "RedisViewController.h"
 #import "CommandViewController.h"
+#import "ConsoleViewController.h"
 
 #import <Winch/Winch.h>
 
@@ -81,6 +82,12 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Actions
+
+- (IBAction)presentConsoleViewController:(id)sender
+{
 }
 
 #pragma mark - Private

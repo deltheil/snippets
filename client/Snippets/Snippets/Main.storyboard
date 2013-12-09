@@ -223,6 +223,9 @@
                                 <state key="normal" image="sn-console">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="presentConsoleViewController:" destination="wmh-VH-L1l" eventType="touchUpInside" id="hmm-Nw-IYO"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

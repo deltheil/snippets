@@ -111,6 +111,9 @@
                                                     <state key="normal" image="sn-see">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="H3B-2i-PkJ" kind="push" id="3gM-56-XaM"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-Bg-Mtv" userLabel="Name Label">
                                                     <rect key="frame" x="20" y="26" width="240" height="16"/>
@@ -241,7 +244,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wTt-ck-DsD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xE4-Xh-anb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

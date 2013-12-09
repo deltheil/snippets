@@ -7,6 +7,7 @@
 //
 
 #import "CommandViewController.h"
+#import "ConsoleViewController.h"
 #import "RDSCommand.h"
 
 @interface CommandViewController ()
@@ -56,7 +57,11 @@
 
 - (IBAction)tryCommand:(id)sender
 {
-
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ConsoleViewController *consoleVC = [storyboard instantiateViewControllerWithIdentifier:@"ConsoleViewController"];
+    consoleVC.htmlHeader = [_command htmlHeader];
+    
+    [self presentViewController:consoleVC animated:YES completion:nil];
 }
 
 - (IBAction)popViewController:(id)sender

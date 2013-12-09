@@ -62,6 +62,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return NO;
+}
+
 #pragma mark - Notifications
 
 - (void)keyboardWillChange:(NSNotification *)notification

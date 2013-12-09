@@ -341,6 +341,9 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="sn_placeHolderHexColor" value="#999999"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="sn_textHexColor" value="#999999"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="NVQ-xa-jXk" id="p6O-cK-689"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>

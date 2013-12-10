@@ -14,5 +14,5 @@
 
 @property (nonatomic, strong) WNCDatabase *database;
 @property (nonatomic, strong) NSString *topicName;
-
+@property (nonatomic, strong) NSString *topic;
 @end

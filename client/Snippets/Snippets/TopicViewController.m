@@ -43,13 +43,6 @@
 {
     [super viewDidLoad];
     
-    // calling sync method to test with data
-    // TODO: sync in background when not at cold start
-    // TODO: manage errors properly
-    [_database rds_syncWithBlock:nil
-                   progressBlock:nil
-                           error:nil];
-        
     // disable interactive pop gesture
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
@@ -57,25 +50,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"commandViewSegue"]) {
+        UITableViewCell *cell = (UITableViewCell *) sender;
         
-        UIButton *button = (UIButton *) sender;
-        
-        UITableViewCell *cell = nil;
-        
-        // Getting tableViewCell from button
-        
-        for (id view = [button superview]; view != nil; view = [view superview]) {
-            if ([view isKindOfClass:[UITableViewCell class]]) {
-                cell = (UITableViewCell *) view;
-                break;
-            }
-        }
-
         NSIndexPath *indexPath = [self.commandsTableView indexPathForCell:cell];
         
         RDSCommand *cmd = self.commands[indexPath.row];
 
-        NSString *htmlDoc = [_database rds_getHTMLForCommand:cmd];
+        NSString *htmlDoc = [_database sn_getHTMLForCommand:cmd forTopic:_topic];
 
         CommandViewController *cmdVC = segue.destinationViewController;
         cmdVC.command = cmd;
@@ -91,6 +72,11 @@
 
 #pragma mark - Private
 
+- (void)setTopic:(NSString *)topic
+{
+    _topic = topic;
+}
+
 - (void)setTopicName:(NSString *)topicName
 {
     _topicName = topicName;
@@ -104,7 +90,7 @@
         return _groups;
     }
     
-    _groups = [_database rds_fetchGroups:nil];
+    _groups = [_database sn_fetchGroupsForTopic:_topic error:nil];
     
     return _groups;
 }
@@ -115,7 +101,7 @@
         return _commands;
     }
     
-    NSMutableArray *cmds = [NSMutableArray arrayWithArray:[_database rds_fetchCommands:nil]];
+    NSMutableArray *cmds = [NSMutableArray arrayWithArray:[_database sn_fetchCommandsForTopic:_topic error:nil]];
     
     if (_currentGroup) {
         [cmds filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary *_) {

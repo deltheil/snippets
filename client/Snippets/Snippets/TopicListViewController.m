@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "TopicTableViewController.h"
+#import "TopicListViewController.h"
 #import "RedisViewController.h"
 #import "TopicCell.h"
 
-@interface TopicTableViewController ()
+@interface TopicListViewController ()
 
 @property (strong, nonatomic) NSMutableArray *themes;
 
 @end
 
-@implementation TopicTableViewController
+@implementation TopicListViewController
 
 #pragma mark -Life Cycle
 

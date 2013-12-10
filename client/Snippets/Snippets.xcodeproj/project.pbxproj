@@ -13,7 +13,7 @@
 		1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */; };
 		1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
 		1AC583121855CB810016DEF6 /* CommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC583111855CB810016DEF6 /* CommandViewController.m */; };
-		1AC5DBDF1857705A00EAB17C /* TopicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBDE1857705A00EAB17C /* TopicTableViewController.m */; };
+		1AC5DBDF1857705A00EAB17C /* TopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBDE1857705A00EAB17C /* TopicListViewController.m */; };
 		1AC5DBE21857733C00EAB17C /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBE11857733C00EAB17C /* TopicCell.m */; };
 		1AC5DBE51857782600EAB17C /* UIBarButtonItem+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBE41857782600EAB17C /* UIBarButtonItem+Snippets.m */; };
 		1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4F7011851FF3E00659531 /* UIView+Snippets.m */; };
@@ -66,8 +66,8 @@
 		1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Snippets.m"; sourceTree = "<group>"; };
 		1AC583101855CB810016DEF6 /* CommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandViewController.h; sourceTree = "<group>"; };
 		1AC583111855CB810016DEF6 /* CommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandViewController.m; sourceTree = "<group>"; };
-		1AC5DBDD1857705A00EAB17C /* TopicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTableViewController.h; sourceTree = "<group>"; };
-		1AC5DBDE1857705A00EAB17C /* TopicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewController.m; sourceTree = "<group>"; };
+		1AC5DBDD1857705A00EAB17C /* TopicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListViewController.h; sourceTree = "<group>"; };
+		1AC5DBDE1857705A00EAB17C /* TopicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListViewController.m; sourceTree = "<group>"; };
 		1AC5DBE01857733C00EAB17C /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
 		1AC5DBE11857733C00EAB17C /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 		1AC5DBE31857782600EAB17C /* UIBarButtonItem+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Snippets.h"; path = "../../UIBarButtonItem+Snippets.h"; sourceTree = "<group>"; };
@@ -311,8 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				827C504C183977F400703460 /* legacy */,
-				1AC5DBDD1857705A00EAB17C /* TopicTableViewController.h */,
-				1AC5DBDE1857705A00EAB17C /* TopicTableViewController.m */,
+				1AC5DBDD1857705A00EAB17C /* TopicListViewController.h */,
+				1AC5DBDE1857705A00EAB17C /* TopicListViewController.m */,
 				823B05F41839243100463BFD /* RedisViewController.h */,
 				823B05F51839243100463BFD /* RedisViewController.m */,
 				1AC583101855CB810016DEF6 /* CommandViewController.h */,
@@ -508,7 +508,7 @@
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
 				1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */,
 				82B420D118245D72002236BE /* WNCDatabase+Redis.m in Sources */,
-				1AC5DBDF1857705A00EAB17C /* TopicTableViewController.m in Sources */,
+				1AC5DBDF1857705A00EAB17C /* TopicListViewController.m in Sources */,
 				1AAA30D6185151B100527AA2 /* RDSGroupCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

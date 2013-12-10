@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-824" y="2"/>
         </scene>
-        <!--Topic Table View Controller-->
+        <!--Topic List View Controller-->
         <scene sceneID="R8I-rN-DZs">
             <objects>
-                <tableViewController id="16S-C5-CqK" customClass="TopicTableViewController" sceneMemberID="viewController">
+                <tableViewController id="16S-C5-CqK" customClass="TopicListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="ycE-a6-a6T">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,7 +10,7 @@
 
 @class WNCDatabase;
 
-@interface TopicTableViewController : UITableViewController
+@interface TopicListViewController : UITableViewController
 
 @property (nonatomic, strong) WNCDatabase *database;
 

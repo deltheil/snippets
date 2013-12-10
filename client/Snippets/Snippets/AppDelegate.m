@@ -11,7 +11,7 @@
 // Winch main header
 #import <Winch/Winch.h>
 
-#import "TopicTableViewController.h"
+#import "TopicListViewController.h"
 
 // ==========================================
 // Winch demo datastore credentials
@@ -35,7 +35,7 @@
     }
     
     UINavigationController *navigationVC = (UINavigationController *) self.window.rootViewController;
-    TopicTableViewController *topicVC = (TopicTableViewController *) navigationVC.topViewController;
+    TopicListViewController *topicVC = (TopicListViewController *) navigationVC.topViewController;
     topicVC.database = _database;
 
     return YES;

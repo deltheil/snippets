@@ -23,4 +23,11 @@
     [super setSelected:selected animated:animated];
 }
 
+- (void)setTopic:(NSString *)topic
+{
+    _topic = topic;
+    
+    [self.topicName setText:_topic];
+}
+
 @end

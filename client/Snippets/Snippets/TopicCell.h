@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *topicName;
 @property (weak, nonatomic) IBOutlet UILabel *description;
 
+
+@property (strong, nonatomic) NSString *topic;
 @end

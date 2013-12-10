@@ -7,6 +7,7 @@
 //
 
 #import "TopicTableViewController.h"
+#import "TopicCell.h"
 
 @interface TopicTableViewController ()
 
@@ -33,7 +34,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,7 +46,8 @@
 {
     static NSString *cellIdentifier = @"topicCellID";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.topic = _themes[indexPath.row];
     
     return cell;
 }

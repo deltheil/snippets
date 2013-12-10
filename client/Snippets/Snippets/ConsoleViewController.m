@@ -151,7 +151,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     NSError *error;
-    NSString *cmd = [textField.text uppercaseString];
+    NSString *cmd = textField.text;
     
     // Run the command
     NSString *resp = [_redis exec:cmd error:&error];

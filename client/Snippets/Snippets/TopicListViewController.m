@@ -28,8 +28,14 @@
     
     _themes = [[NSMutableArray alloc] initWithArray:@[@"Redis", @"Lua"]];
     
+    // interactivePopGesture
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
+
     // set back arrow color
     self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"#d3392e" alpha:1];
+    
+    // disable interactive pop gesture
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +55,7 @@
         
         TopicViewController *topicVC = segue.destinationViewController;
         topicVC.topicName = topic;
+        
         topicVC.database = _database;
     }
 }

@@ -42,8 +42,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
     // calling sync method to test with data
     // TODO: sync in background when not at cold start
@@ -51,6 +49,9 @@
     [_database rds_syncWithBlock:nil
                    progressBlock:nil
                            error:nil];
+        
+    // disable interactive pop gesture
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

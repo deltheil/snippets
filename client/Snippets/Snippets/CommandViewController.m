@@ -35,9 +35,6 @@
     NSString *html = [NSString stringWithFormat:tpl, _htmlDoc];
     
     [self.webView loadHTMLString:html baseURL:nil];
-
-    //swipe to pop view controller
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
 }
 
 - (void)didReceiveMemoryWarning

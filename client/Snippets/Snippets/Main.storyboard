@@ -260,13 +260,13 @@
                                 </connections>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-ae-G0s" userLabel="Close Button">
-                                <rect key="frame" x="234" y="33" width="66" height="30"/>
+                                <rect key="frame" x="268" y="33" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NLf-BS-5gt"/>
-                                    <constraint firstAttribute="width" constant="66" id="jwd-4M-H0o"/>
+                                    <constraint firstAttribute="width" constant="32" id="jwd-4M-H0o"/>
                                 </constraints>
-                                <state key="normal" image="sn-close">
+                                <state key="normal" title="X">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -468,7 +468,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sn-close" width="56" height="23"/>
         <image name="sn-console" width="30" height="30"/>
         <image name="sn-downArrow" width="19" height="12"/>
         <image name="sn-logo" width="30" height="30"/>

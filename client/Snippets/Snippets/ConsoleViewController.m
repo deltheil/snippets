@@ -54,6 +54,12 @@
     [self reloadEntries];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    // automatic web view scroll down when switch orientation mode
+    [self webViewDidFinishLoad:self.webView];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -158,7 +164,6 @@
     if (error) {
         resp = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
     }
-    
     // Create the pair command + response
     [_entries addObject:REDIS_CMD(cmd)];
     [_entries addObject:resp];
@@ -198,14 +203,24 @@
                          self.inputContainerView.frame = textFieldFrame;
                      }
                      completion:nil];
+
+    // set web view height depending on textfield y position
+    
+    CGRect webViewRect = self.webView.frame;
+    webViewRect.size.height = y;
+    
+    self.webView.frame = webViewRect;
 }
 
 #pragma mark - UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    // automatic web view scroll down after exec cmd
+    
     NSInteger height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] intValue];
-    NSString* javascript = [NSString stringWithFormat:@"window.scrollBy(0, %d);", height];
+    NSString *javascript = [NSString stringWithFormat:@"window.scrollBy(0, %d);", height];
+
     [webView stringByEvaluatingJavaScriptFromString:javascript];
 }
 

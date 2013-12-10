@@ -308,14 +308,14 @@
 			isa = PBXGroup;
 			children = (
 				827C504C183977F400703460 /* legacy */,
+				1AC5DBDD1857705A00EAB17C /* TopicTableViewController.h */,
+				1AC5DBDE1857705A00EAB17C /* TopicTableViewController.m */,
 				823B05F41839243100463BFD /* RedisViewController.h */,
 				823B05F51839243100463BFD /* RedisViewController.m */,
 				1AC583101855CB810016DEF6 /* CommandViewController.h */,
 				1AC583111855CB810016DEF6 /* CommandViewController.m */,
 				1A9F6C061855DEA600E89A80 /* ConsoleViewController.h */,
 				1A9F6C071855DEA600E89A80 /* ConsoleViewController.m */,
-				1AC5DBDD1857705A00EAB17C /* TopicTableViewController.h */,
-				1AC5DBDE1857705A00EAB17C /* TopicTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

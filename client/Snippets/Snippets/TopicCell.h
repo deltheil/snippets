@@ -10,4 +10,7 @@
 
 @interface TopicCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *topicName;
+@property (weak, nonatomic) IBOutlet UILabel *description;
+
 @end

@@ -10,6 +10,7 @@
 #import "TopicViewController.h"
 #import "TopicCell.h"
 
+#import "WNCDatabase+Redis.h"
 #import "UIColor+Snippets.h"
 
 @interface TopicListViewController ()
@@ -26,7 +27,11 @@
 {
     [super viewDidLoad];
     
+    _topics = @{@"Lua" : @"lua", @"Redis" : @"rds"};
     
+    // TODO: sync in background if topic is already downloaded
+    // TODO: manage errors properly
+
     // interactivePopGesture
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
 
@@ -45,13 +50,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"topicViewSegue"]) {
-        
         UITableViewCell *cell = (UITableViewCell *) sender;
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 
+        NSArray *keys = [_topics allKeys];
+
+        NSString *topic = [_topics objectForKey:keys[indexPath.row]];
         
+        [_database sn_syncForTopic:topic withBlock:nil progressBlock:nil error:nil];
+
+        // TODO: if sync success, assign
         TopicViewController *topicVC = segue.destinationViewController;
+        topicVC.topicName = keys[indexPath.row];
+        topicVC.topic = topic;
         topicVC.database = _database;
     }
 }
@@ -73,6 +85,9 @@
     static NSString *cellIdentifier = @"topicCellID";
 
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    NSArray *keys = [_topics allKeys];
+    cell.topic = keys[indexPath.row];
     
     return cell;
 }

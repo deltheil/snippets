@@ -419,45 +419,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBj-uv-b2g">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="438"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkN-km-igE">
-                                <rect key="frame" x="0.0" y="446" width="320" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="sn-try">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tryCommand:" destination="H3B-2i-PkJ" eventType="touchUpInside" id="T6w-Fm-WPA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EBj-uv-b2g" firstAttribute="leading" secondItem="xE4-Xh-anb" secondAttribute="leading" id="2pZ-LA-2Ch"/>
                             <constraint firstAttribute="trailing" secondItem="EBj-uv-b2g" secondAttribute="trailing" id="6gL-Ao-hIj"/>
                             <constraint firstItem="EBj-uv-b2g" firstAttribute="top" secondItem="JlT-BT-CC6" secondAttribute="bottom" id="Oe3-Yc-wWf"/>
-                            <constraint firstAttribute="trailing" secondItem="RkN-km-igE" secondAttribute="trailing" id="T1K-Nc-foE"/>
-                            <constraint firstItem="RkN-km-igE" firstAttribute="top" secondItem="EBj-uv-b2g" secondAttribute="bottom" constant="8" id="dWu-9t-yEN"/>
-                            <constraint firstItem="RkN-km-igE" firstAttribute="leading" secondItem="xE4-Xh-anb" secondAttribute="leading" id="fyV-wI-Ych"/>
-                            <constraint firstItem="wTt-ck-DsD" firstAttribute="top" secondItem="EBj-uv-b2g" secondAttribute="bottom" constant="66" id="kMa-Qf-d4V"/>
+                            <constraint firstItem="wTt-ck-DsD" firstAttribute="top" secondItem="EBj-uv-b2g" secondAttribute="bottom" id="kMa-Qf-d4V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ocK-Rx-enP">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" id="8J6-mi-vtk" userLabel="Back Bar Button Item">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bQX-jV-t6p" userLabel="Back Button">
-                                <rect key="frame" x="16" y="7" width="66" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" image="sn-back"/>
-                                <connections>
-                                    <action selector="popViewController:" destination="H3B-2i-PkJ" eventType="touchUpInside" id="Yxc-1h-0s0"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="x9J-f0-K6i" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -476,18 +452,10 @@
                                 <constraint firstItem="u2u-MM-4Ly" firstAttribute="centerX" secondItem="x9J-f0-K6i" secondAttribute="centerX" id="s9f-TB-Wfh"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" id="plP-Fw-128" userLabel="Console Bar Button Item">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6ZY-H5-F5Z" userLabel="Console Button">
-                                <rect key="frame" x="274" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" image="sn-console">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tryCommand:" destination="H3B-2i-PkJ" eventType="touchUpInside" id="tU0-eS-k4L"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Try" id="IiL-Qg-u2O" userLabel="Try Bar Button Item">
+                            <connections>
+                                <action selector="tryCommand:" destination="H3B-2i-PkJ" id="y8A-ws-525"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -500,14 +468,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sn-back" width="66" height="30"/>
         <image name="sn-close" width="56" height="23"/>
         <image name="sn-console" width="30" height="30"/>
         <image name="sn-downArrow" width="19" height="12"/>
         <image name="sn-logo" width="30" height="30"/>
         <image name="sn-redis" width="60" height="30"/>
         <image name="sn-see" width="30" height="33"/>
-        <image name="sn-try" width="270" height="46"/>
         <image name="sn-upArrow" width="19" height="12"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

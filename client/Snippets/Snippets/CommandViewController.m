@@ -67,9 +67,4 @@
     [self presentViewController:consoleVC animated:YES completion:nil];
 }
 
-- (IBAction)popViewController:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 @end

@@ -7,11 +7,13 @@
 //
 
 #import "TopicTableViewController.h"
+#import "RedisViewController.h"
 #import "TopicCell.h"
 
 @interface TopicTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *themes;
+
 @end
 
 @implementation TopicTableViewController
@@ -28,6 +30,22 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"topicViewController"]) {
+        
+        UITableViewCell *cell = (UITableViewCell *) sender;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+
+        NSString *topic = _themes[indexPath.row];
+        
+        RedisViewController *topicVC = segue.destinationViewController;
+        topicVC.topicName = topic;
+        topicVC.database = _database;
+    }
 }
 
 #pragma mark - Table view data source

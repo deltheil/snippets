@@ -24,6 +24,7 @@
 @interface RedisViewController ()
 
 // UI properties
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *groupsCollectionView;
 @property (nonatomic, weak) IBOutlet UITableView *commandsTableView;
 
@@ -86,17 +87,14 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Actions
-
-- (IBAction)presentConsoleViewController:(id)sender
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ConsoleViewController *consoleVC = [storyboard instantiateViewControllerWithIdentifier:@"ConsoleViewController"];
-
-    [self presentViewController:consoleVC animated:YES completion:nil];
-}
-
 #pragma mark - Private
+
+- (void)setTopicName:(NSString *)topicName
+{
+    _topicName = topicName;
+    
+    [self.titleLabel setText:topicName];
+}
 
 - (NSArray *)groups
 {

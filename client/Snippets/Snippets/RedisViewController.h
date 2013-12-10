@@ -13,5 +13,6 @@
 @interface RedisViewController : UIViewController
 
 @property (nonatomic, strong) WNCDatabase *database;
+@property (nonatomic, strong) NSString *topicName;
 
 @end

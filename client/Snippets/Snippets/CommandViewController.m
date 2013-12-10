@@ -37,6 +37,14 @@
     [self.webView loadHTMLString:html baseURL:nil];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"consoleViewSegue"]) {
+        ConsoleViewController *consoleVC = segue.destinationViewController;
+        consoleVC.htmlHeader = [_command htmlHeader];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -59,17 +67,6 @@
 - (void)setHtmlDoc:(NSString *)htmlDoc
 {
     _htmlDoc = htmlDoc;
-}
-
-#pragma mark - Actions
-
-- (IBAction)tryCommand:(id)sender
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ConsoleViewController *consoleVC = [storyboard instantiateViewControllerWithIdentifier:@"consoleViewSegue"];
-    consoleVC.htmlHeader = [_command htmlHeader];
-    
-    [self presentViewController:consoleVC animated:YES completion:nil];
 }
 
 @end

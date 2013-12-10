@@ -514,7 +514,6 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="tryCommand:" destination="H3B-2i-PkJ" id="y8A-ws-525"/>
                                 <segue destination="NVQ-xa-jXk" kind="modal" identifier="consoleViewSegue" id="ktC-Tk-OKe"/>
                             </connections>
                         </barButtonItem>

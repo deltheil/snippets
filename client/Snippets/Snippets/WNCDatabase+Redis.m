@@ -29,6 +29,11 @@
                 error:error];
 }
 
+- (NSInteger)rds_countCommands
+{
+    return [[self getNamespace:RDS_CMDS] count];
+}
+
 - (NSArray *)rds_fetchCommands:(NSError **)error
 {
     return [self rds_fetchModelOfClass:RDSCommand.class error:error];

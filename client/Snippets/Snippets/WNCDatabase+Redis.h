@@ -18,6 +18,8 @@
 
 - (NSArray *)rds_fetchCommands:(NSError **)error;
 
+- (NSInteger)rds_countCommands;
+
 - (NSArray *)rds_fetchGroups:(NSError **)error;
 
 - (NSString *)rds_getHTMLForCommand:(RDSCommand *)cmd;

@@ -10,6 +10,8 @@
 #import "TopicViewController.h"
 #import "TopicCell.h"
 
+#import "UIColor+Snippets.h"
+
 @interface TopicListViewController ()
 
 @property (strong, nonatomic) NSMutableArray *themes;
@@ -25,6 +27,9 @@
     [super viewDidLoad];
     
     _themes = [[NSMutableArray alloc] initWithArray:@[@"Redis", @"Lua"]];
+    
+    // set back arrow color
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"#d3392e" alpha:1];
 }
 
 - (void)didReceiveMemoryWarning

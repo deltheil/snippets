@@ -60,7 +60,7 @@
                                 <connections>
                                     <outlet property="description" destination="ohP-ur-mVE" id="BRJ-1h-AB8"/>
                                     <outlet property="topicName" destination="LIz-dO-8i5" id="VRK-cv-tg6"/>
-                                    <segue destination="wmh-VH-L1l" kind="push" id="6j9-5h-jV5"/>
+                                    <segue destination="wmh-VH-L1l" kind="push" identifier="topicViewController" id="6j9-5h-jV5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -255,11 +255,15 @@
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-vM-V5d" userLabel="Title Label">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-vM-V5d" userLabel="Title Label">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
                             <constraints>
@@ -273,6 +277,7 @@
                     <connections>
                         <outlet property="commandsTableView" destination="XKM-sF-sTM" id="LJp-jY-PQA"/>
                         <outlet property="groupsCollectionView" destination="Ix2-RE-1m7" id="kWa-6P-1Qj"/>
+                        <outlet property="titleLabel" destination="0mt-vM-V5d" id="rac-Jb-s0z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6h-cl-QU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,11 +486,15 @@
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-Co-qX0" userLabel="Title Label">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-Co-qX0" userLabel="Title Label">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
                             <constraints>
@@ -496,6 +505,9 @@
                             </constraints>
                         </view>
                         <barButtonItem key="rightBarButtonItem" title="Try" id="IiL-Qg-u2O" userLabel="Try Bar Button Item">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="tryCommand:" destination="H3B-2i-PkJ" id="y8A-ws-525"/>
                                 <segue destination="NVQ-xa-jXk" kind="push" id="ktC-Tk-OKe"/>

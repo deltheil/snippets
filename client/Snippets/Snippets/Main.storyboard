@@ -45,7 +45,7 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="207" translatesAutoresizingMaskIntoConstraints="NO" id="ohP-ur-mVE" userLabel="Summary Label">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="207" translatesAutoresizingMaskIntoConstraints="NO" id="ohP-ur-mVE" userLabel="Summary Label">
                                             <rect key="frame" x="20" y="46" width="207" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -57,6 +57,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="description" destination="ohP-ur-mVE" id="BRJ-1h-AB8"/>
                                     <outlet property="topicName" destination="LIz-dO-8i5" id="VRK-cv-tg6"/>
@@ -212,6 +213,7 @@
                                                 <constraint firstItem="fNK-Bg-Mtv" firstAttribute="leading" secondItem="xEi-W2-n91" secondAttribute="leading" id="gfO-da-Ydm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="fNK-Bg-Mtv" id="O1u-1k-URx"/>
                                             <outlet property="summaryLabel" destination="xEi-W2-n91" id="95u-UW-jU0"/>

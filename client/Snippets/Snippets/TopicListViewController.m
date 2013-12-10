@@ -14,7 +14,7 @@
 
 @interface TopicListViewController ()
 
-@property (strong, nonatomic) NSMutableArray *themes;
+@property (strong, nonatomic) NSDictionary *topics;
 
 @end
 
@@ -26,7 +26,6 @@
 {
     [super viewDidLoad];
     
-    _themes = [[NSMutableArray alloc] initWithArray:@[@"Redis", @"Lua"]];
     
     // interactivePopGesture
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
@@ -45,17 +44,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"topicViewController"]) {
+    if ([segue.identifier isEqualToString:@"topicViewSegue"]) {
         
         UITableViewCell *cell = (UITableViewCell *) sender;
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 
-        NSString *topic = _themes[indexPath.row];
         
         TopicViewController *topicVC = segue.destinationViewController;
-        topicVC.topicName = topic;
-        
         topicVC.database = _database;
     }
 }
@@ -69,7 +65,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_themes count];
+    return [_topics count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,7 +73,6 @@
     static NSString *cellIdentifier = @"topicCellID";
 
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.topic = _themes[indexPath.row];
     
     return cell;
 }

@@ -154,7 +154,7 @@
 {
     RDSGroup *group = [self.groups objectAtIndex:indexPath.row];
     
-    RDSGroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"redisGroupCellID" forIndexPath:indexPath];
+    RDSGroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topicGroupCellID" forIndexPath:indexPath];
     cell.groupName = group.name;
     
     // TODO: at the app launch set the red underline view to the first row "ALL"
@@ -207,7 +207,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"redisCommandCellID";
+    static NSString *cellIdentifier = @"topicCommandCellID";
     
     RDSCommandCell *cell = (RDSCommandCell *) [_commandsTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {

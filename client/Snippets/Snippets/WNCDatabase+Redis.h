@@ -12,16 +12,21 @@
 
 @interface WNCDatabase (Redis)
 
-- (BOOL)rds_syncWithBlock:(WNCResultBlock)block
-            progressBlock:(WNCProgressBlock)progressBlock
-                    error:(NSError **)error;
+- (BOOL)sn_syncForTopic:(NSString *)topic
+              withBlock:(WNCResultBlock)block
+          progressBlock:(WNCProgressBlock)progressBlock
+                  error:(NSError **)error;
 
-- (NSArray *)rds_fetchCommands:(NSError **)error;
+- (NSInteger)sn_countCommandsForTopicForTopic:(NSString *)topic;
 
-- (NSInteger)rds_countCommands;
+- (NSArray *)sn_fetchCommandsForTopic:(NSString *)topic error:(NSError **)error;
 
-- (NSArray *)rds_fetchGroups:(NSError **)error;
+- (NSArray *)sn_fetchGroupsForTopic:(NSString *)topic error:(NSError **)error;
 
-- (NSString *)rds_getHTMLForCommand:(RDSCommand *)cmd;
+- (NSArray *)sn_fetchModelOfClass:(Class)modelClass
+                         forTopic:(NSString *)topic
+                            error:(NSError **)error;
+
+- (NSString *)sn_getHTMLForCommand:(RDSCommand *)cmd forTopic:(NSString *)topic;
 
 @end

@@ -7,44 +7,45 @@
 //
 
 #import "WNCDatabase+Redis.h"
+#import "WNCOverlayDefines.h"
 
 // Mantle models
 #import "RDSCommand.h"
 #import "RDSGroup.h"
 
-#define RDS_CMDS   @"rds:cmds"
-#define RDS_DOCS   @"rds:docs"
-#define RDS_GROUPS @"rds:groups"
-#define DEF_OPT    @(kWNCSyncDefault)
-
 @implementation WNCDatabase (Redis)
 
-- (BOOL)rds_syncWithBlock:(WNCResultBlock)block
-            progressBlock:(WNCProgressBlock)progressBlock
-                    error:(NSError **)error
+- (BOOL)sn_syncForTopic:(NSString *)topic
+              withBlock:(WNCResultBlock)block
+          progressBlock:(WNCProgressBlock)progressBlock
+                  error:(NSError **)error
 {
-    return [self sync:@{RDS_CMDS: DEF_OPT, RDS_DOCS: DEF_OPT, RDS_GROUPS: DEF_OPT}
+    return [self sync:@{SN_CMDS_TOPIC(topic): DEF_OPT,
+                        SN_DOCS_TOPIC(topic): DEF_OPT,
+                        SN_GROUPS_TOPIC(topic): DEF_OPT}
+            
                 block:block
         progressBlock:progressBlock
                 error:error];
 }
 
-- (NSInteger)rds_countCommands
+- (NSInteger)sn_countCommandsForTopicForTopic:(NSString *)topic
 {
-    return [[self getNamespace:RDS_CMDS] count];
+    return [[self getNamespace:SN_CMDS_TOPIC(topic)] count];
 }
 
-- (NSArray *)rds_fetchCommands:(NSError **)error
+- (NSArray *)sn_fetchCommandsForTopic:(NSString *)topic error:(NSError **)error
 {
-    return [self rds_fetchModelOfClass:RDSCommand.class error:error];
+    return [self sn_fetchModelOfClass:RDSCommand.class forTopic:topic error:error];
 }
 
-- (NSArray *)rds_fetchGroups:(NSError **)error
+- (NSArray *)sn_fetchGroupsForTopic:(NSString *)topic error:(NSError **)error
 {
-    return [self rds_fetchModelOfClass:RDSGroup.class error:error];
+    return [self sn_fetchModelOfClass:RDSGroup.class forTopic:topic error:error];
 }
 
-- (NSArray *)rds_fetchModelOfClass:(Class)modelClass
+- (NSArray *)sn_fetchModelOfClass:(Class)modelClass
+                          forTopic:(NSString *)topic
                              error:(NSError **)error
 {
     NSError *err = nil;
@@ -52,10 +53,10 @@
     
     WNCNamespace *ns = nil;
     if (modelClass == RDSCommand.class) {
-        ns = [self getNamespace:RDS_CMDS];
+        ns = [self getNamespace:SN_CMDS_TOPIC(topic)];
     }
     else if (modelClass == RDSGroup.class) {
-        ns = [self getNamespace:RDS_GROUPS];
+        ns = [self getNamespace:SN_GROUPS_TOPIC(topic)];
     }
     
     NSMutableArray *models = [NSMutableArray array];
@@ -110,9 +111,9 @@ fail:
     return nil;
 }
 
-- (NSString *)rds_getHTMLForCommand:(RDSCommand *)cmd
+- (NSString *)sn_getHTMLForCommand:(RDSCommand *)cmd forTopic:(NSString *)topic
 {
-    WNCNamespace *ns = [self getNamespace:RDS_DOCS];
+    WNCNamespace *ns = [self getNamespace:SN_DOCS_TOPIC(topic)];
     NSData *data = [ns getDataForKey:cmd.uid];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

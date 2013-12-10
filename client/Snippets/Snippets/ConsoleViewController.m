@@ -200,4 +200,13 @@
                      completion:nil];
 }
 
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSInteger height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] intValue];
+    NSString* javascript = [NSString stringWithFormat:@"window.scrollBy(0, %d);", height];
+    [webView stringByEvaluatingJavaScriptFromString:javascript];
+}
+
 @end

@@ -41,6 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
     // calling sync method to test with data
     // TODO: sync in background when not at cold start

@@ -14,6 +14,7 @@
 		1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
 		1AC583121855CB810016DEF6 /* CommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC583111855CB810016DEF6 /* CommandViewController.m */; };
 		1AC5DBDF1857705A00EAB17C /* TopicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBDE1857705A00EAB17C /* TopicTableViewController.m */; };
+		1AC5DBE21857733C00EAB17C /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBE11857733C00EAB17C /* TopicCell.m */; };
 		1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4F7011851FF3E00659531 /* UIView+Snippets.m */; };
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
 		820176FF18134C980041E4E9 /* RDSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSGroup.m */; };
@@ -66,6 +67,8 @@
 		1AC583111855CB810016DEF6 /* CommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandViewController.m; sourceTree = "<group>"; };
 		1AC5DBDD1857705A00EAB17C /* TopicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTableViewController.h; sourceTree = "<group>"; };
 		1AC5DBDE1857705A00EAB17C /* TopicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewController.m; sourceTree = "<group>"; };
+		1AC5DBE01857733C00EAB17C /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
+		1AC5DBE11857733C00EAB17C /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 		1AD4F7001851FF3E00659531 /* UIView+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snippets.h"; sourceTree = "<group>"; };
 		1AD4F7011851FF3E00659531 /* UIView+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snippets.m"; sourceTree = "<group>"; };
 		37450F446EB0401CADA07D5F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +327,8 @@
 				827C504418393D0A00703460 /* RDSCommandCell.m */,
 				1AAA30D4185151B100527AA2 /* RDSGroupCell.h */,
 				1AAA30D5185151B100527AA2 /* RDSGroupCell.m */,
+				1AC5DBE01857733C00EAB17C /* TopicCell.h */,
+				1AC5DBE11857733C00EAB17C /* TopicCell.m */,
 				B0DDA74518129CFA00E015C0 /* UI Categories */,
 				827C504D1839781200703460 /* legacy */,
 			);
@@ -488,6 +493,7 @@
 				1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */,
 				1AC583121855CB810016DEF6 /* CommandViewController.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
+				1AC5DBE21857733C00EAB17C /* TopicCell.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */,
 				1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */,

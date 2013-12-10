@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#ifndef Snippets_WNCOverlayDefines_h
-#define Snippets_WNCOverlayDefines_h
+#ifndef Snippets_WNCSnippetsDefines_h
+#define Snippets_WNCSnippetsDefines_h
 
 #define DEF_OPT    @(kWNCSyncDefault)
 

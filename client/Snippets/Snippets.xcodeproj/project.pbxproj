@@ -72,7 +72,7 @@
 		1AC5DBE11857733C00EAB17C /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 		1AC5DBE31857782600EAB17C /* UIBarButtonItem+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Snippets.h"; path = "../../UIBarButtonItem+Snippets.h"; sourceTree = "<group>"; };
 		1AC5DBE41857782600EAB17C /* UIBarButtonItem+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Snippets.m"; path = "../../UIBarButtonItem+Snippets.m"; sourceTree = "<group>"; };
-		1AC5DBE618578CF500EAB17C /* WNCOverlayDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNCOverlayDefines.h; sourceTree = "<group>"; };
+		1AC5DBE618578CF500EAB17C /* WNCSnippetsDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNCSnippetsDefines.h; sourceTree = "<group>"; };
 		1AD4F7001851FF3E00659531 /* UIView+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snippets.h"; sourceTree = "<group>"; };
 		1AD4F7011851FF3E00659531 /* UIView+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snippets.m"; sourceTree = "<group>"; };
 		37450F446EB0401CADA07D5F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,7 +290,7 @@
 		82B420CE18245D17002236BE /* Winch+ */ = {
 			isa = PBXGroup;
 			children = (
-				1AC5DBE618578CF500EAB17C /* WNCOverlayDefines.h */,
+				1AC5DBE618578CF500EAB17C /* WNCSnippetsDefines.h */,
 				82B420D2182463CA002236BE /* WNCDebug.h */,
 				82B420CF18245D72002236BE /* WNCDatabase+Snippets.h */,
 				82B420D018245D72002236BE /* WNCDatabase+Snippets.m */,

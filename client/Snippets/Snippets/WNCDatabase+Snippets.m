@@ -7,7 +7,7 @@
 //
 
 #import "WNCDatabase+Snippets.h"
-#import "WNCOverlayDefines.h"
+#import "WNCSnippetsDefines.h"
 
 // Mantle models
 #import "RDSCommand.h"

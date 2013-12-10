@@ -11,13 +11,13 @@
 // Winch main header
 #import <Winch/Winch.h>
 
+#import "TopicTableViewController.h"
+
 // ==========================================
 // Winch demo datastore credentials
 // ==========================================
 #define WNC_DATASTORE_ID @"ZCDFQ0KDSO"
 #define WNC_APP_SECRET   @"1LPbPhLr5DiutD1Z"
-
-#import "RedisViewController.h"
 
 @implementation AppDelegate {
     WNCDatabase *_database;
@@ -35,9 +35,9 @@
     }
     
     UINavigationController *navigationVC = (UINavigationController *) self.window.rootViewController;
-    RedisViewController *redisVC = (RedisViewController *) navigationVC.topViewController;
-    redisVC.database = _database;
-    
+    TopicTableViewController *topicVC = (TopicTableViewController *) navigationVC.topViewController;
+    topicVC.database = _database;
+
     return YES;
 }
 

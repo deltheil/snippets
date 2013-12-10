@@ -79,6 +79,7 @@
         CommandViewController *cmdVC = segue.destinationViewController;
         cmdVC.command = cmd;
         cmdVC.htmlDoc = htmlDoc;
+        cmdVC.topicName = _topicName;
     }
 }
 

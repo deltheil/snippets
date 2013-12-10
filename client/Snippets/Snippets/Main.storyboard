@@ -71,6 +71,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="mKh-Iz-t7M">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="B0R-y6-ZeD" userLabel="Bar Button Item -"/>
                         <view key="titleView" contentMode="scaleToFill" id="tXw-tX-VNg" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -251,6 +252,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iPJ-dR-Oig">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="qi2-Qu-7ij"/>
                         <view key="titleView" contentMode="scaleToFill" id="piu-mc-zCP" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -482,6 +484,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ocK-Rx-enP">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="QlZ-r5-soI"/>
                         <view key="titleView" contentMode="scaleToFill" id="Svd-uL-NWN" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -515,6 +518,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="titleLabel" destination="S9E-Co-qX0" id="vso-zu-L7r"/>
                         <outlet property="webView" destination="EBj-uv-b2g" id="D3e-yX-Y5P"/>
                     </connections>
                 </viewController>

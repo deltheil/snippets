@@ -13,6 +13,7 @@
 @interface CommandViewController ()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -45,6 +46,13 @@
 }
 
 #pragma mark - Private
+
+- (void)setTopicName:(NSString *)topicName
+{
+    _topicName = topicName;
+    
+    [self.titleLabel setText:topicName];
+}
 
 - (void)setCommand:(RDSCommand *)command
 {

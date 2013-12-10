@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A5AA0181857D542007635F5 /* UIButton+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AA0171857D542007635F5 /* UIButton+Snippets.m */; };
 		1A9F6C081855DEA600E89A80 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C071855DEA600E89A80 /* ConsoleViewController.m */; };
 		1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C0A1855F7AB00E89A80 /* UITextField+Snippets.m */; };
 		1AAA30D6185151B100527AA2 /* RDSGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA30D5185151B100527AA2 /* RDSGroupCell.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A5AA0161857D542007635F5 /* UIButton+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Snippets.h"; sourceTree = "<group>"; };
+		1A5AA0171857D542007635F5 /* UIButton+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Snippets.m"; sourceTree = "<group>"; };
 		1A9F6C061855DEA600E89A80 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
 		1A9F6C071855DEA600E89A80 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
 		1A9F6C091855F7AB00E89A80 /* UITextField+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Snippets.h"; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 		B0DDA74518129CFA00E015C0 /* UI Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1A5AA0161857D542007635F5 /* UIButton+Snippets.h */,
+				1A5AA0171857D542007635F5 /* UIButton+Snippets.m */,
 				1AD4F7001851FF3E00659531 /* UIView+Snippets.h */,
 				1AD4F7011851FF3E00659531 /* UIView+Snippets.m */,
 				B0DDA74618129CFA00E015C0 /* UIColor+Snippets.h */,
@@ -497,6 +502,7 @@
 				827C504518393D0A00703460 /* RDSCommandCell.m in Sources */,
 				1AC5DBE51857782600EAB17C /* UIBarButtonItem+Snippets.m in Sources */,
 				1A9F6C081855DEA600E89A80 /* ConsoleViewController.m in Sources */,
+				1A5AA0181857D542007635F5 /* UIButton+Snippets.m in Sources */,
 				826579731812959B00A17F63 /* AppDelegate.m in Sources */,
 				1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */,
 				1AC583121855CB810016DEF6 /* CommandViewController.m in Sources */,

@@ -27,8 +27,7 @@
 
 @property (strong, nonatomic) Redis *redis;
 
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
-@property (weak, nonatomic) IBOutlet UIButton *prevButton;
+@property (nonatomic) NSInteger currentIndex;
 
 @end
 
@@ -44,6 +43,8 @@
     _history = [[NSMutableArray alloc] init];
     
     _redis = [[Redis alloc] init];
+    
+    _currentIndex = -1;
 }
 
 - (void)viewDidLoad
@@ -108,19 +109,36 @@
 
 - (IBAction)previousCmd:(id)sender
 {
-    UIButton *prev = (UIButton *) sender;
+    if (_currentIndex == - 1) {
+        _currentIndex = [_history count] - 1;
+    }
+    else {
+        NSInteger idx = _currentIndex;
+        if (idx > 0)
+            _currentIndex = idx - 1;
+    }
 
-    prev.tag = prev.tag - 1;
-
-    if (prev.tag >= 0 && prev.tag <= [_history count] - 1) {
-
-        self.nextButton.tag += 1;
-        self.textField.text = [_history objectAtIndex:prev.tag];
+    if (_currentIndex >= 0 && _currentIndex <= [_history count] - 1) { // paranoid
+        NSString *cmd = [_history objectAtIndex:_currentIndex];
+        self.textField.text = cmd;
     }
 }
 
 - (IBAction)nextCmd:(id)sender
 {
+    if (_currentIndex == - 1) {
+        _currentIndex = [_history count] - 1;
+    }
+    else {
+        NSInteger idx = _currentIndex;
+        if (idx < [_history count] - 1)
+            _currentIndex = idx + 1;
+    }
+    
+    if (_currentIndex >= 0 && _currentIndex <= [_history count] - 1) { // paranoid
+        NSString *cmd = [_history objectAtIndex:_currentIndex];
+        self.textField.text = cmd;
+    }
 }
 
 - (IBAction)dismissViewController:(id)sender
@@ -151,7 +169,9 @@
     [_history addObject:cmd];
     textField.text = @"";
     
-    _prevButton.tag += 1;
+    // reset index navigation
+    _currentIndex = -1;
+    
     return NO;
 }
 

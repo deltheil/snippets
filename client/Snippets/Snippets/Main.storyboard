@@ -397,8 +397,6 @@
                     </view>
                     <connections>
                         <outlet property="inputContainerView" destination="VyS-id-TEy" id="jyv-7w-jFI"/>
-                        <outlet property="nextButton" destination="fIw-a8-UY1" id="9qS-Su-I35"/>
-                        <outlet property="prevButton" destination="xRs-jP-rD6" id="WvC-Np-JWd"/>
                         <outlet property="textField" destination="UYh-Zp-hn2" id="d1C-rv-Yx8"/>
                         <outlet property="webView" destination="frL-2s-dGp" id="xKl-fd-es2"/>
                     </connections>

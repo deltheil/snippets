@@ -13,6 +13,11 @@
 @interface TopicViewController : UIViewController
 
 @property (nonatomic, strong) WNCDatabase *database;
+
+// navigation bar title view
 @property (nonatomic, strong) NSString *topicName;
+
+// topic name e.g rds
 @property (nonatomic, strong) NSString *topic;
+
 @end

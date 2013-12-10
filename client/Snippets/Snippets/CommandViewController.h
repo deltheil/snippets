@@ -12,7 +12,9 @@
 
 @interface CommandViewController : UIViewController
 
+// navigation bar title view
 @property (nonatomic, strong) NSString *topicName;
+
 @property (strong, nonatomic) RDSCommand *command;
 @property (strong, nonatomic) NSString *htmlDoc;
 

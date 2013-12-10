@@ -7,6 +7,7 @@
 //
 
 #import "TopicCell.h"
+#import "UIColor+Snippets.h"
 
 @implementation TopicCell
 
@@ -28,6 +29,23 @@
     _topic = topic;
     
     [self.topicName setText:_topic];
+}
+
+@end
+
+#pragma mark - Helpers Subclasses
+
+@implementation ChooseButton
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = [[UIColor colorWithHexString:@"#d3392e" alpha:1] CGColor];
+        self.layer.cornerRadius = 3;
+    }
+    return self;
 }
 
 @end

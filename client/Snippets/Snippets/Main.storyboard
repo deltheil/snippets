@@ -95,28 +95,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="redisCommandCellID" id="9JQ-tU-uBb" userLabel="Command Table View Cell - redisCommandCellID" customClass="RDSCommandCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="redisCommandCellID" id="9JQ-tU-uBb" userLabel="Command Table View Cell - redisCommandCellID" customClass="RDSCommandCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9JQ-tU-uBb" id="7gF-Q0-eys">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8b-Ja-X8F" userLabel="Detail Button">
-                                                    <rect key="frame" x="268" y="26" width="32" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="nCo-z9-RBj"/>
-                                                    </constraints>
-                                                    <state key="normal" image="sn-see">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="H3B-2i-PkJ" kind="push" identifier="commandViewSegue" id="3gM-56-XaM"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-Bg-Mtv" userLabel="Name Label">
-                                                    <rect key="frame" x="20" y="26" width="240" height="16"/>
+                                                    <rect key="frame" x="20" y="26" width="207" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
@@ -125,8 +112,8 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-W2-n91" userLabel="Summary Label">
-                                                    <rect key="frame" x="20" y="43" width="240" height="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="207" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-W2-n91" userLabel="Summary Label">
+                                                    <rect key="frame" x="20" y="43" width="207" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
@@ -138,19 +125,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xEi-W2-n91" firstAttribute="top" secondItem="fNK-Bg-Mtv" secondAttribute="top" constant="17" id="3Zj-aN-iHd"/>
-                                                <constraint firstItem="A8b-Ja-X8F" firstAttribute="leading" secondItem="fNK-Bg-Mtv" secondAttribute="trailing" constant="8" symbolic="YES" id="4Sz-SB-fpD"/>
-                                                <constraint firstAttribute="trailing" secondItem="A8b-Ja-X8F" secondAttribute="trailing" constant="20" id="LQD-cj-Hi5"/>
+                                                <constraint firstItem="fNK-Bg-Mtv" firstAttribute="top" secondItem="7gF-Q0-eys" secondAttribute="top" constant="26" id="939-jj-jHP"/>
+                                                <constraint firstItem="fNK-Bg-Mtv" firstAttribute="trailing" secondItem="xEi-W2-n91" secondAttribute="trailing" id="Et8-Tx-cu5"/>
                                                 <constraint firstItem="xEi-W2-n91" firstAttribute="leading" secondItem="7gF-Q0-eys" secondAttribute="leading" constant="20" symbolic="YES" id="NNU-TZ-e7S"/>
                                                 <constraint firstAttribute="trailing" secondItem="xEi-W2-n91" secondAttribute="trailing" constant="60" id="OZx-QY-isy"/>
-                                                <constraint firstItem="A8b-Ja-X8F" firstAttribute="bottom" secondItem="xEi-W2-n91" secondAttribute="bottom" id="QYn-ly-NBp"/>
-                                                <constraint firstItem="A8b-Ja-X8F" firstAttribute="centerY" secondItem="7gF-Q0-eys" secondAttribute="centerY" id="X5l-EV-IRl"/>
-                                                <constraint firstItem="A8b-Ja-X8F" firstAttribute="top" secondItem="7gF-Q0-eys" secondAttribute="top" constant="26" id="bwU-QL-EbZ"/>
                                                 <constraint firstItem="fNK-Bg-Mtv" firstAttribute="leading" secondItem="xEi-W2-n91" secondAttribute="leading" id="gfO-da-Ydm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="fNK-Bg-Mtv" id="O1u-1k-URx"/>
                                             <outlet property="summaryLabel" destination="xEi-W2-n91" id="95u-UW-jU0"/>
+                                            <segue destination="H3B-2i-PkJ" kind="push" identifier="commandViewSegue" id="7kV-BJ-ML4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -187,16 +172,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="iPJ-dR-Oig">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="aGv-CF-YwY" userLabel="Redis Bar Button">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DXH-qE-gmu" userLabel="Redis Button">
-                                <rect key="frame" x="16" y="7" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" image="sn-redis">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="AcS-Hp-BaA" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -215,19 +190,6 @@
                                 <constraint firstItem="ymd-st-Ksj" firstAttribute="leading" secondItem="AcS-Hp-BaA" secondAttribute="leading" constant="49" id="v70-Vb-psS"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="TKj-bg-QOz" userLabel="Console Bar Button">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aGK-5M-h9N" userLabel="Console Button">
-                                <rect key="frame" x="274" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" image="sn-console">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="presentConsoleViewController:" destination="wmh-VH-L1l" eventType="touchUpInside" id="hmm-Nw-IYO"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="commandsTableView" destination="XKM-sF-sTM" id="LJp-jY-PQA"/>
@@ -468,11 +430,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sn-console" width="30" height="30"/>
         <image name="sn-downArrow" width="19" height="12"/>
         <image name="sn-logo" width="30" height="30"/>
-        <image name="sn-redis" width="60" height="30"/>
-        <image name="sn-see" width="30" height="33"/>
         <image name="sn-upArrow" width="19" height="12"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

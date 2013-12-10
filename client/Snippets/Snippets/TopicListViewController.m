@@ -7,7 +7,7 @@
 //
 
 #import "TopicListViewController.h"
-#import "RedisViewController.h"
+#import "TopicViewController.h"
 #import "TopicCell.h"
 
 @interface TopicListViewController ()
@@ -42,7 +42,7 @@
 
         NSString *topic = _themes[indexPath.row];
         
-        RedisViewController *topicVC = segue.destinationViewController;
+        TopicViewController *topicVC = segue.destinationViewController;
         topicVC.topicName = topic;
         topicVC.database = _database;
     }

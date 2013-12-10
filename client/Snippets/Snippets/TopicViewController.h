@@ -10,7 +10,7 @@
 
 @class WNCDatabase;
 
-@interface RedisViewController : UIViewController
+@interface TopicViewController : UIViewController
 
 @property (nonatomic, strong) WNCDatabase *database;
 @property (nonatomic, strong) NSString *topicName;

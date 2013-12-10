@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "RedisViewController.h"
+#import "TopicViewController.h"
 #import "CommandViewController.h"
 #import "ConsoleViewController.h"
 
@@ -21,7 +21,7 @@
 
 #define GROUP_CELL_WIDTH 90
 
-@interface RedisViewController ()
+@interface TopicViewController ()
 
 // UI properties
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -35,7 +35,7 @@
 
 @end
 
-@implementation RedisViewController
+@implementation TopicViewController
 
 #pragma mark - Life Cycle
 

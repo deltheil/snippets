@@ -20,7 +20,7 @@
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
 		820176FF18134C980041E4E9 /* RDSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSGroup.m */; };
 		823B05EF183919AB00463BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B05EE183919AB00463BFD /* Main.storyboard */; };
-		823B05F61839243100463BFD /* RedisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B05F51839243100463BFD /* RedisViewController.m */; };
+		823B05F61839243100463BFD /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B05F51839243100463BFD /* TopicViewController.m */; };
 		826579631812959B00A17F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579621812959B00A17F63 /* Foundation.framework */; };
 		826579651812959B00A17F63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579641812959B00A17F63 /* CoreGraphics.framework */; };
 		826579671812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
@@ -79,8 +79,8 @@
 		820176FD18134C980041E4E9 /* RDSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSGroup.h; sourceTree = "<group>"; };
 		820176FE18134C980041E4E9 /* RDSGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSGroup.m; sourceTree = "<group>"; };
 		823B05EE183919AB00463BFD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		823B05F41839243100463BFD /* RedisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedisViewController.h; sourceTree = "<group>"; };
-		823B05F51839243100463BFD /* RedisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedisViewController.m; sourceTree = "<group>"; };
+		823B05F41839243100463BFD /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
+		823B05F51839243100463BFD /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 		8265795F1812959B00A17F63 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826579621812959B00A17F63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		826579641812959B00A17F63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -313,8 +313,8 @@
 				827C504C183977F400703460 /* legacy */,
 				1AC5DBDD1857705A00EAB17C /* TopicListViewController.h */,
 				1AC5DBDE1857705A00EAB17C /* TopicListViewController.m */,
-				823B05F41839243100463BFD /* RedisViewController.h */,
-				823B05F51839243100463BFD /* RedisViewController.m */,
+				823B05F41839243100463BFD /* TopicViewController.h */,
+				823B05F51839243100463BFD /* TopicViewController.m */,
 				1AC583101855CB810016DEF6 /* CommandViewController.h */,
 				1AC583111855CB810016DEF6 /* CommandViewController.m */,
 				1A9F6C061855DEA600E89A80 /* ConsoleViewController.h */,
@@ -503,7 +503,7 @@
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */,
 				1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */,
-				823B05F61839243100463BFD /* RedisViewController.m in Sources */,
+				823B05F61839243100463BFD /* TopicViewController.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
 				1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */,

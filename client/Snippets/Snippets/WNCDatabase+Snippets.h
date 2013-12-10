@@ -10,7 +10,7 @@
 
 @class RDSCommand;
 
-@interface WNCDatabase (Redis)
+@interface WNCDatabase (Snippets)
 
 - (BOOL)sn_syncForTopic:(NSString *)topic
               withBlock:(WNCResultBlock)block

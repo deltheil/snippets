@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "WNCDatabase+Redis.h"
+#import "WNCDatabase+Snippets.h"
 #import "WNCOverlayDefines.h"
 
 // Mantle models
 #import "RDSCommand.h"
 #import "RDSGroup.h"
 
-@implementation WNCDatabase (Redis)
+@implementation WNCDatabase (Snippets)
 
 - (BOOL)sn_syncForTopic:(NSString *)topic
               withBlock:(WNCResultBlock)block

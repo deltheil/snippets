@@ -10,7 +10,7 @@
 #import "TopicViewController.h"
 #import "TopicCell.h"
 
-#import "WNCDatabase+Redis.h"
+#import "WNCDatabase+Snippets.h"
 #import "UIColor+Snippets.h"
 
 @interface TopicListViewController ()

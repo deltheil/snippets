@@ -12,7 +12,7 @@
 
 #import <Winch/Winch.h>
 
-#import "WNCDatabase+Redis.h"
+#import "WNCDatabase+Snippets.h"
 
 #import "RDSGroup.h"
 #import "RDSGroupCell.h"

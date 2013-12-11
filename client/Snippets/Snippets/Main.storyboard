@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E4022" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Mps-hM-I75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Mps-hM-I75">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -646,7 +646,7 @@
                                 <constraint firstItem="S9E-Co-qX0" firstAttribute="leading" secondItem="Svd-uL-NWN" secondAttribute="leading" id="qzC-RP-3zP"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" title="Try" id="IiL-Qg-u2O" userLabel="Try Bar Button Item">
+                        <barButtonItem key="rightBarButtonItem" title="Try it" id="IiL-Qg-u2O" userLabel="Try Bar Button Item">
                             <connections>
                                 <segue destination="NVQ-xa-jXk" kind="modal" identifier="consoleViewSegue" id="ktC-Tk-OKe"/>
                             </connections>

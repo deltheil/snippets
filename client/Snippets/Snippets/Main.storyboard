@@ -148,10 +148,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSl-jX-rGm" userLabel="Powered Title Label">
-                                <rect key="frame" x="0.0" y="48" width="320" height="24"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered by Winch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSl-jX-rGm" userLabel="Powered Title Label">
+                                <rect key="frame" x="0.0" y="117" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -159,19 +159,18 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sn-winchlogo" translatesAutoresizingMaskIntoConstraints="NO" id="9M7-jo-4e2" userLabel="Winch Image View">
-                                <rect key="frame" x="62" y="113" width="196" height="46"/>
+                                <rect key="frame" x="62" y="182" width="196" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-Ul-m6o">
-                                <rect key="frame" x="40" y="280" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Master-slave replication engine for mobile apps" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-Ul-m6o">
+                                <rect key="frame" x="40" y="295" width="240" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="www.winch.io" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukr-8G-t2a">
-                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="481" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -181,16 +180,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="ZSl-jX-rGm" firstAttribute="leading" secondItem="nLA-NK-Ujj" secondAttribute="leading" id="DnU-an-XzY"/>
-                            <constraint firstAttribute="trailing" secondItem="ZSl-jX-rGm" secondAttribute="trailing" id="NeL-bX-H8n"/>
-                            <constraint firstItem="ZSl-jX-rGm" firstAttribute="top" secondItem="SBJ-SA-fq6" secondAttribute="bottom" constant="28" id="noV-72-3X2"/>
-                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="HmI-hf-MdM" appends="YES" id="VMt-3U-TNj"/>
                         </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="tyx-Ul-m6o" id="oaE-hd-EWD"/>
+                        <outlet property="linkTextView" destination="ukr-8G-t2a" id="mBG-tJ-Yi7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gba-LU-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="HmI-hf-MdM">

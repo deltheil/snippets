@@ -10,6 +10,9 @@
 
 @interface AboutViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UITextView *linkTextView;
+
 @end
 
 @implementation AboutViewController
@@ -19,13 +22,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // set font programmatically because UITextView category does not work yet
+    
+    [self.descriptionTextView setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:17]];
+    [self.linkTextView setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:17]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Actions

@@ -18,7 +18,7 @@
 #import "RDSGroup.h"
 #import "RDSGroupCell.h"
 #import "RDSCommand.h"
-#import "RDSCommandCell.h"
+#import "CommandCell.h"
 
 #define GROUP_CELL_WIDTH 90
 
@@ -192,9 +192,9 @@
 {
     static NSString *cellIdentifier = @"topicCommandCellID";
     
-    RDSCommandCell *cell = (RDSCommandCell *) [_commandsTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CommandCell *cell = (CommandCell *) [_commandsTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[RDSCommandCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[CommandCell alloc] initWithStyle:UITableViewCellStyleDefault
                                      reuseIdentifier:cellIdentifier];
     }
     

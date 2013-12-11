@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "RDSCommandCell.h"
+#import "CommandCell.h"
 
 #import "RDSCommand.h"
 
-@interface RDSCommandCell ()
+@interface CommandCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *summaryLabel;
 
 @end
 
-@implementation RDSCommandCell
+@implementation CommandCell
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

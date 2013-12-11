@@ -10,7 +10,7 @@
 
 @class RDSCommand;
 
-@interface RDSCommandCell : UITableViewCell
+@interface CommandCell : UITableViewCell
 
 @property (nonatomic, strong) RDSCommand *command;
 

@@ -165,15 +165,24 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ZSl-jX-rGm" firstAttribute="leading" secondItem="nLA-NK-Ujj" secondAttribute="leading" id="DnU-an-XzY"/>
                             <constraint firstItem="lXm-ce-7ot" firstAttribute="top" secondItem="ZSl-jX-rGm" secondAttribute="bottom" constant="20" id="NdD-Ak-Ygm"/>
                             <constraint firstAttribute="trailing" secondItem="ZSl-jX-rGm" secondAttribute="trailing" id="NeL-bX-H8n"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HmI-hf-MdM" appends="YES" id="VMt-3U-TNj"/>
+                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gba-LU-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HmI-hf-MdM">
+                    <connections>
+                        <action selector="dismissViewController:" destination="3b3-pV-lxo" id="xyd-4B-BOV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="97" y="-358"/>
         </scene>

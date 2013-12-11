@@ -5,3 +5,6 @@
 [submodule "tools/redis/redis-io"]
 	path = tools/redis/redis-io
 	url = git@github.com:antirez/redis-io.git
+[submodule "fakeredis.c"]
+	path = fakeredis.c
+	url = https://github.com/deltheil/fakeredis.c.git

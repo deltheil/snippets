@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Command;
+
 @interface ConsoleViewController : UIViewController
 
-@property (strong, nonatomic) NSString *htmlHeader;
+@property (strong, nonatomic) Command *command;
 
 @end

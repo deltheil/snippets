@@ -42,7 +42,7 @@
 {
     if ([segue.identifier isEqualToString:@"consoleViewSegue"]) {
         ConsoleViewController *consoleVC = segue.destinationViewController;
-        consoleVC.htmlHeader = [_command htmlHeader];
+        consoleVC.command = _command;
     }
 }
 

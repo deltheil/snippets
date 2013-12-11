@@ -8,6 +8,7 @@
 
 #import "ConsoleViewController.h"
 #import "Redis.h"
+#import "Command.h"
 
 #import "NSError+Redis.h"
 
@@ -93,11 +94,10 @@
 
 #pragma mark - Private
 
-- (void)setHtmlHeader:(NSString *)htmlHeader
+- (void)setCommand:(Command *)command
 {
-    _htmlHeader = htmlHeader;
-
-    [_entries addObject:htmlHeader];
+    _command = command;
+    [_entries addObject:_command.htmlHeader];
 }
 
 - (void)reloadEntries

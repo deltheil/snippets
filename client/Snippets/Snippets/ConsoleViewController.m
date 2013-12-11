@@ -205,7 +205,6 @@
                      completion:nil];
 
     // set web view height depending on textfield y position
-    
     CGRect webViewRect = self.webView.frame;
     webViewRect.size.height = y;
     
@@ -217,9 +216,8 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     // automatic web view scroll down after exec cmd
-    
     NSInteger height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] intValue];
-    NSString *javascript = [NSString stringWithFormat:@"window.scrollBy(0, %d);", height];
+    NSString *javascript = [NSString stringWithFormat:@"window.scrollBy(0, %ld);", (long) height];
 
     [webView stringByEvaluatingJavaScriptFromString:javascript];
 }

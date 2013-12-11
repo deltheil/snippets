@@ -18,7 +18,7 @@
 @interface TopicListViewController ()
 
 @property (strong, nonatomic) NSArray *topics;
-
+@property (nonatomic) NSIndexPath *selectedTopic;
 @end
 
 @implementation TopicListViewController
@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 
-    // temporary for demo e.g "rds"
+    // temporary for demo "redis"
     Topic *rds = [[Topic alloc] init];
     rds.uid = @"rds";
     rds.name = @"Redis";
@@ -70,7 +70,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
     Topic *topic = _topics[indexPath.row];
-
+    
     // cold start check
     if ([_database sn_countCommandsForTopicForTopic:topic.uid] > 0) {
         [self presentViewControllerForTopic:topic];
@@ -90,7 +90,10 @@
         [self.tableView setUserInteractionEnabled:YES];
         
         if (error) {
-            // TODO: manage errors properly
+            // keep selected topic to use for retry
+            _selectedTopic = indexPath;
+            // show alert view to handle retry action
+            [self showAlertSyncError:error];
         }
         else {
             [self presentViewControllerForTopic:topic];
@@ -107,6 +110,30 @@
 }
 
 #pragma mark - Private
+
+- (void)showAlertSyncError:(NSError *)error
+{
+    NSString *message;
+    
+    switch ([error code]) {
+        case WNCErrorNoConn:
+            message = NSLocalizedString(@"INITIAL_SYNC_ERROR_MESSAGE_NETWORK", nil);
+            break;
+        case WNCErrorSlowConn:
+        case WNCErrorTimeout:
+            message = NSLocalizedString(@"INITIAL_SYNC_ERROR_MESSAGE_SLOW_NETWORK", nil);
+            break;
+        default:
+            message = NSLocalizedString(@"INITIAL_SYNC_ERROR_MESSAGE", nil);
+            break;
+    }
+    
+    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"SYNC_ERROR", nil)
+                                message:message
+                               delegate:self
+                      cancelButtonTitle:NSLocalizedString(@"DONE", nil)
+                      otherButtonTitles:NSLocalizedString(@"RETRY", nil), nil] show];
+}
 
 - (void)presentViewControllerForTopic:(Topic *)topic
 {
@@ -139,6 +166,20 @@
     cell.topic = _topics[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        return;
+    }
+    
+    // Retry
+    TopicCell *cell = (TopicCell *) [self.tableView cellForRowAtIndexPath:_selectedTopic];
+    // call choose topic IBAction
+    [self chooseTopic:cell.chooseButton];
 }
 
 @end

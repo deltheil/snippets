@@ -55,6 +55,8 @@
     [super didReceiveMemoryWarning];
 }
 
+// TODO: sync method has to be refactoring,
+// not really proper to handle network activity view on sync in background
 - (IBAction)chooseTopic:(id)sender
 {
     UIButton *button = (UIButton *) sender;
@@ -76,10 +78,17 @@
     // cold start check
     if ([_database sn_countCommandsForTopicForTopic:topic.uid] > 0) {
         [self presentViewControllerForTopic:topic];
+        
+        // show network activity indicator on sync in background
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        void (^resultBlock)(NSArray *, NSError *) = ^(id _, NSError *error) {
+            // hide network activity indicator when sync in background finished
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        };
 
         // sync in background
         [_database sn_syncForTopic:topic.uid
-                       resultBlock:nil
+                       resultBlock:resultBlock
                      progressBlock:nil
                              error:nil];
         return;
@@ -151,6 +160,17 @@
 
 #pragma mark - Table view data source
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TopicCell *cell = (TopicCell *) [tableView cellForRowAtIndexPath:indexPath];
+    if (!cell.isSynced) {
+        return;
+    }
+    
+    // call choose topic IBAction with the current selected cell
+    [self chooseTopic:cell.chooseButton];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -167,7 +187,14 @@
 
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    cell.topic = _topics[indexPath.row];
+    Topic *topic = _topics[indexPath.row];
+    
+    cell.topic = topic;
+    
+    // if topic synced, show accessory button
+    if ([_database sn_countCommandsForTopicForTopic:topic.uid] > 0) {
+        cell.isSynced = YES;
+    }
     
     return cell;
 }

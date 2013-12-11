@@ -38,7 +38,16 @@
 {
     _percent = percent;
     
-    [self.chooseButton setTitle:[NSString stringWithFormat:@"%ld %%", (long)_percent]
+    NSString *percentString;
+
+    if (_percent < 100) {
+        percentString = [NSString stringWithFormat:@"%ld %%", (long)_percent];
+    }
+    else {
+        percentString = @"CHOOSE";
+    }
+    
+    [self.chooseButton setTitle:percentString
                        forState:UIControlStateNormal];
 }
 

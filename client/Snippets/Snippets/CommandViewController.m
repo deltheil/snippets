@@ -57,7 +57,7 @@
 {
     _command = command;
 
-    [self.titleLabel setText:_command.name];
+    [self.titleLabel setText:[_command.name capitalizedString]];
 }
 
 - (void)setHtmlDoc:(NSString *)htmlDoc

@@ -104,7 +104,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="mKh-Iz-t7M">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="eLu-Yu-rzp"/>
                         <barButtonItem key="leftBarButtonItem" title="About" id="dmn-F2-q6y">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="3b3-pV-lxo" kind="modal" id="rzH-eR-laK"/>
                             </connections>
@@ -147,7 +151,25 @@
                     <view key="view" contentMode="scaleToFill" id="nLA-NK-Ujj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Winch.io" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSl-jX-rGm">
+                                <rect key="frame" x="0.0" y="524" width="320" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZSl-jX-rGm" firstAttribute="leading" secondItem="nLA-NK-Ujj" secondAttribute="leading" id="DnU-an-XzY"/>
+                            <constraint firstItem="lXm-ce-7ot" firstAttribute="top" secondItem="ZSl-jX-rGm" secondAttribute="bottom" constant="20" id="NdD-Ak-Ygm"/>
+                            <constraint firstAttribute="trailing" secondItem="ZSl-jX-rGm" secondAttribute="trailing" id="NeL-bX-H8n"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
@@ -307,9 +329,10 @@
                             <constraint firstItem="q5p-Uk-tEO" firstAttribute="top" secondItem="Ix2-RE-1m7" secondAttribute="bottom" id="pmS-Ee-26K"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="iPJ-dR-Oig">
                         <nil key="title"/>
-                        <barButtonItem key="backBarButtonItem" title=" " id="qi2-Qu-7ij"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="hsV-lQ-eRd"/>
                         <view key="titleView" contentMode="scaleToFill" id="piu-mc-zCP" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -334,6 +357,7 @@
                         </view>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commandsTableView" destination="XKM-sF-sTM" id="LJp-jY-PQA"/>
                         <outlet property="groupsCollectionView" destination="Ix2-RE-1m7" id="kWa-6P-1Qj"/>
@@ -542,7 +566,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="ocK-Rx-enP">
                         <nil key="title"/>
-                        <barButtonItem key="backBarButtonItem" title=" " id="QlZ-r5-soI"/>
                         <view key="titleView" contentMode="scaleToFill" id="Svd-uL-NWN" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

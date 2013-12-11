@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *groupsCollectionView;
 @property (nonatomic, weak) IBOutlet UITableView *commandsTableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 // Private properties
 @property (nonatomic, strong) NSArray *groups;
@@ -77,6 +78,7 @@
     _topic = topic;
     
     [self.titleLabel setText:_topic.name];
+    [self.backButton setTitle:_topic.name];
 }
 
 - (NSArray *)groups

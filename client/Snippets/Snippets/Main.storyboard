@@ -363,6 +363,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="5WW-iF-PvL" id="0au-6J-gdg"/>
                         <outlet property="commandsTableView" destination="XKM-sF-sTM" id="LJp-jY-PQA"/>
                         <outlet property="groupsCollectionView" destination="Ix2-RE-1m7" id="kWa-6P-1Qj"/>
                         <outlet property="titleLabel" destination="0mt-vM-V5d" id="rac-Jb-s0z"/>

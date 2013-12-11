@@ -104,7 +104,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="mKh-Iz-t7M">
                         <nil key="title"/>
-                        <barButtonItem key="backBarButtonItem" title=" " id="B0R-y6-ZeD" userLabel="Bar Button Item -"/>
+                        <barButtonItem key="leftBarButtonItem" title="About" id="dmn-F2-q6y">
+                            <connections>
+                                <segue destination="3b3-pV-lxo" kind="modal" id="rzH-eR-laK"/>
+                            </connections>
+                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="tXw-tX-VNg" userLabel="Title View">
                             <rect key="frame" x="96" y="6" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,6 +135,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbG-lv-kSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-361" y="2"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="Haw-EK-JBm">
+            <objects>
+                <viewController id="3b3-pV-lxo" userLabel="About View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SBJ-SA-fq6"/>
+                        <viewControllerLayoutGuide type="bottom" id="lXm-ce-7ot"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nLA-NK-Ujj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gba-LU-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="-358"/>
         </scene>
         <!--Topic View Controller-->
         <scene sceneID="fzg-y2-pCg">
@@ -319,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6h-cl-QU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="2"/>
+            <point key="canvasLocation" x="97" y="362"/>
         </scene>
         <!--Console View Controller-->
         <scene sceneID="A5b-kq-B9a">
@@ -489,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgb-8Q-3kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="2"/>
+            <point key="canvasLocation" x="1092" y="362"/>
         </scene>
         <!--Command View Controller-->
         <scene sceneID="yHf-23-QVb">
@@ -558,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2T-fh-80R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="2"/>
+            <point key="canvasLocation" x="621" y="362"/>
         </scene>
     </scenes>
     <resources>

@@ -57,8 +57,8 @@
         NSArray *keys = [_topics allKeys];
 
         NSString *topic = [_topics objectForKey:keys[indexPath.row]];
-        
-        [_database sn_syncForTopic:topic withBlock:nil progressBlock:nil error:nil];
+
+        [_database sn_syncForTopic:topic resultBlock:nil progressBlock:nil error:nil];
 
         // TODO: if sync success, assign
         TopicViewController *topicVC = segue.destinationViewController;
@@ -87,7 +87,7 @@
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     NSArray *keys = [_topics allKeys];
-    cell.topic = keys[indexPath.row];
+    cell.topicName = keys[indexPath.row];
     
     return cell;
 }

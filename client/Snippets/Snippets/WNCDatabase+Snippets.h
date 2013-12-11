@@ -13,7 +13,7 @@
 @interface WNCDatabase (Snippets)
 
 - (BOOL)sn_syncForTopic:(NSString *)topic
-              withBlock:(WNCResultBlock)block
+            resultBlock:(WNCResultBlock)block
           progressBlock:(WNCProgressBlock)progressBlock
                   error:(NSError **)error;
 

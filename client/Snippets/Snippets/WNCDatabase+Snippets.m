@@ -16,7 +16,7 @@
 @implementation WNCDatabase (Snippets)
 
 - (BOOL)sn_syncForTopic:(NSString *)topic
-              withBlock:(WNCResultBlock)block
+            resultBlock:(WNCResultBlock)resultBlock
           progressBlock:(WNCProgressBlock)progressBlock
                   error:(NSError **)error
 {
@@ -24,7 +24,7 @@
                         SN_DOCS_TOPIC(topic): DEF_OPT,
                         SN_GROUPS_TOPIC(topic): DEF_OPT}
             
-                block:block
+                block:resultBlock
         progressBlock:progressBlock
                 error:error];
 }

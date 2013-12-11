@@ -24,11 +24,19 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setTopic:(NSString *)topic
+- (void)setTopicName:(NSString *)topicName
 {
-    _topic = topic;
+    _topicName = topicName;
     
-    [self.topicName setText:_topic];
+    [self.topicNameLabel setText:_topicName];
+}
+
+- (void)setPercent:(NSInteger)percent
+{
+    _percent = percent;
+    
+    [self.chooseButton setTitle:[NSString stringWithFormat:@"%ld %%", (long)_percent]
+                       forState:UIControlStateNormal];
 }
 
 @end

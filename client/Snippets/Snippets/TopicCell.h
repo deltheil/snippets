@@ -10,10 +10,13 @@
 
 @interface TopicCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *topicName;
+@property (weak, nonatomic) IBOutlet UILabel *topicNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *description;
+@property (weak, nonatomic) IBOutlet UIButton *chooseButton;
 
-@property (strong, nonatomic) NSString *topic;
+@property (nonatomic) NSInteger percent;
+
+@property (strong, nonatomic) NSString *topicName;
 
 @end
 

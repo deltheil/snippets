@@ -130,22 +130,22 @@
     
     switch ([error code]) {
         case WNCErrorNoConn:
-            message = NSLocalizedString(@"INITIAL_SYNC_ERROR_MESSAGE_NETWORK", nil);
+            message = @"The initial synchronization failed.\nPlease check your Internet connection.";
             break;
         case WNCErrorSlowConn:
         case WNCErrorTimeout:
-            message = NSLocalizedString(@"INITIAL_SYNC_ERROR_MESSAGE_SLOW_NETWORK", nil);
+            message = @"The initial synchronization failed.\nYour Internet connection is too slow.";
             break;
         default:
-            message = NSLocalizedString(@"INITIAL_SYNC_ERROR_MESSAGE", nil);
+            message = @"The initial synchronization failed.\nPlease try again.";
             break;
     }
     
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"SYNC_ERROR", nil)
+    [[[UIAlertView alloc] initWithTitle:@"Error"
                                 message:message
                                delegate:self
-                      cancelButtonTitle:NSLocalizedString(@"DONE", nil)
-                      otherButtonTitles:NSLocalizedString(@"RETRY", nil), nil] show];
+                      cancelButtonTitle:@"Ok"
+                      otherButtonTitles:@"Retry", nil] show];
 }
 
 - (void)presentViewControllerForTopic:(Topic *)topic

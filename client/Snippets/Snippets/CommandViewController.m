@@ -52,16 +52,11 @@
 
 #pragma mark - Private
 
-- (void)setTopicName:(NSString *)topicName
-{
-    _topicName = topicName;
-    
-    [self.titleLabel setText:topicName];
-}
-
 - (void)setCommand:(RDSCommand *)command
 {
     _command = command;
+
+    [self.titleLabel setText:_command.name];
 }
 
 - (void)setHtmlDoc:(NSString *)htmlDoc

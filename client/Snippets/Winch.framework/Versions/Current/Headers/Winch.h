@@ -9,3 +9,4 @@
 #import <Winch/WNCLoad.h>
 #import <Winch/UIImageView+Winch.h>
 #import <Winch/NSError+Winch.h>
+#import <Winch/WNCDebug.h>

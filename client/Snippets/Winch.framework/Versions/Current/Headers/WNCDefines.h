@@ -19,6 +19,17 @@ extern int const kWNCIterOut;
 extern int const kWNCIterStop;
 
 ///---------------------------------------------------------------------------------------
+/// @name Namespace Iterator Returned Types
+///---------------------------------------------------------------------------------------
+
+/** remote namespace.
+ */
+extern int const kWNCNamespaceRemote;
+/** local namespace.
+ */
+extern int const kWNCNamespaceLocal;
+
+///---------------------------------------------------------------------------------------
 /// @name Database synchronization modes.
 ///---------------------------------------------------------------------------------------
 
@@ -48,3 +59,7 @@ typedef void (^WNCResultBlock)(id object, NSError *error);
 /** Type of a block triggered when the next record is fetched from a database.
  */
 typedef void (^WNCIterBlock)(NSString *key, NSMutableData *data, int *option);
+
+/** Type of a block triggered when the next namespace is fetched from a database.
+ */
+typedef void (^WNCNamespaceIterBlock)(NSString *name, int type);

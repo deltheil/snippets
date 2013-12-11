@@ -26,6 +26,7 @@
 		823B05F61839243100463BFD /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B05F51839243100463BFD /* TopicViewController.m */; };
 		82519B2F1858D06E00684E21 /* libfakeredis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82519B2D1858D06E00684E21 /* libfakeredis.a */; };
 		82519B301858D06E00684E21 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82519B2E1858D06E00684E21 /* liblua.a */; };
+		825505AE1858FA3800143C25 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825505AD1858FA3800143C25 /* Winch.framework */; };
 		826579631812959B00A17F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579621812959B00A17F63 /* Foundation.framework */; };
 		826579651812959B00A17F63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579641812959B00A17F63 /* CoreGraphics.framework */; };
 		826579671812959B00A17F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579661812959B00A17F63 /* UIKit.framework */; };
@@ -44,7 +45,6 @@
 		827C5051183978B000703460 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 827C5050183978B000703460 /* fonts */; };
 		82B420CD182429A1002236BE /* redis-doc.html in Resources */ = {isa = PBXBuildFile; fileRef = 82B420CC182429A1002236BE /* redis-doc.html */; };
 		82B420D118245D72002236BE /* WNCDatabase+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B420D018245D72002236BE /* WNCDatabase+Snippets.m */; };
-		82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F3F18132E2100E3E5E6 /* Winch.framework */; };
 		B0C77E2E1813D2B100801F34 /* redis-cli.html in Resources */ = {isa = PBXBuildFile; fileRef = B0C77E2D1813D2B100801F34 /* redis-cli.html */; };
 		B0DDA74C18129CFA00E015C0 /* UIColor+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +95,7 @@
 		82519B2C1858D06E00684E21 /* fkredis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fkredis.h; path = ../../../fakeredis.c/build/fkredis.h; sourceTree = "<group>"; };
 		82519B2D1858D06E00684E21 /* libfakeredis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfakeredis.a; path = ../../../fakeredis.c/build/libfakeredis.a; sourceTree = "<group>"; };
 		82519B2E1858D06E00684E21 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = ../../../fakeredis.c/build/liblua.a; sourceTree = "<group>"; };
+		825505AD1858FA3800143C25 /* Winch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Winch.framework; sourceTree = "<group>"; };
 		8265795F1812959B00A17F63 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826579621812959B00A17F63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		826579641812959B00A17F63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,8 +122,6 @@
 		82B420CC182429A1002236BE /* redis-doc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-doc.html"; sourceTree = "<group>"; };
 		82B420CF18245D72002236BE /* WNCDatabase+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WNCDatabase+Snippets.h"; sourceTree = "<group>"; };
 		82B420D018245D72002236BE /* WNCDatabase+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WNCDatabase+Snippets.m"; sourceTree = "<group>"; };
-		82B420D2182463CA002236BE /* WNCDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNCDebug.h; sourceTree = "<group>"; };
-		82C46F3F18132E2100E3E5E6 /* Winch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Winch.framework; sourceTree = "<group>"; };
 		82C46F421813311100E3E5E6 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		82C46F431813311100E3E5E6 /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
 		B0880306181359F700D102C4 /* CommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandViewController.h; path = Controllers/CommandViewController.h; sourceTree = "<group>"; };
@@ -148,10 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				82519B301858D06E00684E21 /* liblua.a in Frameworks */,
-				82C46F4018132E2100E3E5E6 /* Winch.framework in Frameworks */,
 				826579651812959B00A17F63 /* CoreGraphics.framework in Frameworks */,
 				826579671812959B00A17F63 /* UIKit.framework in Frameworks */,
 				82519B2F1858D06E00684E21 /* libfakeredis.a in Frameworks */,
+				825505AE1858FA3800143C25 /* Winch.framework in Frameworks */,
 				826579631812959B00A17F63 /* Foundation.framework in Frameworks */,
 				78725F2014C64450A936079C /* libPods.a in Frameworks */,
 			);
@@ -201,7 +200,7 @@
 		826579611812959B00A17F63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82C46F3F18132E2100E3E5E6 /* Winch.framework */,
+				825505AD1858FA3800143C25 /* Winch.framework */,
 				826579621812959B00A17F63 /* Foundation.framework */,
 				826579641812959B00A17F63 /* CoreGraphics.framework */,
 				826579661812959B00A17F63 /* UIKit.framework */,
@@ -312,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				1AC5DBE618578CF500EAB17C /* WNCSnippetsDefines.h */,
-				82B420D2182463CA002236BE /* WNCDebug.h */,
 				82B420CF18245D72002236BE /* WNCDatabase+Snippets.h */,
 				82B420D018245D72002236BE /* WNCDatabase+Snippets.m */,
 			);
@@ -664,6 +662,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					.,
+					/Users/cedric/Projects/tmp/snippets/client/Snippets,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";
@@ -686,6 +685,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					.,
+					/Users/cedric/Projects/tmp/snippets/client/Snippets,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snippets/Snippets-Prefix.pch";

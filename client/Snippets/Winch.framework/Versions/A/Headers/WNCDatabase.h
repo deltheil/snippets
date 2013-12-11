@@ -133,6 +133,23 @@
  */
 - (WNCNamespace *)getNamespace:(NSString *)name;
 
+/**
+ * Enumerate the namespaces that exist at this point in time in the client database.
+ *
+ * This only reflects the namespaces that can be found locally, i.e:
+ *
+ * - the ones that have been synced by means of the `sync:error:` method (a.k.a remote namespaces).
+ * They are returned with the `kWNCNamespaceRemote` type,
+ * - the ones that contain data added by means of the `[WNCNamespace putData:forKey:error:]` method
+ * (a.k.a local namespaces). They are returned with the `kWNCNamespaceLocal` type.
+ *
+ * @param block the block called for each encountered namespace.
+ * @param error the pointer to the error object, if any.
+ * @return `YES` if it succeeded, `NO` otherwise.
+ */
+- (BOOL)enumerateNamespacesUsingBlock:(WNCNamespaceIterBlock)block
+                                error:(NSError **)error;
+
 ///---------------------------------------------------------------------------------------
 /// @name Synchronization
 ///---------------------------------------------------------------------------------------

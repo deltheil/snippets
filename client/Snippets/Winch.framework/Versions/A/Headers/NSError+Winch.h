@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, WNCErrorCode) {
     WNCErrorNoFile,
     /** @abstract 7:  database file locked. */
     WNCErrorBusy,
-    /** @abstract 8:  bad credentials or no such namespace. */
+    /** @abstract 8:  bad datastore id or no such namespace. */
     WNCErrorBadInput,
     /** @abstract 9:  access permission denied. */
     WNCErrorNoPerm,
@@ -49,6 +49,8 @@ typedef NS_ENUM(NSInteger, WNCErrorCode) {
     WNCErrorForbid,
     /** @abstract 20: datastore credentials mismatch. */
     WNCErrorCred,
+    /** @abstract 21: bad app secret. */
+    WNCErrorBadSecret,
 };
 
 /** The error domain for Winch errors.

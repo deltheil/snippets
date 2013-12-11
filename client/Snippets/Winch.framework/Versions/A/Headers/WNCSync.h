@@ -26,6 +26,10 @@
  * the error is `nil`. If the operation has been cancelled the error code is `WNCErrorCancel`.
  * Otherwise an appropriate error code is set.
  *
+ * @warning **Note:** some possible errors are `WNCErrorBadInput` (the sync failed because the
+ * corresponding namespace does not exist, or the datastore ID is invalid) or `WNCErrorBadSecret`
+ * (the database has been opened with an invalid app secret).
+ *
  * @see setResultBlock:
  */
 @property (nonatomic, readonly, strong) NSError *error;

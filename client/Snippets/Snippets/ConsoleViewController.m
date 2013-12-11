@@ -115,7 +115,7 @@
     }
 
     [_entries addObject:REDIS_CMD(cmd)];
-    [_entries addObject:resp];
+    [_entries addObject:[resp stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"]];
     
     // Record the command into the history and clean up the prompt
     [_history addObject:cmd];

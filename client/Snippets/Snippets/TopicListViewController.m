@@ -71,8 +71,15 @@
     
     Topic *topic = _topics[indexPath.row];
 
+    // cold start check
     if ([_database sn_countCommandsForTopicForTopic:topic.uid] > 0) {
         [self presentViewControllerForTopic:topic];
+
+        // sync in background
+        [_database sn_syncForTopic:topic.uid
+                       resultBlock:nil
+                     progressBlock:nil
+                             error:nil];
         return;
     }
     

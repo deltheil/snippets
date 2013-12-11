@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A37A8051858741400A36954 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A37A8041858741400A36954 /* Topic.m */; };
 		1A5AA0181857D542007635F5 /* UIButton+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AA0171857D542007635F5 /* UIButton+Snippets.m */; };
 		1A9F6C081855DEA600E89A80 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C071855DEA600E89A80 /* ConsoleViewController.m */; };
 		1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C0A1855F7AB00E89A80 /* UITextField+Snippets.m */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A37A8031858741400A36954 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		1A37A8041858741400A36954 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
 		1A5AA0161857D542007635F5 /* UIButton+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Snippets.h"; sourceTree = "<group>"; };
 		1A5AA0171857D542007635F5 /* UIButton+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Snippets.m"; sourceTree = "<group>"; };
 		1A9F6C061855DEA600E89A80 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 		82C46F41181330F000E3E5E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A37A8031858741400A36954 /* Topic.h */,
+				1A37A8041858741400A36954 /* Topic.m */,
 				82C46F421813311100E3E5E6 /* RDSCommand.h */,
 				82C46F431813311100E3E5E6 /* RDSCommand.m */,
 				820176FD18134C980041E4E9 /* RDSGroup.h */,
@@ -510,6 +515,7 @@
 				1AC5DBE21857733C00EAB17C /* TopicCell.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,
 				1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */,
+				1A37A8051858741400A36954 /* Topic.m in Sources */,
 				1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */,
 				823B05F61839243100463BFD /* TopicViewController.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,

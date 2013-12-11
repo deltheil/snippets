@@ -67,6 +67,9 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="chooseTopic:" destination="16S-C5-CqK" eventType="touchUpInside" id="rU9-7L-A4j"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -80,7 +83,6 @@
                                     <outlet property="chooseButton" destination="Zga-mc-wcK" id="xJI-v0-8dy"/>
                                     <outlet property="description" destination="ohP-ur-mVE" id="BRJ-1h-AB8"/>
                                     <outlet property="topicNameLabel" destination="LIz-dO-8i5" id="1uY-7N-Nk2"/>
-                                    <segue destination="wmh-VH-L1l" kind="push" identifier="topicViewSegue" id="6j9-5h-jV5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

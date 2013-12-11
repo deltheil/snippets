@@ -47,14 +47,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction)chooseTopic:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"topicViewSegue"]) {
-        UITableViewCell *cell = (UITableViewCell *) sender;
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-
-        NSArray *keys = [_topics allKeys];
 
         NSString *topic = [_topics objectForKey:keys[indexPath.row]];
 

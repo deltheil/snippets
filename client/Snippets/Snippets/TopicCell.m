@@ -7,6 +7,8 @@
 //
 
 #import "TopicCell.h"
+#import "Topic.h"
+
 #import "UIColor+Snippets.h"
 
 @implementation TopicCell
@@ -24,11 +26,12 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setTopicName:(NSString *)topicName
+- (void)setTopic:(Topic *)topic
 {
-    _topicName = topicName;
+    _topic = topic;
     
-    [self.topicNameLabel setText:_topicName];
+    [self.topicNameLabel setText:_topic.name];
+    [self.description setText:_topic.description];
 }
 
 - (void)setPercent:(NSInteger)percent

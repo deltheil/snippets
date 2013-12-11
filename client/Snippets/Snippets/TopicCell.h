@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Topic;
+
 @interface TopicCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *topicNameLabel;
@@ -16,7 +18,7 @@
 
 @property (nonatomic) NSInteger percent;
 
-@property (strong, nonatomic) NSString *topicName;
+@property (strong, nonatomic) Topic *topic;
 
 @end
 

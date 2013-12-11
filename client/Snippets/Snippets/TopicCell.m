@@ -17,6 +17,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.isSynced = NO;
     }
     return self;
 }
@@ -37,19 +38,24 @@
 - (void)setPercent:(NSInteger)percent
 {
     _percent = percent;
-    
-    NSString *percentString;
 
-    if (_percent < 100) {
-        percentString = [NSString stringWithFormat:@"%ld %%", (long)_percent];
-    }
-    else {
-        percentString = @"CHOOSE";
+    if (_percent >= 100) {
+        self.isSynced = YES;
+        return;
     }
     
-    [self.chooseButton setTitle:percentString
+    [self.chooseButton setTitle:[NSString stringWithFormat:@"%ld %%", (long)_percent]
                        forState:UIControlStateNormal];
 }
+
+- (void)setIsSynced:(BOOL)isSynced
+{
+    _isSynced = isSynced;
+    
+    [self.chooseButton setHidden:_isSynced];
+    self.accessoryType = (isSynced) ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
+}
+
 
 @end
 

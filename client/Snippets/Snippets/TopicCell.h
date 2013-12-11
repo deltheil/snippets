@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *chooseButton;
 
 @property (nonatomic) NSInteger percent;
+@property (nonatomic) BOOL isSynced;
 
 @property (strong, nonatomic) Topic *topic;
 

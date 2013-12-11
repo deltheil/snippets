@@ -17,7 +17,7 @@
 
 @interface TopicListViewController ()
 
-@property (strong, nonatomic) NSDictionary *topics;
+@property (strong, nonatomic) NSArray *topics;
 
 @end
 
@@ -28,12 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    _topics = @{@"Lua" : @"lua", @"Redis" : @"rds"};
-    
-    // TODO: sync in background if topic is already downloaded
-    // TODO: manage errors properly
 
+    // temporary for demo e.g "rds"
+    Topic *rds = [[Topic alloc] init];
+    rds.uid = @"rds";
+    rds.name = @"Redis";
+    rds.description = @"Redis is an open source, BSD licensed, advanced key-value store..";
+    
+    _topics = [[NSArray alloc] initWithObjects:rds, nil];
+    
     // interactivePopGesture
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
 

@@ -170,6 +170,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825505AC1858F5D500143C25 /* Lua */ = {
+			isa = PBXGroup;
+			children = (
+				82519B2E1858D06E00684E21 /* liblua.a */,
+			);
+			name = Lua;
+			sourceTree = "<group>";
+		};
 		826579561812959B00A17F63 = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				82B420CE18245D17002236BE /* Winch+ */,
-				826579D01812AA8300A17F63 /* Vedis */,
+				826579D01812AA8300A17F63 /* fakeredis */,
+				825505AC1858F5D500143C25 /* Lua */,
 				B0DDA738181298B400E015C0 /* Views */,
 				82C46F41181330F000E3E5E6 /* Models */,
 				B0DDA7371812982F00E015C0 /* View Controllers */,
@@ -252,15 +261,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		826579D01812AA8300A17F63 /* Vedis */ = {
+		826579D01812AA8300A17F63 /* fakeredis */ = {
 			isa = PBXGroup;
 			children = (
 				82519B2C1858D06E00684E21 /* fkredis.h */,
 				82519B2D1858D06E00684E21 /* libfakeredis.a */,
-				82519B2E1858D06E00684E21 /* liblua.a */,
 				826579D41812B4C400A17F63 /* Obj-C */,
 			);
-			name = Vedis;
+			name = fakeredis;
 			sourceTree = "<group>";
 		};
 		826579D41812B4C400A17F63 /* Obj-C */ = {

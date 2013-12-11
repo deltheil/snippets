@@ -8,7 +8,7 @@
 
 #import <Winch/Winch.h>
 
-@class RDSCommand;
+@class Command;
 
 @interface WNCDatabase (Snippets)
 
@@ -27,6 +27,6 @@
                          forTopic:(NSString *)topic
                             error:(NSError **)error;
 
-- (NSString *)sn_getHTMLForCommand:(RDSCommand *)cmd forTopic:(NSString *)topic;
+- (NSString *)sn_getHTMLForCommand:(Command *)cmd forTopic:(NSString *)topic;
 
 @end

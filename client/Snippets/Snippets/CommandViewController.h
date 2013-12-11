@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class RDSCommand;
+@class Command;
 
 @interface CommandViewController : UIViewController
 
-@property (strong, nonatomic) RDSCommand *command;
+@property (strong, nonatomic) Command *command;
 @property (strong, nonatomic) NSString *htmlDoc;
 
 @end

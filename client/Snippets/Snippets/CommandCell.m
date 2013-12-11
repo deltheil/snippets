@@ -8,7 +8,7 @@
 
 #import "CommandCell.h"
 
-#import "RDSCommand.h"
+#import "Command.h"
 
 @interface CommandCell ()
 
@@ -27,7 +27,7 @@
     return self;
 }
 
-- (void)setCommand:(RDSCommand *)command
+- (void)setCommand:(Command *)command
 {
     _command = command;
     

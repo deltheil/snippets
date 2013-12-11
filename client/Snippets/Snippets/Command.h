@@ -10,7 +10,7 @@
 
 #import <Mantle.h>
 
-@interface RDSCommand : MTLModel <MTLJSONSerializing>
+@interface Command : MTLModel <MTLJSONSerializing>
 
 // command unique identifier, e.g "hset"
 @property (nonatomic, copy) NSString *uid;

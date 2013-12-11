@@ -17,7 +17,7 @@
 #import "Topic.h"
 #import "RDSGroup.h"
 #import "GroupCell.h"
-#import "RDSCommand.h"
+#import "Command.h"
 #import "CommandCell.h"
 
 #define GROUP_CELL_WIDTH 90
@@ -55,7 +55,7 @@
         
         NSIndexPath *indexPath = [self.commandsTableView indexPathForCell:cell];
         
-        RDSCommand *cmd = self.commands[indexPath.row];
+        Command *cmd = self.commands[indexPath.row];
 
         NSString *htmlDoc = [_database sn_getHTMLForCommand:cmd forTopic:_topic.uid];
 
@@ -100,7 +100,7 @@
     
     if (_currentGroup) {
         [cmds filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary *_) {
-            RDSCommand *cmd = (RDSCommand *) obj;
+            Command *cmd = (Command *) obj;
             return [_currentGroup.cmds containsObject:cmd.uid];
         }]];
     }
@@ -198,7 +198,7 @@
                                      reuseIdentifier:cellIdentifier];
     }
     
-    RDSCommand *cmd = self.commands[indexPath.row];
+    Command *cmd = self.commands[indexPath.row];
     cell.command = cmd;
     
     return cell;

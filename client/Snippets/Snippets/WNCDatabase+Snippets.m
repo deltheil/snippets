@@ -10,7 +10,7 @@
 #import "WNCSnippetsDefines.h"
 
 // Mantle models
-#import "RDSCommand.h"
+#import "Command.h"
 #import "RDSGroup.h"
 
 @implementation WNCDatabase (Snippets)
@@ -36,7 +36,7 @@
 
 - (NSArray *)sn_fetchCommandsForTopic:(NSString *)topic error:(NSError **)error
 {
-    return [self sn_fetchModelOfClass:RDSCommand.class forTopic:topic error:error];
+    return [self sn_fetchModelOfClass:Command.class forTopic:topic error:error];
 }
 
 - (NSArray *)sn_fetchGroupsForTopic:(NSString *)topic error:(NSError **)error
@@ -52,7 +52,7 @@
     __block NSError *parseErr = nil; // JSON or Mantle error
     
     WNCNamespace *ns = nil;
-    if (modelClass == RDSCommand.class) {
+    if (modelClass == Command.class) {
         ns = [self getNamespace:SN_CMDS_TOPIC(topic)];
     }
     else if (modelClass == RDSGroup.class) {
@@ -78,8 +78,8 @@
             return;
         }
         
-        if ([model isKindOfClass:[RDSCommand class]]) {
-            RDSCommand *cmd = (RDSCommand *) model;
+        if ([model isKindOfClass:[Command class]]) {
+            Command *cmd = (Command *) model;
             cmd.uid = key;
         }
         
@@ -111,7 +111,7 @@ fail:
     return nil;
 }
 
-- (NSString *)sn_getHTMLForCommand:(RDSCommand *)cmd forTopic:(NSString *)topic
+- (NSString *)sn_getHTMLForCommand:(Command *)cmd forTopic:(NSString *)topic
 {
     WNCNamespace *ns = [self getNamespace:SN_DOCS_TOPIC(topic)];
     NSData *data = [ns getDataForKey:cmd.uid];

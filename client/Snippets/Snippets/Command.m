@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "RDSCommand.h"
+#import "Command.h"
 
 #define HDR_TPL @"<h1>Example<br/>%@<br/><br/>////////////////////////////////<br/><br/></h1>"
 
-@implementation RDSCommand
+@implementation Command
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {

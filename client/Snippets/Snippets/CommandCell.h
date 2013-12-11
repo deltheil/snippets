@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class RDSCommand;
+@class Command;
 
 @interface CommandCell : UITableViewCell
 
-@property (nonatomic, strong) RDSCommand *command;
+@property (nonatomic, strong) Command *command;
 
 @end

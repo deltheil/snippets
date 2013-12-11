@@ -14,7 +14,7 @@
 		1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C0A1855F7AB00E89A80 /* UITextField+Snippets.m */; };
 		1AAA30D6185151B100527AA2 /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA30D5185151B100527AA2 /* GroupCell.m */; };
 		1AC3D05B184FD945009ED88D /* UILabel+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */; };
-		1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* RDSCommand.m */; };
+		1AC3D073184FDD8F009ED88D /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C46F431813311100E3E5E6 /* Command.m */; };
 		1AC583121855CB810016DEF6 /* CommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC583111855CB810016DEF6 /* CommandViewController.m */; };
 		1AC5DBDF1857705A00EAB17C /* TopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBDE1857705A00EAB17C /* TopicListViewController.m */; };
 		1AC5DBE21857733C00EAB17C /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBE11857733C00EAB17C /* TopicCell.m */; };
@@ -121,8 +121,8 @@
 		82B420D018245D72002236BE /* WNCDatabase+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WNCDatabase+Snippets.m"; sourceTree = "<group>"; };
 		82B420D2182463CA002236BE /* WNCDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNCDebug.h; sourceTree = "<group>"; };
 		82C46F3F18132E2100E3E5E6 /* Winch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Winch.framework; sourceTree = "<group>"; };
-		82C46F421813311100E3E5E6 /* RDSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSCommand.h; sourceTree = "<group>"; };
-		82C46F431813311100E3E5E6 /* RDSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSCommand.m; sourceTree = "<group>"; };
+		82C46F421813311100E3E5E6 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		82C46F431813311100E3E5E6 /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
 		B0880306181359F700D102C4 /* CommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandViewController.h; path = Controllers/CommandViewController.h; sourceTree = "<group>"; };
 		B0880307181359F700D102C4 /* CommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandViewController.m; path = Controllers/CommandViewController.m; sourceTree = "<group>"; };
 		B0880311181364C800D102C4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleViewController.h; path = Controllers/ConsoleViewController.h; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 			children = (
 				1A37A8031858741400A36954 /* Topic.h */,
 				1A37A8041858741400A36954 /* Topic.m */,
-				82C46F421813311100E3E5E6 /* RDSCommand.h */,
-				82C46F431813311100E3E5E6 /* RDSCommand.m */,
+				82C46F421813311100E3E5E6 /* Command.h */,
+				82C46F431813311100E3E5E6 /* Command.m */,
 				820176FD18134C980041E4E9 /* RDSGroup.h */,
 				820176FE18134C980041E4E9 /* RDSGroup.m */,
 			);
@@ -526,7 +526,7 @@
 				823B05F61839243100463BFD /* TopicViewController.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
 				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
-				1AC3D073184FDD8F009ED88D /* RDSCommand.m in Sources */,
+				1AC3D073184FDD8F009ED88D /* Command.m in Sources */,
 				82B420D118245D72002236BE /* WNCDatabase+Snippets.m in Sources */,
 				1AC5DBDF1857705A00EAB17C /* TopicListViewController.m in Sources */,
 				1AAA30D6185151B100527AA2 /* GroupCell.m in Sources */,

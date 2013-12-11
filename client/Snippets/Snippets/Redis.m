@@ -20,15 +20,35 @@
     self = [super init];
     if (self) {
         _store = NULL;
-        int rc = fkredis_open(&_store);
-        if (rc != FK_REDIS_OK) {
-            NSError *error = [NSError rds_errorWithCode:rc store:_store];
-            fkredis_close(_store);
-            NSLog(@"[Redis] fatal: open error (%@)", [error rds_message]);
-            return nil;
-        }
     }
     return self;
+}
+
+- (BOOL)open
+{
+    return [self open:nil];
+}
+
+- (BOOL)open:(NSError **)error
+{
+    if (_store) {
+        [self close];
+    }
+    
+    int rc = fkredis_open(&_store);
+    
+    if (rc != FK_REDIS_OK) {
+        goto err;
+    }
+    
+    return YES;
+    
+err:
+    if (error) {
+        *error = [NSError rds_errorWithCode:rc store:_store];
+    }
+    
+    return NO;
 }
 
 - (void)dealloc

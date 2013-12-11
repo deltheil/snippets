@@ -48,6 +48,11 @@
     
     _redis = [[Redis alloc] init];
     
+    NSError *err = nil;
+    if (![_redis open:&err]) {
+        NSLog(@"error: can't open Redis (%@)", [err rds_message]);
+    }
+    
     _currentIndex = -1;
 }
 

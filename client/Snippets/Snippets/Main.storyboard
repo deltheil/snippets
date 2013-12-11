@@ -156,11 +156,10 @@
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#d3392e"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9M7-jo-4e2" userLabel="Winch Image View">
-                                <rect key="frame" x="40" y="113" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sn-winchlogo" translatesAutoresizingMaskIntoConstraints="NO" id="9M7-jo-4e2" userLabel="Winch Image View">
+                                <rect key="frame" x="62" y="113" width="196" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-Ul-m6o">
@@ -171,24 +170,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="www.winch.io" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Gl-Ak-IN3" userLabel="Web Site Text Field">
-                                <rect key="frame" x="0.0" y="531" width="320" height="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="www.winch.io" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukr-8G-t2a">
+                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9Gl-Ak-IN3" secondAttribute="trailing" id="4gH-zL-5qo"/>
                             <constraint firstItem="ZSl-jX-rGm" firstAttribute="leading" secondItem="nLA-NK-Ujj" secondAttribute="leading" id="DnU-an-XzY"/>
                             <constraint firstAttribute="trailing" secondItem="ZSl-jX-rGm" secondAttribute="trailing" id="NeL-bX-H8n"/>
-                            <constraint firstItem="9Gl-Ak-IN3" firstAttribute="leading" secondItem="nLA-NK-Ujj" secondAttribute="leading" id="VsX-Op-spI"/>
-                            <constraint firstItem="lXm-ce-7ot" firstAttribute="top" secondItem="9Gl-Ak-IN3" secondAttribute="bottom" constant="20" id="j6R-Ui-VfV"/>
                             <constraint firstItem="ZSl-jX-rGm" firstAttribute="top" secondItem="SBJ-SA-fq6" secondAttribute="bottom" constant="28" id="noV-72-3X2"/>
                         </constraints>
                         <connections>
@@ -636,6 +631,7 @@
         <image name="sn-downArrow" width="19" height="12"/>
         <image name="sn-logo" width="30" height="30"/>
         <image name="sn-upArrow" width="19" height="12"/>
+        <image name="sn-winchlogo" width="195" height="46"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

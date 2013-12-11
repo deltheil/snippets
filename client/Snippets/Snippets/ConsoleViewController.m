@@ -97,7 +97,33 @@
 - (void)setCommand:(Command *)command
 {
     _command = command;
+
     [_entries addObject:_command.htmlHeader];
+    
+    for (NSString *cmd in _command.cli) {
+        [self execCommand:cmd];
+    }
+}
+
+- (void)execCommand:(NSString *)cmd
+{
+    NSError *error;
+    
+    NSString *resp = [_redis exec:cmd error:&error];
+    if (error) {
+        resp = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
+    }
+
+    [_entries addObject:REDIS_CMD(cmd)];
+    [_entries addObject:resp];
+    
+    // Record the command into the history and clean up the prompt
+    [_history addObject:cmd];
+
+    // reset index navigation
+    _currentIndex = -1;
+    
+    [self reloadEntries];
 }
 
 - (void)reloadEntries
@@ -159,26 +185,10 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSError *error;
-    NSString *cmd = textField.text;
-    
-    // Run the command
-    NSString *resp = [_redis exec:cmd error:&error];
-    if (error) {
-        resp = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
-    }
-    // Create the pair command + response
-    [_entries addObject:REDIS_CMD(cmd)];
-    [_entries addObject:resp];
+    [self execCommand:textField.text];
 
-    [self reloadEntries];
-    
-    // Record the command into the history and clean up the prompt
-    [_history addObject:cmd];
+    // reset text field
     textField.text = @"";
-    
-    // reset index navigation
-    _currentIndex = -1;
     
     return NO;
 }

@@ -9,10 +9,10 @@
 #import "Redis.h"
 #import "NSError+Redis.h"
 
-#include "vedis.h"
+#include "fkredis.h"
 
 @implementation Redis {
-    vedis *_store;
+    void *_store;
 }
 
 - (id)init
@@ -20,9 +20,10 @@
     self = [super init];
     if (self) {
         _store = NULL;
-        int rc = vedis_open(&_store, NULL /* in memory */);
-        if (rc != VEDIS_OK) {
+        int rc = fkredis_open(&_store);
+        if (rc != FK_REDIS_OK) {
             NSError *error = [NSError rds_errorWithCode:rc store:_store];
+            fkredis_close(_store);
             NSLog(@"[Redis] fatal: open error (%@)", [error rds_message]);
             return nil;
         }
@@ -32,27 +33,13 @@
 
 - (void)dealloc
 {
-    [self close:nil];
+    [self close];
 }
 
-- (BOOL)close
+- (void)close
 {
-    return [self close:nil];
-}
-
-- (BOOL)close:(NSError **)error
-{
-    int rc = vedis_close(_store);
-    if (rc != VEDIS_OK) goto err;
-
+    fkredis_close(_store);
     _store = NULL;
-    return YES;
-err:
-    if (error) {
-        *error = [NSError rds_errorWithCode:rc store:_store];
-    }
-
-    return NO;
 }
 
 - (NSString *)exec:(NSString *)command
@@ -61,18 +48,19 @@ err:
 }
 - (NSString *)exec:(NSString *)command error:(NSError **)error
 {
-    vedis_value *res;
-    int rc = vedis_exec(_store, [command UTF8String], -1);
-    if (rc != VEDIS_OK) goto err;
-    rc = vedis_exec_result(_store, &res);
-    if (rc != VEDIS_OK) goto err;
-    if (vedis_value_is_null(res)) {
-        return @"(nil)";
+    int rc;
+    char *resp = NULL;
+    
+    rc = fkredis_exec(_store, [command UTF8String], &resp);
+    
+    if (rc != FK_REDIS_OK) {
+        goto err;
     }
-    else {
-        return [[NSString alloc] initWithCString:vedis_value_to_string(res, NULL)
-                                        encoding:NSUTF8StringEncoding];
-    }
+    
+    return [[NSString alloc] initWithBytesNoCopy:resp
+                                   length:strlen(resp)
+                                 encoding:NSUTF8StringEncoding
+                             freeWhenDone:YES];
 
 err:
     if (error) {

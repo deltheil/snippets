@@ -8,23 +8,21 @@
 
 #import "NSError+Redis.h"
 
-NSString *const RedisErrorDomain = @"net.symisc.Vedis.error";
+NSString *const RedisErrorDomain = @"fakeredis";
 
 @implementation NSError (Redis)
 
-+ (NSError *)rds_errorWithCode:(NSInteger)code store:(vedis *)store
++ (NSError *)rds_errorWithCode:(NSInteger)code store:(void *)store
 {
-    if (code == RDS_OK)
+    if (code == FK_REDIS_OK)
         return nil;
 
     NSDictionary *userInfo = nil;
 
     if (store) {
-        const char *err;
-        int len = 0;
-        vedis_config(store, VEDIS_CONFIG_ERR_LOG, &err, &len);
-        if (len > 0) {
-            NSString *msg = [[NSString alloc] initWithBytes:err length:len encoding:NSUTF8StringEncoding];
+        const char *err = fkredis_error(store);
+        if (err) {
+            NSString *msg = [[NSString alloc] initWithBytes:err length:strlen(err) encoding:NSUTF8StringEncoding];
             userInfo = @{ @"msg": msg };
         }
     }

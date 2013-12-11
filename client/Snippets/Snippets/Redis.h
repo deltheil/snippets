@@ -11,8 +11,7 @@
 // In-memory Redis session
 @interface Redis : NSObject
 
-- (BOOL)close;
-- (BOOL)close:(NSError **)error;
+- (void)close;
 
 - (NSString *)exec:(NSString *)command;
 - (NSString *)exec:(NSString *)command error:(NSError **)error;

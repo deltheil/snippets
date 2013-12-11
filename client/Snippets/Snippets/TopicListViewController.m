@@ -54,8 +54,50 @@
 
 - (IBAction)chooseTopic:(id)sender
 {
+    UIButton *button = (UIButton *) sender;
+    
+    TopicCell *cell = nil;
+    
+    // Getting tableViewCell from button
+    
+    for (id view = [button superview]; view != nil; view = [view superview]) {
+        if ([view isKindOfClass:[UITableViewCell class]]) {
+            cell = (TopicCell *) view;
+            break;
+        }
+    }
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    Topic *topic = _topics[indexPath.row];
 
-        NSString *topic = [_topics objectForKey:keys[indexPath.row]];
+    if ([_database sn_countCommandsForTopicForTopic:topic.uid] > 0) {
+        [self presentViewControllerForTopic:topic];
+        return;
+    }
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+    void (^resultBlock)(NSArray *, NSError *) = ^(id _, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        [self.tableView setUserInteractionEnabled:YES];
+        
+        if (error) {
+            // TODO: manage errors properly
+        }
+        else {
+            [self presentViewControllerForTopic:topic];
+        }
+    };
+
+    void (^progressBlock)(NSInteger percentDone) = ^(NSInteger percentDone) {
+        [cell setPercent:percentDone];
+    };
+
+    [_database sn_syncForTopic:topic.uid resultBlock:resultBlock progressBlock:progressBlock error:nil];
+    
+    [self.tableView setUserInteractionEnabled:NO];
+}
 
 #pragma mark - Private
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDSGroupCell : UICollectionViewCell
+@interface GroupCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *groupLabel;
 @property (weak, nonatomic) IBOutlet UIView *underlineView;

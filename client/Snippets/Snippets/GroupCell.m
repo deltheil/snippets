@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "RDSGroupCell.h"
+#import "GroupCell.h"
 
-@implementation RDSGroupCell
+@implementation GroupCell
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

@@ -16,7 +16,7 @@
 
 #import "Topic.h"
 #import "RDSGroup.h"
-#import "RDSGroupCell.h"
+#import "GroupCell.h"
 #import "RDSCommand.h"
 #import "CommandCell.h"
 
@@ -137,7 +137,7 @@
 {
     RDSGroup *group = [self.groups objectAtIndex:indexPath.row];
     
-    RDSGroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topicGroupCellID" forIndexPath:indexPath];
+    GroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topicGroupCellID" forIndexPath:indexPath];
     cell.groupName = group.name;
     
     // TODO: at the app launch set the red underline view to the first row "ALL"

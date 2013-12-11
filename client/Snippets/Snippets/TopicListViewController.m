@@ -86,8 +86,7 @@
 
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSArray *keys = [_topics allKeys];
-    cell.topicName = keys[indexPath.row];
+    cell.topic = _topics[indexPath.row];
     
     return cell;
 }

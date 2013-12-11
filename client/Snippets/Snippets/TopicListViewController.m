@@ -107,6 +107,8 @@
     [self.tableView setUserInteractionEnabled:NO];
 }
 
+#pragma mark - Private
+
 - (void)syncTopic:(NSString *)uid
       resultBlock:(void (^)(NSError *error))resultBlock
     progressBlock:(void (^)(NSInteger percentDone))progressBlock
@@ -126,8 +128,6 @@
                  progressBlock:progressBlock
                          error:nil];
 }
-
-#pragma mark - Private
 
 - (void)showAlertSyncError:(NSError *)error
 {

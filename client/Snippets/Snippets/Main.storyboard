@@ -103,7 +103,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="mKh-Iz-t7M">
                         <nil key="title"/>
-                        <barButtonItem key="backBarButtonItem" title="Choices" id="eLu-Yu-rzp"/>
+                        <barButtonItem key="backBarButtonItem" title="Home" id="eLu-Yu-rzp"/>
                         <barButtonItem key="leftBarButtonItem" title="About" id="dmn-F2-q6y">
                             <connections>
                                 <segue destination="3b3-pV-lxo" kind="modal" id="rzH-eR-laK"/>

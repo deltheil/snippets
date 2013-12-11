@@ -10,6 +10,8 @@
 #import "TopicViewController.h"
 #import "TopicCell.h"
 
+#import "Topic.h"
+
 #import "WNCDatabase+Snippets.h"
 #import "UIColor+Snippets.h"
 
@@ -52,14 +54,16 @@
 
         NSString *topic = [_topics objectForKey:keys[indexPath.row]];
 
-        [_database sn_syncForTopic:topic resultBlock:nil progressBlock:nil error:nil];
+#pragma mark - Private
 
-        // TODO: if sync success, assign
-        TopicViewController *topicVC = segue.destinationViewController;
-        topicVC.topicName = keys[indexPath.row];
-        topicVC.topic = topic;
-        topicVC.database = _database;
-    }
+- (void)presentViewControllerForTopic:(Topic *)topic
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TopicViewController  *topicVC = [storyboard instantiateViewControllerWithIdentifier:@"TopicViewController"];
+    topicVC.topic = topic;
+    topicVC.database = _database;
+    
+    [self.navigationController pushViewController:topicVC animated:YES];
 }
 
 #pragma mark - Table view data source

@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 
-    // temporary for demo "redis"
+    // temporary setter for demo "redis"
     Topic *rds = [[Topic alloc] init];
     rds.uid = @"rds";
     rds.name = @"Redis";
@@ -89,6 +89,7 @@
     
     void (^resultBlock)(NSArray *, NSError *) = ^(id _, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        // enable user interaction on sync call back
         [self.tableView setUserInteractionEnabled:YES];
         
         if (error) {
@@ -107,7 +108,8 @@
     };
 
     [_database sn_syncForTopic:topic.uid resultBlock:resultBlock progressBlock:progressBlock error:nil];
-    
+
+    // disable user interaction on sync
     [self.tableView setUserInteractionEnabled:NO];
 }
 

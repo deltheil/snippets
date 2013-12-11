@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1977A21858A18F00CCBC13 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1977A11858A18F00CCBC13 /* AboutViewController.m */; };
 		1A37A8051858741400A36954 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A37A8041858741400A36954 /* Topic.m */; };
 		1A5AA0181857D542007635F5 /* UIButton+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AA0171857D542007635F5 /* UIButton+Snippets.m */; };
 		1A9F6C081855DEA600E89A80 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C071855DEA600E89A80 /* ConsoleViewController.m */; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1977A01858A18F00CCBC13 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		1A1977A11858A18F00CCBC13 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		1A37A8031858741400A36954 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		1A37A8041858741400A36954 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
 		1A5AA0161857D542007635F5 /* UIButton+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Snippets.h"; sourceTree = "<group>"; };
@@ -329,6 +332,8 @@
 				1AC583111855CB810016DEF6 /* CommandViewController.m */,
 				1A9F6C061855DEA600E89A80 /* ConsoleViewController.h */,
 				1A9F6C071855DEA600E89A80 /* ConsoleViewController.m */,
+				1A1977A01858A18F00CCBC13 /* AboutViewController.h */,
+				1A1977A11858A18F00CCBC13 /* AboutViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				826579731812959B00A17F63 /* AppDelegate.m in Sources */,
 				1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */,
 				1AC583121855CB810016DEF6 /* CommandViewController.m in Sources */,
+				1A1977A21858A18F00CCBC13 /* AboutViewController.m in Sources */,
 				826579DA1812B57100A17F63 /* Redis.m in Sources */,
 				1AC5DBE21857733C00EAB17C /* TopicCell.m in Sources */,
 				8265796F1812959B00A17F63 /* main.m in Sources */,

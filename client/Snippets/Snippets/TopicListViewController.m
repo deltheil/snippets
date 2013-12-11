@@ -37,13 +37,13 @@
     
     _topics = [[NSArray alloc] initWithObjects:rds, nil];
     
-    //  set an empty table view footer
+    // set an empty table view footer
     [self.tableView setTableFooterView:[UIView new]];
 
-    // interactivePopGesture
+    // interactivePopGesture view controller
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
 
-    // set back arrow color
+    // set tint color to navigationBar for back arrow
     self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"#d3392e" alpha:1];
     
     // disable interactive pop gesture
@@ -62,7 +62,6 @@
     TopicCell *cell = nil;
     
     // Getting tableViewCell from button
-    
     for (id view = [button superview]; view != nil; view = [view superview]) {
         if ([view isKindOfClass:[UITableViewCell class]]) {
             cell = (TopicCell *) view;
@@ -93,7 +92,7 @@
         [self.tableView setUserInteractionEnabled:YES];
         
         if (error) {
-            // keep selected topic to use for retry
+            // keep selected topic to use for retry action
             _selectedTopic = indexPath;
             // show alert view to handle retry action
             [self showAlertSyncError:error];
@@ -179,9 +178,9 @@
         return;
     }
     
-    // Retry
+    // Retry button
     TopicCell *cell = (TopicCell *) [self.tableView cellForRowAtIndexPath:_selectedTopic];
-    // call choose topic IBAction
+    // call choose topic IBAction with the current selected cell
     [self chooseTopic:cell.chooseButton];
 }
 

@@ -37,6 +37,9 @@
     
     _topics = [[NSArray alloc] initWithObjects:rds, nil];
     
+    //  set an empty table view footer
+    [self.tableView setTableFooterView:[UIView new]];
+
     // interactivePopGesture
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
 

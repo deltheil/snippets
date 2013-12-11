@@ -14,6 +14,7 @@
 
 #import "WNCDatabase+Snippets.h"
 
+#import "Topic.h"
 #import "RDSGroup.h"
 #import "RDSGroupCell.h"
 #import "RDSCommand.h"
@@ -56,12 +57,11 @@
         
         RDSCommand *cmd = self.commands[indexPath.row];
 
-        NSString *htmlDoc = [_database sn_getHTMLForCommand:cmd forTopic:_topic];
+        NSString *htmlDoc = [_database sn_getHTMLForCommand:cmd forTopic:_topic.uid];
 
         CommandViewController *cmdVC = segue.destinationViewController;
         cmdVC.command = cmd;
         cmdVC.htmlDoc = htmlDoc;
-        cmdVC.topicName = _topicName;
     }
 }
 
@@ -72,16 +72,11 @@
 
 #pragma mark - Private
 
-- (void)setTopic:(NSString *)topic
+- (void)setTopic:(Topic *)topic
 {
     _topic = topic;
-}
-
-- (void)setTopicName:(NSString *)topicName
-{
-    _topicName = topicName;
     
-    [self.titleLabel setText:topicName];
+    [self.titleLabel setText:_topic.name];
 }
 
 - (NSArray *)groups
@@ -90,7 +85,7 @@
         return _groups;
     }
     
-    _groups = [_database sn_fetchGroupsForTopic:_topic error:nil];
+    _groups = [_database sn_fetchGroupsForTopic:_topic.uid error:nil];
     
     return _groups;
 }
@@ -101,7 +96,7 @@
         return _commands;
     }
     
-    NSMutableArray *cmds = [NSMutableArray arrayWithArray:[_database sn_fetchCommandsForTopic:_topic error:nil]];
+    NSMutableArray *cmds = [NSMutableArray arrayWithArray:[_database sn_fetchCommandsForTopic:_topic.uid error:nil]];
     
     if (_currentGroup) {
         [cmds filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary *_) {

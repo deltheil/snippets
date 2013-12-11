@@ -18,16 +18,19 @@
 
 @interface ConsoleViewController ()
 
+// UI properties
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *inputContainerView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+// Private properties
 @property (strong, nonatomic) NSMutableArray *entries;
 @property (strong, nonatomic) NSMutableArray *history;
-
-@property (strong, nonatomic) Redis *redis;
-
 @property (nonatomic) NSInteger currentIndex;
+
+// Has to rethink the way to set properly the right module
+// based on the choosen techno
+@property (strong, nonatomic) Redis *redis;
 
 @end
 

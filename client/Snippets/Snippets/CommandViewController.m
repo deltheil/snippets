@@ -12,6 +12,7 @@
 
 @interface CommandViewController ()
 
+// UI properties
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 

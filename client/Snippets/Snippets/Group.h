@@ -10,13 +10,13 @@
 
 #import <Mantle.h>
 
-@interface RDSGroup : MTLModel <MTLJSONSerializing>
+@interface Group : MTLModel <MTLJSONSerializing>
 
 // e.g "GET"
 @property (nonatomic, copy, readonly) NSString *name;
 // e.g ["hdel", "hget", "hlen"]
 @property (nonatomic, copy, readonly) NSArray *cmds;
 
-+ (RDSGroup *)groupsUnion:(NSArray *)groups;
++ (Group *)groupsUnion:(NSArray *)groups;
 
 @end

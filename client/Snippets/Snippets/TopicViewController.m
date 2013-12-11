@@ -15,7 +15,7 @@
 #import "WNCDatabase+Snippets.h"
 
 #import "Topic.h"
-#import "RDSGroup.h"
+#import "Group.h"
 #import "GroupCell.h"
 #import "Command.h"
 #import "CommandCell.h"
@@ -32,7 +32,7 @@
 // Private properties
 @property (nonatomic, strong) NSArray *groups;
 @property (nonatomic, strong) NSArray *commands;
-@property (nonatomic, strong) RDSGroup *currentGroup;
+@property (nonatomic, strong) Group *currentGroup;
 
 @end
 
@@ -110,7 +110,7 @@
     return _commands;
 }
 
-- (void)setCurrentGroup:(RDSGroup *)currentGroup
+- (void)setCurrentGroup:(Group *)currentGroup
 {
     NSString *prev = _currentGroup ? _currentGroup.name : @"<void>";
     NSString *next = currentGroup ? currentGroup.name : @"<void>";
@@ -135,7 +135,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    RDSGroup *group = [self.groups objectAtIndex:indexPath.row];
+    Group *group = [self.groups objectAtIndex:indexPath.row];
     
     GroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topicGroupCellID" forIndexPath:indexPath];
     cell.groupName = group.name;

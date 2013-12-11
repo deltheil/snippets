@@ -11,7 +11,7 @@
 
 // Mantle models
 #import "Command.h"
-#import "RDSGroup.h"
+#import "Group.h"
 
 @implementation WNCDatabase (Snippets)
 
@@ -41,7 +41,7 @@
 
 - (NSArray *)sn_fetchGroupsForTopic:(NSString *)topic error:(NSError **)error
 {
-    return [self sn_fetchModelOfClass:RDSGroup.class forTopic:topic error:error];
+    return [self sn_fetchModelOfClass:Group.class forTopic:topic error:error];
 }
 
 - (NSArray *)sn_fetchModelOfClass:(Class)modelClass
@@ -55,7 +55,7 @@
     if (modelClass == Command.class) {
         ns = [self getNamespace:SN_CMDS_TOPIC(topic)];
     }
-    else if (modelClass == RDSGroup.class) {
+    else if (modelClass == Group.class) {
         ns = [self getNamespace:SN_GROUPS_TOPIC(topic)];
     }
     
@@ -96,9 +96,9 @@
         goto fail;
     }
     
-    if (modelClass == RDSGroup.class) {
+    if (modelClass == Group.class) {
         // Prepend a special group that contains *all* the commands
-        [models insertObject:[RDSGroup groupsUnion:models] atIndex:0];
+        [models insertObject:[Group groupsUnion:models] atIndex:0];
     }
     
     return models;

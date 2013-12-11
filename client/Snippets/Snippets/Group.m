@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
-#import "RDSGroup.h"
+#import "Group.h"
 
-@implementation RDSGroup
+@implementation Group
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -16,17 +16,17 @@
     return @{};
 }
 
-+ (RDSGroup *)groupsUnion:(NSArray *)groups
++ (Group *)groupsUnion:(NSArray *)groups
 {
     NSMutableSet *set = [NSMutableSet set];
     
-    for (RDSGroup *group in groups) {
+    for (Group *group in groups) {
         [set addObjectsFromArray:group.cmds];
     }
     
     NSArray *cmds = [NSArray arrayWithArray:[set allObjects]];
     
-    return [MTLJSONAdapter modelOfClass:RDSGroup.class
+    return [MTLJSONAdapter modelOfClass:Group.class
                      fromJSONDictionary:@{@"name": @"All", @"cmds": cmds}
                                   error:nil];
 }

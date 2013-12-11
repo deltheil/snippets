@@ -21,7 +21,7 @@
 		1AC5DBE51857782600EAB17C /* UIBarButtonItem+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5DBE41857782600EAB17C /* UIBarButtonItem+Snippets.m */; };
 		1AD4F7021851FF3E00659531 /* UIView+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4F7011851FF3E00659531 /* UIView+Snippets.m */; };
 		78725F2014C64450A936079C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37450F446EB0401CADA07D5F /* libPods.a */; };
-		820176FF18134C980041E4E9 /* RDSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* RDSGroup.m */; };
+		820176FF18134C980041E4E9 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 820176FE18134C980041E4E9 /* Group.m */; };
 		823B05EF183919AB00463BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B05EE183919AB00463BFD /* Main.storyboard */; };
 		823B05F61839243100463BFD /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B05F51839243100463BFD /* TopicViewController.m */; };
 		826579631812959B00A17F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826579621812959B00A17F63 /* Foundation.framework */; };
@@ -86,8 +86,8 @@
 		1AD4F7011851FF3E00659531 /* UIView+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snippets.m"; sourceTree = "<group>"; };
 		37450F446EB0401CADA07D5F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		651242B8D3EF4CB9ACACB863 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		820176FD18134C980041E4E9 /* RDSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDSGroup.h; sourceTree = "<group>"; };
-		820176FE18134C980041E4E9 /* RDSGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDSGroup.m; sourceTree = "<group>"; };
+		820176FD18134C980041E4E9 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		820176FE18134C980041E4E9 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		823B05EE183919AB00463BFD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		823B05F41839243100463BFD /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
 		823B05F51839243100463BFD /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
@@ -314,8 +314,8 @@
 				1A37A8041858741400A36954 /* Topic.m */,
 				82C46F421813311100E3E5E6 /* Command.h */,
 				82C46F431813311100E3E5E6 /* Command.m */,
-				820176FD18134C980041E4E9 /* RDSGroup.h */,
-				820176FE18134C980041E4E9 /* RDSGroup.m */,
+				820176FD18134C980041E4E9 /* Group.h */,
+				820176FE18134C980041E4E9 /* Group.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -525,7 +525,7 @@
 				1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */,
 				823B05F61839243100463BFD /* TopicViewController.m in Sources */,
 				826579DD1812B72200A17F63 /* NSError+Redis.m in Sources */,
-				820176FF18134C980041E4E9 /* RDSGroup.m in Sources */,
+				820176FF18134C980041E4E9 /* Group.m in Sources */,
 				1AC3D073184FDD8F009ED88D /* Command.m in Sources */,
 				82B420D118245D72002236BE /* WNCDatabase+Snippets.m in Sources */,
 				1AC5DBDF1857705A00EAB17C /* TopicListViewController.m in Sources */,

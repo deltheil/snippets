@@ -55,8 +55,6 @@
     [super didReceiveMemoryWarning];
 }
 
-// TODO: sync method has to be refactoring,
-// not really proper to handle network activity view on sync in background
 - (IBAction)chooseTopic:(id)sender
 {
     UIButton *button = (UIButton *) sender;
@@ -79,28 +77,14 @@
     if ([_database sn_countCommandsForTopicForTopic:topic.uid] > 0) {
         [self presentViewControllerForTopic:topic];
         
-        // show network activity indicator on sync in background
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-        void (^resultBlock)(NSArray *, NSError *) = ^(id _, NSError *error) {
-            // hide network activity indicator when sync in background finished
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        };
-
         // sync in background
-        [_database sn_syncForTopic:topic.uid
-                       resultBlock:resultBlock
-                     progressBlock:nil
-                             error:nil];
+        [self syncTopic:topic.uid resultBlock:nil progressBlock:nil];
+
         return;
     }
     
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    
-    void (^resultBlock)(NSArray *, NSError *) = ^(id _, NSError *error) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        // enable user interaction on sync call back
+    void (^resultBlock)(NSError *) = ^(NSError *error) {
         [self.tableView setUserInteractionEnabled:YES];
-        
         if (error) {
             // keep selected topic to use for retry action
             _selectedTopic = indexPath;
@@ -111,15 +95,36 @@
             [self presentViewControllerForTopic:topic];
         }
     };
-
+    
     void (^progressBlock)(NSInteger percentDone) = ^(NSInteger percentDone) {
         [cell setPercent:percentDone];
     };
 
-    [_database sn_syncForTopic:topic.uid resultBlock:resultBlock progressBlock:progressBlock error:nil];
+    // sync on cold start with error view
+    [self syncTopic:topic.uid resultBlock:resultBlock progressBlock:progressBlock];
 
     // disable user interaction on sync
     [self.tableView setUserInteractionEnabled:NO];
+}
+
+- (void)syncTopic:(NSString *)uid
+      resultBlock:(void (^)(NSError *error))resultBlock
+    progressBlock:(void (^)(NSInteger percentDone))progressBlock
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+    void (^postSyncBlock)(NSArray *, NSError *) = ^(id _, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        if (resultBlock) {
+            resultBlock(error);
+        }
+    };
+    
+    [_database sn_syncForTopic:uid
+                   resultBlock:postSyncBlock
+                 progressBlock:progressBlock
+                         error:nil];
 }
 
 #pragma mark - Private

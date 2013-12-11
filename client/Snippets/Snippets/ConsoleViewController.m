@@ -111,7 +111,7 @@
     
     NSString *resp = [_redis exec:cmd error:&error];
     if (error) {
-        resp = [[error rds_message] stringByReplacingOccurrencesOfString:@"Vedis" withString:@"Redis"];
+        resp = [error rds_message];
     }
 
     [_entries addObject:REDIS_CMD(cmd)];

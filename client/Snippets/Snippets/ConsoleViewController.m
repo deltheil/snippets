@@ -80,7 +80,7 @@
         [[[UIAlertView alloc] initWithTitle:@"Error"
                                     message:@"Cannot start the Redis session"
                                    delegate:self
-                          cancelButtonTitle:@"Ok"
+                          cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
         
         return;

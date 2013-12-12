@@ -124,19 +124,7 @@
 		82B420D018245D72002236BE /* WNCDatabase+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WNCDatabase+Snippets.m"; sourceTree = "<group>"; };
 		82C46F421813311100E3E5E6 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		82C46F431813311100E3E5E6 /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
-		B0880306181359F700D102C4 /* CommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandViewController.h; path = Controllers/CommandViewController.h; sourceTree = "<group>"; };
-		B0880307181359F700D102C4 /* CommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandViewController.m; path = Controllers/CommandViewController.m; sourceTree = "<group>"; };
-		B0880311181364C800D102C4 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleViewController.h; path = Controllers/ConsoleViewController.h; sourceTree = "<group>"; };
-		B0880312181364C800D102C4 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleViewController.m; path = Controllers/ConsoleViewController.m; sourceTree = "<group>"; };
-		B08803171813694D00D102C4 /* TextFieldConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldConsole.h; path = Views/TextFieldConsole.h; sourceTree = "<group>"; };
-		B08803181813694D00D102C4 /* TextFieldConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextFieldConsole.m; path = Views/TextFieldConsole.m; sourceTree = "<group>"; };
 		B0C77E2D1813D2B100801F34 /* redis-cli.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "redis-cli.html"; sourceTree = "<group>"; };
-		B0DDA73C18129A9000E015C0 /* LNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNViewController.h; path = Components/LNViewController.h; sourceTree = "<group>"; };
-		B0DDA73D18129A9000E015C0 /* LNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNViewController.m; path = Components/LNViewController.m; sourceTree = "<group>"; };
-		B0DDA73F18129AED00E015C0 /* BoardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardingViewController.h; path = Controllers/BoardingViewController.h; sourceTree = "<group>"; };
-		B0DDA74018129AED00E015C0 /* BoardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardingViewController.m; path = Controllers/BoardingViewController.m; sourceTree = "<group>"; };
-		B0DDA74218129C8E00E015C0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
-		B0DDA74318129C8E00E015C0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
 		B0DDA74618129CFA00E015C0 /* UIColor+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Snippets.h"; sourceTree = "<group>"; };
 		B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Snippets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,32 +269,6 @@
 			name = "Obj-C";
 			sourceTree = "<group>";
 		};
-		827C504C183977F400703460 /* legacy */ = {
-			isa = PBXGroup;
-			children = (
-				B0DDA73C18129A9000E015C0 /* LNViewController.h */,
-				B0DDA73D18129A9000E015C0 /* LNViewController.m */,
-				B0DDA73F18129AED00E015C0 /* BoardingViewController.h */,
-				B0DDA74018129AED00E015C0 /* BoardingViewController.m */,
-				B0DDA74218129C8E00E015C0 /* MainViewController.h */,
-				B0DDA74318129C8E00E015C0 /* MainViewController.m */,
-				B0880306181359F700D102C4 /* CommandViewController.h */,
-				B0880307181359F700D102C4 /* CommandViewController.m */,
-				B0880311181364C800D102C4 /* ConsoleViewController.h */,
-				B0880312181364C800D102C4 /* ConsoleViewController.m */,
-			);
-			name = legacy;
-			sourceTree = "<group>";
-		};
-		827C504D1839781200703460 /* legacy */ = {
-			isa = PBXGroup;
-			children = (
-				B08803171813694D00D102C4 /* TextFieldConsole.h */,
-				B08803181813694D00D102C4 /* TextFieldConsole.m */,
-			);
-			name = legacy;
-			sourceTree = "<group>";
-		};
 		82B420CE18245D17002236BE /* Winch+ */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,7 +295,6 @@
 		B0DDA7371812982F00E015C0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				827C504C183977F400703460 /* legacy */,
 				1AC5DBDD1857705A00EAB17C /* TopicListViewController.h */,
 				1AC5DBDE1857705A00EAB17C /* TopicListViewController.m */,
 				823B05F41839243100463BFD /* TopicViewController.h */,
@@ -358,7 +319,6 @@
 				1AC5DBE01857733C00EAB17C /* TopicCell.h */,
 				1AC5DBE11857733C00EAB17C /* TopicCell.m */,
 				B0DDA74518129CFA00E015C0 /* UI Categories */,
-				827C504D1839781200703460 /* legacy */,
 			);
 			name = Views;
 			sourceTree = "<group>";

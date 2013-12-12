@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Mps-hM-I75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Mps-hM-I75">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -201,6 +201,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dismissViewController:" destination="NVQ-xa-jXk" eventType="touchUpInside" id="VS3-oD-bp3"/>
+                                    <action selector="dismissViewController:" destination="3b3-pV-lxo" eventType="touchUpInside" id="mwb-PV-39n"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,9 +219,6 @@
                             <constraint firstItem="tyx-Ul-m6o" firstAttribute="centerX" secondItem="zj7-Z4-gTN" secondAttribute="centerX" id="s2w-Fe-gCv"/>
                             <constraint firstAttribute="trailing" secondItem="avO-EZ-1gs" secondAttribute="trailing" constant="10" id="tEi-qM-02j"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="HmI-hf-MdM" appends="YES" id="VMt-3U-TNj"/>
-                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -228,11 +226,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gba-LU-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="HmI-hf-MdM">
-                    <connections>
-                        <action selector="dismissViewController:" destination="3b3-pV-lxo" id="xyd-4B-BOV"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="97" y="-358"/>
         </scene>

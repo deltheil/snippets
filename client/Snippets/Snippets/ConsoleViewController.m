@@ -14,8 +14,8 @@
 
 #define REDIS_PROMPT @"<div class='lg'>redis></div> %@"
 
-#define REDIS_CMD(_CMD) \
-[NSString stringWithFormat:REDIS_PROMPT, (_CMD)]
+#define REDIS_CMD(_CMD) [NSString stringWithFormat:REDIS_PROMPT, (_CMD)]
+#define REDIS_RES(_RES) [(_RES) stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"]
 
 @interface ConsoleViewController ()
 
@@ -120,7 +120,7 @@
     }
 
     [_entries addObject:REDIS_CMD(cmd)];
-    [_entries addObject:[resp stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"]];
+    [_entries addObject:REDIS_RES(resp)];
     
     // Record the command into the history and clean up the prompt
     [_history addObject:cmd];

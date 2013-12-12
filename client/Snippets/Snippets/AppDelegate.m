@@ -13,12 +13,6 @@
 
 #import "TopicListViewController.h"
 
-// ==========================================
-// Winch demo datastore credentials
-// ==========================================
-#define WNC_DATASTORE_ID @"ZCDFQ0KDSO"
-#define WNC_APP_SECRET   @"1LPbPhLr5DiutD1Z"
-
 @implementation AppDelegate {
     WNCDatabase *_database;
 }

@@ -33,7 +33,7 @@
     Topic *rds = [[Topic alloc] init];
     rds.uid = @"rds";
     rds.name = @"Redis";
-    rds.description = @"Redis is an open source, BSD licensed, advanced key-value store..";
+    rds.description = @"Redis is an open source, BSD licensed, advanced key-value store.";
     
     _topics = [[NSArray alloc] initWithObjects:rds, nil];
     

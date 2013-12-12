@@ -149,7 +149,7 @@
     [[[UIAlertView alloc] initWithTitle:@"Error"
                                 message:message
                                delegate:self
-                      cancelButtonTitle:@"OK"
+                      cancelButtonTitle:@"Cancel"
                       otherButtonTitles:@"Retry", nil] show];
 }
 

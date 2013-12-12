@@ -155,6 +155,14 @@
     [self.webView loadHTMLString:html baseURL:nil];
 }
 
+- (void)updatePromptWithIndex:(NSInteger)historyIndex
+{
+    if (historyIndex >= 0 && historyIndex <= [_history count] - 1) {
+        NSString *cmd = [_history objectAtIndex:historyIndex];
+        self.textField.text = cmd;
+    }
+}
+
 #pragma mark - Actions
 
 - (IBAction)previousCmd:(id)sender
@@ -163,31 +171,26 @@
         _currentIndex = [_history count] - 1;
     }
     else {
-        NSInteger idx = _currentIndex;
-        if (idx > 0)
-            _currentIndex = idx - 1;
+        _currentIndex = (_currentIndex > 0) ? _currentIndex - 1 : 0;
     }
-
-    if (_currentIndex >= 0 && _currentIndex <= [_history count] - 1) { // paranoid
-        NSString *cmd = [_history objectAtIndex:_currentIndex];
-        self.textField.text = cmd;
-    }
+    
+    [self updatePromptWithIndex:_currentIndex];
 }
 
 - (IBAction)nextCmd:(id)sender
 {
     if (_currentIndex == - 1) {
-        _currentIndex = [_history count] - 1;
+        _currentIndex = [_history count];
     }
     else {
-        NSInteger idx = _currentIndex;
-        if (idx < [_history count] - 1)
-            _currentIndex = idx + 1;
+        _currentIndex = (_currentIndex < [_history count]) ? _currentIndex + 1 : _currentIndex;
     }
     
-    if (_currentIndex >= 0 && _currentIndex <= [_history count] - 1) { // paranoid
-        NSString *cmd = [_history objectAtIndex:_currentIndex];
-        self.textField.text = cmd;
+    if (_currentIndex == [_history count]) {
+        self.textField.text = @"";
+    }
+    else {
+        [self updatePromptWithIndex:_currentIndex];
     }
 }
 

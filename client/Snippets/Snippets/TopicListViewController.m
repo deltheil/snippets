@@ -19,6 +19,7 @@
 
 @property (strong, nonatomic) NSArray *topics;
 @property (nonatomic) NSIndexPath *selectedTopic;
+
 @end
 
 @implementation TopicListViewController
@@ -72,6 +73,9 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
     Topic *topic = _topics[indexPath.row];
+    
+    // set percent to 0 on choosen topic
+    [cell setPercent:0];
     
     // cold start check
     if ([_database sn_countCommandsForTopicForTopic:topic.uid] > 0) {

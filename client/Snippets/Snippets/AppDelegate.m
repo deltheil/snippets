@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-// Winch main header
 #import <Winch/Winch.h>
 
 #import "TopicListViewController.h"
@@ -25,7 +24,7 @@
     
     NSError *error;
     if (![_database openWithID:WNC_DATASTORE_ID appSecret:WNC_APP_SECRET error:&error]) {
-        NSLog(@"winch open error: %@", [error wnc_message]);
+        WNCDLog(@"winch open error: %@", [error wnc_message]);
     }
     
     UINavigationController *navigationVC = (UINavigationController *) self.window.rootViewController;

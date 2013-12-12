@@ -631,6 +631,7 @@
 					"COCOAPODS=1",
 					"WNC_APP_SECRET='@\"$(WINCH_APP_SECRET)\"'",
 					"WNC_DATASTORE_ID='@\"$(WINCH_DATASTORE_ID)\"'",
+					"SN_SCHEMA_VERSION='@\"$(SNIPPETS_SCHEMA_VERSION)\"'",
 				);
 				INFOPLIST_FILE = "Snippets/Snippets-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -638,6 +639,7 @@
 					../../fakeredis.c/build,
 				);
 				PRODUCT_NAME = Snippets;
+				SNIPPETS_SCHEMA_VERSION = 1;
 				WINCH_APP_SECRET = 1LPbPhLr5DiutD1Z;
 				WINCH_DATASTORE_ID = ZCDFQ0KDSO;
 				WRAPPER_EXTENSION = app;
@@ -662,6 +664,7 @@
 					"COCOAPODS=1",
 					"WNC_APP_SECRET='@\"$(WINCH_APP_SECRET)\"'",
 					"WNC_DATASTORE_ID='@\"$(WINCH_DATASTORE_ID)\"'",
+					"SN_SCHEMA_VERSION='@\"$(SNIPPETS_SCHEMA_VERSION)\"'",
 				);
 				INFOPLIST_FILE = "Snippets/Snippets-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -669,6 +672,7 @@
 					../../fakeredis.c/build,
 				);
 				PRODUCT_NAME = Snippets;
+				SNIPPETS_SCHEMA_VERSION = 1;
 				WINCH_APP_SECRET = 1LPbPhLr5DiutD1Z;
 				WINCH_DATASTORE_ID = ZCDFQ0KDSO;
 				WRAPPER_EXTENSION = app;

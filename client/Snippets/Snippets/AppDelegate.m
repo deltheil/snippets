@@ -10,6 +10,9 @@
 
 #import <Winch/Winch.h>
 
+// Winch filename with format <version>_<datastoreID>_snippets.db
+#define WNC_FILENAME(SN_ver, SN_wnc_id) [NSString stringWithFormat:@"%@_%@_snippets.db", (SN_ver), (SN_wnc_id)]
+
 #import "TopicListViewController.h"
 
 @implementation AppDelegate {
@@ -18,7 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSString *path = [WNCDatabase cachesPathFor:@"store.db"];
+    NSString *path = [WNCDatabase cachesPathFor:WNC_FILENAME(SN_SCHEMA_VERSION, WNC_DATASTORE_ID)];
     
     _database = [WNCDatabase databaseWithPath:path];
     

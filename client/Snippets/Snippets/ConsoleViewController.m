@@ -17,7 +17,7 @@
 #define REDIS_CMD(_CMD) [NSString stringWithFormat:REDIS_PROMPT, (_CMD)]
 #define REDIS_RES(_RES) [(_RES) stringByReplacingOccurrencesOfString:@"\n" withString:@"<br/>"]
 
-@interface ConsoleViewController ()
+@interface ConsoleViewController () <UIAlertViewDelegate>
 
 // UI properties
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -48,11 +48,6 @@
     
     _redis = [[Redis alloc] init];
     
-    NSError *err = nil;
-    if (![_redis open:&err]) {
-        NSLog(@"error: can't open Redis (%@)", [err rds_message]);
-    }
-    
     _currentIndex = -1;
 }
 
@@ -76,6 +71,25 @@
                                                  name:UIKeyboardWillChangeFrameNotification
                                                object:nil];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSError *err = nil;
+    if (![_redis open:&err]) {
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"Cannot start the Redis session"
+                                   delegate:self
+                          cancelButtonTitle:@"Ok"
+                          otherButtonTitles:nil] show];
+        
+        return;
+    }
+    
+    // Pre-load example commands
+    for (NSString *cmd in _command.cli) {
+        [self execCommand:cmd];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -104,10 +118,6 @@
     _command = command;
 
     [_entries addObject:_command.htmlHeader];
-    
-    for (NSString *cmd in _command.cli) {
-        [self execCommand:cmd];
-    }
 }
 
 - (void)execCommand:(NSString *)cmd
@@ -238,6 +248,13 @@
     NSString *javascript = [NSString stringWithFormat:@"window.scrollBy(0, %ld);", (long) height];
 
     [webView stringByEvaluatingJavaScriptFromString:javascript];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

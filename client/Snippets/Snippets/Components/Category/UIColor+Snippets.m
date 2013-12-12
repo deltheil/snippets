@@ -1,9 +1,9 @@
 //
 //  UIColor+Hex.m
-//  evasion
+//  Snippets
 //
 //  Created by Aymeric Gallissot on 26/08/13.
-//  Copyright (c) 2013 Fuzzze. All rights reserved.
+//  Copyright (c) 2013 Snippets. All rights reserved.
 //
 
 #import "UIColor+Snippets.h"

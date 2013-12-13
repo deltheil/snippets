@@ -170,15 +170,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dio-S7-iXK" userLabel="Winch Button ">
-                                <rect key="frame" x="113" y="518" width="95" height="30"/>
+                                <rect key="frame" x="103" y="520" width="115" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <state key="normal" title="www.winch.io">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openWinchUrl:" destination="3b3-pV-lxo" eventType="touchUpInside" id="Jcy-bH-1Jw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zj7-Z4-gTN" userLabel="Winch Button bis">
                                 <rect key="frame" x="63" y="163" width="195" height="46"/>
@@ -186,6 +187,9 @@
                                 <state key="normal" image="sn-winchlogo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="openWinchUrl:" destination="3b3-pV-lxo" eventType="touchUpInside" id="I9d-6Y-iRe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avO-EZ-1gs" userLabel="Close Button">
                                 <rect key="frame" x="278" y="38" width="32" height="30"/>
@@ -222,6 +226,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="chooseButton" destination="dio-S7-iXK" id="9Zm-Dp-AVI"/>
                         <outlet property="descriptionTextView" destination="tyx-Ul-m6o" id="oaE-hd-EWD"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,7 @@
 @interface AboutViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIButton *chooseButton;
 
 @end
 
@@ -29,6 +30,11 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)openWinchUrl:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.winch.io"]];
 }
 
 #pragma mark - Actions

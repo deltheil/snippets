@@ -23,6 +23,10 @@
 {
     [super viewDidLoad];
 
+    self.chooseButton.layer.borderWidth = 1;
+    self.chooseButton.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.chooseButton.layer.cornerRadius = 3;
+    
     // set font programmatically because UITextView category does not work yet
     [self.descriptionTextView setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:17]];
 }

@@ -35,6 +35,8 @@
 @property (nonatomic, strong) NSArray *commands;
 @property (nonatomic, strong) Group *currentGroup;
 
+@property (nonatomic) double lastScrollPosX;
+
 @end
 
 @implementation TopicViewController
@@ -45,7 +47,7 @@
 {
     [super viewDidLoad];
     
-    // disable interactive pop gesture
+    // enable interactive pop gesture
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
@@ -128,6 +130,33 @@
     [self.commandsTableView reloadData];
 }
 
+- (void)updateScrollViewOffset
+{
+    float toX = self.groupsCollectionView.contentOffset.x;
+    
+    float modulo = toX - (int) (toX / GROUP_CELL_WIDTH) * GROUP_CELL_WIDTH;
+    
+    if (modulo != 0) {
+        toX -= fabs(modulo);
+        if (self.groupsCollectionView.contentOffset.x - _lastScrollPosX > 0) {
+            toX += GROUP_CELL_WIDTH;
+        }
+    }
+    
+    toX = fmax(toX, 0);
+    toX = fmin(toX, self.groupsCollectionView.contentSize.width - GROUP_CELL_WIDTH);
+    
+    [UIView animateWithDuration:.15 delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.groupsCollectionView.contentOffset = CGPointMake(toX, self.groupsCollectionView.contentOffset.y);
+                     }
+                     completion:^(BOOL finished) {
+                         _lastScrollPosX = self.groupsCollectionView.contentOffset.x;
+                     }];
+    
+}
+
 #pragma mark - UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
@@ -142,8 +171,6 @@
     GroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topicGroupCellID" forIndexPath:indexPath];
     cell.groupName = group.name;
     
-    // TODO: at the app launch set the red underline view to the first row "ALL"
-
     return cell;
 }
 
@@ -152,29 +179,39 @@
     NSInteger row = indexPath.row;
 
     self.currentGroup = [self.groups objectAtIndex:row];
-
-    // TODO: overflow has to be rethink for the scroll view [1]
-    // [1] [collectionView setContentOffset:CGPointMake((row * GROUP_CELL_WIDTH), 0) animated:YES];
     
     // set table view offset when group has been selected
     // and table view has been scrolled before
     [self.commandsTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    
+    // scroll to select item to avoid a cut visible rect
+    GroupCell *groupCell = (GroupCell *) [collectionView cellForItemAtIndexPath:indexPath];
+
+    [self.groupsCollectionView scrollRectToVisible:groupCell.frame animated:YES];
 }
+
+#pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView == self.groupsCollectionView) {
-        CGPoint contentOffset = scrollView.contentOffset;
-        contentOffset.x = contentOffset.x - scrollView.contentInset.left;
-        scrollView.contentOffset = contentOffset;
+        scrollView.contentOffset = scrollView.contentOffset;
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if (scrollView == self.groupsCollectionView) {
-        NSInteger position = (NSInteger) floor(scrollView.contentOffset.x / GROUP_CELL_WIDTH);
-        [scrollView setContentOffset:CGPointMake((position * GROUP_CELL_WIDTH), 0) animated:YES];
+        if (!decelerate) {
+            [self updateScrollViewOffset];
+        }
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView == self.groupsCollectionView) {
+        [self updateScrollViewOffset];
     }
 }
 

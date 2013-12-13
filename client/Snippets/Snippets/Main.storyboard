@@ -149,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSl-jX-rGm" userLabel="Powered Title Label">
-                                <rect key="frame" x="114" y="112" width="92" height="21"/>
+                                <rect key="frame" x="114" y="147" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -159,7 +159,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Master-slave replication engine for mobile apps" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-Ul-m6o">
-                                <rect key="frame" x="40" y="248" width="240" height="51"/>
+                                <rect key="frame" x="40" y="283" width="240" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -182,7 +182,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zj7-Z4-gTN" userLabel="Winch Button bis">
-                                <rect key="frame" x="63" y="163" width="195" height="46"/>
+                                <rect key="frame" x="63" y="198" width="195" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="sn-winchlogo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,7 +214,7 @@
                         <constraints>
                             <constraint firstItem="lXm-ce-7ot" firstAttribute="top" secondItem="dio-S7-iXK" secondAttribute="bottom" constant="20" id="0Ja-qd-Zxh"/>
                             <constraint firstAttribute="centerX" secondItem="ZSl-jX-rGm" secondAttribute="centerX" id="DTp-hF-KAS"/>
-                            <constraint firstItem="ZSl-jX-rGm" firstAttribute="top" secondItem="avO-EZ-1gs" secondAttribute="bottom" constant="44" id="MR6-jk-YFE"/>
+                            <constraint firstItem="ZSl-jX-rGm" firstAttribute="top" secondItem="avO-EZ-1gs" secondAttribute="bottom" constant="79" id="MR6-jk-YFE"/>
                             <constraint firstAttribute="centerX" secondItem="dio-S7-iXK" secondAttribute="centerX" constant="-0.5" id="Rz3-Ql-ie8"/>
                             <constraint firstAttribute="centerX" secondItem="zj7-Z4-gTN" secondAttribute="centerX" id="Wk0-RL-nvO"/>
                             <constraint firstItem="zj7-Z4-gTN" firstAttribute="top" secondItem="ZSl-jX-rGm" secondAttribute="bottom" constant="30" id="aBM-Gf-gfH"/>

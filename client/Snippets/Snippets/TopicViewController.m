@@ -49,6 +49,11 @@
     
     // enable interactive pop gesture
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    
+    // transform pickerView to be horizontal
+    CGAffineTransform rotate = CGAffineTransformMakeRotation(-3.14 / 2);
+    rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
+    [self.groupPickerView setTransform:rotate];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -71,6 +76,53 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component;
+{
+    return [self.groups count];
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 44;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.currentGroup = [self.groups objectAtIndex:row];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    Group *group = [self.groups objectAtIndex:row];
+    
+    // reusing view
+    UILabel *label = (UILabel *) view;
+   
+    if (!label) {
+        label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 80)];
+        
+        // customize title label
+        [label setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:26]];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        
+        // transform label to be horizontal
+        CGAffineTransform rotate = CGAffineTransformMakeRotation(3.14 / 2);
+        rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
+        [label setTransform:rotate];
+    }
+
+    [label setText:group.name];
+    
+    return label;
 }
 
 #pragma mark - Private
@@ -128,91 +180,7 @@
     self.commands = nil;
     
     [self.commandsTableView reloadData];
-}
-
-- (void)updateScrollViewOffset
-{
-    float toX = self.groupsCollectionView.contentOffset.x;
     
-    float modulo = toX - (int) (toX / GROUP_CELL_WIDTH) * GROUP_CELL_WIDTH;
-    
-    if (modulo != 0) {
-        toX -= fabs(modulo);
-        if (self.groupsCollectionView.contentOffset.x - _lastScrollPosX > 0) {
-            toX += GROUP_CELL_WIDTH;
-        }
-    }
-    
-    toX = fmax(toX, 0);
-    toX = fmin(toX, self.groupsCollectionView.contentSize.width - GROUP_CELL_WIDTH);
-    
-    [UIView animateWithDuration:.15 delay:0.0
-                        options:UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         self.groupsCollectionView.contentOffset = CGPointMake(toX, self.groupsCollectionView.contentOffset.y);
-                     }
-                     completion:^(BOOL finished) {
-                         _lastScrollPosX = self.groupsCollectionView.contentOffset.x;
-                     }];
-    
-}
-
-#pragma mark - UICollectionViewDelegate
-
-- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
-{
-    return [self.groups count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    Group *group = [self.groups objectAtIndex:indexPath.row];
-    
-    GroupCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topicGroupCellID" forIndexPath:indexPath];
-    cell.groupName = group.name;
-    
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger row = indexPath.row;
-
-    self.currentGroup = [self.groups objectAtIndex:row];
-    
-    // set table view offset when group has been selected
-    // and table view has been scrolled before
-    [self.commandsTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
-    
-    // scroll to select item to avoid a cut visible rect
-    GroupCell *groupCell = (GroupCell *) [collectionView cellForItemAtIndexPath:indexPath];
-
-    [self.groupsCollectionView scrollRectToVisible:groupCell.frame animated:YES];
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (scrollView == self.groupsCollectionView) {
-        scrollView.contentOffset = scrollView.contentOffset;
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (scrollView == self.groupsCollectionView) {
-        if (!decelerate) {
-            [self updateScrollViewOffset];
-        }
-    }
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    if (scrollView == self.groupsCollectionView) {
-        [self updateScrollViewOffset];
-    }
 }
 
 #pragma mark - UITableViewDataSource

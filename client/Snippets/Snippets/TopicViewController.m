@@ -26,7 +26,7 @@
 
 // UI properties
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UICollectionView *groupsCollectionView;
+@property (weak, nonatomic) IBOutlet UIPickerView *groupPickerView;
 @property (nonatomic, weak) IBOutlet UITableView *commandsTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 

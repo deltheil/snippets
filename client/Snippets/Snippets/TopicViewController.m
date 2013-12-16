@@ -13,6 +13,7 @@
 #import <Winch/Winch.h>
 
 #import "WNCDatabase+Snippets.h"
+#import "UITableView+Snippets.h"
 
 #import "Topic.h"
 #import "Group.h"
@@ -181,6 +182,8 @@
     
     [self.commandsTableView reloadData];
     
+    // table view popup animation
+    [self.commandsTableView popUpVisibleCells];
 }
 
 #pragma mark - UITableViewDataSource

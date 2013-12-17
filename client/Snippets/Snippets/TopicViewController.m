@@ -91,9 +91,14 @@
     return [self.groups count];
 }
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    return GROUP_CELL_WIDTH;
+}
+
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    return 44;
+    return GROUP_CELL_HEIGHT;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -109,12 +114,12 @@
     UILabel *label = (UILabel *) view;
    
     if (!label) {
-        label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 80)];
+        label = [[UILabel alloc]initWithFrame:CGRectZero];
         
         // customize title label
         [label setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:26]];
         [label setTextAlignment:NSTextAlignmentCenter];
-        
+
         // transform label to be horizontal
         CGAffineTransform rotate = CGAffineTransformMakeRotation(3.14 / 2);
         rotate = CGAffineTransformScale(rotate, 0.25, 2.0);

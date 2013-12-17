@@ -19,8 +19,7 @@
 - (void)setSn_fontName:(NSString *)sn_fontName
 {
     [self setTitleTextAttributes:@{
-                                   NSForegroundColorAttributeName: [UIColor colorWithHexString:@"#d3392e" alpha:1],
-                                   NSFontAttributeName : [UIFont fontWithName:sn_fontName size:14.5]
+                                   NSFontAttributeName : [UIFont fontWithName:sn_fontName size:17]
                                    }
                             forState:UIControlStateNormal];
 }

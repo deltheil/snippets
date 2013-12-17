@@ -21,7 +21,9 @@
 #import "Command.h"
 #import "CommandCell.h"
 
-#define GROUP_CELL_WIDTH 90
+#define GROUP_CELL_WIDTH 160
+#define GROUP_CELL_HEIGHT 44
+#define GROUP_MARGIN 8
 
 @interface TopicViewController ()
 
@@ -35,8 +37,6 @@
 @property (nonatomic, strong) NSArray *groups;
 @property (nonatomic, strong) NSArray *commands;
 @property (nonatomic, strong) Group *currentGroup;
-
-@property (nonatomic) double lastScrollPosX;
 
 @end
 

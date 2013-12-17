@@ -55,7 +55,33 @@
     // set gray background color
     [self.groupPickerView setBackgroundColor:GRAY_COLOR];
     
+    // We cannot custom our own picker view selection indicator since ios7 ( cf: http://goo.gl/KjxaXd )
+    // We choose to hide those two selection lines by adding two subviews to the controller view
+    // with the same background color than the picker view.
+    // By doing this, we will create a mask effect on built-in selection indicators and avoid their appearance
+    NSInteger offSetX = CGRectGetWidth(self.view.frame) / 2;
+    
+    // add left selection indicator line
+    UIView *lIndicatorLine = [[UIView alloc] init];
+    lIndicatorLine.frame = CGRectMake(offSetX - 45, 0, 1, GROUP_CELL_HEIGHT);
+    lIndicatorLine.backgroundColor = GRAY_COLOR;
+    
+    [self.view addSubview:lIndicatorLine];
 
+    // add right selection indicator line
+    UIView *rIndicatorLine = [[UIView alloc] init];
+    rIndicatorLine.frame = CGRectMake(offSetX + 48, 0, 1, GROUP_CELL_HEIGHT);
+    rIndicatorLine.backgroundColor = GRAY_COLOR;
+    
+    [self.view addSubview:rIndicatorLine];
+
+    // add bottom selection indicator line
+    UIView *bIndicatorLine = [[UIView alloc] init];
+    bIndicatorLine.frame = CGRectMake(offSetX - 40, GROUP_CELL_HEIGHT - 1, 84, 2);
+    bIndicatorLine.backgroundColor = [UIColor colorWithHexString:@"#f16353" alpha:1];
+
+    [self.view addSubview:bIndicatorLine];
+    
     // transform pickerView to be horizontal
     CGAffineTransform rotate = CGAffineTransformMakeRotation(-3.14 / 2);
     rotate = CGAffineTransformScale(rotate, 0.25, 2.0);

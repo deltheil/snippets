@@ -36,8 +36,8 @@
     
     NSString *tpl = [[NSString alloc] initWithData:[fileHandle readDataToEndOfFile]
                                           encoding:NSUTF8StringEncoding];
-    
     NSString *html = [NSString stringWithFormat:tpl, _htmlDoc];
+    NSLog(@"%@", html);
     
     [self.webView loadHTMLString:html baseURL:nil];
 }

@@ -52,7 +52,7 @@
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#3d5d65"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#006269"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-mc-wcK" userLabel="Choose Button" customClass="ChooseButton">
@@ -186,7 +186,7 @@
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#3d5d65"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#006269"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>

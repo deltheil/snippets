@@ -110,58 +110,6 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - UIPickerViewDelegate
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
-{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component;
-{
-    return [self.groups count];
-}
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-{
-    return GROUP_CELL_WIDTH;
-}
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
-{
-    return GROUP_CELL_HEIGHT;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    self.currentGroup = [self.groups objectAtIndex:row];
-}
-
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-{
-    Group *group = [self.groups objectAtIndex:row];
-    
-    // reusing view
-    UILabel *label = (UILabel *) view;
-   
-    if (!label) {
-        label = [[UILabel alloc]initWithFrame:CGRectZero];
-        
-        // customize title label
-        [label setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:26]];
-        [label setTextAlignment:NSTextAlignmentCenter];
-
-        // transform label to be horizontal
-        CGAffineTransform rotate = CGAffineTransformMakeRotation(3.14 / 2);
-        rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
-        [label setTransform:rotate];
-    }
-
-    [label setText:group.name];
-    
-    return label;
-}
-
 #pragma mark - Private
 
 - (void)setTopic:(Topic *)topic
@@ -220,6 +168,58 @@
     
     // table view popup animation
     [self.commandsTableView popUpVisibleCells];
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component;
+{
+    return [self.groups count];
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    return GROUP_CELL_WIDTH;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return GROUP_CELL_HEIGHT;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.currentGroup = [self.groups objectAtIndex:row];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    Group *group = [self.groups objectAtIndex:row];
+    
+    // reusing view
+    UILabel *label = (UILabel *) view;
+    
+    if (!label) {
+        label = [[UILabel alloc]initWithFrame:CGRectZero];
+        
+        // customize title label
+        [label setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:26]];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        
+        // transform label to be horizontal
+        CGAffineTransform rotate = CGAffineTransformMakeRotation(3.14 / 2);
+        rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
+        [label setTransform:rotate];
+    }
+    
+    [label setText:group.name];
+    
+    return label;
 }
 
 #pragma mark - UITableViewDataSource

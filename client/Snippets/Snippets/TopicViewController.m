@@ -24,7 +24,7 @@
 #define GROUP_CELL_WIDTH 160
 #define GROUP_CELL_HEIGHT 44
 
-#define GRAY_COLOR [UIColor colorWithHexString:@"#F8F8F8" alpha:1]
+#define GRAY_COLOR [UIColor colorWithHexString:@"#f2f2f2" alpha:1]
 
 @interface TopicViewController ()
 

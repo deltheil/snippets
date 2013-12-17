@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
 
-    [self.webView setBackgroundColor:[UIColor colorWithHexString:@"#F8F8F8" alpha:1]];
+    [self.webView setBackgroundColor:[UIColor colorWithHexString:@"#f2f2f2" alpha:1]];
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-doc" ofType:@"html"];
     

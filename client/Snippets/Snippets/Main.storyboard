@@ -304,11 +304,11 @@
                                 </connections>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-ae-G0s" userLabel="Close Button">
-                                <rect key="frame" x="278" y="33" width="32" height="30"/>
+                                <rect key="frame" x="244" y="33" width="56" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="NLf-BS-5gt"/>
-                                    <constraint firstAttribute="width" constant="32" id="jwd-4M-H0o"/>
+                                    <constraint firstAttribute="height" constant="44" id="NLf-BS-5gt"/>
+                                    <constraint firstAttribute="width" constant="56" id="jwd-4M-H0o"/>
                                 </constraints>
                                 <state key="normal" image="sn_close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -427,7 +427,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VyS-id-TEy" firstAttribute="leading" secondItem="frL-2s-dGp" secondAttribute="leading" id="1cm-qq-hVF"/>
-                            <constraint firstAttribute="trailing" secondItem="Tdl-ae-G0s" secondAttribute="trailing" constant="10" id="4JP-w3-GSv"/>
+                            <constraint firstAttribute="trailing" secondItem="Tdl-ae-G0s" secondAttribute="trailing" constant="20" id="4JP-w3-GSv"/>
                             <constraint firstItem="frL-2s-dGp" firstAttribute="top" secondItem="bVa-Nz-90Z" secondAttribute="top" id="5RJ-Te-Dcm"/>
                             <constraint firstItem="VyS-id-TEy" firstAttribute="trailing" secondItem="frL-2s-dGp" secondAttribute="trailing" id="5lu-vC-8Xi"/>
                             <constraint firstItem="VyS-id-TEy" firstAttribute="top" secondItem="frL-2s-dGp" secondAttribute="bottom" id="Kgz-4R-wYC"/>
@@ -525,7 +525,7 @@
         <image name="sn-downArrow" width="19" height="12"/>
         <image name="sn-logo" width="30" height="30"/>
         <image name="sn-upArrow" width="19" height="12"/>
-        <image name="sn_close" width="9" height="9"/>
+        <image name="sn_close" width="56" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

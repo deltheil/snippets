@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "sn-close.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "w_snippets_close.png"
+      "filename" : "sn-close@2x.png"
     }
   ],
   "info" : {

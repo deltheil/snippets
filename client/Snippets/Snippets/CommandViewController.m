@@ -10,6 +10,8 @@
 #import "ConsoleViewController.h"
 #import "Command.h"
 
+#import "UIColor+Snippets.h"
+
 @interface CommandViewController ()
 
 // UI properties
@@ -25,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.webView setBackgroundColor:[UIColor colorWithHexString:@"#F8F8F8" alpha:1]];
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"redis-doc" ofType:@"html"];
     

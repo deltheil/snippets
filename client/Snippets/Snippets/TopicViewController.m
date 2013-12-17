@@ -14,6 +14,7 @@
 
 #import "WNCDatabase+Snippets.h"
 #import "UITableView+Snippets.h"
+#import "UIColor+Snippets.h"
 
 #import "Topic.h"
 #import "Group.h"
@@ -51,6 +52,9 @@
     // enable interactive pop gesture
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     
+    // set gray background color
+    [self.groupPickerView setBackgroundColor:[UIColor colorWithHexString:@"#F8F8F8" alpha:1]];
+
     // transform pickerView to be horizontal
     CGAffineTransform rotate = CGAffineTransformMakeRotation(-3.14 / 2);
     rotate = CGAffineTransformScale(rotate, 0.25, 2.0);

@@ -68,7 +68,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.layer.borderWidth = 1;
-        self.layer.borderColor = [[UIColor colorWithHexString:@"#d3392e" alpha:1] CGColor];
+        self.layer.borderColor = [[UIColor colorWithHexString:@"#f16353" alpha:1] CGColor];
         self.layer.cornerRadius = 3;
     }
     return self;

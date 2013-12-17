@@ -18,13 +18,13 @@
 
 #import "Topic.h"
 #import "Group.h"
-#import "GroupCell.h"
 #import "Command.h"
 #import "CommandCell.h"
 
 #define GROUP_CELL_WIDTH 160
 #define GROUP_CELL_HEIGHT 44
-#define GROUP_MARGIN 8
+
+#define GRAY_COLOR [UIColor colorWithHexString:@"#F8F8F8" alpha:1]
 
 @interface TopicViewController ()
 
@@ -53,7 +53,8 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     
     // set gray background color
-    [self.groupPickerView setBackgroundColor:[UIColor colorWithHexString:@"#F8F8F8" alpha:1]];
+    [self.groupPickerView setBackgroundColor:GRAY_COLOR];
+    
 
     // transform pickerView to be horizontal
     CGAffineTransform rotate = CGAffineTransformMakeRotation(-3.14 / 2);

@@ -161,9 +161,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="g8z-wf-RTo">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="topicCommandCellID" id="9JQ-tU-uBb" userLabel="Command Table View Cell - redisCommandCellID" customClass="CommandCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="85"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9JQ-tU-uBb" id="7gF-Q0-eys">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="84"/>
@@ -275,10 +280,20 @@
                         <outlet property="backButton" destination="5WW-iF-PvL" id="0au-6J-gdg"/>
                         <outlet property="commandsTableView" destination="XKM-sF-sTM" id="LJp-jY-PQA"/>
                         <outlet property="groupPickerView" destination="F5A-ki-FU5" id="IBQ-8R-WgO"/>
+                        <outlet property="searchBar" destination="g8z-wf-RTo" id="Hbl-2I-qXw"/>
+                        <outlet property="searchDisplayController" destination="bE8-A2-rX4" id="yXu-ZK-F0V"/>
                         <outlet property="titleLabel" destination="0mt-vM-V5d" id="rac-Jb-s0z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6h-cl-QU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="bE8-A2-rX4">
+                    <connections>
+                        <outlet property="delegate" destination="wmh-VH-L1l" id="NBW-vu-oDZ"/>
+                        <outlet property="searchContentsController" destination="wmh-VH-L1l" id="flT-cE-ssb"/>
+                        <outlet property="searchResultsDataSource" destination="wmh-VH-L1l" id="w7w-Od-Sha"/>
+                        <outlet property="searchResultsDelegate" destination="wmh-VH-L1l" id="4kH-4y-sxO"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="143" y="2"/>
         </scene>

@@ -33,7 +33,6 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *groupPickerView;
 @property (nonatomic, weak) IBOutlet UITableView *commandsTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 // Private properties
 @property (nonatomic, strong) NSArray *groups;

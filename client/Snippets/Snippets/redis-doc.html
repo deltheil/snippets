@@ -2,47 +2,58 @@
 <html>
     <head>
         <title>Snippets</title>
-            <style type="text/css">
-            body{
+        <style type="text/css">
+            body {
                 margin: 0;
                 padding: 0;
                 background-color: rgb( 242, 242, 242 );
                 font-family: "VAGRoundedStd-Light";
             }
         
-            header{
-                width: auto;
-            }
-            
-            h1,h2,h3,h4,p,code,ul {
-                display:block;
+            h1, h2, h3, h4, p, code, ul {
+                display: block;
                 padding-left:20px;
                 padding-right:20px;
             }
             
-            h1{
+            p code, li p, ul li code, ul code, pre code {
+                padding: 0;
+                margin-bottom: 5px;
+            }
+            
+            pre code {
+                display: inline-block;
+                margin-left: 20px;
+                margin-left: 20px;
+            }
+            
+            header {
+                width: auto;
+            }
+        
+            h1 {
                 text-transform: uppercase;
-
+                
                 font-size: 18px;
                 font-weight: 100;
-
+                
                 color: rgb(241, 99, 83);
-
+                
                 z-index: 69;
                 padding-bottom: 10px;
                 border-bottom: 1px rgb( 224, 224, 224 ) inset;
             }
             
-            h2{
-                font-size: 14px;
+            h1 span {
+                font-family: "VAGRoundedStd-Light";
                 color: black;
-                text-transform: uppercase;
-                z-index: 70;
-                display: inline;
-                font-weight: 100;
+                font-size: 10px;
+                padding: 0;
+                margin: 0;
+                display: inline-block;
             }
-            
-            h3{
+
+            h2 {
                 font-size: 14px;
                 color: rgb( 127, 127, 127 );
                 line-height: 1.792;
@@ -51,7 +62,7 @@
                 z-index: 73;
             }
             
-            h4{
+            h3 {
                 font-size: 20px;
                 color: rgb( 76, 185, 187 );
                 text-align: left;
@@ -69,29 +80,13 @@
                 font-size: 14px;
             }
             
-            p code, ul li code, ul code, pre code {
-                padding: 0;
-                margin-bottom: 5px;
-            }
-        
-            h4 code {
-                color: rgb( 127, 127, 127 );
-                padding: 0;
-            }
-
-            pre code {
-                display: inline-block;
-                margin-left: 20px;
-                margin-left: 20px;
-            }
-
             p {
                 font-size: 14px;
                 color: black;
                 text-align: left;
                 z-index: 72;
             }
-            </style>
+        </style>
         </head>
     <body>
         %@

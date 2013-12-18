@@ -38,7 +38,7 @@
 
 - (void)setSn_placeHolderHexColor:(NSString *)sn_placeHolderHexColor
 {
-    [self setValue:[UIColor colorWithHexString:sn_placeHolderHexColor alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    [self setValue:[UIColor colorWithHexString:sn_placeHolderHexColor alpha:.2] forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 @end

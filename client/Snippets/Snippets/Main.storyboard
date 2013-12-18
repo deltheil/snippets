@@ -388,7 +388,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="sn_placeHolderHexColor" value="#999999"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="sn_textHexColor" value="#999999"/>
                                         </userDefinedRuntimeAttributes>

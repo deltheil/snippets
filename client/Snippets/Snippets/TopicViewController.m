@@ -209,7 +209,7 @@
         
         // customize title label
         [label setFont:[UIFont fontWithName:@"VAGRoundedStd-Light" size:26]];
-         [label setTextAlignment:NSTextAlignmentCenter];
+        [label setTextAlignment:NSTextAlignmentCenter];
         
         // transform label to be horizontal
         CGAffineTransform rotate = CGAffineTransformMakeRotation(3.14 / 2);

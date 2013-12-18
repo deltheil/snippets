@@ -46,7 +46,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="187" translatesAutoresizingMaskIntoConstraints="NO" id="ohP-ur-mVE" userLabel="Summary Label">
-                                            <rect key="frame" x="20" y="42" width="187" height="27"/>
+                                            <rect key="frame" x="20" y="42" width="187" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                         <constraint firstItem="LIz-dO-8i5" firstAttribute="top" secondItem="uh6-TT-iu3" secondAttribute="top" constant="15" id="fpV-Va-8Pm"/>
                                         <constraint firstItem="ohP-ur-mVE" firstAttribute="leading" secondItem="uh6-TT-iu3" secondAttribute="leading" constant="20" id="jLu-nA-VVn"/>
                                         <constraint firstItem="ohP-ur-mVE" firstAttribute="top" secondItem="LIz-dO-8i5" secondAttribute="bottom" constant="1" id="pM7-lf-hvC"/>
-                                        <constraint firstAttribute="bottom" secondItem="ohP-ur-mVE" secondAttribute="bottom" constant="15" id="phh-1L-DNn"/>
+                                        <constraint firstAttribute="bottom" secondItem="ohP-ur-mVE" secondAttribute="bottom" constant="12" id="phh-1L-DNn"/>
                                         <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ohP-ur-mVE" secondAttribute="trailing" constant="80" id="wGQ-Zx-qcF"/>
                                         <constraint firstItem="Zga-mc-wcK" firstAttribute="top" secondItem="uh6-TT-iu3" secondAttribute="top" constant="26" id="waq-gt-tOp"/>
                                     </constraints>
@@ -486,11 +486,11 @@
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-Co-qX0" userLabel="Title Label">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>

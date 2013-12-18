@@ -55,10 +55,10 @@
     // set gray background color
     [self.groupPickerView setBackgroundColor:GRAY_COLOR];
     
-    // We cannot custom our own picker view selection indicator since ios7 ( cf: http://goo.gl/KjxaXd )
-    // We choose to hide those two selection lines by adding two subviews to the controller view
+    // We cannot customize our own picker view selection indicator since ios7 ( cf: http://goo.gl/KjxaXd )
+    // We choose to hide those two selection lines by adding subviews to the controller view
     // with the same background color than the picker view.
-    // By doing this, we will create a mask effect on built-in selection indicators and avoid their appearance
+    // By doing this, we will create a clear color effect on built-in selection indicators and avoid their appearance
     NSInteger offSetX = CGRectGetWidth(self.view.frame) / 2;
     
     // add left selection indicator line
@@ -222,7 +222,7 @@
     return label;
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

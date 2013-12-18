@@ -323,8 +323,6 @@
 				1A5AA0171857D542007635F5 /* UIButton+Snippets.m */,
 				1AD4F7001851FF3E00659531 /* UIView+Snippets.h */,
 				1AD4F7011851FF3E00659531 /* UIView+Snippets.m */,
-				B0DDA74618129CFA00E015C0 /* UIColor+Snippets.h */,
-				B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */,
 				1AC3D059184FD945009ED88D /* UILabel+Snippets.h */,
 				1AC3D05A184FD945009ED88D /* UILabel+Snippets.m */,
 				1A9F6C091855F7AB00E89A80 /* UITextField+Snippets.h */,
@@ -333,6 +331,8 @@
 				1AC5DBE41857782600EAB17C /* UIBarButtonItem+Snippets.m */,
 				1AB24859185F3C9F00703674 /* UITableView+Snippets.h */,
 				1AB2485A185F3C9F00703674 /* UITableView+Snippets.m */,
+				B0DDA74618129CFA00E015C0 /* UIColor+Snippets.h */,
+				B0DDA74718129CFA00E015C0 /* UIColor+Snippets.m */,
 			);
 			name = "UI Categories";
 			path = Components/Category;

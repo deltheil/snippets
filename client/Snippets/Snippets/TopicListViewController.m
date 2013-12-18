@@ -59,6 +59,8 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Actions
+
 - (IBAction)chooseTopic:(id)sender
 {
     UIButton *button = (UIButton *) sender;

@@ -54,7 +54,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//  [self.textField becomeFirstResponder];
+    
     [self reloadEntries];
 }
 

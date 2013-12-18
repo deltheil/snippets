@@ -41,7 +41,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#f16353"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
@@ -175,7 +175,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="sn_hexColor" value="#f16353"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
@@ -490,7 +490,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="VAGRoundedStd-Light"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="sn_fontName" value="Aleo-Regular"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>

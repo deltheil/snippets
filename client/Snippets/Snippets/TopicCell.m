@@ -56,6 +56,11 @@
     self.accessoryType = (isSynced) ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
 }
 
+- (void)reset
+{
+    [self.chooseButton setTitle:((ChooseButton *) self.chooseButton).defaultTitle
+                       forState:UIControlStateNormal];
+}
 
 @end
 
@@ -70,6 +75,7 @@
         self.layer.borderWidth = 1;
         self.layer.borderColor = [[UIColor colorWithHexString:@"#f16353" alpha:1] CGColor];
         self.layer.cornerRadius = 3;
+        self.defaultTitle = self.titleLabel.text;
     }
     return self;
 }

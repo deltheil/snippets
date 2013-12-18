@@ -21,10 +21,14 @@
 
 @property (strong, nonatomic) Topic *topic;
 
+- (void)reset;
+
 @end
 
 #pragma mark - Helpers Subclasses
 
 @interface ChooseButton : UIButton
+
+@property (nonatomic, copy) NSString *defaultTitle;
 
 @end

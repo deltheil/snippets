@@ -97,6 +97,8 @@
         if (error) {
             // keep selected topic to use for retry action
             _selectedTopic = indexPath;
+            // restore cell default title (= SYNC)
+            [cell reset];
             // show alert view to handle retry action
             [self showAlertSyncError:error];
         }

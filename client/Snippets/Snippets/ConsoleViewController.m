@@ -198,6 +198,13 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    NSCharacterSet *ws = [NSCharacterSet whitespaceCharacterSet];
+    NSString *cmd = textField.text;
+    
+    if ([[cmd stringByTrimmingCharactersInSet:ws] length] == 0) {
+        return NO;
+    }
+
     [self execCommand:textField.text];
 
     // reset text field

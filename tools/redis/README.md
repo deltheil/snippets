@@ -22,8 +22,7 @@ gem install batch
 git submodule update --remote
 ```
 
-> The `--remote` option is available as of Git 1.8.2. See
-[this](http://www.vogella.com/articles/Git/article.html#submodules_trackbranch)
+> The `--remote` option is available as of Git 1.8.2. It fetches and ensures that the latest commit from the branch is used. See [this](http://www.vogella.com/articles/Git/article.html#submodules_trackbranch)
 for more details.
 
 ### 2. Convert data

@@ -290,6 +290,7 @@
         <!--Search View Controller-->
         <scene sceneID="kC0-VU-gAh">
             <objects>
+                <viewController id="A9K-04-5am" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ceN-1w-tFD"/>
                         <viewControllerLayoutGuide type="bottom" id="E9t-C4-2wm"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A37A8051858741400A36954 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A37A8041858741400A36954 /* Topic.m */; };
+		1A4E24F71865194800B110F2 /* FadeAnimationPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E24F61865194800B110F2 /* FadeAnimationPushSegue.m */; };
 		1A5AA0181857D542007635F5 /* UIButton+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AA0171857D542007635F5 /* UIButton+Snippets.m */; };
 		1A9F6C081855DEA600E89A80 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C071855DEA600E89A80 /* ConsoleViewController.m */; };
 		1A9F6C0B1855F7AB00E89A80 /* UITextField+Snippets.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F6C0A1855F7AB00E89A80 /* UITextField+Snippets.m */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		1A37A8031858741400A36954 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		1A37A8041858741400A36954 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		1A4E24F51865194800B110F2 /* FadeAnimationPushSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeAnimationPushSegue.h; sourceTree = "<group>"; };
+		1A4E24F61865194800B110F2 /* FadeAnimationPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeAnimationPushSegue.m; sourceTree = "<group>"; };
 		1A5AA0161857D542007635F5 /* UIButton+Snippets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Snippets.h"; sourceTree = "<group>"; };
 		1A5AA0171857D542007635F5 /* UIButton+Snippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Snippets.m"; sourceTree = "<group>"; };
 		1A9F6C061855DEA600E89A80 /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
@@ -311,6 +314,8 @@
 				827C504418393D0A00703460 /* CommandCell.m */,
 				1AC5DBE01857733C00EAB17C /* TopicCell.h */,
 				1AC5DBE11857733C00EAB17C /* TopicCell.m */,
+				1A4E24F51865194800B110F2 /* FadeAnimationPushSegue.h */,
+				1A4E24F61865194800B110F2 /* FadeAnimationPushSegue.m */,
 				B0DDA74518129CFA00E015C0 /* UI Categories */,
 			);
 			name = Views;
@@ -475,6 +480,7 @@
 			files = (
 				B0DDA74C18129CFA00E015C0 /* UIColor+Snippets.m in Sources */,
 				827C504518393D0A00703460 /* CommandCell.m in Sources */,
+				1A4E24F71865194800B110F2 /* FadeAnimationPushSegue.m in Sources */,
 				1AC5DBE51857782600EAB17C /* UIBarButtonItem+Snippets.m in Sources */,
 				1A9F6C081855DEA600E89A80 /* ConsoleViewController.m in Sources */,
 				1A5AA0181857D542007635F5 /* UIButton+Snippets.m in Sources */,

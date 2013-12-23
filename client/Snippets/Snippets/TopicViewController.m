@@ -9,6 +9,7 @@
 #import "TopicViewController.h"
 #import "CommandViewController.h"
 #import "ConsoleViewController.h"
+#import "SearchViewController.h"
 
 #import <Winch/Winch.h>
 
@@ -102,6 +103,11 @@
         CommandViewController *cmdVC = segue.destinationViewController;
         cmdVC.command = cmd;
         cmdVC.htmlDoc = htmlDoc;
+    }
+    
+    else if ([segue.identifier isEqualToString:@"SearchSegue"]) {
+        SearchViewController *searchVC = segue.destinationViewController;
+        searchVC.commands = _commands;
     }
 }
 

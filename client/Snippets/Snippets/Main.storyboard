@@ -269,6 +269,9 @@
                             </constraints>
                         </view>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Bfp-kH-8iy">
+                            <connections>
+                                <segue destination="A9K-04-5am" kind="custom" identifier="SearchSegue" customClass="FadeAnimationPushSegue" id="lsa-oW-QYG"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

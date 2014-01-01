@@ -126,42 +126,12 @@ header h1 a{
   text-indent: -9999em;
 }
 
-/* SIGNUP
+/* APP DOWNLOAD
 -------------------------------------------------- */
-#signup{
+#appstore{
   position: absolute;
-  width: 430px;
-  height: 59px;
-  top:360px;
+  top:330px;
   left:20px;
-}
-
-#signup input[type="text"]{
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  left:0;
-  top: 0;
-  width: 306px;
-  height: 59px;
-  border-radius: 8px 0 0 8px;
-  border: 0;
-  padding:0 0 0 20px;
-  font: 22px "VAG Rounded Std";
-  color: rgb(128, 128, 128);
-}
-
-#signup input[type="submit"]{
-  background-color: rgb( 245, 98, 86);
-  position: absolute;
-  right: 0;
-  top:0;
-  width: 104px;
-  height: 59px;
-  border-radius: 0 8px 8px 0;
-  border: 0;
-  font: 22px "VAG Rounded Std";
-  color: rgb(255, 255, 255);
-  cursor: pointer;
 }
 
 /* FEATURES

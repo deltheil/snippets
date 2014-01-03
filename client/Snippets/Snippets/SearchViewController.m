@@ -22,38 +22,29 @@
 
 #pragma mark - Life Cycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // display search bar in navigation bar
     [self.searchDisplayController setDisplaysSearchBarInNavigationBar:YES];
-
-    [self.searchDisplayController.searchBar becomeFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // force display keyboard and focus to search bar
-    [self.searchBar becomeFirstResponder];
-
     [super viewWillAppear:animated];
     
     // hide back button to navigation bar
     self.navigationItem.hidesBackButton = YES;
+    
+    // force display keyboard and focus to search bar
+    [self.searchDisplayController.searchBar becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
+    [super viewWillDisappear:animated];
+    
 }
 
 #pragma mark - Private
@@ -82,7 +73,6 @@
 {
     return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_commands count];
@@ -103,16 +93,12 @@
     return cell;
 }
 
-#pragma mark - UISearchBarDelegate
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
-{
-
-}
+#pragma mark - UISearchDisplayControllerDelegate
 
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
 {
     [self.searchDisplayController.searchResultsTableView registerClass:[CommandCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
 }
+
 
 @end

@@ -34,6 +34,9 @@
 {
     [super viewWillAppear:animated];
     
+    // set translucent to YES to support search display controller
+    [self.navigationController.navigationBar setTranslucent:YES];
+    
     // hide back button to navigation bar
     self.navigationItem.hidesBackButton = YES;
     
@@ -45,6 +48,8 @@
 {
     [super viewWillDisappear:animated];
     
+    // set translucent to NO on will disappear for child view controllers
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 #pragma mark - Private

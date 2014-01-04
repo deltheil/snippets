@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class WNCDatabase;
+@class Topic;
+
 @interface SearchViewController : UIViewController
 
-@property (strong, nonatomic) NSArray *commands;
+@property (nonatomic, strong) WNCDatabase *database;
+@property (nonatomic, strong) Topic *topic;
 
 @end

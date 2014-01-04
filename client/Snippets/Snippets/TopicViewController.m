@@ -57,7 +57,7 @@
     [self.groupPickerView setBackgroundColor:GRAY_COLOR];
     
     // We cannot customize our own picker view selection indicator since ios7 ( cf: http://goo.gl/KjxaXd )
-    // We choose to hide those two selection lines by adding subviews to the controller view
+    // We choose to hide these two selection lines by adding subviews to the controller view
     // with the same background color than the picker view.
     // By doing this, we will create a clear color effect on built-in selection indicators and avoid their appearance
     NSInteger offSetX = CGRectGetWidth(self.view.frame) / 2;

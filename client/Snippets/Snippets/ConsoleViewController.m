@@ -7,10 +7,11 @@
 //
 
 #import "ConsoleViewController.h"
-#import "Redis.h"
-#import "Command.h"
 
 #import "NSError+Redis.h"
+
+#import "Redis.h"
+#import "Command.h"
 
 #define REDIS_PROMPT @"<div class='lg'>redis></div> %@"
 

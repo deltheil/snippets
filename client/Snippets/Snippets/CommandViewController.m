@@ -8,9 +8,10 @@
 
 #import "CommandViewController.h"
 #import "ConsoleViewController.h"
-#import "Command.h"
 
 #import "UIColor+Snippets.h"
+
+#import "Command.h"
 
 @interface CommandViewController ()
 
@@ -43,7 +44,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"consoleViewSegue"]) {
+    if ([segue.identifier isEqualToString:@"ConsoleVCSegue"]) {
         ConsoleViewController *consoleVC = segue.destinationViewController;
         consoleVC.command = _command;
     }

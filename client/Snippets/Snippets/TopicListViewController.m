@@ -8,12 +8,15 @@
 
 #import "TopicListViewController.h"
 #import "TopicViewController.h"
-#import "TopicCell.h"
-
-#import "Topic.h"
 
 #import "WNCDatabase+Snippets.h"
 #import "UIColor+Snippets.h"
+
+#import "Topic.h"
+
+#import "TopicCell.h"
+
+#define CELL_IDENTIFIER @"TopicCellID"
 
 @interface TopicListViewController ()
 
@@ -44,14 +47,14 @@
     // interactivePopGesture view controller
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>) self;
 
+    // disable interactive pop gesture
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+
     // set tint color to navigationBar for back arrow
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // set tint color to navigationBar
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#f16353" alpha:1];
-
-    // disable interactive pop gesture
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -199,9 +202,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"topicCellID";
-
-    TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
     Topic *topic = _topics[indexPath.row];
     
@@ -225,6 +226,7 @@
     
     // Retry button
     TopicCell *cell = (TopicCell *) [self.tableView cellForRowAtIndexPath:_selectedTopic];
+    
     // call choose topic IBAction with the current selected cell
     [self chooseTopic:cell.chooseButton];
 }

@@ -13,6 +13,7 @@
 
 #import "Topic.h"
 #import "Command.h"
+
 #import "CommandCell.h"
 
 #define CELL_IDENTIFIER @"CommandCellID"
@@ -50,19 +51,17 @@
     
     // hide back button to navigation bar
     self.navigationItem.hidesBackButton = YES;
-    
-    // force display keyboard and focus to search bar
-    [self.searchDisplayController.searchBar becomeFirstResponder];
-    
-    // register custom table view cell class to search results table view
-    [[self.searchDisplayController searchResultsTableView] registerClass:[CommandCell class]
-                                                  forCellReuseIdentifier:CELL_IDENTIFIER];
-    
+
     // set an empty origin table view footer
     [self.tableView setTableFooterView:[UIView new]];
     
     // set an empty search results table view footer
     [[self.searchDisplayController searchResultsTableView] setTableFooterView:[UIView new]];
+
+    // register custom table view cell class to search results table view
+    [[self.searchDisplayController searchResultsTableView] registerClass:[CommandCell class]
+                                                  forCellReuseIdentifier:CELL_IDENTIFIER];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -99,7 +98,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"SearchCommandViewSegue"]) {
+    if ([segue.identifier isEqualToString:@"CommandVCSegue"]) {
         UITableViewCell *cell = (UITableViewCell *) sender;
         
         NSIndexPath *indexPath = [[self.searchDisplayController searchResultsTableView] indexPathForCell:cell];

@@ -8,7 +8,6 @@
 
 #import "TopicViewController.h"
 #import "CommandViewController.h"
-#import "ConsoleViewController.h"
 #import "SearchViewController.h"
 
 #import <Winch/Winch.h>
@@ -20,10 +19,13 @@
 #import "Topic.h"
 #import "Group.h"
 #import "Command.h"
+
 #import "CommandCell.h"
 
 #define GROUP_CELL_WIDTH 160
 #define GROUP_CELL_HEIGHT 44
+
+#define CELL_IDENTIFIER @"CommandCellID"
 
 #define GRAY_COLOR [UIColor colorWithHexString:@"#f2f2f2" alpha:1]
 
@@ -91,7 +93,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"commandViewSegue"]) {
+    if ([segue.identifier isEqualToString:@"CommandVCSegue"]) {
         UITableViewCell *cell = (UITableViewCell *) sender;
         
         NSIndexPath *indexPath = [self.commandsTableView indexPathForCell:cell];
@@ -105,7 +107,7 @@
         cmdVC.htmlDoc = htmlDoc;
     }
     
-    else if ([segue.identifier isEqualToString:@"SearchSegue"]) {
+    else if ([segue.identifier isEqualToString:@"SearchVCSegue"]) {
         SearchViewController *searchVC = segue.destinationViewController;
         searchVC.topic = _topic;
         searchVC.database = _database;
@@ -243,12 +245,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"topicCommandCellID";
-    
-    CommandCell *cell = (CommandCell *) [_commandsTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CommandCell *cell = (CommandCell *) [_commandsTableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
     if (!cell) {
         cell = [[CommandCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                     reuseIdentifier:cellIdentifier];
+                                     reuseIdentifier:CELL_IDENTIFIER];
     }
     
     Command *cmd = self.commands[indexPath.row];

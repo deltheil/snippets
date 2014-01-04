@@ -10,6 +10,7 @@
                 <navigationController definesPresentationContext="YES" id="Mps-hM-I75" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="uhL-lJ-X41">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="16S-C5-CqK" kind="relationship" relationship="rootViewController" id="Yak-D8-UMV"/>
@@ -380,10 +381,10 @@
                         <outlet property="searchResultsDelegate" destination="A9K-04-5am" id="2K0-R0-kvS"/>
                     </connections>
                 </searchDisplayController>
-                <searchBar contentMode="redraw" showsCancelButton="YES" id="4Rr-Y8-H6e">
+                <searchBar opaque="NO" contentMode="redraw" placeholder="Search a command" showsCancelButton="YES" id="4Rr-Y8-H6e">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                     <connections>
                         <outlet property="delegate" destination="A9K-04-5am" id="sCg-9G-bXr"/>
                     </connections>
@@ -642,6 +643,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VD8-Zs-jh6"/>
+        <segue reference="7kV-BJ-ML4"/>
     </inferredMetricsTieBreakers>
 </document>

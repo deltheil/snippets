@@ -49,9 +49,6 @@
 
     // disable interactive pop gesture
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-
-    // set tint color to navigationBar for back arrow
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // set tint color to navigationBar
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#f16353" alpha:1];

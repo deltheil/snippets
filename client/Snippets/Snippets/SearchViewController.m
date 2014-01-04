@@ -91,6 +91,23 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SearchCommandViewSegue"]) {
+        UITableViewCell *cell = (UITableViewCell *) sender;
+        
+        NSIndexPath *indexPath = [[self.searchDisplayController searchResultsTableView] indexPathForCell:cell];
+        
+        Command *cmd = _filteredCommands[indexPath.row];
+        
+        NSString *htmlDoc = [_database sn_getHTMLForCommand:cmd forTopic:_topic.uid];
+        
+        CommandViewController *cmdVC = segue.destinationViewController;
+        cmdVC.command = cmd;
+        cmdVC.htmlDoc = htmlDoc;
+    }
+}
+
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

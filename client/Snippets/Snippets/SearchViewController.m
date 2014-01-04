@@ -7,6 +7,11 @@
 //
 
 #import "SearchViewController.h"
+#import "CommandViewController.h"
+
+#import "WNCDatabase+Snippets.h"
+
+#import "Topic.h"
 #import "Command.h"
 #import "CommandCell.h"
 
@@ -14,7 +19,11 @@
 
 @interface SearchViewController ()
 
+// UI properties
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+// Private properties
+@property (strong, nonatomic) NSArray *commands;
 
 @end
 
@@ -54,9 +63,13 @@
 
 #pragma mark - Private
 
-- (void)setCommands:(NSArray *)commands
+- (NSArray *)commands
 {
-    _commands = commands;
+    if (_commands) {
+        return _commands;
+    }
+    
+    return [_database sn_fetchCommandsForTopic:_topic.uid error:nil];
 }
 
 #pragma mark - Actions

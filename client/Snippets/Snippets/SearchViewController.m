@@ -136,5 +136,13 @@
     [self searchBarCancelButtonClicked:self.searchBar];
 }
 
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    NSPredicate *filterMerchant = [NSPredicate predicateWithFormat:@"name contains[cd] %@", searchString];
+    
+    _filteredCommands = [self.commands filteredArrayUsingPredicate:filterMerchant];
+    
+    return YES;
+}
 
 @end

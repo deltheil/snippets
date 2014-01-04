@@ -15,15 +15,17 @@
 #import "Command.h"
 #import "CommandCell.h"
 
-#define CELL_IDENTIFIER @"topicCommandCellID"
+#define CELL_IDENTIFIER @"CommandCellID"
 
 @interface SearchViewController ()
 
 // UI properties
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 // Private properties
 @property (strong, nonatomic) NSArray *commands;
+@property (strong, nonatomic) NSArray *filteredCommands;
 
 @end
 
@@ -51,6 +53,10 @@
     
     // force display keyboard and focus to search bar
     [self.searchDisplayController.searchBar becomeFirstResponder];
+    
+    // register custom table view cell class to search results table view
+    [[self.searchDisplayController searchResultsTableView] registerClass:[CommandCell class]
+                                                  forCellReuseIdentifier:CELL_IDENTIFIER];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -87,25 +93,37 @@
 
 #pragma mark - UITableViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 85;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_commands count];
+    return ([tableView isEqual:[self.searchDisplayController searchResultsTableView]]) ? [_filteredCommands count] : [self.commands count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CommandCell *cell = (CommandCell *) [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
-
-    if (!cell) {
-        cell = [[CommandCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                  reuseIdentifier:CELL_IDENTIFIER];
+    CommandCell *cell;
+    
+    if (tableView == [self.searchDisplayController searchResultsTableView]) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
+    }
+    else {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     }
 
-    Command *cmd = _commands[indexPath.row];
+    NSInteger row = indexPath.row;
+    
+    Command *cmd = ([tableView isEqual:[self.searchDisplayController searchResultsTableView]])
+                    ? _filteredCommands[row] : self.commands[row];
+    
     cell.command = cmd;
     
     return cell;
@@ -113,9 +131,9 @@
 
 #pragma mark - UISearchDisplayControllerDelegate
 
-- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {
-    [self.searchDisplayController.searchResultsTableView registerClass:[CommandCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
+    [self searchBarCancelButtonClicked:self.searchBar];
 }
 
 

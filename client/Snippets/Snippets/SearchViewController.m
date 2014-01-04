@@ -57,6 +57,12 @@
     // register custom table view cell class to search results table view
     [[self.searchDisplayController searchResultsTableView] registerClass:[CommandCell class]
                                                   forCellReuseIdentifier:CELL_IDENTIFIER];
+    
+    // set an empty origin table view footer
+    [self.tableView setTableFooterView:[UIView new]];
+    
+    // set an empty search results table view footer
+    [[self.searchDisplayController searchResultsTableView] setTableFooterView:[UIView new]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

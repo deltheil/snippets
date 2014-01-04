@@ -62,6 +62,11 @@
     [[self.searchDisplayController searchResultsTableView] registerClass:[CommandCell class]
                                                   forCellReuseIdentifier:CELL_IDENTIFIER];
 
+    // force display keyboard and focus to search bar
+    // if search bar is not active to avoid an ugly animation on pop vc
+    // with gesture from command doc vc
+    if (![self.searchDisplayController isActive])
+        [self.searchDisplayController.searchBar becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -70,6 +75,9 @@
     
     // set translucent to NO on will disappear for child view controllers
     [self.navigationController.navigationBar setTranslucent:NO];
+    
+    // force hide keyboard
+    [self.searchDisplayController.searchBar resignFirstResponder];
 }
 
 #pragma mark - Private

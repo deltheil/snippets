@@ -107,7 +107,8 @@
     
     else if ([segue.identifier isEqualToString:@"SearchSegue"]) {
         SearchViewController *searchVC = segue.destinationViewController;
-        searchVC.commands = _commands;
+        searchVC.topic = _topic;
+        searchVC.database = _database;
     }
 }
 

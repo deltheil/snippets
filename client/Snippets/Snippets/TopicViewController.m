@@ -89,6 +89,9 @@
     CGAffineTransform rotate = CGAffineTransformMakeRotation(-3.14 / 2);
     rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
     [self.groupPickerView setTransform:rotate];
+    
+    // choose manually 'ALL' to avoid a nil currentGroup
+    _currentGroup = [self.groups objectAtIndex:0];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

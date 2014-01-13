@@ -9,6 +9,8 @@
 #import "SearchViewController.h"
 #import "CommandViewController.h"
 
+#import "UIColor+Snippets.h"
+
 #import "WNCDatabase+Snippets.h"
 
 #import "Topic.h"
@@ -17,6 +19,8 @@
 #import "CommandCell.h"
 
 #define CELL_IDENTIFIER @"CommandCellID"
+
+#define RED_COLOR [UIColor colorWithHexString:@"#f16353" alpha:1]
 
 @interface SearchViewController ()
 
@@ -40,6 +44,17 @@
     // display search bar in navigation bar
     [self.searchDisplayController setDisplaysSearchBarInNavigationBar:YES];
 
+    UITextField *searchField = [self.searchBar valueForKey:@"_searchField"];
+
+    // set UI customization
+    [searchField setTextColor:RED_COLOR];
+    [searchField setTintColor:RED_COLOR];
+    [searchField setAdjustsFontSizeToFitWidth:YES];
+    [searchField setFont:[UIFont fontWithName:@"Aleo-Regular" size:12]];
+    [searchField setValue:RED_COLOR forKeyPath:@"_placeholderLabel.textColor"];
+
+    // set placeholder text
+    [searchField setPlaceholder:[NSString stringWithFormat:@"Search a command in \"%@\"", _currentGroup]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

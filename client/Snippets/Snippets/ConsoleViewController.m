@@ -153,7 +153,7 @@
 
 - (void)updatePromptWithIndex:(NSInteger)historyIndex
 {
-    if (historyIndex >= 0 && historyIndex <= [_history count] - 1) {
+    if ([_history count] > 0 && historyIndex >= 0 && historyIndex <= [_history count] - 1) {
         NSString *cmd = [_history objectAtIndex:historyIndex];
         self.textField.text = cmd;
     }

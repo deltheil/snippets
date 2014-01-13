@@ -96,7 +96,7 @@
     [self.searchDisplayController.searchBar resignFirstResponder];
 }
 
-#pragma mark - Actions
+#pragma mark - IBActions
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {

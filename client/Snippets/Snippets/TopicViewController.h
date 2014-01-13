@@ -13,8 +13,8 @@
 
 @interface TopicViewController : UIViewController
 
-@property (nonatomic, strong) WNCDatabase *database;
+@property (strong, nonatomic) WNCDatabase *database;
 
-@property (nonatomic, strong) Topic *topic;
+@property (strong, nonatomic) Topic *topic;
 
 @end

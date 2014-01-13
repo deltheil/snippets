@@ -55,7 +55,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Private
+#pragma mark - Custom Accessors
 
 - (void)setCommand:(Command *)command
 {

@@ -34,13 +34,13 @@
 // UI properties
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *groupPickerView;
-@property (nonatomic, weak) IBOutlet UITableView *commandsTableView;
+@property (weak, nonatomic) IBOutlet UITableView *commandsTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 // Private properties
-@property (nonatomic, strong) NSArray *groups;
-@property (nonatomic, strong) NSArray *commands;
-@property (nonatomic, strong) Group *currentGroup;
+@property (strong, nonatomic) NSArray *groups;
+@property (strong, nonatomic) NSArray *commands;
+@property (strong, nonatomic) Group *currentGroup;
 
 @end
 
@@ -124,7 +124,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Private
+#pragma mark - Custom Accessors
 
 - (void)setTopic:(Topic *)topic
 {
@@ -160,7 +160,7 @@
         }]];
     }
     
-    _commands = [NSArray arrayWithArray:cmds];
+    _commands = cmds;
     
     return _commands;
 }

@@ -13,8 +13,8 @@
 
 @interface SearchViewController : UIViewController
 
-@property (nonatomic, strong) WNCDatabase *database;
-@property (nonatomic, strong) Topic *topic;
+@property (strong, nonatomic) WNCDatabase *database;
+@property (strong, nonatomic) Topic *topic;
 @property (strong, nonatomic) NSArray *commands;
 @property (strong, nonatomic) NSString *currentGroup;
 

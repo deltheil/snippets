@@ -12,6 +12,6 @@
 
 @interface TopicListViewController : UITableViewController
 
-@property (nonatomic, strong) WNCDatabase *database;
+@property (strong, nonatomic) WNCDatabase *database;
 
 @end

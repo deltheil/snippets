@@ -107,7 +107,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Private
+#pragma mark - Custom Accessors
 
 - (void)setCommand:(Command *)command
 {
@@ -137,6 +137,8 @@
     [self reloadEntries];
 }
 
+#pragma mark - Private
+
 - (void)reloadEntries
 {
     // Load the HTML template in memory
@@ -159,7 +161,7 @@
     }
 }
 
-#pragma mark - Actions
+#pragma mark - IBActions
 
 - (IBAction)previousCmd:(id)sender
 {
@@ -214,7 +216,7 @@
     return NO;
 }
 
-#pragma mark - Notifications
+#pragma mark - NSNotification
 
 - (void)keyboardWillChange:(NSNotification *)notification
 {

@@ -27,7 +27,7 @@
 
 @implementation TopicListViewController
 
-#pragma mark -Life Cycle
+#pragma mark - Life Cycle
 
 - (void)viewDidLoad
 {
@@ -39,7 +39,7 @@
     rds.name = @"Redis";
     rds.description = @"Redis is an open source, BSD licensed, advanced key-value store.";
     
-    _topics = [[NSArray alloc] initWithObjects:rds, nil];
+    _topics = @[rds];
     
     // set an empty table view footer
     [self.tableView setTableFooterView:[UIView new]];
@@ -59,7 +59,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Actions
+#pragma mark - IBActions
 
 - (IBAction)chooseTopic:(id)sender
 {
@@ -174,7 +174,7 @@
     [self.navigationController pushViewController:topicVC animated:YES];
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

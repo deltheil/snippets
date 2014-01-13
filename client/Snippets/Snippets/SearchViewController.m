@@ -40,18 +40,6 @@
     // display search bar in navigation bar
     [self.searchDisplayController setDisplaysSearchBarInNavigationBar:YES];
 
-    for (UIView *subView in self.searchBar.subviews) {
-        for (UIView *secondLevelSubview in subView.subviews){
-            if ([secondLevelSubview isKindOfClass:[UITextField class]]) {
-                UITextField *searchBarTextField = (UITextField *) secondLevelSubview;
-
-                //set text color
-                searchBarTextField.textColor = [UIColor whiteColor];
-                
-                break;
-            }
-        }
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

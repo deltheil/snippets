@@ -114,6 +114,8 @@
         SearchViewController *searchVC = segue.destinationViewController;
         searchVC.topic = _topic;
         searchVC.database = _database;
+        searchVC.currentGroup = _currentGroup.name;
+        searchVC.commands = self.commands;
     }
 }
 

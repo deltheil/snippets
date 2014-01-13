@@ -62,6 +62,9 @@
     [[self.searchDisplayController searchResultsTableView] registerClass:[CommandCell class]
                                                   forCellReuseIdentifier:CELL_IDENTIFIER];
 
+    // set search input cursor color
+    [[self.searchBar valueForKey:@"textInputTraits"] setValue:[UIColor blackColor] forKey:@"insertionPointColor"];
+
     // force display keyboard and focus to search bar
     // if search bar is not active to avoid an ugly animation on pop vc
     // with gesture from command doc vc

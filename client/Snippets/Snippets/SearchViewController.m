@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 // Private properties
-@property (strong, nonatomic) NSArray *commands;
 @property (strong, nonatomic) NSArray *filteredCommands;
 
 @end
@@ -92,17 +91,6 @@
     
     // force hide keyboard
     [self.searchDisplayController.searchBar resignFirstResponder];
-}
-
-#pragma mark - Private
-
-- (NSArray *)commands
-{
-    if (_commands) {
-        return _commands;
-    }
-    
-    return [_database sn_fetchCommandsForTopic:_topic.uid error:nil];
 }
 
 #pragma mark - Actions

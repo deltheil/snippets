@@ -20,7 +20,8 @@
 
 #define CELL_IDENTIFIER @"CommandCellID"
 
-#define RED_COLOR [UIColor colorWithHexString:@"#f16353" alpha:1]
+#define RED_COLOR [UIColor whiteColor]
+//[UIColor colorWithHexString:@"#f16353" alpha:1]
 
 @interface SearchViewController ()
 
@@ -44,14 +45,19 @@
     // display search bar in navigation bar
     [self.searchDisplayController setDisplaysSearchBarInNavigationBar:YES];
 
-    UITextField *searchField = [self.searchBar valueForKey:@"_searchField"];
-
     // set UI customization
+    UITextField *searchField = [self.searchBar valueForKey:@"_searchField"];
     [searchField setTextColor:RED_COLOR];
     [searchField setTintColor:RED_COLOR];
     [searchField setAdjustsFontSizeToFitWidth:YES];
-    [searchField setFont:[UIFont fontWithName:@"Aleo-Regular" size:12]];
-    [searchField setValue:RED_COLOR forKeyPath:@"_placeholderLabel.textColor"];
+    [searchField setFont:[UIFont fontWithName:@"Aleo-Regular" size:14]];
+    [searchField setValue:[UIColor lightTextColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [searchField setLeftViewMode:UITextFieldViewModeNever];
+
+    // search bar UI customization
+    [self.searchBar setImage:[UIImage imageNamed:@"sn_cross_off"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
+    [self.searchBar setImage:[UIImage imageNamed:@"sn_cross_on"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateHighlighted];
+
 
     // set placeholder text
     [searchField setPlaceholder:[NSString stringWithFormat:@"Search a command in \"%@\"", _currentGroup]];

@@ -28,7 +28,6 @@
 	<array>
 		<string>fonts/DejaVuSansMono.ttf</string>
 		<string>fonts/Aleo-Regular.otf</string>
-		<string>fonts/DINPro-Bold.ttf</string>
 		<string>fonts/VAGRoundedStd-Light.otf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>

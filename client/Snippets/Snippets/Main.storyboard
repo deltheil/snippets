@@ -269,7 +269,7 @@
                                 <constraint firstAttribute="trailing" secondItem="0mt-vM-V5d" secondAttribute="trailing" id="kg4-hW-SsM"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Bfp-kH-8iy">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="Bfp-kH-8iy">
                             <connections>
                                 <segue destination="A9K-04-5am" kind="custom" identifier="SearchVCSegue" customClass="FadeAnimationPushSegue" id="lsa-oW-QYG"/>
                             </connections>

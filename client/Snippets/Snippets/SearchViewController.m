@@ -20,8 +20,7 @@
 
 #define CELL_IDENTIFIER @"CommandCellID"
 
-#define RED_COLOR [UIColor whiteColor]
-//[UIColor colorWithHexString:@"#f16353" alpha:1]
+#define WHITE_COLOR [UIColor whiteColor]
 
 @interface SearchViewController ()
 
@@ -47,8 +46,8 @@
 
     // set UI customization
     UITextField *searchField = [self.searchBar valueForKey:@"_searchField"];
-    [searchField setTextColor:RED_COLOR];
-    [searchField setTintColor:RED_COLOR];
+    [searchField setTextColor:WHITE_COLOR];
+    [searchField setTintColor:WHITE_COLOR];
     [searchField setAdjustsFontSizeToFitWidth:YES];
     [searchField setFont:[UIFont fontWithName:@"Aleo-Regular" size:14]];
     [searchField setValue:[UIColor lightTextColor] forKeyPath:@"_placeholderLabel.textColor"];

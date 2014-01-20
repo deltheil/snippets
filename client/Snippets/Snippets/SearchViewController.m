@@ -20,16 +20,21 @@
 
 #define CELL_IDENTIFIER @"CommandCellID"
 
-#define WHITE_COLOR [UIColor whiteColor]
+#define WHITE_COLOR     [UIColor whiteColor]
 
 @interface SearchViewController ()
 
 // UI properties
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelBarButton;
+@property (strong, nonatomic) IBOutlet UIView *blackSearchView;
+@property (weak, nonatomic) IBOutlet UIView *noResultView;
 
 // Private properties
+@property (strong, nonatomic) UITapGestureRecognizer *hideKeyboardGesture;
 @property (strong, nonatomic) NSArray *filteredCommands;
+@property (assign) bool isFiltering;
 
 @end
 
@@ -41,10 +46,6 @@
 {
     [super viewDidLoad];
     
-    // display search bar in navigation bar
-    [self.searchDisplayController setDisplaysSearchBarInNavigationBar:YES];
-
-    // set UI customization
     UITextField *searchField = [self.searchBar valueForKey:@"_searchField"];
     [searchField setTextColor:WHITE_COLOR];
     [searchField setTintColor:WHITE_COLOR];
@@ -53,58 +54,70 @@
     [searchField setValue:[UIColor lightTextColor] forKeyPath:@"_placeholderLabel.textColor"];
     [searchField setLeftViewMode:UITextFieldViewModeNever];
 
-    // search bar UI customization
     [self.searchBar setImage:[UIImage imageNamed:@"sn_cross_off"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
     [self.searchBar setImage:[UIImage imageNamed:@"sn_cross_on"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateHighlighted];
 
-
-    // set placeholder text
     [searchField setPlaceholder:[NSString stringWithFormat:@"Search a command in \"%@\"", _currentGroup]];
+    
+    // add a tap gesture to dismiss keyboard when searching
+    self.hideKeyboardGesture = [[UITapGestureRecognizer alloc]
+                                initWithTarget:self
+                                action:@selector(dismissKeyboard)];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // set translucent to YES to support search display controller
-    [self.navigationController.navigationBar setTranslucent:YES];
-    
+
     // hide back button to navigation bar
-    self.navigationItem.hidesBackButton = YES;
+    [self.navigationItem setHidesBackButton:YES];
+
+    // set custom search cancel button
+    self.navigationItem.rightBarButtonItem = self.cancelBarButton;
 
     // set an empty origin table view footer
     [self.tableView setTableFooterView:[UIView new]];
-    
-    // set an empty search results table view footer
-    [[self.searchDisplayController searchResultsTableView] setTableFooterView:[UIView new]];
 
-    // register custom table view cell class to search results table view
-    [[self.searchDisplayController searchResultsTableView] registerClass:[CommandCell class]
-                                                  forCellReuseIdentifier:CELL_IDENTIFIER];
+    // display search bar in navigation bar
+    [self.navigationController.navigationBar addSubview:self.searchBar];
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    // force display keyboard and focus to search bar
-    // if search bar is not active to avoid an ugly animation on pop vc
-    // with gesture from command doc vc
-    if (![self.searchDisplayController isActive])
-        [self.searchDisplayController.searchBar becomeFirstResponder];
+    // force display keyboard
+    [self.searchBar becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
-    // set translucent to NO on will disappear for child view controllers
-    [self.navigationController.navigationBar setTranslucent:NO];
-    
+    // remove search bar from navigation bar
+    [self.searchBar removeFromSuperview];
     // force hide keyboard
-    [self.searchDisplayController.searchBar resignFirstResponder];
+    [self.searchBar resignFirstResponder];
 }
 
 #pragma mark - IBActions
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+- (void)dismissKeyboard
 {
+    if (!_isFiltering || !self.noResultView.hidden) {
+        [self searchBarCancelButtonClicked:self.cancelBarButton];
+        return;
+    }
+    
+    [self.searchBar resignFirstResponder];
+    [self.tableView reloadData];
+    [self.view removeGestureRecognizer:self.hideKeyboardGesture];
+}
+
+- (IBAction)searchBarCancelButtonClicked:(id)sender
+{
+    _isFiltering = NO;
+    
     CATransition *transition = [CATransition animation];
     
     transition.duration = 0.35;
@@ -117,9 +130,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"CommandVCSegue"]) {
+        
         UITableViewCell *cell = (UITableViewCell *) sender;
         
-        NSIndexPath *indexPath = [[self.searchDisplayController searchResultsTableView] indexPathForCell:cell];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         
         Command *cmd = _filteredCommands[indexPath.row];
         
@@ -145,44 +159,51 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return ([tableView isEqual:[self.searchDisplayController searchResultsTableView]]) ? [_filteredCommands count] : [self.commands count];
+    return (_isFiltering) ? [_filteredCommands count] : [self.commands count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CommandCell *cell;
-    
-    if (tableView == [self.searchDisplayController searchResultsTableView]) {
-        cell = [self.tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
-    }
-    else {
-        cell = [self.tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
-    }
+    CommandCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
 
     NSInteger row = indexPath.row;
     
-    Command *cmd = ([tableView isEqual:[self.searchDisplayController searchResultsTableView]])
-                    ? _filteredCommands[row] : self.commands[row];
+    Command *cmd = (_isFiltering) ? _filteredCommands[row] : self.commands[row];
     
     cell.command = cmd;
     
     return cell;
 }
 
-#pragma mark - UISearchDisplayControllerDelegate
+#pragma mark - UISearchBarDelegate
 
-- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    [self searchBarCancelButtonClicked:self.searchBar];
+    [self.view addGestureRecognizer:self.hideKeyboardGesture];
 }
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    NSPredicate *filterMerchant = [NSPredicate predicateWithFormat:@"name contains[cd] %@", searchString];
+    if (searchText.length == 0) {
+        _isFiltering = NO;
+
+        self.noResultView.hidden = YES;
+
+        self.blackSearchView.hidden = NO;
+    }
+    else {
+        _isFiltering = YES;
+        
+        NSPredicate *filterMerchant = [NSPredicate predicateWithFormat:@"name contains[cd] %@", searchText];
+        
+        _filteredCommands = [self.commands filteredArrayUsingPredicate:filterMerchant];
+
+        self.noResultView.hidden = !([_filteredCommands count] < 1);
+
+        self.blackSearchView.hidden = YES;
+    }
     
-    _filteredCommands = [self.commands filteredArrayUsingPredicate:filterMerchant];
-    
-    return YES;
+    [self.tableView reloadData];
 }
 
 @end

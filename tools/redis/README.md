@@ -53,7 +53,7 @@ data
 **Goal**: transfer local data files to the Winch datastore.
 
 ```
-WNC_CRED="user@mail.com:pAsSwoRd" ./index.rb snippets
+WNC_CRED="DATASTORE_ID:TOKEN" ./index.rb snippets
 ```
 
 > Note: this is quite basic (and inefficient). It will be improved in a near

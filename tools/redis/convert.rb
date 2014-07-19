@@ -88,12 +88,13 @@ class SnippetsRender < Redcarpet::Render::HTML
     "history"     => "History"
   }
 
+  # See http://redis.io/topics/protocol
   REPLY_TYPES = {
-    "nil"         => "Null multi-bulk reply",
-    "status"      => "Status code reply",
-    "integer"     => "Integer reply",
-    "bulk"        => "Bulk reply",
-    "multi-bulk"  => "Multi-bulk reply"
+    "nil"           => "Null reply",
+    "simple-string" => "Simple string reply",
+    "integer"       => "Integer reply",
+    "bulk-string"   => "Bulk string reply",
+    "array"         => "Array reply"
   }
 
   attr_reader :cmd
